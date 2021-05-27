@@ -17,5 +17,8 @@
     "url": "https://github.com/KevvKo/discord-clone/issues"
   },
   "homepage": "https://github.com/KevvKo/discord-clone#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "express-generator": "^4.16.1"
+  }
 }
