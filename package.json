@@ -19,6 +19,7 @@
   "homepage": "https://github.com/KevvKo/discord-clone#readme",
   "devDependencies": {},
   "dependencies": {
-    "express-generator": "^4.16.1"
+    "express-generator": "^4.16.1",
+    "mongodb": "^3.6.9"
   }
 }
