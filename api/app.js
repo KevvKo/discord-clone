@@ -1,15 +1,21 @@
 'use strict';
 
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var cors = require("cors");
-var app = express();
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const cors = require("cors");
+const db = require('./services/connection');
+const app = express();
+
+require('dotenv').config();
+const { db_user, db_password } = require('./config');
+const DB_URL = `mongodb+srv://${db_user}:${db_password}@discord-db.rlsxs.mongodb.net/discord_db?retryWrites=true&w=majority`
+db.connect(DB_URL);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
