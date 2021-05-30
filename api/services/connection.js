@@ -9,7 +9,7 @@ module.exports = {
         try {
             // Connect to the MongoDB cluster
             await client.connect(); 
-            console.log('Connected to database. ')
+            console.log('Connected to database.')
         } catch (e) {
             console.error(e);
         }

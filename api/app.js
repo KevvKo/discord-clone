@@ -11,23 +11,19 @@ const usersRouter = require('./routes/users');
 const cors = require("cors");
 const db = require('./services/connection');
 const app = express();
+const port = 3000
 
 require('dotenv').config();
 const { db_user, db_password } = require('./config');
 const DB_URL = `mongodb+srv://${db_user}:${db_password}@discord-db.rlsxs.mongodb.net/discord_db?retryWrites=true&w=majority`
 db.connect(DB_URL);
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public', 'build')));
 app.use(cors());
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // catch 404 and forward to error handler
@@ -43,7 +39,6 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
 });
 
 module.exports = app;
