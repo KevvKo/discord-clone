@@ -1,0 +1,30 @@
+
+/* theme colors */
+--primar-color:         #a113dd;
+--secondary-color:      #34af6c;
+--tertiary-color:       #b316f7;
+
+/* spotlight colors */
+--success-color:        #17d640;
+--warning-color:        #e8ea54;
+--danger-color:         #af0f0f;
+
+/* grey tones */
+--grey-100:             #9e9e9e;
+--grey-90:              #848484;
+--grey-80:              #777777;
+--grey-70:              #6b6b6b;
+--grey-60:              #606060;
+--grey-50:              #515151;
+--grey-40:              #444444;
+--grey-30:              #383838;
+--grey-20:              #2b2b2b;
+--grey-10:              #1e1e1e;
+
+/* font colors */
+--body-font-color:      var(--grey-10);
+--light-font-color:     var(--grey-20);
+--dark-font-color:      var(--grey-100);
+
+/* border colors */
+
