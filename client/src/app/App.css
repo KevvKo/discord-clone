@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root, .App{
+  height: 100%;
+  margin: 0;
+}
+
+body{
+    color: var(--body-font-color);
+  }
+  
