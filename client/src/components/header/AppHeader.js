@@ -4,7 +4,7 @@ function AppHeader() {
 
   return (
     <div className="app-header">
-      
+      Header
     </div>
   );
 }

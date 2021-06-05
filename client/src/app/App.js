@@ -12,19 +12,19 @@ function App() {
 
   return (
     <div className="App">
-      <Container fluid="true">
-        <Row>
+      <Container className="d-flex flex-column h-100" fluid="true">
+        <Row noGutters={true}>
           <AppHeader />
         </Row>
-        <Row>
-          <Col>
+        <Row className="" noGutters={true}>
+          <Col md={3}>
             <AppSideBar />
           </Col>
-          <Col>
+          <Col md={9}>
             <AppMain />
           </Col>
         </Row>
-        <Row>
+        <Row className="fixed-bottom" noGutters={true}>
           <AppFooter/>
         </Row>
       </Container>
