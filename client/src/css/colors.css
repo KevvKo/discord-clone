@@ -1,58 +1,58 @@
 :root{
     /* primary colors */
-    --purple-h:             282;
-    --purple-s:             82%;
-    --purple-l:             33%;
+    --purple-h:                 282;
+    --purple-s:                 82%;
+    --purple-l:                 33%;
 
     /* secondary color */
-    --green-h:              282;
-    --green-s:              82%;
-    --green-l:              33%;
+    --green-h:                  282;
+    --green-s:                  82%;
+    --green-l:                  33%;
 
     /* grey color */
-    --grey-h:               240;
-    --grey-s:               1%;
-    --grey-l:               53%;
+    --grey-h:                   240;
+    --grey-s:                   1%;
+    --grey-l:                   53%;
 
     /* color palettes */
-    --purple-color:            hsl(var(--purple-h), var(--purple-s), var(--purple-l));
-    --purple-color-10:         hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 5%));
-    --purple-color-20:         hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 10%));
-    --purple-color-30:         hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 15%));
-    --purple-color-40:         hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 20%));
-    --purple-color-50:         hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 25%));
-    --purple-color-60:         hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 30%));
-    --purple-color-70:         hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 35%));
-    --purple-color-80:         hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 40%));
+    --purple-color:             hsl(var(--purple-h), var(--purple-s), var(--purple-l));
+    --purple-color-10:          hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 5%));
+    --purple-color-20:          hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 10%));
+    --purple-color-30:          hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 15%));
+    --purple-color-40:          hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 20%));
+    --purple-color-50:          hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 25%));
+    --purple-color-60:          hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 30%));
+    --purple-color-70:          hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 35%));
+    --purple-color-80:          hsl(var(--purple-h), var(--purple-s), calc(var(--purple-l) + 40%));
 
-    --green-color:            hsl(var(--green-h), var(--green-s), var(--green-l));
-    --green-color-10:         hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 5%));
-    --green-color-20:         hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 10%));
-    --green-color-30:         hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 15%));
-    --green-color-40:         hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 20%));
-    --green-color-50:         hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 25%));
-    --green-color-60:         hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 30%));
-    --green-color-70:         hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 35%));
-    --green-color-80:         hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 40%));
+    --green-color:              hsl(var(--green-h), var(--green-s), var(--green-l));
+    --green-color-10:           hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 5%));
+    --green-color-20:           hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 10%));
+    --green-color-30:           hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 15%));
+    --green-color-40:           hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 20%));
+    --green-color-50:           hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 25%));
+    --green-color-60:           hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 30%));
+    --green-color-70:           hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 35%));
+    --green-color-80:           hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 40%));
 
-    --grey-color:            hsl(var(--grey-h), var(--grey-s), var(--grey-l));
-    --grey-color-10:         hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 5%));
-    --grey-color-20:         hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 10%));
-    --grey-color-30:         hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 15%));
-    --grey-color-40:         hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 20%));
-    --grey-color-50:         hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 25%));
-    --grey-color-60:         hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 30%));
-    --grey-color-70:         hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 35%));
-    --grey-color-80:         hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 40%));
+    --grey-color:               hsl(var(--grey-h), var(--grey-s), var(--grey-l));
+    --grey-color-10:            hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 5%));
+    --grey-color-20:            hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 10%));
+    --grey-color-30:            hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 15%));
+    --grey-color-40:            hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 20%));
+    --grey-color-50:            hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 25%));
+    --grey-color-60:            hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 30%));
+    --grey-color-70:            hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 35%));
+    --grey-color-80:            hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 40%));
 
     /* spotlight colors */
-    --success-color:        #17d640;
-    --warning-color:        #e8ea54;
-    --danger-color:         #af0f0f;
+    --success-color:            #17d640;
+    --warning-color:            #e8ea54;
+    --danger-color:             #af0f0f;
 
     /* font colors */
-    --body-font-color:      var(--grey-color);
-    --dark-font-color:      var(--grey-color-80);
+    --body-font-color:          var(--grey-color);
+    --dark-font-color:          var(--grey-color-80);
 } 
 
 
