@@ -20,10 +20,10 @@ function App() {
           <Col className="d-flex" md={1}>
             <ChannelList />
           </Col>
-          <Col className="d-flex" md={2}>
+          <Col className="d-flex col-auto">
             <FriendsList />
           </Col>
-          <Col className="d-flex" md={9}>
+          <Col className="d-flex">
             <AppMain />
           </Col>
         </Row>

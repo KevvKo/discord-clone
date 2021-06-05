@@ -53,6 +53,9 @@
     /* font colors */
     --body-font-color:          var(--grey-color-70);
     --dark-font-color:          var(--grey-color-80);
+
+    /* border colors */
+    --border-color-layout:      var(--ocean-blue-color-40);
 } 
 
 
