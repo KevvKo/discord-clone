@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import AppFooter from './AppFooter';
+import ChannelList from './ChannelList';
 
 test('renders learn react link', () => {
-  render(<AppFooter />);
+  render(<ChannelList />);
   const linkElement = screen.getByText(/ xyz /i);
   expect(linkElement).toBeInTheDocument();
 });

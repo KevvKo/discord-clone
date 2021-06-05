@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import AppSideBar from './AppSideBar';
+import FriendsList from './FriendsList.test';
 
 test('renders learn react link', () => {
-  render(<AppSideBar />);
+  render(<FriendsList />);
   const linkElement = screen.getByText(/ xyz /i);
   expect(linkElement).toBeInTheDocument();
 });

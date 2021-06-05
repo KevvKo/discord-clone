@@ -5,8 +5,8 @@ import Col from 'react-bootstrap/Col'
 
 import AppHeader from '../components/header/AppHeader'
 import AppMain from '../components/main/AppMain'
-import AppSideBar from '../components/sidebar/AppSideBar'
-import AppFooter from '../components/footer/AppFooter'
+import FriendsList from '../components/friendsList/FriendsList'
+import ChannelList from '../components/channelList/ChannelList'
 
 function App() {
 
@@ -16,16 +16,16 @@ function App() {
         <Row noGutters={true}>
           <AppHeader />
         </Row>
-        <Row className="" noGutters={true}>
-          <Col md={3}>
-            <AppSideBar />
+        <Row className="d-flex flex-fill" noGutters={true}>
+          <Col className="d-flex" md={3}>
+            <ChannelList />
           </Col>
-          <Col md={9}>
+          <Col className="d-flex" md={7}>
             <AppMain />
           </Col>
-        </Row>
-        <Row className="fixed-bottom" noGutters={true}>
-          <AppFooter/>
+          <Col className="d-flex" md={2}>
+            <FriendsList />
+          </Col>
         </Row>
       </Container>
       
