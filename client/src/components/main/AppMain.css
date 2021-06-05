@@ -1,0 +1,5 @@
+.app-main{
+    --app-main-bg: var(--ocean-blue-color-30);
+
+    background: var(--app-main-bg);
+}

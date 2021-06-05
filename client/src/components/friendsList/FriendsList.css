@@ -1,0 +1,5 @@
+.friends-list{
+    --friends-list-bg: var(--ocean-blue-color-20);
+
+    background: var(--friends-list-bg);
+}

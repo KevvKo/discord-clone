@@ -9,4 +9,5 @@ html, body, #root, .App{
 
 body{
   color: var(--body-font-color);
+  line-height: var(--line-height);
 }

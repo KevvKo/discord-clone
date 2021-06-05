@@ -17,14 +17,14 @@ function App() {
           <AppHeader />
         </Row>
         <Row className="d-flex flex-fill" noGutters={true}>
-          <Col className="d-flex" md={3}>
+          <Col className="d-flex" md={1}>
             <ChannelList />
-          </Col>
-          <Col className="d-flex" md={7}>
-            <AppMain />
           </Col>
           <Col className="d-flex" md={2}>
             <FriendsList />
+          </Col>
+          <Col className="d-flex" md={9}>
+            <AppMain />
           </Col>
         </Row>
       </Container>
