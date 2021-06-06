@@ -1,5 +1,8 @@
 {
     "friendsList": {
         "title":    "Direktnachrichten"
+    },
+    "searchBar": {
+        "searchButtonName": "Finde deine Freunde."
     }
 }
