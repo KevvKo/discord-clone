@@ -8,8 +8,8 @@ function FriendsList() {
 
   return (
       <Container className="friends-list d-flex justify-content-center flex-grow-1">
-        <Row>
-          <h6>
+        <Row noGutters={true}>
+          <h6 class="mt-2">
             {t('friendsList.title')}
           </h6>
         </Row>
