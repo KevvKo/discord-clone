@@ -1,5 +1,5 @@
 .app-main{
 
     background: var(--panel-bg);
-    border-top: 1px solid var(--ocean-blue-color-40);
+    border-top: 1px solid var(--border-color-layout);
 }
