@@ -3,6 +3,6 @@
         "title":    "Direct messages"
     },
     "searchBar": {
-        "searchButtonName": "Find your friends"
+        "searchFieldPlaceHolder": "Find or starting a chat"
     }
 }

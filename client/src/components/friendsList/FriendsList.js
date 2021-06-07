@@ -9,7 +9,7 @@ function FriendsList() {
   return (
       <Container className="friends-list d-flex justify-content-center flex-grow-1">
         <Row noGutters={true}>
-          <h6 class="mt-3 ">
+          <h6 className="mt-3 ">
             {t('friendsList.title')}
           </h6>
         </Row>

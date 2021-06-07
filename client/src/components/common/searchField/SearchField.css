@@ -1,0 +1,6 @@
+.search-field{
+
+    background-color: var(--ocean-blue-color) !important;
+    font-size: var(--font-size-xs) !important;
+    color: var(--font-color-secondary) !important;
+}

@@ -1,5 +1,5 @@
 import './SearchBar.css';
-import Button from 'react-bootstrap/Button';
+import SearchField from '../common/searchField/SearchField';
 import {useTranslation} from "react-i18next";
 
 function SearchBar() {
@@ -7,8 +7,8 @@ function SearchBar() {
     const [t, i18n] = useTranslation('common');
 
     return (
-    <div className="search-bar">
-        <Button variant="secondary" size={'sm'}>{t('searchBar.searchButtonName')}</Button>
+    <div className='search-bar d-flex justify-content-center p-2'>
+        <SearchField placeholder={ t('searchBar.searchFieldPlaceHolder') } />
     </div>
     );
 }
