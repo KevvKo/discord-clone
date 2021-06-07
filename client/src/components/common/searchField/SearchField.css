@@ -1,6 +1,10 @@
-.search-field{
+button.search-field, .form-control{
 
     background-color: var(--ocean-blue-color) !important;
     font-size: var(--font-size-xs) !important;
     color: var(--font-color-secondary) !important;
+}
+
+.form-control{
+    border: none !important;
 }
