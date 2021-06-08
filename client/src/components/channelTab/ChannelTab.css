@@ -1,0 +1,12 @@
+.channel-tab{
+    --channel-tab-height: 50px;
+    --channel-tab-width: 50px;
+    --channel-tab-border-radius: 50%;
+    --channel-tab-bg: var(--grey-color);
+
+    height: var(--channel-tab-height);
+    width: var(--channel-tab-width);
+    background: var(--ocean-blue-color);
+    border-radius: var(--channel-tab-border-radius);
+    margin-top: var(--spacer);
+}
