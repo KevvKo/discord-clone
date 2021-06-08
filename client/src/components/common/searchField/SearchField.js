@@ -1,11 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
 import './SearchField.css';
-import {useTranslation} from "react-i18next";
-
 function SearchField(props) {
 
-    const [t, i18n] = useTranslation('common');
     const buttonType = props.type;
     let searchField;
 

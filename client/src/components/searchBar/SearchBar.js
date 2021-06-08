@@ -8,7 +8,7 @@ function SearchBar() {
 
     return (
     <div className='search-bar d-flex justify-content-center p-2'>
-        <SearchField placeholder={ t('searchBar.searchFieldPlaceHolder') } />
+        <SearchField type="button" placeholder={ t('searchBar.searchFieldPlaceHolder') } />
     </div>
     );
 }
