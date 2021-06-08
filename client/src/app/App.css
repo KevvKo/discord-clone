@@ -14,3 +14,9 @@ body{
 .App{
   color: var(--body-font-color);
 }
+
+h6{
+  font-size: var(--font-size-xs) !important;
+  text-transform: uppercase;
+  font-weight: var(--font-weight-semi-bold) !important;
+}

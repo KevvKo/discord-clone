@@ -7,7 +7,7 @@ function FriendsList() {
   const [t, i18n] = useTranslation('common');
 
   return (
-      <Container className="friends-list d-flex justify-content-center flex-grow-1">
+      <Container className="friends-list d-flex justify-content-start flex-grow-1">
         <Row noGutters={true}>
           <h6 className="mt-3 ">
             {t('friendsList.title')}
