@@ -1,11 +1,11 @@
 import './NavBar.css';
-
+import {Col} from 'react-bootstrap';
 function NavBar() {
 
   return (
-    <div className="navbar">
+    <Col className="navbar">
       
-    </div>
+    </Col>
   );
 }
 

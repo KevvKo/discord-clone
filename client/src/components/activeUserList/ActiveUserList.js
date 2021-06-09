@@ -1,9 +1,11 @@
 import './ActiveUserList.css';
+import {Col} from 'react-bootstrap';
+
 function ActiveUserList() {
 
   return (
-    <div className="active-user-list flex-grow-1">
-    </div>
+    <Col className="active-user-list" md={2}>
+    </Col>
   );
 }
 

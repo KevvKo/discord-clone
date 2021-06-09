@@ -1,11 +1,12 @@
 import './AppMain.css';
+import {Col} from 'react-bootstrap';
 
 function AppMain() {
 
   return (
-    <div className="app-main flex-grow-1">
+    <Col className="app-main">
       
-    </div>
+    </Col>
   );
 }
 
