@@ -1,9 +1,11 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&family=Stint+Ultra+Condensed&display=swap');
+
 :root{
-    @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
-    --font-family: 'Exo 2', sans-serif;
+    --font-family: 'Poppins', sans-serif;
 
-    --font-size-xs:                 12px;
+    --font-size-xs:                 9px;
     --font-size-sm:                 14px;
     --font-size-rg:                 16px;
     --font-size-lg:                 18px;
