@@ -1,5 +1,4 @@
 import './UserBar.css';
-import SearchField from '../common/searchField/SearchField';
 import {useTranslation} from "react-i18next";
 import {Col} from 'react-bootstrap';
 

@@ -7,7 +7,7 @@ function FriendsList() {
   const [t, i18n] = useTranslation('common');
 
   return (
-    <Col className="friends-list justify-content-start" md={2}>
+    <Col className="friends-list justify-content-start">
       <h6 className="mt-3 ">
         {t('friendsList.title')}
       </h6>

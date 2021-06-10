@@ -1,0 +1,5 @@
+.user-bar{
+    --user-bar-bg: var(--ocean-blue-color);
+
+    background: var(--user-bar-bg);
+}

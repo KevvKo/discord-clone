@@ -9,7 +9,7 @@ import AppMain from '../components/main/AppMain';
 import FriendsList from '../components/friendsList/FriendsList';
 import ChannelList from '../components/channelList/ChannelList';
 import ActiveUserList from '../components/activeUserList/ActiveUserList';
-
+import UserBar from '../components/userBar/UserBar';
 
 function App() {
 
@@ -23,7 +23,14 @@ function App() {
         <Col className="d-flex flex-column">
           <TopBar />
           <Row className="flex-fill">
-            <FriendsList />
+            <Col className="d-flex flex-column" md={2}>
+              <Row className="flex-grow-1">
+                <FriendsList />
+              </Row>
+              <Row>
+                <UserBar />
+              </Row>
+            </Col>
             <AppMain />
             <ActiveUserList />
           </Row>
