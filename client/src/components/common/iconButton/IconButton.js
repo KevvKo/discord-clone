@@ -1,20 +1,22 @@
 import './IconButton.css';
+import {Button} from 'react-bootstrap';
 
 function IconButton(props) {
 
   const  iconClassName = `bi ${props.icon}`;
 
   return (
-    <span className="icon-button ml-1 mr-1">
+    <Button className="icon-button" variant="flat" size={props.size}>
       <i className={iconClassName}></i>
-    </span>
+    </Button>
   );
 }
 
 IconButton.defaultProps = {
     icon: 'bi-person-fill',
     hover: true,
-    background: true
+    background: true,
+    size: 'md'
   };
 
 export default IconButton;

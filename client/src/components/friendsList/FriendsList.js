@@ -10,12 +10,12 @@ function FriendsList() {
     <Col className="friends-list justify-content-start">
       <Row>
         <Col sm={9}>
-          <h6 className="mt-3 ">
+          <h6 className="mt-3 text-nowrap">
             {t('friendsList.title')}
           </h6>
         </Col>
-        <Col>
-          <IconButton icon="bi-plus" />
+        <Col sm={3}>
+          <IconButton icon="bi-plus" size="sm"/>
         </Col>
       </Row>
     </Col>
