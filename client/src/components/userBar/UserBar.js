@@ -11,8 +11,8 @@ function UserBar() {
     <Col className='user-bar d-flex'>
         <div></div>
         <div className="d-flex align-items-center">
-            <IconButton icon="bi-chat-square-fill"/>
-            <IconButton icon="bi-people-fill"/>
+            <IconButton icon="bi-mic-fill"/>
+            <IconButton icon="bi-headphones"/>
             <IconButton icon="bi-gear-fill"/>
         </div>
     </Col>

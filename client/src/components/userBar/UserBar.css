@@ -1,6 +1,6 @@
 .user-bar{
     --user-bar-bg: var(--ocean-blue-color);
-    --user-bar-height: 35px;
+    --user-bar-height: 50px;
 
     background: var(--user-bar-bg);
     height: var(--user-bar-height);
