@@ -9,7 +9,7 @@ import AppMain from '../components/main/AppMain';
 import FriendsList from '../components/friendsList/FriendsList';
 import ChannelList from '../components/channelList/ChannelList';
 import ActiveUserList from '../components/activeUserList/ActiveUserList';
-import UserBar from '../components/userBar/UserBar';
+import UserBar from '../components/user/userBar/UserBar';
 
 function App() {
 

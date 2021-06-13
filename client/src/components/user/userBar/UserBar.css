@@ -4,4 +4,5 @@
 
     background: var(--user-bar-bg);
     height: var(--user-bar-height);
+    font-size: var(--font-size-xs)
 }
