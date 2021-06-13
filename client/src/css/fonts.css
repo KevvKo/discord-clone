@@ -5,10 +5,10 @@
 
     --font-family: 'Poppins', sans-serif;
 
-    --font-size-xs:                 9px;
-    --font-size-sm:                 14px;
-    --font-size-rg:                 16px;
-    --font-size-lg:                 18px;
+    --font-size-xs:                 0.563rem;
+    --font-size-sm:                 0.875rem;
+    --font-size-rg:                 1rem;
+    --font-size-lg:                 1.125rem;
 
     --font-weight-light:            300;
     --font-weight-regular:          400;

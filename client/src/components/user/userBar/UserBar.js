@@ -9,10 +9,10 @@ function UserBar() {
     const [t, i18n] = useTranslation('common');
 
     return (
-    <Col className='user-bar d-flex'>
+    <Col className='user-bar d-flex align-items-center'>
         <UserAvatar />
         <UserTag />
-        <div className="d-flex align-items-center">
+        <div className="d-flex">
             <IconButton icon="bi-mic-fill" background={false} size="sm"/>
             <IconButton icon="bi-headphones" background={false} size="sm"/>
             <IconButton icon="bi-gear-fill" background={false} size="sm"/>

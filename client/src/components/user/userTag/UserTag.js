@@ -8,8 +8,8 @@ function UserTag() {
 
     return (
     <div className="user-tag">
-        <span>{userName}</span>
-        <span>{userTag}</span>
+        <div>{userName}</div>
+        <div>{userTag}</div>
     </div>
     );
 }
