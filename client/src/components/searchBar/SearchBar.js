@@ -8,9 +8,9 @@ function SearchBar() {
     const [t, i18n] = useTranslation('common');
 
     return (
-    <Col className='search-bar d-flex justify-content-center p-2' md={2}>
+    <div className='search-bar d-flex justify-content-center p-2' md={2}>
         <SearchField type="button" placeholder={ t('searchBar.searchFieldPlaceHolder') } />
-    </Col>
+    </div>
     );
 }
 

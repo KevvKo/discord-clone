@@ -7,18 +7,14 @@ function FriendsList() {
   const [t, i18n] = useTranslation('common');
 
   return (
-    <Col className="friends-list justify-content-start">
-      <Row>
-        <Col sm={9}>
+    <div className="friends-list flex-grow-1 justify-content-start pl-2">
+      <div>
           <h6 className="mt-3 text-nowrap">
             {t('friendsList.title')}
           </h6>
-        </Col>
-        <Col sm={3}>
           <IconButton icon="bi-plus" size="sm"/>
-        </Col>
-      </Row>
-    </Col>
+      </div>
+    </div>
   );
 }
 

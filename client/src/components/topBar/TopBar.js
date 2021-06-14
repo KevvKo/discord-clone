@@ -8,7 +8,6 @@ function TopBar() {
     
     return (
         <Row className='top-bar'>
-            <SearchBar />
             <NavBar />
         </Row>
     );

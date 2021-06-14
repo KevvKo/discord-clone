@@ -10,6 +10,7 @@ import FriendsList from '../components/friendsList/FriendsList';
 import ChannelList from '../components/channelList/ChannelList';
 import ActiveUserList from '../components/activeUserList/ActiveUserList';
 import UserBar from '../components/user/userBar/UserBar';
+import SearchBar from '../components/searchBar/SearchBar';
 
 function App() {
 
@@ -20,17 +21,14 @@ function App() {
       </Row>
       <Row className="flex-fill">
         <ChannelList />
+        <div className="d-flex flex-column">
+              <SearchBar />
+              <FriendsList />
+              <UserBar />
+            </div>
         <Col className="d-flex flex-column">
           <TopBar />
           <Row className="flex-fill">
-            <Col className="d-flex flex-column" md={2}>
-              <Row className="flex-grow-1">
-                <FriendsList />
-              </Row>
-              <Row>
-                <UserBar />
-              </Row>
-            </Col>
             <AppMain />
             <ActiveUserList />
           </Row>

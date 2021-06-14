@@ -1,6 +1,5 @@
 import './UserBar.css';
 import {useTranslation} from "react-i18next";
-import {Col} from 'react-bootstrap';
 import IconButton from '../../common/iconButton/IconButton';
 import UserAvatar from '../userAvatar/UserAvatar';
 import UserTag from '../userTag/UserTag';
@@ -9,7 +8,7 @@ function UserBar() {
     const [t, i18n] = useTranslation('common');
 
     return (
-    <Col className='user-bar d-flex align-items-center'>
+    <div className='user-bar d-flex align-items-center'>
         <UserAvatar />
         <UserTag />
         <div className="d-flex">
@@ -17,7 +16,7 @@ function UserBar() {
             <IconButton icon="bi-headphones" background={false} size="sm"/>
             <IconButton icon="bi-gear-fill" background={false} size="sm"/>
         </div>
-    </Col>
+    </div>
     );
 }
 
