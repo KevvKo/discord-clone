@@ -4,9 +4,15 @@ import {Row, Col} from 'react-bootstrap';
 function ChannelList() {
 
   return (
-    <div className="channel-list" md={1}>
-      <div className="p-2 justify-content-center">
-        <ChannelTab />
+    <div className="channel-list pl-2 pr-1">
+      <div className="p-1 justify-content-center">
+        <ChannelTab icon="bi-controller" />
+      </div>
+      <div className="p-1 justify-content-center">
+        <ChannelTab icon="bi-compass" />
+      </div>
+      <div className="p-1 justify-content-center">
+        <ChannelTab icon="bi-plus" />
       </div>
     </div>
   );

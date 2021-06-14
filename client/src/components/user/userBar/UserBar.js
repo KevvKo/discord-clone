@@ -8,7 +8,7 @@ function UserBar() {
     const [t, i18n] = useTranslation('common');
 
     return (
-    <div className='user-bar d-flex align-items-center'>
+    <div className='p-2 user-bar d-flex align-items-center'>
         <UserAvatar />
         <UserTag />
         <div className="d-flex">

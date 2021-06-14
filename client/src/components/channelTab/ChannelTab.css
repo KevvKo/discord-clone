@@ -1,12 +1,25 @@
 .channel-tab{
+    --channel-tab-font-color: var(--grey-color-50) !important;
     --channel-tab-height: 50px;
     --channel-tab-width: 50px;
     --channel-tab-border-radius: 50%;
     --channel-tab-bg: var(--grey-color);
+    --channel-tab-border-radius-hover: 35%;
 
     height: var(--channel-tab-height);
     width: var(--channel-tab-width);
     background: var(--ocean-blue-color);
     border-radius: var(--channel-tab-border-radius);
     margin-top: var(--spacer);
+    padding-bottom: 8px;
+    transition: 0.25s;
+}
+
+.channel-tab:hover{
+    cursor: pointer;
+    border-radius: var(--channel-tab-border-radius-hover);
+}
+
+.channel-tab i{
+    color: var(--channel-tab-font-color);
 }
