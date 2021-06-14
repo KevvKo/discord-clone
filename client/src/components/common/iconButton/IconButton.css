@@ -1,4 +1,7 @@
 .icon-button{
     color: var(--grey-color-50) !important;
-    padding-bottom: 8px;
+}
+
+.icon-button i::before{
+    line-height: inherit !important;
 }
