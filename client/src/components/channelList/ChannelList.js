@@ -9,7 +9,7 @@ function ChannelList() {
         <ChannelTab icon="bi-controller" />
       </div>
       <div className="p-1 justify-content-center">
-        <ChannelTab icon="bi-compass" />
+        <ChannelTab icon="bi-compass-fill" />
       </div>
       <div className="p-1 justify-content-center">
         <ChannelTab icon="bi-plus" />

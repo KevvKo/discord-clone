@@ -3,3 +3,7 @@
 
     background: var(--friends-list-bg);
 }
+
+.friends-list h6{
+    max-height: fit-content;
+}

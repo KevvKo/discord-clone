@@ -5,9 +5,9 @@
     --ocean-blue-l:                 10%;
 
     /* secondary color */
-    --green-h:                      282;
-    --green-s:                      82%;
-    --green-l:                      33%;
+    --green-h:                      114;
+    --green-s:                      71%;
+    --green-l:                      31%;
 
     /* grey color */
     --grey-h:                       240;
@@ -53,7 +53,7 @@
     /* font colors */
     --body-font-color:              var(--grey-color-70);
     --dark-font-color:              var(--grey-color-80);
-    --font-color-secondary:         var(--grey-color-30);
+    --font-color-secondary:         var(--grey-color);
 
     /* border colors */
     --border-color-layout:          var(--ocean-blue-color-40);

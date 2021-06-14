@@ -1,14 +1,16 @@
 .channel-tab{
-    --channel-tab-font-color: var(--grey-color-50) !important;
-    --channel-tab-height: 50px;
-    --channel-tab-width: 50px;
-    --channel-tab-border-radius: 50%;
-    --channel-tab-bg: var(--grey-color);
-    --channel-tab-border-radius-hover: 35%;
+    --channel-tab-font-color:           var(--green-color) !important;
+    --channel-tab-font-color-hover:     var(--gray-color) !important;
+    --channel-tab-height:               50px;
+    --channel-tab-width:                50px;
+    --channel-tab-border-radius:        50%;
+    --channel-tab-bg:                   var(--ocean-blue-color-40);
+    --channel-tab-bg-hover:             var(--green-color);
+    --channel-tab-border-radius-hover:  35%;
 
     height: var(--channel-tab-height);
     width: var(--channel-tab-width);
-    background: var(--ocean-blue-color);
+    background: var(--channel-tab-bg);
     border-radius: var(--channel-tab-border-radius);
     margin-top: var(--spacer);
     padding-bottom: 8px;
@@ -20,6 +22,12 @@
     border-radius: var(--channel-tab-border-radius-hover);
 }
 
-.channel-tab i{
+.channel-tab{
     color: var(--channel-tab-font-color);
+    font-size: 1.5rem !important;
+}
+
+.default-hover:hover{
+    background: var(--channel-tab-bg-hover); 
+    color: var(--channel-tab-font-color-hover); 
 }

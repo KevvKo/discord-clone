@@ -1,5 +1,8 @@
 .active-user-list{
+    --list-width:   350px;
+
     background: var(--panel-bg);
+    width: var(--list-width);
     border-left: 1px solid var(--border-color-layout);
     border-top: 1px solid var(--border-color-layout);
 }

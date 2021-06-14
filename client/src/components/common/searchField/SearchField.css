@@ -1,8 +1,18 @@
+.search-field{
+    --search-field-bg:      var(--ocean-blue-color) !important;
+    --search-field-color:   var(--font-color-secondary) !important;   
+}
+
 button.search-field, .form-control{
 
-    background-color: var(--ocean-blue-color) !important;
+    background-color: var(--search-field-bg);
     font-size: var(--font-size-xs) !important;
-    color: var(--font-color-secondary) !important;
+    color: var(--search-field-color);
+    width: 220px;
+}
+
+button.search-field:hover{
+    color: var(--search-field-color);
 }
 
 .form-control{

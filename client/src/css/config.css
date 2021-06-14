@@ -1,0 +1,6 @@
+/* general css rule overwritings for bootstrap */
+
+.btn:focus {
+    box-shadow: none !important;
+  }
+  

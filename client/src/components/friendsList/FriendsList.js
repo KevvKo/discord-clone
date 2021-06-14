@@ -8,11 +8,11 @@ function FriendsList() {
 
   return (
     <div className="friends-list flex-grow-1 justify-content-start pl-2">
-      <div>
-          <h6 className="mt-3 text-nowrap">
+      <div className="d-flex mt-3">
+          <h6 className="mb-0 text-nowrap">
             {t('friendsList.title')}
           </h6>
-          <IconButton icon="bi-plus" size="sm"/>
+          <IconButton icon="bi-plus" size="sm" />
       </div>
     </div>
   );
