@@ -2,3 +2,7 @@
     background: var(--panel-bg);
     height: 50px;
 }
+
+.navbar .icon-separator{
+    border-right: 1px solid var(--border-color-layout);
+}
