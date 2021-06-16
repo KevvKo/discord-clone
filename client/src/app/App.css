@@ -16,7 +16,12 @@ body{
   color: var(--body-font-color);
 }
 
-h6{
+
+h5, .h5{
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-bold) !important;
+}
+h6, .h6{
   font-size: var(--font-size-xs) !important;
   text-transform: uppercase;
   font-weight: var(--font-weight-semi-bold) !important;

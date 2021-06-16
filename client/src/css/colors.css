@@ -5,9 +5,9 @@
     --ocean-blue-l:                 10%;
 
     /* secondary color */
-    --green-h:                      114;
-    --green-s:                      71%;
-    --green-l:                      31%;
+    --green-h:                      143;
+    --green-s:                      85%;
+    --green-l:                      37%;
 
     /* grey color */
     --grey-h:                       240;
@@ -16,14 +16,14 @@
 
     /* color palettes */
     --ocean-blue-color:             hsl(var(--ocean-blue-h), var(--ocean-blue-s), var(--ocean-blue-l));
-    --ocean-blue-color-10:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 5%));
-    --ocean-blue-color-20:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 10%));
-    --ocean-blue-color-30:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 15%));
-    --ocean-blue-color-40:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 20%));
-    --ocean-blue-color-50:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 25%));
-    --ocean-blue-color-60:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 30%));
-    --ocean-blue-color-70:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 35%));
-    --ocean-blue-color-80:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 40%));
+    --ocean-blue-color-10:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 3%));
+    --ocean-blue-color-20:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 6%));
+    --ocean-blue-color-30:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 9%));
+    --ocean-blue-color-40:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 12%));
+    --ocean-blue-color-50:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 15%));
+    --ocean-blue-color-60:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 18%));
+    --ocean-blue-color-70:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 21%));
+    --ocean-blue-color-80:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 24%));
 
     --green-color:                  hsl(var(--green-h), var(--green-s), var(--green-l));
     --green-color-10:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 5%));
@@ -53,7 +53,7 @@
     /* font colors */
     --body-font-color:              var(--grey-color-70);
     --dark-font-color:              var(--grey-color-80);
-    --font-color-secondary:         var(--grey-color);
+    --font-color-secondary:         var(--grey-color-20);
 
     /* border colors */
     --border-color-layout:          var(--ocean-blue-color-40);

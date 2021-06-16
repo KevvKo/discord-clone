@@ -1,6 +1,5 @@
 import './ChannelList.css';
 import ChannelTab from '../channelTab/ChannelTab'
-import {Row, Col} from 'react-bootstrap';
 function ChannelList() {
 
   return (

@@ -1,8 +1,17 @@
 .active-user-list{
-    --list-width:   350px;
+    --list-width:   460px;
 
     background: var(--panel-bg);
     width: var(--list-width);
     border-left: 1px solid var(--border-color-layout);
     border-top: 1px solid var(--border-color-layout);
+}
+
+.active-user-list p{
+    font-size: var(--font-size-xs);
+}
+
+.active-user-list p{
+    color: var(--font-color-secondary);
+    font-size: var(--font-size-xs);
 }

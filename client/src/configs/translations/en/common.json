@@ -1,4 +1,9 @@
 {
+    "activeUserList": {
+        "title": "Now active",
+        "subTitle": "So far everythig is calm...",
+        "emptyListText": "If a friend is beginning an activity - for example plays something or just hanging around in the voice chat - you can see it here!"
+    },
     "friendsList": {
         "title":    "Direct messages"
     },

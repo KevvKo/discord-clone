@@ -1,6 +1,6 @@
 .search-field{
     --search-field-bg:      var(--ocean-blue-color) !important;
-    --search-field-color:   var(--font-color-secondary) !important;   
+    --search-field-color:   var(--grey-color) !important;   
 }
 
 button.search-field, .form-control{

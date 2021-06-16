@@ -1,5 +1,4 @@
 import './FriendsList.css';
-import {Row, Col} from 'react-bootstrap';
 import {useTranslation} from "react-i18next";
 import IconButton from '../common/iconButton/IconButton'
 function FriendsList() {
