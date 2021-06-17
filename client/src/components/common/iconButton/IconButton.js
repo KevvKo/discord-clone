@@ -1,15 +1,16 @@
 import './IconButton.css';
-import { Button, Overlay, Tooltip, OverlayTrigger } from 'react-bootstrap';
+import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 function IconButton(props) {
 
   const  iconClassName = `bi ${props.icon}`;
+  // if(props.tooltipText) setShow(true);
 
   return (
     <OverlayTrigger 
-      placement='top' 
+      placement={props.tooltipPlacement}
       overlay={
         <Tooltip>
-          Test
+          {props.tooltipText}
         </Tooltip>
       }
     >
@@ -25,8 +26,9 @@ IconButton.defaultProps = {
     hover: true,
     background: true,
     size: 'md',
-    cssClasses: ''
-
+    cssClasses: '',
+    tooltipText: '',
+    tooltipPlacement: 'top'
   };
 
 export default IconButton;

@@ -5,9 +5,20 @@
         "emptyListText": "Wenn ein Freund eine Aktivität beginnt - zum Beispiel etwas spielt oder im Sprachchat abhängt - siehst du es hier!"
     },
     "friendsList": {
-        "title":    "Direktnachrichten"
+        "title":    "Direktnachrichten",
+        "newMessageTooltip": "Neue Direktnachricht"
+    },
+    "navBar": {
+        "newChatTooltip": "Neuer Gruppenchat",
+        "inboxTooltip": "Posteingang",
+        "helpTooltip": "Hilfe"
     },
     "searchBar": {
         "searchButtonName": "Finde Freunde oder starte ein Gespräch"
+    },
+    "userBar":{
+        "micTooltip": "mute",
+        "audioTooltip": "deactivate input and output",
+        "settingsTooltip": "user settings"
     }
 }

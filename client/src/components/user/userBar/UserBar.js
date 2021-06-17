@@ -12,9 +12,9 @@ function UserBar() {
         <UserAvatar />
         <UserTag />
         <div className="d-flex">
-            <IconButton icon="bi-mic-fill" background={false} size="sm"/>
-            <IconButton icon="bi-headphones" background={false} size="sm"/>
-            <IconButton icon="bi-gear-fill" background={false} size="sm"/>
+            <IconButton icon="bi-mic-fill" background={false} size="sm" tooltipText={t('userBar.micTooltip')}/>
+            <IconButton icon="bi-headphones" background={false} size="sm" tooltipText={t('userBar.audioTooltip')}/>
+            <IconButton icon="bi-gear-fill" background={false} size="sm" tooltipText={t('userBar.   settingsTooltip')}/>
         </div>
     </div>
     );

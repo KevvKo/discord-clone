@@ -1,5 +1,4 @@
 import './TopBar.css';
-import SearchBar from '../searchBar/SearchBar';
 import NavBar from '../navbar/NavBar';
 import {Row} from 'react-bootstrap';
 
