@@ -1,7 +1,13 @@
 .friends-list{
     --friends-list-bg: var(--ocean-blue-color-20);
 
+    color: var(--font-color-secondary);
     background: var(--friends-list-bg);
+}
+
+.friends-list div:first-child:hover{
+    cursor: default;                        /* to avoid a text cursor by hovering */
+    color: var(--body-font-color);
 }
 
 .friends-list h6{
