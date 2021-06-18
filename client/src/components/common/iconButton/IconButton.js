@@ -2,8 +2,12 @@ import './IconButton.css';
 import { Button, Tooltip, OverlayTrigger } from 'react-bootstrap';
 function IconButton(props) {
 
-  const  iconClassName = `bi ${props.icon}`;
-  // if(props.tooltipText) setShow(true);
+  const iconClassNames = `bi ${props.icon}`;
+  let buttonClassNames = '';
+  
+  props.hover 
+    ? buttonClassNames += 'icon-hover-bg'
+    : buttonClassNames += 'icon-hover';
 
   return (
     <OverlayTrigger 
@@ -14,8 +18,8 @@ function IconButton(props) {
         </Tooltip>
       }
     >
-      <Button className={`icon-button ${props.cssClasses}`} variant="flat" size={props.size}>
-        <i className={iconClassName}></i>
+      <Button className={`icon-button ${props.cssClasses} ${ buttonClassNames}`} variant="flat" size={props.size}>
+        <i className={iconClassNames}></i>
       </Button>
     </OverlayTrigger>
   );
@@ -24,7 +28,7 @@ function IconButton(props) {
 IconButton.defaultProps = {
     icon: 'bi-person-fill',
     iconSize: '',
-    hover: true,
+    hover: false,
     background: true,
     size: 'md',
     cssClasses: 'p-0',

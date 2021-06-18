@@ -6,24 +6,27 @@ import UserTag from '../userTag/UserTag';
 function UserBar() {
 
     const [t, i18n] = useTranslation('common');
-    const classes = 'p-0 mx-2'
+    const classes = 'p-1 m-1'
     return (
-    <div className='p-2 user-bar d-flex align-items-center'>
+    <div className='p-1 user-bar d-flex align-items-center'>
         <UserAvatar />
         <UserTag />
         <div className="d-flex">
             <IconButton 
                 icon="bi-mic-fill" 
+                hover={true}
                 cssClasses={classes} 
                 background={false}  
                 tooltipText={t('userBar.micTooltip')}/>
             <IconButton 
                 icon="bi-headphones"
+                hover={true}
                 cssClasses={classes} 
                 background={false}  
                 tooltipText={t('userBar.audioTooltip')}/>
             <IconButton 
-                icon="bi-gear-fill" 
+                icon="bi-gear-fill"
+                hover={true} 
                 cssClasses={classes} 
                 background={false}  
                 tooltipText={t('userBar.settingsTooltip')}/>

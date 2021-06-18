@@ -1,14 +1,19 @@
 .icon-button{
     --icon-color:           var(--grey-color-50);
     --icon-color-hover:     var(--body-font-color);
-
-    color: var(--grey-color-50) !important;
+    --icon-bg:              var(--ocean-blue-color-20);
+    color: var(--icon-color) !important;
 }
 
-.icon-button i:hover{
-    color: var(--icon-color-hover);
+.icon-hover-bg:hover {
+    background: var(--icon-bg) !important;
+    color: var(--icon-color-hover) !important;
 }
 
 .icon-button i::before{
     line-height: inherit !important;
+}
+
+.icon-hover:hover{
+    color: var(--icon-color-hover) !important;
 }
