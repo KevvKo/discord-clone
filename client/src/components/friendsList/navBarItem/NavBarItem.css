@@ -1,3 +1,22 @@
 .navbar-item{
+    --navbar-item-color:                 var(--font-color-secondary);
+    --navbar-item-bg-hover:              var(--hover-bg);
+    --navbar-item-color-hover:           var(--body-font-color);
+
+    color: ;
     list-style-type: none;
+}
+
+.navbar-item:hover{
+    cursor: pointer;
+    color: var(--navbar-item-color-hover) !important;
+    background: var(--navbar-item-bg-hover);
+}
+
+.navbar-item a{
+    color:  var(--navbar-item-color) !important;
+}
+.navbar-item a:hover{ 
+    color: var(--navbar-item-color-hover) !important;
+    text-decoration: none; 
 }

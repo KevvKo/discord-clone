@@ -16,7 +16,9 @@ body{
   color: var(--body-font-color);
 }
 
-
+i::before{
+  line-height: inherit !important;
+}
 h5, .h5{
   font-size: var(--font-size-lg) !important;
   font-weight: var(--font-weight-bold) !important;

@@ -50,6 +50,8 @@
     --warning-color:                #e8ea54;
     --danger-color:                 #af0f0f;
 
+    /* hover colors */
+    --hover-bg:                     var(--ocean-blue-color-30);
     /* font colors */
     --body-font-color:              var(--grey-color-70);
     --dark-font-color:              var(--grey-color-80);

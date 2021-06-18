@@ -8,7 +8,7 @@ function FriendsList() {
 
   return (
     <div className='friends-list flex-grow-1 justify-content-start pl-2'>
-      <ul>
+      <ul className="p-0">
         <NavBarItem 
           icon='people-fill'
           text='Friends'
@@ -24,6 +24,48 @@ function FriendsList() {
           </h6>
           <IconButton icon='bi-plus' size='lg' cssClasses='p-0 mr-2' tooltipText={t('friendsList.newMessageTooltip')}/>
       </div>
+      <ul className="p-0">
+        <NavBarItem 
+          icon='person-fill'
+          text='Friends'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Kevin'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Benny'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Marius'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Anna'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Basti'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Felix'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Simon'
+          closeButton={true}
+        />
+      </ul>
     </div>
   );
 }
