@@ -23,10 +23,11 @@ function IconButton(props) {
 
 IconButton.defaultProps = {
     icon: 'bi-person-fill',
+    iconSize: '',
     hover: true,
     background: true,
     size: 'md',
-    cssClasses: '',
+    cssClasses: 'p-0',
     tooltipText: '',
     tooltipPlacement: 'top'
   };

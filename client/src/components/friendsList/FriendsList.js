@@ -11,7 +11,7 @@ function FriendsList() {
           <h6 className="mb-0 flex-fill text-nowrap">
             {t('friendsList.title')}
           </h6>
-          <IconButton icon="bi-plus" size="sm" tooltipText={t('friendsList.newMessageTooltip')}/>
+          <IconButton icon="bi-plus" size="lg" cssClasses="p-0 mr-2" tooltipText={t('friendsList.newMessageTooltip')}/>
       </div>
     </div>
   );
