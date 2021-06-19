@@ -1,0 +1,10 @@
+.filter-tab{
+    --filter-hover-bg: var(--hover-bg);
+    
+    color: var(--font-color-secondary) !important;
+}
+
+.filter-tab:hover{
+    color: inherit !important;
+    background: var(--hover-bg) !important;
+}

@@ -1,0 +1,11 @@
+.topbar{
+    background: var(--panel-bg);
+}
+
+.navbar{
+    height: 50px;
+}
+
+.navbar .icon-separator{
+    border-right: 1px solid var(--border-color-layout);
+}

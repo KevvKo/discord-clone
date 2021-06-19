@@ -27,11 +27,6 @@ function FriendsList() {
       <ul className="p-0">
         <NavBarItem 
           icon='person-fill'
-          text='Friends'
-          closeButton={true}
-        />
-        <NavBarItem 
-          icon='person-fill'
           text='Kevin'
           closeButton={true}
         />

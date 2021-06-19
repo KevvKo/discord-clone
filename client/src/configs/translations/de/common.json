@@ -8,10 +8,18 @@
         "title":    "Direktnachrichten",
         "newMessageTooltip": "Neue Direktnachricht"
     },
-    "navBar": {
+    "tobBar": {
         "newChatTooltip": "Neuer Gruppenchat",
         "inboxTooltip": "Posteingang",
-        "helpTooltip": "Hilfe"
+        "helpTooltip": "Hilfe",
+        "friendView": {
+            "title":"Freunde",
+            "onlineTab": "Online",
+            "allTab": "Alle",
+            "pendingTab": "Ausstehend",
+            "blockedTab": "Blockiert",
+            "addFriendTab": "Freund hinzufügen"
+        }
     },
     "searchBar": {
         "searchButtonName": "Finde Freunde oder starte ein Gespräch"

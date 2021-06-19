@@ -8,10 +8,18 @@
         "title": "Direct messages",
         "newMessageTooltip": "New direct message"
     },
-    "navBar": {
+    "topBar": {
         "newChatTooltip": "New group chat",
         "inboxTooltip": "inbox",
-        "helpTooltip": "help"
+        "helpTooltip": "help",
+        "friendView": {
+            "title":"friends",
+            "onlineTab": "online",
+            "allTab": "all",
+            "pendingTab": "pending",
+            "blockedTab": "blocked",
+            "addFriendTab": "add friend"
+        }
     },
     "searchBar": {
         "searchFieldPlaceHolder": "Find friends or starting a chat"
