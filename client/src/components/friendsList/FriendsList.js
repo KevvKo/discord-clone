@@ -7,7 +7,7 @@ function FriendsList() {
   const [t, i18n] = useTranslation('common');
 
   return (
-    <div className='friends-list flex-grow-1 justify-content-start pl-2'>
+    <div className='friends-list justify-content-start pl-2'>
       <ul className="p-0">
         <NavBarItem 
           icon='people-fill'
@@ -22,7 +22,7 @@ function FriendsList() {
           <h6 className='mb-0 flex-fill text-nowrap'>
             {t('friendsList.title')}
           </h6>
-          <IconButton icon='bi-plus' size='lg' cssClasses='p-0 mr-2' tooltipText={t('friendsList.newMessageTooltip')}/>
+          <IconButton icon='bi-plus' size='lg' cssClasses='p-0 pr-1 mr-1' tooltipText={t('friendsList.newMessageTooltip')}/>
       </div>
       <ul className="p-0">
         <NavBarItem 
@@ -63,6 +63,21 @@ function FriendsList() {
         <NavBarItem 
           icon='person-fill'
           text='Simon'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Olivia'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Phili'
+          closeButton={true}
+        />
+        <NavBarItem 
+          icon='person-fill'
+          text='Josi'
           closeButton={true}
         />
       </ul>

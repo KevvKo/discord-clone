@@ -3,9 +3,11 @@
 
     color: var(--font-color-secondary);
     background: var(--friends-list-bg);
+    overflow-y: scroll;
+    
 }
 
-.friends-list div:first-child:hover{
+.friends-list div:hover{
     cursor: default;                        /* to avoid a text cursor by hovering */
     color: var(--body-font-color);
 }

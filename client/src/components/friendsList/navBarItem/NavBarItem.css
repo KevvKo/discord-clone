@@ -7,16 +7,24 @@
     list-style-type: none;
 }
 
+.navbar-item     .icon-button {
+    visibility: hidden;
+}
+
 .navbar-item:hover{
     cursor: pointer;
     color: var(--navbar-item-color-hover) !important;
     background: var(--navbar-item-bg-hover);
 }
 
+.navbar-item:hover .icon-button {
+    visibility: visible;
+}
+
 .navbar-item a{
     color:  var(--navbar-item-color) !important;
 }
-.navbar-item a:hover{ 
+/* .navbar-item a:hover{ 
     color: var(--navbar-item-color-hover) !important;
     text-decoration: none; 
-}
+} */

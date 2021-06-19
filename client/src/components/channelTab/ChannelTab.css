@@ -13,7 +13,6 @@
     background: var(--channel-tab-bg);
     border-radius: var(--channel-tab-border-radius);
     margin-top: var(--spacer);
-    padding-bottom: 8px;
     transition: 0.25s;
 }
 

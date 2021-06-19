@@ -1,6 +1,6 @@
 import './NavBarItem.css';
-import {useTranslation} from "react-i18next";
-
+import { useTranslation } from "react-i18next";
+import IconButton from '../../common/iconButton/IconButton'
 function NavBarItem(props) {
 
   const [t, i18n] = useTranslation('common');
@@ -9,10 +9,13 @@ function NavBarItem(props) {
   return (
     <li className="navbar-item d-flex align-items-center mt-1 mr-1 p-1">
         <i className={iconClassNames}></i>
-        <a className="flex-fill">
+        <span className="flex-fill">
             {props.text}
-        </a>
-        { props.closeButton && <i className='bi bi-x '></i> }
+        </span>
+        { props.closeButton &&
+          <IconButton icon='bi-x' size='lg'  tooltipText={t('friendsList.newMessageTooltip')}/>
+
+        }
     </li>
   );
 }
