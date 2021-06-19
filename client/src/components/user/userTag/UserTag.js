@@ -7,7 +7,7 @@ function UserTag() {
     const userTag = "#3432";
 
     return (
-    <div className="user-tag">
+    <div className="user-tag flex-fill">
         <div>{userName}</div>
         <div>{userTag}</div>
     </div>
