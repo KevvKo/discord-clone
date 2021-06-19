@@ -2,7 +2,6 @@
     --user-bar-bg: var(--ocean-blue-color);
     /* --user-bar-height: 44px; */
 
-    background: var(--user-bar-bg);
-    /* height: var(--user-bar-height); */
+    background: var(--user-bar-bg);       /* height: var(--user-bar-height); */
     font-size: var(--font-size-xs)
 }
