@@ -13,12 +13,12 @@
         "inboxTooltip": "inbox",
         "helpTooltip": "help",
         "friendView": {
-            "title":"friends",
-            "onlineTab": "online",
-            "allTab": "all",
-            "pendingTab": "pending",
-            "blockedTab": "blocked",
-            "addFriendTab": "add friend"
+            "title":"Friends",
+            "onlineTab": "Online",
+            "allTab": "All",
+            "pendingTab": "Pending",
+            "blockedTab": "Blocked",
+            "addFriendTab": "Add Friend"
         }
     },
     "searchBar": {

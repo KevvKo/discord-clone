@@ -7,7 +7,7 @@ function ActiveUserList() {
 
   return (
     <div className="d-flex px-3 py-4 flex-column active-user-list" >
-      <h5>{t('activeUserList.title')}</h5>
+      <h4>{t('activeUserList.title')}</h4>
       <div className="mt-4">
         <div className="h6 text-center">
           {t('activeUserList.subTitle')}

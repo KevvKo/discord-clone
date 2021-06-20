@@ -2,10 +2,16 @@
     background: var(--panel-bg);
 }
 
+.topbar i{
+    color: var(--font-color-secondary) !important;
+}
+
 .navbar{
     height: 50px;
 }
 
-.navbar .icon-separator{
-    border-right: 1px solid var(--border-color-layout);
+.separator{
+    width: 1px;
+    height: 25px;
+    border: 1px solid var(--border-color-layout);
 }

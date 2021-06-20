@@ -26,52 +26,52 @@ function FriendsList() {
       </div>
       <ul className="p-0">
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Kevin'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Benny'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Marius'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Anna'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Basti'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Felix'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Simon'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Olivia'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Phili'
           closeButton={true}
         />
         <NavBarItem 
-          icon='person-fill'
+          icon='person-circle'
           text='Josi'
           closeButton={true}
         />

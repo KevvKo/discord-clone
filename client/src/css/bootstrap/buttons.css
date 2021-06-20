@@ -1,0 +1,9 @@
+.btn-success{
+    color: var(--font-color-tertiary) !important;
+    background: var(--green-color-10) !important;
+}
+
+.btn-success:hover{
+    color: var(--font-color-tertiary) !important;
+    background: var(--green-color-10) !important;
+}

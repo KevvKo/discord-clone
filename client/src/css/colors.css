@@ -56,12 +56,12 @@
     --body-font-color:              var(--grey-color-70);
     --dark-font-color:              var(--grey-color-80);
     --font-color-secondary:         var(--grey-color-20);
-
+    --font-color-tertiary:          var(--grey-color-80);
     /* border colors */
-    --border-color-layout:          var(--ocean-blue-color-40);
+    --border-color-layout:          var(--ocean-blue-color-50);
     
     /* background colors */
-    --panel-bg:                     var(--ocean-blue-color-30);
+    --panel-bg:                     var(--ocean-blue-color-40);
 }
 
 

@@ -12,17 +12,23 @@ function TopBar() {
     return (
         <Row className='topbar'>
             <Col className="navbar d-flex">
-                <div className="flex-fill">
-                                    
+                <i className="bi bi-people-fill"></i>
+                <div className='h5 mb-0 pr-2 mx-2'>
+                    {t('topBar.friendView.title')}
+                </div>  
+                <div className="separator"></div>
+                <div className="flex-fill">    
                     <FilterTab text={t('topBar.friendView.onlineTab')}/>  
                     <FilterTab text={t('topBar.friendView.allTab')}/>  
                     <FilterTab text={t('topBar.friendView.pendingTab')}/>  
                     <FilterTab text={t('topBar.friendView.blockedTab')}/>  
+                    <FilterTab text={t('topBar.friendView.addFriendTab')} variant='success'/>  
                 </div>
-                <div className="icon-separator">
+                <div>
                     <IconButton icon="bi-chat-left-fill" size='lg' tooltipPlacement='bottom-start' cssClasses={classes} tooltipText={t('topBar.newChatTooltip')}/>
                 </div>
-                <div className="">
+                <div className="separator"></div>
+                <div>
                     <IconButton icon="bi-inbox-fill" size='lg' tooltipPlacement="bottom-start" cssClasses={classes} tooltipText={t('topBar.inboxTooltip')} />
                     <IconButton icon="bi-question-circle-fill" size='lg' tooltipPlacement="bottom" cssClasses={classes} tooltipText={t('topBar.helpTooltip')} />  
                 </div>

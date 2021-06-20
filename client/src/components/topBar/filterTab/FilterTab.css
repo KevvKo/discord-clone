@@ -1,10 +1,10 @@
-.filter-tab{
+.filter-tab:not(.btn-success){
     --filter-hover-bg: var(--hover-bg);
     
     color: var(--font-color-secondary) !important;
 }
 
-.filter-tab:hover{
+.filter-tab:hover:not(.btn-success){
     color: inherit !important;
-    background: var(--hover-bg) !important;
+    background: var(--hover-bg);
 }
