@@ -12,6 +12,9 @@ body{
   font-family: var(--font-family) !important;
   line-height: var(--line-height);
 }
+i::before{
+  line-height: inherit !important;
+}
 h1, .h1{
   font-size: var(--font-size-xl) !important;
   font-weight: var(--font-weight-bold) !important;

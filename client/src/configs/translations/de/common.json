@@ -13,10 +13,10 @@
         "subGreetings": "Wir freuen uns so, dich wiederzusehen!",
         "emailLabel": "Email oder Telefonnummer",
         "passwordLabel": "Passwort",
-        "forgotten": "Passwort vergessen?",
+        "newPassword": "Passwort vergessen?",
         "submit": "Anmelden",
-        "resteringQuestion": "Brauchst du einen Account?",
-        "registering": "Registrieren"
+        "registerQuestion": "Brauchst du einen Account?",
+        "register": "Registrieren"
     },
     "tobBar": {
         "newChatTooltip": "Neuer Gruppenchat",

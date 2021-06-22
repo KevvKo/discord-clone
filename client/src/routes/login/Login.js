@@ -12,7 +12,7 @@ function Login(props){
 
     return (
         <Row className='login flex-grow-1 justify-content-center align-items-center'>
-            <Col sm ={8}>
+            <Col className='p-5' sm ={8}>
                 <h1>{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>
                 <Form>
@@ -21,14 +21,22 @@ function Login(props){
                             {t('login.emailLabel')}
                         </Form.Label>
                         <Form.Control type="email"></Form.Control>
+                    </Form.Group>
+                    <Form.Group>
                         <Form.Label>
                             {t('login.passwordLabel')}
                         </Form.Label>
                         <Form.Control type="password"></Form.Control>
+                        <Form.Text>
+                            <a href='#'>{t('login.newPassword')}</a>
+                        </Form.Text>
                     </Form.Group>
-                    <Button variant="primary" type='submit'>
+                    <Button variant="primary" type='submit' block>
                         {t('login.submit')}
                     </Button>   
+                    <p>
+                        {t('login.registerQuestion')} <a href='#'>{t('login.register')}</a>
+                    </p>
                 </Form>
             </Col>
         </Row>
