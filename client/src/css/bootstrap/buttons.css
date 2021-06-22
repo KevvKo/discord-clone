@@ -1,6 +1,7 @@
 .btn {
-  --btn-primary-bg: var(--midnight-blue-color-80);
-  --btn-success-bg: var(--green-color-10);
+  --btn-primary-bg:       var(--midnight-blue-color-80);
+  --btn-primary-hover-bg: var(--midnight-blue-color-60);
+  --btn-success-bg:       var(--green-color-10);
 }
 
 .btn-primary {
@@ -8,7 +9,7 @@
   border: none !important;
 }
 .btn-primary:hover {
-  background: var(--btn-primary-bg) !important;
+  background: var(--btn-primary-hover-bg) !important;
   border: none !important;
 }
 .btn-success {
