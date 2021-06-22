@@ -1,17 +1,17 @@
-.friends-list{
-    --friends-list-bg: var(--ocean-blue-color-20);
+.friends-list {
+  --friends-list-bg: var(--midnight-blue-color-20);
 
-    color: var(--font-color-secondary);
-    background: var(--friends-list-bg);
-    overflow-y: auto;
-    height: calc(100vh - 50.5px - 45px - 29px);
+  color: var(--font-color-secondary);
+  background: var(--friends-list-bg);
+  overflow-y: auto;
+  height: calc(100vh - 50.5px - 45px - 29px);
 }
 
-.friends-list div:hover{
-    cursor: default;                        /* to avoid a text cursor by hovering */
-    color: var(--body-font-color);
+.friends-list div:hover {
+  cursor: default; /* to avoid a text cursor by hovering */
+  color: var(--body-font-color);
 }
 
-.friends-list h6{
-    max-height: fit-content;
+.friends-list h6 {
+  max-height: fit-content;
 }

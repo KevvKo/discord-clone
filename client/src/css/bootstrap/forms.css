@@ -1,0 +1,6 @@
+.form-control{
+    --input-bg: var(--midnight-blue-color-30);
+
+    background: var(--input-bg) !important;
+    border-color: var(--border-color-forms) !important;
+}

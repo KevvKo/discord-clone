@@ -1,5 +1,5 @@
-.channel-list{
-    --channel-list-bg: var(--ocean-blue-color-10);
+.channel-list {
+  --channel-list-bg: var(--midnight-blue-color-10);
 
-    background: var(--channel-list-bg);
+  background: var(--channel-list-bg);
 }

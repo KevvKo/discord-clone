@@ -1,0 +1,13 @@
+.login {
+  --login-form-bg: var(--midnight-blue-color-20);
+  --login-form-height: 500px;
+  background: var(--panel-bg);
+}
+
+.login:not(h1){
+    color: var(--font-color-secondary);
+}
+.login > div {
+  background: var(--login-form-bg);
+  height: var(--login-form-height);
+}

@@ -1,12 +1,10 @@
+.app-header {
+  --header-font-color: var(--grey-color-70);
 
-
-.app-header{
-    --header-font-color: var(--grey-color-70);
-
-    width: 100%;
-    padding: var(--spacer);
-    color: var(--header-font-color);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-semi-bold);
-    background: var(--ocean-blue-color);
+  width: 100%;
+  padding: var(--spacer);
+  color: var(--header-font-color);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semi-bold);
+  background: var(--midnight-blue-color);
 }

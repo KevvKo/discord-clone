@@ -8,18 +8,14 @@ html, body, #root, .App{
 }
 
 body{
+  color: var(--body-font-color) !important;
   font-family: var(--font-family) !important;
   line-height: var(--line-height);
 }
-
-.App{
-  color: var(--body-font-color);
+h1, .h1{
+  font-size: var(--font-size-xl) !important;
+  font-weight: var(--font-weight-bold) !important;
 }
-
-i::before{
-  line-height: inherit !important;
-}
-
 h4, .h4{
   font-size: var(--font-size-lg) !important;
   font-weight: var(--font-weight-bold) !important;

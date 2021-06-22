@@ -1,7 +1,7 @@
-.user-bar{
-    --user-bar-bg: var(--ocean-blue-color);
-    /* --user-bar-height: 44px; */
+.user-bar {
+  --user-bar-bg: var(--midnight-blue-color);
+  /* --user-bar-height: 44px; */
 
-    background: var(--user-bar-bg);       /* height: var(--user-bar-height); */
-    font-size: var(--font-size-xs)
+  background: var(--user-bar-bg); /* height: var(--user-bar-height); */
+  font-size: var(--font-size-xs);
 }

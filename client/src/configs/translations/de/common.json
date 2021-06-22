@@ -8,6 +8,16 @@
         "title":    "Direktnachrichten",
         "newMessageTooltip": "Neue Direktnachricht"
     },
+    "login": {
+        "title": "Willkommen zurück!",
+        "subGreetings": "Wir freuen uns so, dich wiederzusehen!",
+        "emailLabel": "Email oder Telefonnummer",
+        "passwordLabel": "Passwort",
+        "forgotten": "Passwort vergessen?",
+        "submit": "Anmelden",
+        "resteringQuestion": "Brauchst du einen Account?",
+        "registering": "Registrieren"
+    },
     "tobBar": {
         "newChatTooltip": "Neuer Gruppenchat",
         "inboxTooltip": "Posteingang",

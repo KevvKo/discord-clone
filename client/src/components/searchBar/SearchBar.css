@@ -1,7 +1,6 @@
-.search-bar{
-    --friends-list-bg: var(--ocean-blue-color-20);
+.search-bar {
+  --friends-list-bg: var(--midnight-blue-color-20);
 
-    background: var(--friends-list-bg);
-    border-bottom: 1px solid var(--border-color-layout);
-
+  background: var(--friends-list-bg);
+  border-bottom: 1px solid var(--border-color-layout);
 }

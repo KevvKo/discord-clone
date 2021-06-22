@@ -1,20 +1,20 @@
-.search-field{
-    --search-field-bg:      var(--ocean-blue-color) !important;
-    --search-field-color:   var(--grey-color) !important;   
+.search-field {
+  --search-field-bg: var(--midnight-blue-color) !important;
+  --search-field-color: var(--grey-color) !important;
 }
 
-button.search-field, .form-control{
-
-    background-color: var(--search-field-bg);
-    font-size: var(--font-size-xs) !important;
-    color: var(--search-field-color);
-    width: 220px;
+button.search-field,
+.form-control {
+  background-color: var(--search-field-bg);
+  font-size: var(--font-size-xs) !important;
+  color: var(--search-field-color);
+  width: 220px;
 }
 
-button.search-field:hover{
-    color: var(--search-field-color);
+button.search-field:hover {
+  color: var(--search-field-color);
 }
 
-.form-control{
-    border: none !important;
+.search-field.form-control {
+  border: none !important;
 }

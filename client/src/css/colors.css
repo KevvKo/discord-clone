@@ -1,67 +1,134 @@
-:root{
-    /* primary colors */
-    --ocean-blue-h:                 216;
-    --ocean-blue-s:                 19%;
-    --ocean-blue-l:                 10%;
+:root {
+  /* primary colors */
+  --midnight-blue-h: 216;
+  --midnight-blue-s: 19%;
+  --midnight-blue-l: 10%;
 
-    /* secondary color */
-    --green-h:                      143;
-    --green-s:                      85%;
-    --green-l:                      37%;
+  /* secondary color */
+  --green-h: 143;
+  --green-s: 85%;
+  --green-l: 37%;
 
-    /* grey color */
-    --grey-h:                       240;
-    --grey-s:                       1%;
-    --grey-l:                       53%;
+  /* grey color */
+  --grey-h: 240;
+  --grey-s: 1%;
+  --grey-l: 53%;
 
-    /* color palettes */
-    --ocean-blue-color:             hsl(var(--ocean-blue-h), var(--ocean-blue-s), var(--ocean-blue-l));
-    --ocean-blue-color-10:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 3%));
-    --ocean-blue-color-20:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 6%));
-    --ocean-blue-color-30:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 9%));
-    --ocean-blue-color-40:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 12%));
-    --ocean-blue-color-50:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 15%));
-    --ocean-blue-color-60:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 18%));
-    --ocean-blue-color-70:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 21%));
-    --ocean-blue-color-80:          hsl(var(--ocean-blue-h), var(--ocean-blue-s), calc(var(--ocean-blue-l) + 24%));
+  /* color palettes */
+  --midnight-blue-color: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    var(--midnight-blue-l)
+  );
+  --midnight-blue-color-10: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    calc(var(--midnight-blue-l) + 3%)
+  );
+  --midnight-blue-color-20: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    calc(var(--midnight-blue-l) + 6%)
+  );
+  --midnight-blue-color-30: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    calc(var(--midnight-blue-l) + 9%)
+  );
+  --midnight-blue-color-40: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    calc(var(--midnight-blue-l) + 12%)
+  );
+  --midnight-blue-color-50: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    calc(var(--midnight-blue-l) + 15%)
+  );
+  --midnight-blue-color-60: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    calc(var(--midnight-blue-l) + 18%)
+  );
+  --midnight-blue-color-70: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    calc(var(--midnight-blue-l) + 21%)
+  );
+  --midnight-blue-color-80: hsl(
+    var(--midnight-blue-h),
+    var(--midnight-blue-s),
+    calc(var(--midnight-blue-l) + 24%)
+  );
 
-    --green-color:                  hsl(var(--green-h), var(--green-s), var(--green-l));
-    --green-color-10:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 5%));
-    --green-color-20:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 10%));
-    --green-color-30:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 15%));
-    --green-color-40:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 20%));
-    --green-color-50:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 25%));
-    --green-color-60:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 30%));
-    --green-color-70:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 35%));
-    --green-color-80:               hsl(var(--green-h), var(--green-s), calc(var(--green-l) + 40%));
+  --green-color: hsl(var(--green-h), var(--green-s), var(--green-l));
+  --green-color-10: hsl(
+    var(--green-h),
+    var(--green-s),
+    calc(var(--green-l) + 5%)
+  );
+  --green-color-20: hsl(
+    var(--green-h),
+    var(--green-s),
+    calc(var(--green-l) + 10%)
+  );
+  --green-color-30: hsl(
+    var(--green-h),
+    var(--green-s),
+    calc(var(--green-l) + 15%)
+  );
+  --green-color-40: hsl(
+    var(--green-h),
+    var(--green-s),
+    calc(var(--green-l) + 20%)
+  );
+  --green-color-50: hsl(
+    var(--green-h),
+    var(--green-s),
+    calc(var(--green-l) + 25%)
+  );
+  --green-color-60: hsl(
+    var(--green-h),
+    var(--green-s),
+    calc(var(--green-l) + 30%)
+  );
+  --green-color-70: hsl(
+    var(--green-h),
+    var(--green-s),
+    calc(var(--green-l) + 35%)
+  );
+  --green-color-80: hsl(
+    var(--green-h),
+    var(--green-s),
+    calc(var(--green-l) + 40%)
+  );
 
-    --grey-color:                   hsl(var(--grey-h), var(--grey-s), var(--grey-l));
-    --grey-color-10:                hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 5%));
-    --grey-color-20:                hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 10%));
-    --grey-color-30:                hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 15%));
-    --grey-color-40:                hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 20%));
-    --grey-color-50:                hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 25%));
-    --grey-color-60:                hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 30%));
-    --grey-color-70:                hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 35%));
-    --grey-color-80:                hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 40%));
+  --grey-color: hsl(var(--grey-h), var(--grey-s), var(--grey-l));
+  --grey-color-10: hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 5%));
+  --grey-color-20: hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 10%));
+  --grey-color-30: hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 15%));
+  --grey-color-40: hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 20%));
+  --grey-color-50: hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 25%));
+  --grey-color-60: hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 30%));
+  --grey-color-70: hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 35%));
+  --grey-color-80: hsl(var(--grey-h), var(--grey-s), calc(var(--grey-l) + 40%));
 
-    /* spotlight colors */
-    --success-color:                #17d640;
-    --warning-color:                #e8ea54;
-    --danger-color:                 #af0f0f;
+  /* spotlight colors */
+  --success-color: #17d640;
+  --warning-color: #e8ea54;
+  --danger-color: #af0f0f;
 
-    /* hover colors */
-    --hover-bg:                     var(--ocean-blue-color-30);
-    /* font colors */
-    --body-font-color:              var(--grey-color-70);
-    --dark-font-color:              var(--grey-color-80);
-    --font-color-secondary:         var(--grey-color-20);
-    --font-color-tertiary:          var(--grey-color-80);
-    /* border colors */
-    --border-color-layout:          var(--ocean-blue-color-50);
-    
-    /* background colors */
-    --panel-bg:                     var(--ocean-blue-color-40);
+  /* hover colors */
+  --hover-bg: var(--midnight-blue-color-30);
+  /* font colors */
+  --body-font-color: var(--grey-color-70);
+  --dark-font-color: var(--grey-color-80);
+  --font-color-secondary: var(--grey-color-20);
+  --font-color-tertiary: var(--grey-color-80);
+  /* border colors */
+  --border-color-layout: var(--midnight-blue-color-50);
+  --border-color-forms: var(--midnight-blue-color);
+
+  /* background colors */
+  --panel-bg: var(--midnight-blue-color-40);
 }
-
-
