@@ -8,6 +8,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import routes from '../services/routes';
 
 function App() {
 
@@ -17,12 +18,12 @@ function App() {
     <Router>
       <Container className="App d-flex flex-column h-100" fluid>
         <Switch>
-          <Route path='/home'>
-            <Home />
-          </Route>
-          <Route exact='/' path='/'>
-            <Login />
-          </Route>
+          {routes.map((route, i) => (
+              <Route key={i} path={route.path} >
+                <route.component />     
+              </Route>
+            ))
+          }
         </Switch>
       </Container>
     </Router>

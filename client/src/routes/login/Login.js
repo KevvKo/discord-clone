@@ -5,7 +5,7 @@ import {
     Form, 
     Button } from 'react-bootstrap';
 import {useTranslation} from "react-i18next";
-import {Link} from "react-router-dom";
+import {Link, Router} from "react-router-dom";
 
 function Login(props){
 
@@ -34,13 +34,13 @@ function Login(props){
                         </Link>
                         </Form.Text>
                     </Form.Group>
-                    <Link to="/Home">
+                    <Link to='/Home'>
                         <Button variant='primary' type='submit' block>
                             {t('login.submit')}
                         </Button>  
                     </Link> 
                     <p className='mt-2'>
-                        {t('login.registerQuestion')} <Link path='/register'>{t('login.register')}</Link>
+                        {t('login.registerQuestion')} <Link to='/register'>{t('login.register')}</Link>
                     </p>
                 </Form>
             </Col>
