@@ -8,6 +8,10 @@
         "title": "Direct messages",
         "newMessageTooltip": "New direct message"
     },
+    "index": {
+        "title": "Discord Clone",
+        "subtitle": "You are not logged in..."
+    },
     "login": {
         "title": "Welcome back!",
         "subGreetings": "We are happy, to see you again!",

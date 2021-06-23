@@ -1,16 +1,20 @@
-import Home from '../routes/home/Home'
-import Login from '../routes/login/Login'
-import Register from '../routes/register/Register'
+import Index from '../routes/index/Index';
+import Home from '../routes/home/Home';
+import Login from '../routes/login/Login';
+import Register from '../routes/register/Register';
 
 const routes = [
+    {
+      path: '/',
+      component: Index
+    },
     {
       path: '/home',
       component: Home
     },
     {
-      path: '/',
+      path: '/login',
       component: Login,
-      exact: true
     },
     {
       path: '/register',

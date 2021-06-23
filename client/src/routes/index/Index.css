@@ -1,0 +1,13 @@
+.index{
+    background: var(--panel-bg);
+    font-size: 2rem;
+}
+
+.index h5{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+.index i{
+    font-size: 10rem;
+}
