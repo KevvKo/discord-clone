@@ -35,3 +35,5 @@ const fakeAuth = {
     setTimeout(cb, 100);
   }
 };
+
+export default useProvideAuth;

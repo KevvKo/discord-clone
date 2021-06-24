@@ -1,11 +1,6 @@
 import './Index.css';
-import { 
-    Row, 
-    Col, 
-    Form, 
-    Button } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import {useTranslation} from "react-i18next";
-import {Link} from "react-router-dom";
 
 function Index(props){
 
@@ -17,7 +12,7 @@ function Index(props){
                 <h5>
                     {t('index.title')}
                 </h5>
-                <i class="bi bi-emoji-expressionless-fill"></i>
+                <i className="bi bi-emoji-expressionless-fill"></i>
                 <p>
                     {t('index.subtitle')} 
                 </p>

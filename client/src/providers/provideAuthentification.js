@@ -1,5 +1,5 @@
 import { authContext } from '../contexts/authentificationContext';
-import { useProvideAuth } from '../hooks/useProvideAuthentification';
+import useProvideAuth from '../hooks/useProvideAuthentification';
 
 
 export function ProvideAuth({ children }) {

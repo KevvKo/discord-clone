@@ -4,10 +4,28 @@ import {
     Col, 
     Form, 
     Button } from 'react-bootstrap';
-import {useTranslation} from "react-i18next";
-import {Link, Router} from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { 
+    Link, 
+    Router,
+    useHistory,
+    useLocation
+} from "react-router-dom";
+import { useAuth } from '../../hooks/useAuthentification';
 
 function Login(props){
+    
+    let history = useHistory();
+    let location = useLocation();
+    let authentification = useAuth();
+
+    let { from } = location.state
+    
+    let login = () => {
+        authentification.signin(() => {
+          history.replace(from);
+        });
+      };
 
     const [t, i18n] = useTranslation('common');
 
@@ -35,7 +53,7 @@ function Login(props){
                         </Form.Text>
                     </Form.Group>
                     <Link to='/Home'>
-                        <Button variant='primary' type='submit' block>
+                        <Button variant='primary' type='submit' onClick={login} block>
                             {t('login.submit')}
                         </Button>  
                     </Link> 
