@@ -2,7 +2,7 @@ import { authContext } from '../contexts/authentificationContext';
 import useProvideAuth from '../hooks/useProvideAuthentification';
 
 
-export function ProvideAuth({ children }) {
+export default function ProvideAuth({ children }) {
     const auth = useProvideAuth();
     return (
         <authContext.Provider value={auth}>

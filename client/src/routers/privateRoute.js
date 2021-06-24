@@ -1,5 +1,5 @@
 import { Route, Redirect } from 'react';
-import {useAuth} from '../hooks/useAuthentification'
+import useAuth from '../hooks/useAuthentification'
 
 // router that check the authenification context for a user and redirects to the login route if the user isn't authentificated
 function PrivateRoute({ children, ...rest }) {

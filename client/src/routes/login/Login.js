@@ -11,7 +11,7 @@ import {
     useHistory,
     useLocation
 } from "react-router-dom";
-import { useAuth } from '../../hooks/useAuthentification';
+import useAuth from '../../hooks/useAuthentification';
 
 function Login(props){
     
@@ -20,7 +20,8 @@ function Login(props){
     let authentification = useAuth();
 
     let { from } = location.state
-    
+
+    console.log(from)
     let login = () => {
         authentification.signin(() => {
           history.replace(from);
