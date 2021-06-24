@@ -2,6 +2,7 @@ import './App.css';
 import Container from 'react-bootstrap/Container';
 import Home from '../routes/home/Home';
 import Login from '../routes/login/Login';
+import ProvideAuth from '../services/'
 import {
   BrowserRouter as Router,
   Switch,
