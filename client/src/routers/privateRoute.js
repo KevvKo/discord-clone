@@ -1,4 +1,4 @@
-import { Route, Redirect } from 'react';
+import { Route, Redirect } from 'react-router-dom';
 import useAuth from '../hooks/useAuthentification'
 
 // router that check the authenification context for a user and redirects to the login route if the user isn't authentificated

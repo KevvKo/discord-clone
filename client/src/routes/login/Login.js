@@ -7,7 +7,6 @@ import {
 import { useTranslation } from "react-i18next";
 import { 
     Link, 
-    Router,
     useHistory,
     useLocation
 } from "react-router-dom";
@@ -31,7 +30,7 @@ function Login(){
 
     return (
         <Row className='login flex-grow-1 justify-content-center align-items-center'>
-            <Col className='p-5' sm ={8}>
+            <Col className='p-5' sm={8} md={5}>
                 <h1>{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>
                 <Form>
