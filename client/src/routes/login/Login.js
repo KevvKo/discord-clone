@@ -13,18 +13,17 @@ import {
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuthentification';
 
-function Login(props){
+function Login(){
     
     let history = useHistory();
     let location = useLocation();
     let authentification = useAuth();
 
-    let { from } = location.state
+    let  { from }  = location.state || { from: { pathname: "/" } };
 
-    console.log(from)
     let login = () => {
         authentification.signin(() => {
-          history.replace(from);
+            history.replace(from);
         });
       };
 
@@ -53,11 +52,9 @@ function Login(props){
                         </Link>
                         </Form.Text>
                     </Form.Group>
-                    <Link to='/Home'>
-                        <Button variant='primary' type='submit' onClick={login} block>
-                            {t('login.submit')}
-                        </Button>  
-                    </Link> 
+                    <Button variant='primary' type='button' onClick={login} block>
+                        {t('login.submit')}
+                    </Button> 
                     <p className='mt-2'>
                         {t('login.registerQuestion')} <Link to='/register'>{t('login.register')}</Link>
                     </p>

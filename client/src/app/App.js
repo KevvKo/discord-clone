@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Index from '../routes/index/Index'
 import Home from '../routes/home/Home';
 import Login from '../routes/login/Login';
-import useAuth from '../hooks/useAuthentification';
 import PrivateRoute from '../routers/privateRoute'
 import ProvideAuth from '../providers/provideAuthentification'
 import {
@@ -33,9 +32,9 @@ function App() {
             <Route path='/login'>
               <Login />
             </Route>
-            <PrivateRoute path='/home'>
+            <Route path='/home'>
               <Home />
-            </PrivateRoute>
+            </Route>
           </Switch>
         </Container>
       </Router>
