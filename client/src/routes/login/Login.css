@@ -4,7 +4,10 @@
   background: var(--panel-bg);
 }
 
-.login:not(h1){
+.login h1{
+  color: var(--body-font-color);
+}
+.login{
     color: var(--font-color-secondary);
 }
 .login > div {

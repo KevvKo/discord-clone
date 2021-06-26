@@ -1,0 +1,9 @@
+.select{
+    --select-bg: var(--midnight-blue-color-30);
+}
+
+.select.custom-select{
+    background-color: var(--select-bg) !important;
+    border-color: var(--border-color-forms) !important;
+    color: var(--font-color-secondary);
+}

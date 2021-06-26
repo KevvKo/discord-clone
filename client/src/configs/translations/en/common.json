@@ -4,6 +4,9 @@
         "subTitle": "So far everythig is calm...",
         "emptyListText": "If a friend starts an activity - for example plays something or just hanging around in the voice chat - you can see it here!"
     },
+    "forms": {
+        "select": "select"
+    },
     "friendsList": {
         "title": "Direct messages",
         "newMessageTooltip": "New direct message"
@@ -28,6 +31,7 @@
         "username": "username",
         "password": "password",
         "birthday": "Birthday",
+        "explanation": "I have been reading the terms of use and data privacy explanation from discord and accepted",
         "submit":   "continue",
         "accountAvailable": "Did you already have an account?"
     },

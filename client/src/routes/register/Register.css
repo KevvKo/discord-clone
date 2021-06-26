@@ -1,14 +1,14 @@
 .register {
     --login-form-bg: var(--midnight-blue-color-20);
-    --login-form-height: 500px;
     background: var(--panel-bg);
   }
   
-  .register:not(h1){
-      color: var(--font-color-secondary);
-  }
   .register > div {
+    height: 550px !important;
     background: var(--login-form-bg);
-    height: var(--login-form-height);
   }
   
+  .register .form-check-label{
+    color: var(--font-color-secondary) !important;
+    font-size: var(--font-size-xss);
+  }

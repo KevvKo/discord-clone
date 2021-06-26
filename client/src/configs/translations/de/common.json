@@ -4,6 +4,9 @@
         "subTitle": "Bisher ist alles ruhig...",
         "emptyListText": "Wenn ein Freund eine Aktivität beginnt - zum Beispiel etwas spielt oder im Sprachchat abhängt - siehst du es hier!"
     },
+    "forms": {
+        "select": "Auswählen"
+    },
     "friendsList": {
         "title":    "Direktnachrichten",
         "newMessageTooltip": "Neue Direktnachricht"
@@ -21,6 +24,16 @@
         "submit": "Anmelden",
         "registerQuestion": "Brauchst du einen Account?",
         "register": "Registrieren"
+    },
+    "register": {
+        "title":"Account erstellen",
+        "email": "Email",
+        "username": "Benutzername",
+        "password": "Passwort",
+        "birthday": "Geburtstag",
+        "explanation": "Ich habe die Nutzungsbdingungen und Datenschutzerklärung von Discord gelesen und akzeptiert",
+        "submit":   "Weiter",
+        "accountAvailable": "Hast du bereits einen Account?"
     },
     "tobBar": {
         "newChatTooltip": "Neuer Gruppenchat",

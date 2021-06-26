@@ -3,4 +3,11 @@
 
     background: var(--input-bg) !important;
     border-color: var(--border-color-forms) !important;
+    color: var(--font-color-secondary) !important;
+}
+
+.form-label{
+    font-size: var(--font-size-xs) !important;
+    color: var(--font-color-label) !important; 
+    text-transform: uppercase;
 }
