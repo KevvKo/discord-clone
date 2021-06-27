@@ -1,6 +1,6 @@
 import './UserBar.css';
 import {useTranslation} from "react-i18next";
-import IconButton from '../../common/iconButton/IconButton';
+import IconButton from '../../buttons/iconButton/IconButton';
 import UserAvatar from '../userAvatar/UserAvatar';
 import UserTag from '../userTag/UserTag';
 function UserBar() {

@@ -1,0 +1,30 @@
+.friend-tab{
+    --friend-tab-color:                 var(--font-color-secondary);
+    --friend-tab-bg-hover:              var(--hover-bg);
+    --friend-tab-color-hover:           var(--body-font-color);
+
+    color: ;
+    list-style-type: none;
+}
+
+.friend-tab     .icon-button {
+    visibility: hidden;
+}
+
+.friend-tab:hover{
+    cursor: pointer;
+    color: var(--friend-tab-color-hover) !important;
+    background: var(--friend-tab-bg-hover);
+}
+
+.friend-tab:hover .icon-button {
+    visibility: visible;
+}
+
+.friend-tab a{
+    color:  var(--friend-tab-color) !important;
+}
+/* .friend-tab a:hover{ 
+    color: var(--friend-tab-color-hover) !important;
+    text-decoration: none; 
+} */

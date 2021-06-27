@@ -1,9 +1,9 @@
 import './App.css';
 import Container from 'react-bootstrap/Container';
-import Index from '../routes/index/Index'
-import Home from '../routes/home/Home';
-import Login from '../routes/login/Login';
-import Register from '../routes/register/Register'
+import Index from '../pages/index/Index'
+import Home from '../pages/home/Home';
+import Login from '../pages/login/Login';
+import Register from '../pages/register/Register'
 import PrivateRoute from '../routers/privateRoute'
 import ProvideAuth from '../providers/provideAuthentification'
 import {

@@ -3,13 +3,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import AppHeader from '../../components/header/AppHeader';
-import TopBar from '../../components/topBar/TopBar';
+import TopBar from '../../components/filterBar/TopBar';
 import AppMain from '../../components/main/AppMain';
 import FriendsList from '../../components/friendsList/FriendsList';
-import ChannelList from '../../components/channelList/ChannelList';
+import ChannelList from '../../components/channels/channelList/ChannelList';
 import ActiveUserList from '../../components/activeUserList/ActiveUserList';
 import UserBar from '../../components/user/userBar/UserBar';
-import SearchBar from '../../components/searchBar/SearchBar';
+import SearchBar from '../../components/search/searchBar/SearchBar';
 
 function Home() {
 

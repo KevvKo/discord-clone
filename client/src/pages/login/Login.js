@@ -11,6 +11,7 @@ import {
     useLocation
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuthentification';
+import FormInput from '../../components/forms/structure/formInput/FormInput'
 
 function Login(){
     
@@ -34,12 +35,7 @@ function Login(){
                 <h1 className="h1">{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>
                 <Form>
-                    <Form.Group>
-                        <Form.Label>
-                            {t('login.emailLabel')}
-                        </Form.Label>
-                        <Form.Control type='email'></Form.Control>
-                    </Form.Group>
+                    <FormInput type='email' label={t('login.emailLabel')}/>
                     <Form.Group>
                         <Form.Label>
                             {t('login.passwordLabel')}

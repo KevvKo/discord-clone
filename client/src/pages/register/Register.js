@@ -7,6 +7,7 @@ import {
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import Select from '../../components/forms/select/Select';
+import FormInput from '../../components/forms/structure/formInput/FormInput'
 import { range } from '../../services/utils';
 
 function Register(props){
@@ -35,24 +36,9 @@ function Register(props){
             <Col className='p-4' sm={8} md={4}>
                 <h1>{t('register.title')}</h1>
                 <Form>
-                    <Form.Group>
-                        <Form.Label>
-                            {t('register.email')}
-                        </Form.Label>
-                        <Form.Control type='email'></Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>
-                            {t('register.username')}
-                        </Form.Label>
-                        <Form.Control type='text'></Form.Control>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>
-                            {t('register.password')}
-                        </Form.Label>
-                        <Form.Control type='password'></Form.Control>
-                    </Form.Group>
+                    <FormInput type='email' label={t('register.email')}/>
+                    <FormInput type='text' label={t('register.username')}/>
+                    <FormInput type='password' label={t('register.password')}/>
                     <Form.Group>
                         <Form.Label>
                             {t('register.birthday')}
@@ -70,7 +56,6 @@ function Register(props){
                         </Row>
                     </Form.Group>
                     <Form.Row>
-                        
                     </Form.Row>
                     <Form.Group controlId='formBasicCheckbox'>
                             <Form.Check type='checkbox' inline={true} label={t('register.explanation')}/>

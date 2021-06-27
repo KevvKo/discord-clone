@@ -1,6 +1,6 @@
 import './TopBar.css';
 import FilterTab from './filterTab/FilterTab';
-import IconButton from '../common/iconButton/IconButton';
+import IconButton from '../buttons/iconButton/IconButton';
 import { Row, Col } from 'react-bootstrap';
 import {useTranslation} from "react-i18next";
 

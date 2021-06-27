@@ -1,7 +1,6 @@
 import './SearchBar.css';
-import SearchField from '../common/searchField/SearchField';
+import SearchField from '../searchField/SearchField';
 import {useTranslation} from "react-i18next";
-import {Col} from 'react-bootstrap';
 
 function SearchBar() {
 

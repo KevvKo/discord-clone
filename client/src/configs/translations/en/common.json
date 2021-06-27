@@ -9,7 +9,8 @@
     },
     "friendsList": {
         "title": "Direct messages",
-        "newMessageTooltip": "New direct message"
+        "newMessageTooltip": "New direct message",
+        "removeTooltip": "Close"
     },
     "index": {
         "title": "Discord Clone",
