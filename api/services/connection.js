@@ -1,18 +1,23 @@
-const path = require('path')
-const { MongoClient } = require('mongodb'); 
+const mysql = require('mysql');
+const { DB_HOST, DB_USER, DB_PASSWORD } = require('dotenv').config()
 
 module.exports = {
-    connect: async (DB_URL) => {
+    
+    connect: async () => {
         
-        const client = new MongoClient(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
- 
-        try {
-            // Connect to the MongoDB cluster
-            await client.connect(); 
-            console.log('Connected to database.')
-        } catch (e) {
-            console.error(e);
-        }
+        const db_host = process.env.DB_HOST;
+        const db_user = process.env.DB_USER;
+        const db_password = process.env.DB_PASSWORD;
+
+        var con = mysql.createConnection({
+            db_host: db_host,
+            db_user: db_user,
+            db_password: db_password
+        });
+        
+        con.connect( error => {
+            console.log("Database is connected")
+        })
     },
 
     close: async () => {
