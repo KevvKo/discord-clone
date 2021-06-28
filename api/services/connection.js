@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const { DB_HOST, DB_USER, DB_PASSWORD } = require('dotenv').config()
+require('dotenv').config()
 
 module.exports = {
     
@@ -9,19 +9,15 @@ module.exports = {
         const db_user = process.env.DB_USER;
         const db_password = process.env.DB_PASSWORD;
 
-        var con = mysql.createConnection({
-            db_host: db_host,
-            db_user: db_user,
-            db_password: db_password
+        var pool = mysql.createPool({
+            host: db_host,
+            user: db_user,
+            password: db_password
         });
         
-        con.connect( error => {
-            console.log("Database is connected")
+        pool.getConnection((error, connection) => {
+            if(error) throw error;
+            console.log(`connection as id: ${connection.threadId}`)
         })
     },
-
-    close: async () => {
-        await client.close();
-
-    }
 }
