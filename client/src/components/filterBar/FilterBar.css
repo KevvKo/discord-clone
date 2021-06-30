@@ -1,8 +1,8 @@
-.topbar{
+.filterbar{
     background: var(--panel-bg);
 }
 
-.topbar i{
+.filterBar i{
     color: var(--font-color-secondary) !important;
 }
 

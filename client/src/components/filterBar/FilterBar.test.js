@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import AppMain from './AppMain';
+import FilterBar from './FilterBar';
 
 test('renders learn react link', () => {
-  render(<AppMain />);
+  render(<FilterBar />);
   const linkElement = screen.getByText(/ xyz /i);
   expect(linkElement).toBeInTheDocument();
 });

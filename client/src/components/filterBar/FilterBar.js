@@ -1,16 +1,16 @@
-import './TopBar.css';
+import './FilterBar.css';
 import FilterTab from './filterTab/FilterTab';
 import IconButton from '../buttons/iconButton/IconButton';
 import { Row, Col } from 'react-bootstrap';
 import {useTranslation} from "react-i18next";
 
-function TopBar() {
+function FilterBar() {
 
     const [t, i18n] = useTranslation('common');
     const classes = 'p-0 mx-2'
         
     return (
-        <Row className='topbar'>
+        <Row className='filterbar'>
             <Col className="navbar d-flex">
                 <i className="bi bi-people-fill"></i>
                 <div className='h5 mb-0 pr-2 mx-2'>
@@ -37,4 +37,4 @@ function TopBar() {
     );
 }
 
-export default TopBar;
+export default FilterBar;

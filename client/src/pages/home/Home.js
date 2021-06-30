@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import AppHeader from '../../components/header/AppHeader';
-import TopBar from '../../components/filterBar/TopBar';
+import FilterBar from '../../components/filterBar/FilterBar';
 import AppMain from '../../components/main/AppMain';
 import FriendsList from '../../components/friendsList/FriendsList';
 import ChannelList from '../../components/channels/channelList/ChannelList';
@@ -26,7 +26,7 @@ function Home() {
               <UserBar />
             </div>
         <Col className="d-flex flex-column">
-          <TopBar />
+          <FilterBar />
           <Row className="flex-fill">
             <AppMain />
             <ActiveUserList />
