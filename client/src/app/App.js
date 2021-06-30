@@ -7,7 +7,7 @@ import Register from '../pages/register/Register'
 import PrivateRoute from '../routers/privateRoute'
 import ProvideAuth from '../providers/provideAuthentification'
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
