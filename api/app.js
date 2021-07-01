@@ -5,15 +5,21 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const indexRouter = require('./routes/index');
-const cors = require("cors");
-const db = require('./services/connection');
 const app = express();
 const port = 3000
 
-db.connect();
+const corsOptions = {
+  origin: `http://localhost:${port}`
+};
 
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
