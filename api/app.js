@@ -1,28 +1,27 @@
 'use strict';
 
 const { ApolloServer } = require('apollo-server');
+const { PrismaClient } = require('@prisma/client')
 
-const typeDefs = `
-  type Query {
-    info: String!
-  }
-`
+const fs = require('fs');
+const path = require('path');
 
 const resolvers = {
   Query: {
-    info: () => `This is the API of a discord Clone`
-  }
+
+  },
+  Mutation: {
+   
+  },
 }
 
 const server = new ApolloServer({
-  typeDefs,
+  typeDefs: fs.readFileSync(
+    path.join(__dirname, 'schema.graphql'),
+    'utf8'
+  ),
   resolvers,
+  context: {
+    prisma,
+  }
 })
-
-server
-  .listen()
-  .then(({ url }) =>
-    console.log(`Server is running on ${url}`)
-  );
-
-
