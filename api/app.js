@@ -10,9 +10,11 @@ const Mutation = require('./src/resolvers/Mutation');
 const User = require('./src/resolvers/User');
 
 const resolvers = { 
-  Mutation,
-  User
+  Mutation
 }
+
+const prisma = new PrismaClient()
+
 const server = new ApolloServer({
   typeDefs: fs.readFileSync(
     path.join(__dirname, './src/schema.graphql'),

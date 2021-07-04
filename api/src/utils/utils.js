@@ -1,7 +1,10 @@
+require('dotenv').config();
+
 const jwt = require('jsonwebtoken');
+const { APP_SECRET } = process.env;
 
 function getTokenPayload(token) {
-  return jwt.verify(token, APP_SECRET);
+  return jwt.verify(token, "deinemussa");
 }
 
 function getUserId(req, authToken) {

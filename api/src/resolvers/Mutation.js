@@ -1,19 +1,19 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const { getUserId } = require('../utils/utils');
-const { APP_SECRET } = require('dotenv').config();
+require('dotenv').config();
 
+const { APP_SECRET } = process.env;
 
 async function signup(parent, args, context, info) {
 
-    const saltRounds = 15;
+    const saltRounds =  5;
     const password = await bcrypt.hash(args.password, saltRounds);
     const user = await context.prisma.user.create({ data: { ...args, password } });
     const token = jwt.sign({ userId: user.id }, APP_SECRET);
-  
     return {
       token,
-      user,
+      user
     }
   }
   
