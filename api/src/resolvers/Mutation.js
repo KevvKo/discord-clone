@@ -5,6 +5,21 @@ require('dotenv').config();
 
 const { APP_SECRET } = process.env;
 
+async function message(parent, args, context, info) {
+  const { userId } = context;
+
+  const newMessage = await context.prisma.message.create({
+    data: {
+      sender_id: { connect: { id: userId } },
+      conversation_id:  3,               //just a placeholder for test cases
+      message: args.text
+    }
+  })
+  context.pubsub.publish("NEW_MESSAGE", newMessage)
+
+  return newMessage
+}
+
 async function signup(parent, args, context, info) {
 
     const saltRounds =  5;
