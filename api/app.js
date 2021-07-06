@@ -10,6 +10,7 @@ const Mutation = require('./src/resolvers/Mutation');
 const User = require('./src/resolvers/User');
 
 const resolvers = { 
+  User,
   Mutation
 }
 
@@ -25,10 +26,10 @@ const server = new ApolloServer({
     return {
       ...req,
       prisma,
-      userId: 
-        req && req.headers.authorization
-          ? getUserId(req)
-          : null
+      // userId: 
+      //   req && req.headers.authorization
+      //     ? getUserId(req)
+      //     : null
     }
   }
 })

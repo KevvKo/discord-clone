@@ -7,11 +7,46 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model user{
+model User{
 
-  id        Int     @default(autoincrement()) @id
-  username  String? @unique
-  email     String? @unique
-  password  String 
+  id                Int           @default(autoincrement()) @id
+  username          String?       @unique
+  email             String?       @unique
+  password          String 
+  Messages          Messages[]
+  Conversations     Conversation[]
+  Participiants     Participiants[]
+}
+
+model Conversation{
+
+  id                Int           @default(autoincrement()) @id
+  creator_id        Int
+  title             String
+  created_at        DateTime      @default(now())
+  User              User?         @relation(fields: [creator_id], references: [id])
+  Participiants     Participiants[]
+  Messages          Messages[]
+}
+
+model Participiants {
+
+  id                Int           @default(autoincrement()) @id
+  conversation_id   Int
+  user_id           Int
+  User              User?         @relation(fields: [user_id], references: [id])
+  Conversation      Conversation? @relation(fields: [conversation_id], references: [id])
+}
+
+model Messages {
+
+  id                Int           @default(autoincrement()) @id
+  sender_id         Int
+  conversation_id   Int
+  message           String
+  created_at        DateTime      @default(now())
+  User              User?         @relation(fields: [sender_id], references: [id])
+  Conversation      Conversation? @relation(fields: [conversation_id], references: [id])
+  @@index([sender_id], name: "sender")
 }
 

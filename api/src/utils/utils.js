@@ -4,10 +4,11 @@ const jwt = require('jsonwebtoken');
 const { APP_SECRET } = process.env;
 
 function getTokenPayload(token) {
-  return jwt.verify(token, "deinemussa");
+  return jwt.verify(token, APP_SECRET);
 }
 
 function getUserId(req, authToken) {
+  console.log("joooo")
   if (req) {
     const authHeader = req.headers.authorization;
     if (authHeader) {
