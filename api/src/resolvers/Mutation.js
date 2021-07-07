@@ -10,7 +10,7 @@ async function message(parent, args, context, info) {
 
   const newMessage = await context.prisma.message.create({
     data: {
-      sender_id: { connect: { id: userId } },
+      id: { connect: { id: userId } },
       conversation_id:  3,               //just a placeholder for test cases
       message: args.text
     }

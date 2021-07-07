@@ -17,11 +17,13 @@ type User {
   id: ID!
   username: String!
   email: String!
+  messages: [Message!]
 }
 
 type Message {
   id: ID!
   message: String!
+  writtenBy: User!
 }
 
 type Subscription{

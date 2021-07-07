@@ -41,8 +41,8 @@ model Participiants {
 model Messages {
 
   id                Int           @default(autoincrement()) @id
-  sender_id         Int
-  conversation_id   Int
+  written_by        Int
+  written_in        Int
   message           String
   created_at        DateTime      @default(now())
   User              User?         @relation(fields: [sender_id], references: [id])

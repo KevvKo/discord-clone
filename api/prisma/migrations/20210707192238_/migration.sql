@@ -32,9 +32,10 @@ CREATE TABLE `Participiants` (
 -- CreateTable
 CREATE TABLE `Messages` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `sender_id` INTEGER NOT NULL,
+    `conversation_id` INTEGER NOT NULL,
     `message` VARCHAR(191) NOT NULL,
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
-    `sender_id` INTEGER NOT NULL,
 
     INDEX `sender`(`sender_id`),
     PRIMARY KEY (`id`)
@@ -51,3 +52,6 @@ ALTER TABLE `Participiants` ADD FOREIGN KEY (`conversation_id`) REFERENCES `Conv
 
 -- AddForeignKey
 ALTER TABLE `Messages` ADD FOREIGN KEY (`sender_id`) REFERENCES `User`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE `Messages` ADD FOREIGN KEY (`conversation_id`) REFERENCES `Conversation`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
