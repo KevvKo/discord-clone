@@ -8,16 +8,23 @@ const { APP_SECRET } = process.env;
 async function message(parent, args, context, info) {
   const { userId } = context;
 
-  const newMessage = await context.prisma.message.create({
+  // const newMessage = await context.prisma.message.create({
+  //   data: {
+  //     written_by: { connect: { id: userId } },
+  //     written_in:  3,               //just a placeholder for test cases
+  //     text: args.text
+  //   }
+  // })
+  // context.pubsub.publish("NEW_MESSAGE", newMessage)
+
+  // return newMessag
+  return await context.prisma.messages.create({
     data: {
-      id: { connect: { id: userId } },
-      conversation_id:  3,               //just a placeholder for test cases
-      message: args.text
+      written_by: { connect: { id: userId }},      //just a placeholder for test cases
+      written_in:  2,   
+      text: args.text,
     }
   })
-  context.pubsub.publish("NEW_MESSAGE", newMessage)
-
-  return newMessage
 }
 
 async function signup(parent, args, context, info) {
@@ -49,6 +56,7 @@ async function signup(parent, args, context, info) {
   }
   
   module.exports = {
+    message,
     signup,
     login
   }

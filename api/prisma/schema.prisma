@@ -26,7 +26,6 @@ model Conversation{
   created_at        DateTime      @default(now())
   User              User?         @relation(fields: [creator_id], references: [id])
   Participiants     Participiants[]
-  Messages          Messages[]
 }
 
 model Participiants {
@@ -41,12 +40,11 @@ model Participiants {
 model Messages {
 
   id                Int           @default(autoincrement()) @id
-  written_by        Int
   written_in        Int
-  message           String
+  text              String
   created_at        DateTime      @default(now())
-  User              User?         @relation(fields: [sender_id], references: [id])
-  Conversation      Conversation? @relation(fields: [conversation_id], references: [id])
-  @@index([sender_id], name: "sender")
+  written_by        User?         @relation(fields: [written_by_id], references: [id])
+  written_by_id     Int
+
 }
 
