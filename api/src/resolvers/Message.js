@@ -1,6 +1,5 @@
 
 function writtenBy(parent, args, context){
-    console.log(parent.id)
     return context.prisma.messages.findUnique({ where: { id: parent.id }}).written_by();
 }
 
