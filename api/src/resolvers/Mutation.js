@@ -5,27 +5,33 @@ require('dotenv').config();
 
 const { APP_SECRET } = process.env;
 
+async function newConversation(parent, args, contect, info){
+  const { userId } = context;
+
+  const newMessage = await context.prisma.Conversation.create({
+    data: {
+      written_by: { connect: { id: userId }},
+      written_in:  2,   
+      text: args.text
+    }
+  })
+  context.pubsub.publish("NEW_CONVERSATION", newMessage)
+  return newchat;
+}
+
+
 async function message(parent, args, context, info) {
   const { userId } = context;
 
   const newMessage = await context.prisma.messages.create({
     data: {
-      written_by: { connect: { id: userId }},      //just a placeholder for test cases
+      written_by: { connect: { id: userId }},
       written_in:  2,   
       text: args.text
     }
   })
   context.pubsub.publish("NEW_MESSAGE", newMessage)
   return newMessage;
-
-  // return newMessag
-  // return await context.prisma.messages.create({
-  //   data: {
-  //     written_by: { connect: { id: userId }},      //just a placeholder for test cases
-  //     written_in:  2,   
-  //     text: args.text,
-  //   }
-  // })
 }
 
 async function signup(parent, args, context, info) {

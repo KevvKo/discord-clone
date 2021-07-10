@@ -22,15 +22,14 @@ model Conversation{
 
   id                Int           @default(autoincrement()) @id
   creator_id        Int
-  title             String
   created_at        DateTime      @default(now())
   User              User?         @relation(fields: [creator_id], references: [id])
   Participiants     Participiants[]
+  Messages          Messages[]
 }
 
 model Participiants {
 
-  id                Int           @default(autoincrement()) @id
   conversation_id   Int
   user_id           Int
   User              User?         @relation(fields: [user_id], references: [id])
@@ -40,11 +39,11 @@ model Participiants {
 model Messages {
 
   id                Int           @default(autoincrement()) @id
-  written_in        Int
   text              String
   created_at        DateTime      @default(now())
   written_by        User?         @relation(fields: [written_by_id], references: [id])
+  written_in        Conversation? @relation(fields: [written_by_in], references: [id])
   written_by_id     Int
-
+  written_in_id
 }
 
