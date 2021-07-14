@@ -5,6 +5,8 @@ import {
     Form, 
     Button } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
+import { useState } from 'react';
+import { useQuery, gql } from '@apollo/client';
 import { 
     Link, 
     useHistory,
@@ -14,7 +16,7 @@ import useAuth from '../../hooks/useAuthentification';
 import FormInput from '../../components/forms/structure/formInput/FormInput'
 
 function Login(){
-    
+
     let history = useHistory();
     let location = useLocation();
     let authentification = useAuth();
@@ -22,11 +24,22 @@ function Login(){
     let  { from }  = location.state || { from: { pathname: "/" } };
 
     let login = () => {
+        setFormState({
+            ...formState,
+            login: !formState.login
+        });
         authentification.signin(() => {
             history.replace(from);
         });
       };
 
+    const [formState, setFormState] = useState({
+        login: true,
+        email: '',
+        password: '',
+        name: ''
+    });
+    
     const [t, i18n] = useTranslation('common');
 
     return (
