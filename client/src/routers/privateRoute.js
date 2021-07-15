@@ -8,12 +8,12 @@ function PrivateRoute({ children, ...rest }) {
         <Route
             {...rest}
             render={({ location }) =>
-            auth.user 
+            true // auth.user -> quick solution until the whole process is correct implemented
             ? ( children )
             : (
                 <Redirect
                     to={{
-                        pathname: "/login",
+                        pathname: "/",
                         state: { from: location }
                     }}
                 />

@@ -11,7 +11,7 @@ function Index(){
     let authentification = useAuth();
     let location = useLocation();
 
-    authentification.user 
+    true // authentification.user --> currenty quick solution until the whole authentication process is well implemented 
     ? history.push('/home')
     : history.replace(
         {pathname:'/login', 

@@ -23,41 +23,6 @@ function Login(){
     let authentification = useAuth();
 
     let  { from }  = location.state || { from: { pathname: "/" } };
-    const SIGNUP_MUTATION = gql`
-    mutation SignupMutation(
-      $email: String!
-      $password: String!
-      $name: String!
-    ) {
-      signup(
-        email: $email
-        password: $password
-        name: $name
-      ) {
-        token
-      }
-    }
-  `;
-  
-  const LOGIN_MUTATION = gql`
-    mutation LoginMutation(
-      $email: String!
-      $password: String!
-    ) {
-      login(email: $email, password: $password) {
-        token
-      }
-    }
-  `;
-    // let login = () => {
-    //     setFormState({
-    //         ...formState,
-    //         login: !formState.login
-    //     });
-    //     authentification.signin(() => {
-    //         history.replace(from);
-    //     });
-    //   };
 
     const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
 
@@ -75,12 +40,14 @@ function Login(){
             password: formState.password
         },
         onCompleted: ({ login }) => {
-            localStorage.setItem(AUTH_TOKEN, login.token);
+            localStorage.setItem(AUTH_TOKEN, login.token)
+            console.log(from)
             history.replace(from);
+            history.push(from);
+
         }
     });
-    function onChangeEmail(e) {
-        console.log("jooo")
+    const onChangeEmail = (e) => {
         setFormState({
             ...formState,
             email: e.target.value
