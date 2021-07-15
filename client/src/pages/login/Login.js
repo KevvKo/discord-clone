@@ -6,7 +6,8 @@ import {
     Button } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
 import { useState } from 'react';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery, gql, useMutation } from '@apollo/client'; 
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../../graphql/mutations'
 import { 
     Link, 
     useHistory,
@@ -22,16 +23,43 @@ function Login(){
     let authentification = useAuth();
 
     let  { from }  = location.state || { from: { pathname: "/" } };
+    const SIGNUP_MUTATION = gql`
+    mutation SignupMutation(
+      $email: String!
+      $password: String!
+      $name: String!
+    ) {
+      signup(
+        email: $email
+        password: $password
+        name: $name
+      ) {
+        token
+      }
+    }
+  `;
+  
+  const LOGIN_MUTATION = gql`
+    mutation LoginMutation(
+      $email: String!
+      $password: String!
+    ) {
+      login(email: $email, password: $password) {
+        token
+      }
+    }
+  `;
+    // let login = () => {
+    //     setFormState({
+    //         ...formState,
+    //         login: !formState.login
+    //     });
+    //     authentification.signin(() => {
+    //         history.replace(from);
+    //     });
+    //   };
 
-    let login = () => {
-        setFormState({
-            ...formState,
-            login: !formState.login
-        });
-        authentification.signin(() => {
-            history.replace(from);
-        });
-      };
+    const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
 
     const [formState, setFormState] = useState({
         login: true,
@@ -41,6 +69,30 @@ function Login(){
     });
     
     const [t, i18n] = useTranslation('common');
+    const [login] = useMutation(LOGIN_MUTATION, {
+        variables: {
+            email: formState.email,
+            password: formState.password
+        },
+        onCompleted: ({ login }) => {
+            localStorage.setItem(AUTH_TOKEN, login.token);
+            history.replace(from);
+        }
+    });
+    function onChangeEmail(e) {
+        console.log("jooo")
+        setFormState({
+            ...formState,
+            email: e.target.value
+        })
+    }
+
+    const onChangePassword = (e) => {
+        setFormState({
+            ...formState,
+            password: e.target.value
+        })
+    }
 
     return (
         <Row className='login flex-grow-1 justify-content-center align-items-center'>
@@ -48,19 +100,19 @@ function Login(){
                 <h1 className="h1">{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>
                 <Form>
-                    <FormInput type='email' label={t('login.emailLabel')}/>
+                    <FormInput type='email' label={t('login.emailLabel')} onChange={ onChangeEmail } />
                     <Form.Group>
                         <Form.Label>
                             {t('login.passwordLabel')}
                         </Form.Label>
-                        <Form.Control type="password"></Form.Control>
+                        <Form.Control onChange={ onChangePassword } type="password"></Form.Control>
                         <Form.Text>
-                        <Link path='/newPassword'>
+                        <Link to='/newPassword'>
                             {t('login.newPassword')}
                         </Link>
                         </Form.Text>
                     </Form.Group>
-                    <Button variant='primary' type='button' onClick={login} block>
+                    <Button variant='primary' type='button' onClick={ login } block>
                         {t('login.submit')}
                     </Button> 
                     <p className='mt-2'>

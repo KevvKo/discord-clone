@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap';
 
 function FormInput(props){
     return(
-        <Form.Group>
+    <Form.Group onChange={ props.onChange }>
         <Form.Label>
             {props.label}
         </Form.Label>
