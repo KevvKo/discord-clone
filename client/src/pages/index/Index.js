@@ -1,17 +1,17 @@
 import './Index.css';
 import { Row } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
-import useAuth from '../../hooks/useAuthentification';
 
 import {useTranslation} from "react-i18next";
 
 function Index(){
 
     let history = useHistory();
-    let authentification = useAuth();
     let location = useLocation();
-
-    true // authentification.user --> currenty quick solution until the whole authentication process is well implemented 
+    const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
+    const authenticationToken = localStorage.getItem(AUTH_TOKEN)    
+    
+    authenticationToken
     ? history.push('/home')
     : history.replace(
         {pathname:'/login', 

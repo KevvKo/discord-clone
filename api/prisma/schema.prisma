@@ -14,8 +14,6 @@ model User{
   email             String?       @unique
   password          String 
   Messages          Messages[]
-  Conversations     Conversation[]
-  Participiants     Participiants[]
 }
 
 model Conversation{
@@ -24,8 +22,6 @@ model Conversation{
   creator_id        Int
   created_at        DateTime      @default(now())
   User              User?         @relation(fields: [creator_id], references: [id])
-  Participiants     Participiants[]
-  Messages          Messages[]
 }
 
 model Participiants {
@@ -42,8 +38,6 @@ model Messages {
   text              String
   created_at        DateTime      @default(now())
   written_by        User?         @relation(fields: [written_by_id], references: [id])
-  written_in        Conversation? @relation(fields: [written_by_in], references: [id])
   written_by_id     Int
-  written_in_id
 }
 

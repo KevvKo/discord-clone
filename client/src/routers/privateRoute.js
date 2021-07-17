@@ -1,14 +1,15 @@
 import { Route, Redirect } from 'react-router-dom';
-import useAuth from '../hooks/useAuthentification'
-
 // router that check the authenification context for a user and redirects to the login route if the user isn't authentificated
 function PrivateRoute({ children, ...rest }) {
-    let auth = useAuth();
+
+    const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
+    const authenticationToken = localStorage.getItem(AUTH_TOKEN)
+
     return (
         <Route
             {...rest}
             render={({ location }) =>
-            true // auth.user -> quick solution until the whole process is correct implemented
+            authenticationToken
             ? ( children )
             : (
                 <Redirect

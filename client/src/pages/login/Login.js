@@ -6,8 +6,8 @@ import {
     Button } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
 import { useState } from 'react';
-import { useQuery, gql, useMutation } from '@apollo/client'; 
-import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../../graphql/mutations'
+import { useMutation } from '@apollo/client'; 
+import { LOGIN_MUTATION } from '../../graphql/mutations'
 import { 
     Link, 
     useHistory,
@@ -41,10 +41,7 @@ function Login(){
         },
         onCompleted: ({ login }) => {
             localStorage.setItem(AUTH_TOKEN, login.token)
-            console.log(from)
             history.replace(from);
-            history.push(from);
-
         }
     });
     const onChangeEmail = (e) => {

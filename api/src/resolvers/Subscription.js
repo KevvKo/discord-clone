@@ -26,6 +26,5 @@ const newConversation = {
 
 module.exports = {
     newMessage,
-    newConversation
 }
 
