@@ -21,11 +21,11 @@ function useProvideAuth() {
     }
   });
 
-  const signin = async (email, password) => {
+  const signin = async (data) => {
     setUser({
       ...user,
-      email: email,
-      password: password
+      email: data.email,
+      password: data.password
     })
     login()
   };
