@@ -6,8 +6,6 @@ import {
     Button } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
 import { useState } from 'react';
-import { useMutation } from '@apollo/client'; 
-import { LOGIN_MUTATION } from '../../graphql/mutations'
 import { 
     Link, 
     useHistory,
@@ -20,30 +18,24 @@ function Login(){
 
     let history = useHistory();
     let location = useLocation();
-    let authentification = useAuth();
-
+    let authentication = useAuth();
     let  { from }  = location.state || { from: { pathname: "/" } };
 
-    const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
-
     const [formState, setFormState] = useState({
-        login: true,
         email: '',
         password: '',
-        name: ''
     });
     
     const [t, i18n] = useTranslation('common');
-    const [login] = useMutation(LOGIN_MUTATION, {
-        variables: {
-            email: formState.email,
-            password: formState.password
-        },
-        onCompleted: ({ login }) => {
-            localStorage.setItem(AUTH_TOKEN, login.token)
-            history.replace(from);
-        }
-    });
+
+    const login = () => {
+        authentication
+            .signin()
+            .then(() => { 
+                history.replace(from);
+            })
+    }
+
     const onChangeEmail = (e) => {
         setFormState({
             ...formState,
