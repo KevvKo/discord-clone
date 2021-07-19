@@ -8,13 +8,13 @@ function Select(props){
 
     if(props.data){
         selectItems = props.data.map((element) => 
-            <option key={element}>{element}</option>
+            <option key={element} value={element} >{element}</option>
         )
     }
 
     return(
-        <Form.Control value={-1} className='select' as='select' custom>
-            <option key={-1} disabled value={-1}>{t('forms.select')}</option>
+        <Form.Control className='select' as='select' oChange={props.onChange} custom>
+            <option key={-1} >{t('forms.select')}</option>
             {selectItems && selectItems}
         </Form.Control>
     )
