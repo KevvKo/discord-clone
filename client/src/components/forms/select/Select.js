@@ -13,7 +13,7 @@ function Select(props){
     }
 
     return(
-        <Form.Control className='select' as='select' oChange={props.onChange} custom>
+        <Form.Control name={props.name} className='select' as='select' onChange={props.onChange} custom>
             <option key={-1} >{t('forms.select')}</option>
             {selectItems && selectItems}
         </Form.Control>

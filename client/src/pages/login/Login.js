@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuthentification';
 import FormInput from '../../components/forms/structure/formInput/FormInput'
+import useForm from '../../hooks/useForm';
 
 function Login(){
 
@@ -21,33 +22,21 @@ function Login(){
     let authentication = useAuth();
     let  { from }  = location.state || { from: { pathname: "/" } };
 
-    const [formState, setFormState] = useState({
+    const initialeValues = {
         email: '',
         password: '',
-    });
-    
+    };
+
+    const {values, handleChange, handleSubmit } = useForm(initialeValues)
+
     const [t, i18n] = useTranslation('common');
 
     const login = () => {
         authentication
-            .signin(formState)
+            .signin(values)
             .then(() => { 
                 history.replace(from);
             })
-    }
-
-    const onChangeEmail = (e) => {
-        setFormState({
-            ...formState,
-            email: e.target.value
-        })
-    }
-
-    const onChangePassword = (e) => {
-        setFormState({
-            ...formState,
-            password: e.target.value
-        })
     }
 
     return (
@@ -56,12 +45,12 @@ function Login(){
                 <h1 className="h1">{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>
                 <Form>
-                    <FormInput type='email' label={t('login.emailLabel')} onChange={ onChangeEmail } />
+                    <FormInput type='email' label={t('login.emailLabel')} onChange={ handleChange } />
                     <Form.Group>
                         <Form.Label>
                             {t('login.passwordLabel')}
                         </Form.Label>
-                        <Form.Control onChange={ onChangePassword } type="password"></Form.Control>
+                        <Form.Control onChange={ handleChange } type="password"></Form.Control>
                         <Form.Text>
                         <Link to='/newPassword'>
                             {t('login.newPassword')}
