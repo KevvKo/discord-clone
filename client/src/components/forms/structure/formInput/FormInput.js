@@ -7,7 +7,7 @@ function FormInput(props){
         <Form.Label>
             {props.label}
         </Form.Label>
-        <Form.Control type={props.type}></Form.Control>
+        <Form.Control name={ props.name } type={props.type}></Form.Control>
     </Form.Group>
     );
 }

@@ -15,6 +15,10 @@ import useAuth from '../../hooks/useAuthentification';
 import FormInput from '../../components/forms/structure/formInput/FormInput'
 import useForm from '../../hooks/useForm';
 
+/**
+ * @todo fix login process bug: logs in, though the form is empty -> token will also created
+ * @
+ */
 function Login(){
 
     let history = useHistory();
@@ -22,12 +26,7 @@ function Login(){
     let authentication = useAuth();
     let  { from }  = location.state || { from: { pathname: "/" } };
 
-    const initialeValues = {
-        email: '',
-        password: '',
-    };
-
-    const {values, handleChange, handleSubmit } = useForm(initialeValues)
+    const {values, handleChange, handleSubmit } = useForm()
 
     const [t, i18n] = useTranslation('common');
 
@@ -45,12 +44,12 @@ function Login(){
                 <h1 className="h1">{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>
                 <Form>
-                    <FormInput type='email' label={t('login.emailLabel')} onChange={ handleChange } />
+                    <FormInput type='email' name="email" label={t('login.emailLabel')} onChange={ handleChange } />
                     <Form.Group>
                         <Form.Label>
                             {t('login.passwordLabel')}
                         </Form.Label>
-                        <Form.Control onChange={ handleChange } type="password"></Form.Control>
+                        <Form.Control onChange={ handleChange } name="password" type="password"></Form.Control>
                         <Form.Text>
                         <Link to='/newPassword'>
                             {t('login.newPassword')}

@@ -9,20 +9,11 @@ import {Link} from 'react-router-dom';
 import Select from '../../components/forms/select/Select';
 import FormInput from '../../components/forms/structure/formInput/FormInput';
 import { range } from '../../services/utils';
-import useState from 'react';
-import { useForm } from '../../hooks/useForm';
+import useForm from '../../hooks/useForm';
 
 function Register(props){
 
     const [t, i18n] = useTranslation('common');
-    const initialeValues = {
-        email: '',
-        username: '',
-        password: '',
-        day: '',
-        month: '',
-        year: ''
-    }
 
     const days = Array.from({length:31}, (v, k) => k+1 )
     const months = [
@@ -40,7 +31,7 @@ function Register(props){
         'December'
     ];
 
-    const { values, handleChange, handleSubmit } = useForm(initialeValues);
+    const { values, handleChange, handleSubmit } = useForm();
 
     const year = new Date().getFullYear();
     const years = range(year, 1900, -1);
@@ -50,7 +41,7 @@ function Register(props){
             <Col className='p-4' sm={8} md={4}>
                 <h1>{t('register.title')}</h1>
                 <Form onSubmit={ handleSubmit }>
-                    <FormInput type='email' name='email' label={t('register.email')} onChange={ handleChange } value={ values.email }/>
+                    <FormInput type='email' name='email' label={t('register.email')} onChange={ handleChange }/>
                     <FormInput type='text' name='username' label={t('register.username')} onChange={ handleChange }/>
                     <FormInput type='password' name='password' label={t('register.password')} onChange={ handleChange }/>
                     <Form.Group>
