@@ -17,28 +17,23 @@ function useProvideAuth() {
         password: user.password
     },
     onCompleted: ({ login }) => {
-        localStorage.setItem(AUTH_TOKEN, login.token)
-    }
+        localStorage.setItem(AUTH_TOKEN, login.token);
+      }
   });
 
-  const signin = async (data) => {
+  const handleChange = (event) => {
+    const { target } = event;
+    const { name, value } = target;
     setUser({
-      ...user,
-      email: data.email,
-      password: data.password
+        ...user,
+        [ name ]: value
     })
-    login()
-  };
-
-  const signout = () => {
-
-  };
-
+  }
 
   return {
     user,
-    signin,
-    signout
+    login,
+    handleChange
   };
 };
 

@@ -5,7 +5,6 @@ import {
     Form, 
     Button } from 'react-bootstrap';
 import { useTranslation } from "react-i18next";
-import { useState } from 'react';
 import { 
     Link, 
     useHistory,
@@ -13,28 +12,20 @@ import {
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuthentification';
 import FormInput from '../../components/forms/structure/formInput/FormInput'
-import useForm from '../../hooks/useForm';
 
-/**
- * @todo fix login process bug: logs in, though the form is empty -> token will also created
- * @
- */
 function Login(){
 
     let history = useHistory();
-    let location = useLocation();
-    let authentication = useAuth();
-    let  { from }  = location.state || { from: { pathname: "/" } };
-
-    const {values, handleChange, handleSubmit } = useForm()
+    const { handleChange , login} = useAuth();
 
     const [t, i18n] = useTranslation('common');
 
-    const login = () => {
-        authentication
-            .signin(values)
+    const submit = () => {
+            login()
             .then(() => { 
-                history.replace(from);
+                history.replace({
+                    pathname: '/'
+                });
             })
     }
 
@@ -56,7 +47,7 @@ function Login(){
                         </Link>
                         </Form.Text>
                     </Form.Group>
-                    <Button variant='primary' type='button' onClick={ login } block>
+                    <Button variant='primary' type='button' onClick={ submit } block>
                         {t('login.submit')}
                     </Button> 
                     <p className='mt-2'>
