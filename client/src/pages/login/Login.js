@@ -7,8 +7,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { 
     Link, 
-    useHistory,
-    useLocation
+    useHistory
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuthentification';
 import FormInput from '../../components/forms/structure/formInput/FormInput'

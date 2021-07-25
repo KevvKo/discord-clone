@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { LOGIN_MUTATION } from '../graphql/mutations'
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/mutations'
 import { useMutation } from '@apollo/client'; 
 
 function useProvideAuth() {
@@ -21,6 +21,16 @@ function useProvideAuth() {
       }
   });
 
+  const [signup] = useMutation(SIGNUP_MUTATION, {
+    variables: {
+      username: user.name,
+      email: user.email,
+      password: user.password
+    },
+    onCompleted: ({ signup }) => {
+      localStorage.setItem(AUTH_TOKEN, signup.token);
+    }
+  });
   const handleChange = (event) => {
     const { target } = event;
     const { name, value } = target;
@@ -33,6 +43,7 @@ function useProvideAuth() {
   return {
     user,
     login,
+    signup,
     handleChange
   };
 };
