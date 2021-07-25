@@ -1,5 +1,5 @@
 :root{
     --spacer: 4px;
-    --line-height: 0 !important;
+    --line-height: 1.6;
     --border-radius: 5px;
 }

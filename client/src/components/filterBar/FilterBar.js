@@ -24,13 +24,15 @@ function FilterBar() {
                     <FilterTab text={t('topBar.friendView.blockedTab')}/>  
                     <FilterTab text={t('topBar.friendView.addFriendTab')} variant='success'/>  
                 </div>
-                <div>
-                    <IconButton icon="bi-chat-left-fill" size='lg' tooltipPlacement='bottom-start' cssClasses={classes} tooltipText={t('topBar.newChatTooltip')}/>
-                </div>
-                <div className="separator"></div>
-                <div>
-                    <IconButton icon="bi-inbox-fill" size='lg' tooltipPlacement="bottom-start" cssClasses={classes} tooltipText={t('topBar.inboxTooltip')} />
-                    <IconButton icon="bi-question-circle-fill" size='lg' tooltipPlacement="bottom" cssClasses={classes} tooltipText={t('topBar.helpTooltip')} />  
+                <div className="d-flex flex-nowrap">
+                    <div>
+                        <IconButton icon="bi-chat-left-fill" size='lg' tooltipPlacement='bottom-start' cssClasses={classes} tooltipText={t('topBar.newChatTooltip')}/>
+                    </div>
+                    <div className="separator"></div>
+                    <div>
+                        <IconButton icon="bi-inbox-fill" size='lg' tooltipPlacement="bottom-start" cssClasses={classes} tooltipText={t('topBar.inboxTooltip')} />
+                        <IconButton icon="bi-question-circle-fill" size='lg' tooltipPlacement="bottom" cssClasses={classes} tooltipText={t('topBar.helpTooltip')} />  
+                    </div>
                 </div>
             </Col>
         </Row>

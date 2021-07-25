@@ -14,7 +14,7 @@ import SearchBar from '../../components/search/searchBar/SearchBar';
 function Home() {
 
   return (
-    <div className='Home' fluid={'true'}>
+    <div className='Home'>
       <Row >
         <AppHeader />
       </Row>
