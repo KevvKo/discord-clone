@@ -35,7 +35,6 @@ async function message(parent, args, context, info) {
 }
 
 async function signup(parent, args, context, info) {
-
     const saltRounds =  5;
     const password = await bcrypt.hash(args.password, saltRounds);
     const user = await context.prisma.user.create({ data: { ...args, password } });
