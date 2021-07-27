@@ -23,7 +23,7 @@ function Login(){
             login()
             .then(() => { 
                 history.replace({
-                    pathname: '/'
+                    pathname: '/home'
                 });
             })
     }

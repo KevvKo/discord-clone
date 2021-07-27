@@ -46,7 +46,7 @@ function Register(props){
         signup()
         .then(() => {
             history.replace({
-                pathname: '/'
+                pathname: '/home'
             });
         })
     };

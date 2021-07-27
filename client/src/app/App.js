@@ -20,13 +20,6 @@ function App() {
       <Router>
         <Container className="App d-flex flex-column h-100" fluid>
           <Switch>
-            {/* {routes.map((route, i) => (
-                <Route key={i} path={route.path} >
-                  <route.component />     
-                </Route>
-              ))
-            } */} 
-
             <Route exact path='/'>
               <Index />
             </Route>
