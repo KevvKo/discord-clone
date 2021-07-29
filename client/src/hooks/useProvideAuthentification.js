@@ -11,6 +11,11 @@ function useProvideAuth() {
     password: '',
   });
 
+  const [ errors, setErrors ] = useState({
+    emailError: false,
+    passwordError: false
+  })
+ 
   const [login] = useMutation(LOGIN_MUTATION, {
     variables: {
         email: user.email,
@@ -31,8 +36,8 @@ function useProvideAuth() {
       localStorage.setItem(AUTH_TOKEN, signup.token);
     }
   });
-  const handleChange = (event) => {
-    const { target } = event;
+  const handleChange = (e) => {
+    const { target } = e;
     const { name, value } = target;
     setUser({
         ...user,
