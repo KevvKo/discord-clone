@@ -4,6 +4,7 @@ import {
     Col, 
     Form, 
     Button } from 'react-bootstrap';
+import  FormFeedback from '../../components/forms/formFeedback/FormFeedback';
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
 import { 
@@ -11,11 +12,11 @@ import {
     useHistory
 } from "react-router-dom";
 import useAuth from '../../hooks/useAuthentification';
-import useForm from '../../hooks/useForm'
+
 function Login(){
 
     let history = useHistory();
-    const { handleChange , login} = useAuth();
+    const { handleChange , login    } = useAuth();
     const [validated, setValidated] = useState(false);
     const [ t ] = useTranslation('common');
 
@@ -37,29 +38,23 @@ function Login(){
                 <h1 className="h1">{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>
                 <Form noValidate validated={validated} onSubmit={ handleSubmit }>
-                    <Form.Group >
+                    <FormFeedback>
                         <Form.Label>
                             {t('login.emailLabel')}                       
                         </Form.Label>
                         <Form.Control onChange={ handleChange } name="email" type="text"></Form.Control>
-                        <Form.Control.Feedback type="invalid">
-                            This field is required
-                        </Form.Control.Feedback>                
-                    </Form.Group>       
-                    <Form.Group >
+                    </FormFeedback>    
+                    <FormFeedback>
                         <Form.Label>
                             {t('login.passwordLabel')}
                         </Form.Label>
                         <Form.Control required onChange={ handleChange } name="password" type="password"></Form.Control>
-                        <Form.Control.Feedback type="invalid">
-                            This field is required
-                        </Form.Control.Feedback>
-                        <Form.Text>
-                            <Link to='/newPassword'>
-                                {t('login.newPassword')}
-                            </Link>
-                        </Form.Text>
-                    </Form.Group>
+                    </FormFeedback>         
+                    <Form.Text>
+                        <Link to='/newPassword'>
+                            {t('login.newPassword')}
+                        </Link>
+                    </Form.Text>
                     <Button variant='primary' type='submit' block>
                         {t('login.submit')}
                     </Button> 
