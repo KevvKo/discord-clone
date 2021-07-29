@@ -7,7 +7,10 @@ function FormInput(props){
         <Form.Label>
             {props.label}
         </Form.Label>
-        <Form.Control name={ props.name } type={props.type}></Form.Control>
+        <Form.Control required name={ props.name } type={props.type}></Form.Control>
+        <Form.Control.Feedback type="invalid">
+            {props.error}
+        </Form.Control.Feedback>
     </Form.Group>
     );
 }
