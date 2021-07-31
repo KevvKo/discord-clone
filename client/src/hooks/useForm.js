@@ -1,41 +1,37 @@
 import { useState } from 'react'
 
 /* hook to handle forms, especially for sing up and login */
-const useForm = (initialValues, callback) => {
+const useForm = () => {
 
-    const [values, setValues] = useState( initialValues || {})
     const [ errors, setErrors ] = useState({});
-
-    const handleSubmit = (event) => {
-        const { target } = event;
-        if(target) event.preventDefault();
-        callback();
-    }
-
-    const handleChange = (event) => {
-        const { target } = event;
-        const { name, value } = target;
-        setValues({
-            ...values,
-            [ name ]: value
-        })
-    }
 
     /**
      * 
      * @param {*} form 
      */
     const validateErrors = ( form ) => {
-        const regexExpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
+        const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/;
+        const passwordNumberRegex = /\d/g;
+        const { email, name, password } = form;
+        const errorMessages = {};
+
+        if( !email || email.value === '' ) errorMessages.email = 'This field is required.';
+        else if( !emailRegex.test(email.value) ) errorMessages.email = 'Please enter a valid email.';
         
-        console.log(form)
+        if( !name || name.value === '' ) errorMessages.name = 'This field is required.';
+        else if( name.value.length < 5 ) errorMessages.name = 'Your username name must be at least containing 5 characters';
+
+        if( !password || password.value === '' ) errorMessages.password = 'This field is required.';
+        else if( password.value.length < 10 ) errorMessages.password = 'Your password name must be at least containing 10 characters';
+        else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = 'Your password must contain a number';
+
+        setErrors(errorMessages);
     }
 
     return {
-        values,
-        validateErrors,
-        handleSubmit,
-        handleChange
+        errors,
+        setErrors,
+        validateErrors
     }
 };
 
