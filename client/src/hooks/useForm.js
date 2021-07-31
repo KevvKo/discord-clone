@@ -4,7 +4,8 @@ import { useState } from 'react'
 const useForm = (initialValues, callback) => {
 
     const [values, setValues] = useState( initialValues || {})
-    
+    const [ errors, setErrors ] = useState({});
+
     const handleSubmit = (event) => {
         const { target } = event;
         if(target) event.preventDefault();
@@ -20,8 +21,19 @@ const useForm = (initialValues, callback) => {
         })
     }
 
+    /**
+     * 
+     * @param {*} form 
+     */
+    const validateErrors = ( form ) => {
+        const regexExpression = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/
+        
+        console.log(form)
+    }
+
     return {
         values,
+        validateErrors,
         handleSubmit,
         handleChange
     }

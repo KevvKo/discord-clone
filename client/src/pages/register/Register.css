@@ -4,7 +4,6 @@
   }
   
   .register > div {
-    height: 550px !important;
     min-width: 500px;
     background: var(--login-form-bg);
   }
