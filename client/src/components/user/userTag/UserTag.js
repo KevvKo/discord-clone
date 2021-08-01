@@ -1,6 +1,3 @@
-import './UserTag.css';
-
-
 function UserTag() {
 
     const userName = "unosxmopsus";

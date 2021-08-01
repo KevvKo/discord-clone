@@ -1,4 +1,3 @@
-import './FormInput.css';
 import { Form } from 'react-bootstrap';
 
 function FormInput(props){
