@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 /* hook to handle forms, especially for sing up and login */
 const useForm = () => {
-
     const [ errors, setErrors ] = useState({});
 
     /**
@@ -26,13 +25,13 @@ const useForm = () => {
         else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = 'Your password must contain a number';
 
         setErrors(errorMessages);
-    }
+    };
 
     return {
         errors,
         setErrors,
         validateErrors
-    }
+    };
 };
 
 export default useForm;
