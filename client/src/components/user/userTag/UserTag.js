@@ -1,13 +1,14 @@
+import React from 'react';
 function UserTag() {
 
-    const userName = "unosxmopsus";
-    const userTag = "#3432";
+    const userName = 'unosxmopsus';
+    const userTag = '#3432';
 
     return (
-    <div className="user-tag flex-fill">
-        <div>{userName}</div>
-        <div>{userTag}</div>
-    </div>
+        <div className='user-tag flex-fill'>
+            <div>{userName}</div>
+            <div>{userTag}</div>
+        </div>
     );
 }
 

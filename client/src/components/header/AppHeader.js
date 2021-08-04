@@ -1,11 +1,12 @@
+import React from 'react';
 import './AppHeader.css';
 function AppHeader() {
 
-  return (
-    <header className="app-header">
-      Discord Clone
-    </header>
-  );
+    return (
+        <header className="app-header">
+          Discord Clone
+        </header>
+    );
 }
 
 export default AppHeader;

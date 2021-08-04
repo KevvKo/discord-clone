@@ -9,7 +9,7 @@ const useForm = () => {
      * @param {*} form 
      */
     const validateErrors = ( form ) => {
-        const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/;
+        const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
         const passwordNumberRegex = /\d/g;
         const { email, name, password } = form;
         const errorMessages = {};

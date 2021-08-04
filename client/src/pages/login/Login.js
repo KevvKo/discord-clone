@@ -1,3 +1,4 @@
+import React from 'react';
 import './Login.css';
 import { 
     Row, 
@@ -5,11 +6,11 @@ import {
     Form, 
     Button } from 'react-bootstrap';
 import  FormFeedback from '../../components/forms/formFeedback/FormFeedback';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import { 
     Link, 
     useHistory
-} from "react-router-dom";
+} from 'react-router-dom';
 import useAuth from '../../hooks/useAuthentification';
 import useForm from '../../hooks/useForm';
 
@@ -22,32 +23,32 @@ function Login(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        validateErrors(e.target)
+        validateErrors(e.target);
         login()
-        .then(() => { 
-            history.replace({
-                pathname: '/home'
+            .then(() => { 
+                history.replace({
+                    pathname: '/home'
+                });
             });
-        })
-    }
+    };
 
     return (
         <Row className='login flex-grow-1 justify-content-center align-items-center'>
             <Col className='p-5' sm={8} md={5}>
-                <h1 className="h1">{t('login.title')}</h1>
+                <h1 className='h1'>{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>
                 <Form noValidate onSubmit={ handleSubmit }>
                     <FormFeedback error={errors.email}>
                         <Form.Label>
                             {t('login.emailLabel')}                       
                         </Form.Label>
-                        <Form.Control isInvalid={ !!errors.email } onChange={ handleChange } name="email" type="text"></Form.Control>
+                        <Form.Control isInvalid={ !!errors.email } onChange={ handleChange } name='email' type='text'></Form.Control>
                     </FormFeedback>    
                     <FormFeedback error={errors.password}>
                         <Form.Label>
                             {t('login.passwordLabel')}
                         </Form.Label>
-                        <Form.Control  isInvalid={ !!errors.password } onChange={ handleChange } name="password" type="password"></Form.Control>
+                        <Form.Control  isInvalid={ !!errors.password } onChange={ handleChange } name='password' type='password'></Form.Control>
                     </FormFeedback>         
                     <Form.Text>
                         <Link to='/newPassword'>
@@ -63,7 +64,7 @@ function Login(){
                 </Form>
             </Col>
         </Row>
-    )
+    );
 }
 
-export default Login
+export default Login;

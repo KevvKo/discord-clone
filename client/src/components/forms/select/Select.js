@@ -1,15 +1,17 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import './Select.css';
 import { Form } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
 function Select(props){
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     let selectItems;
 
     if(props.data){
         selectItems = props.data.map((element) => 
             <option key={element} value={element} >{element}</option>
-        )
+        );
     }
 
     return(
@@ -17,7 +19,13 @@ function Select(props){
             <option key={-1} >{t('forms.select')}</option>
             {selectItems && selectItems}
         </Form.Control>
-    )
+    );
 }
+
+Select.propTypes = {
+    data: PropTypes.array,
+    onChange: PropTypes.function,
+    name: PropTypes.string
+};
 
 export default Select;

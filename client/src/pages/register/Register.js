@@ -1,3 +1,4 @@
+import React from 'react';
 import './Register.css';
 import { 
     Row, 
@@ -5,7 +6,7 @@ import {
     Form, 
     Button } from 'react-bootstrap';
 import Select from '../../components/forms/select/Select';
-import FormFeedback from '../../components/forms/formFeedback/FormFeedback'
+import FormFeedback from '../../components/forms/formFeedback/FormFeedback';
 import {useTranslation} from 'react-i18next';
 import {Link} from 'react-router-dom';
 import { range } from '../../services/utils';
@@ -18,13 +19,13 @@ import { useHistory } from 'react-router-dom';
  * @param {} props 
  * @returns 
  */
-function Register(props){
+function Register(){
 
-    const [t, i18n] = useTranslation('common');
+    const [t] = useTranslation('common');
     const { errors,  validateErrors } = useForm();
     const history = useHistory();
     const { handleChange, signup } = useAuth();
-    const days = Array.from({length:31}, (v, k) => k+1 )
+    const days = Array.from({length:31}, (v, k) => k+1 );
     const months = [
         'January',
         'February',
@@ -44,15 +45,15 @@ function Register(props){
     const years = range(year, 1900, -1);
 
     const handleSubmit = (e) => {
-        e.preventDefault()
-        validateErrors(e.target)
+        e.preventDefault();
+        validateErrors(e.target);
     
         signup()
-        .then(() => {
-            history.replace({
-                pathname: '/home'
+            .then(() => {
+                history.replace({
+                    pathname: '/home'
+                });
             });
-        })
     };
 
     return (
@@ -97,7 +98,7 @@ function Register(props){
                     <Form.Row>
                     </Form.Row>
                     <Form.Group controlId='formBasicCheckbox'>
-                            <Form.Check required type='checkbox' inline={true} label={t('register.explanation')}/>
+                        <Form.Check required type='checkbox' inline={true} label={t('register.explanation')}/>
                     </Form.Group>
                     <Button variant='primary' type="submit" block>
                         {t('register.submit')}
@@ -108,7 +109,7 @@ function Register(props){
                 </Form>
             </Col>
         </Row>
-    )
+    );
 }
 
-export default Register
+export default Register;

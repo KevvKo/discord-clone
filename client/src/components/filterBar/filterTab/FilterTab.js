@@ -1,5 +1,7 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import './FilterTab.css';
-import { Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 function FilterTab(props) {
         
     return (
@@ -11,5 +13,11 @@ function FilterTab(props) {
 
 FilterTab.defaultProps = {
     variant: 'flat'
-}
+};
+
+FilterTab.propTypes = {
+    variant: PropTypes.string,
+    text: PropTypes.string
+};
+
 export default FilterTab;
