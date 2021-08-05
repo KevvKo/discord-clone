@@ -3,6 +3,7 @@ import { useState } from 'react';
 /* hook to handle forms, especially for sing up and login */
 const useForm = () => {
     const [ errors, setErrors ] = useState({});
+    const [ checked, setChecked ] = useState(false);
 
     /**
      * 
@@ -11,7 +12,7 @@ const useForm = () => {
     const validateErrors = ( form ) => {
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
         const passwordNumberRegex = /\d/g;
-        const { email, name, password } = form;
+        const { email, name, password, terms } = form;
         const errorMessages = {};
 
         if( !email || email.value === '' ) errorMessages.email = 'This field is required.';
@@ -24,12 +25,20 @@ const useForm = () => {
         else if( password.value.length < 10 ) errorMessages.password = 'Your password name must be at least containing 10 characters';
         else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = 'Your password must contain a number';
 
+        if( !terms || !terms.checked ) errorMessages.terms = 'Please confirm our terms and conditions.';
         setErrors(errorMessages);
     };
 
+    const handleTerms = (e) => {
+        const checkbox = e.target;
+        console.log(errors);
+        if(checkbox.name === 'terms') setChecked( !checked );
+    };
     return {
         errors,
         setErrors,
+        checked,
+        handleTerms,
         validateErrors
     };
 };

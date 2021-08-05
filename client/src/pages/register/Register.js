@@ -22,7 +22,13 @@ import { useHistory } from 'react-router-dom';
 function Register(){
 
     const [t] = useTranslation('common');
-    const { errors,  validateErrors } = useForm();
+    const { 
+        errors,
+        validateErrors, 
+        handleTerms, 
+        checked
+    } = useForm();
+
     const history = useHistory();
     const { handleChange, signup } = useAuth();
     const days = Array.from({length:31}, (v, k) => k+1 );
@@ -48,12 +54,12 @@ function Register(){
         e.preventDefault();
         validateErrors(e.target);
     
-        signup()
-            .then(() => {
-                history.replace({
-                    pathname: '/home'
-                });
-            });
+        // signup()
+        //     .then(() => {
+        //         history.replace({
+        //             pathname: '/home'
+        //         });
+        //     });
     };
 
     return (
@@ -97,9 +103,9 @@ function Register(){
                     </Form.Group>
                     <Form.Row>
                     </Form.Row>
-                    <Form.Group controlId='formBasicCheckbox'>
-                        <Form.Check required type='checkbox' inline={true} label={t('register.explanation')}/>
-                    </Form.Group>
+                    <FormFeedback error={ errors.terms }>
+                        <Form.Check checked={ checked } isInvalid={ !!errors.terms } onChange={ handleTerms } type='checkbox' name="terms" inline={true} label={t('register.explanation')}/>
+                    </FormFeedback>
                     <Button variant='primary' type="submit" block>
                         {t('register.submit')}
                     </Button> 
