@@ -13,7 +13,7 @@ function FormFeedback(props){
     );
 }
 FormFeedback.propTypes = {
-    onChange: PropTypes.function,
+    onChange: PropTypes.func,
     children: PropTypes.node.isRequired,
     error: PropTypes.string,
 };

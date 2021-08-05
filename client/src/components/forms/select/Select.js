@@ -24,7 +24,7 @@ function Select(props){
 
 Select.propTypes = {
     data: PropTypes.array,
-    onChange: PropTypes.function,
+    onChange: PropTypes.func,
     name: PropTypes.string
 };
 
