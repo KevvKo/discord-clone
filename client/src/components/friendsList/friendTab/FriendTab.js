@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-type';
+import PropTypes from 'prop-types';
 import './FriendTab.css';
 import { useTranslation } from 'react-i18next';
 import IconButton from '../../buttons/iconButton/IconButton';
@@ -17,7 +17,6 @@ function FriendTab(props) {
             </span>
             { props.closeButton &&
               <IconButton icon='bi-x' size='lg'  tooltipText={t('friendsList.removeTooltip')}/>
-
             }
         </li>
     );

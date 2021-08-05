@@ -13,4 +13,4 @@ export const range = (start, stop, step = 1) => {
         { length: (stop - start) / step + 1}, 
         (_, i) => start + (i * step)
     );
-}
+};
