@@ -53,13 +53,12 @@ function Register(){
     const handleSubmit = (e) => {
         e.preventDefault();
         validateErrors(e.target);
-    
-        // signup()
-        //     .then(() => {
-        //         history.replace({
-        //             pathname: '/home'
-        //         });
-        //     });
+        signup()
+            .then(() => {
+                history.replace({
+                    pathname: '/home'
+                });
+            });
     };
 
     return (
@@ -103,9 +102,9 @@ function Register(){
                     </Form.Group>
                     <Form.Row>
                     </Form.Row>
-                    <FormFeedback error={ errors.terms }>
-                        <Form.Check checked={ checked } isInvalid={ !!errors.terms } onChange={ handleTerms } type='checkbox' name="terms" inline={true} label={t('register.explanation')}/>
-                    </FormFeedback>
+                    <Form.Group>
+                        <Form.Check feedback={errors.terms} checked={ checked } isInvalid={ !!errors.terms } onChange={ handleTerms } type='checkbox' name="terms" label={t('register.explanation')}/>
+                    </Form.Group>
                     <Button variant='primary' type="submit" block>
                         {t('register.submit')}
                     </Button> 
