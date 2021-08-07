@@ -16,20 +16,26 @@ import useForm from '../../hooks/useForm';
 
 function Login(){
 
-    let history = useHistory();
-    const { handleChange , login    } = useAuth();
+    const { handleChange , login } = useAuth();
     const [ t ] = useTranslation('common');
-    const { errors,  validateErrors } = useForm();
+    const { 
+        errors,  
+        validateErrors
+    } = useForm();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        validateErrors(e.target);
-        login()
-            .then(() => { 
-                history.replace({
-                    pathname: '/home'
+
+        const hasErrors = validateErrors(e.target);
+        if( !hasErrors ){
+            login()
+                .then(() => { 
+                    history.replace({
+                        pathname: '/home'
+                    });
                 });
-            });
+        }
+        
     };
 
     return (

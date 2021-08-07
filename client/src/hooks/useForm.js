@@ -4,7 +4,6 @@ import { useState } from 'react';
 const useForm = () => {
     const [ errors, setErrors ] = useState({});
     const [ checked, setChecked ] = useState(false);
-
     /**
      * 
      * @param {*} form 
@@ -14,24 +13,30 @@ const useForm = () => {
         const passwordNumberRegex = /\d/g;
         const { email, name, password, terms } = form;
         const errorMessages = {};
-
-        if( !email || email.value === '' ) errorMessages.email = 'This field is required.';
-        else if( !emailRegex.test(email.value) ) errorMessages.email = 'Please enter a valid email.';
+    
+        if(email){
+            if( email.value === '' ) errorMessages.email = 'This field is required.';
+            else if( !emailRegex.test(email.value) ) errorMessages.email = 'Please enter a valid email.';
+        }
         
-        if( !name || name.value === '' ) errorMessages.name = 'This field is required.';
-        else if( name.value.length < 5 ) errorMessages.name = 'Your username name must be at least containing 5 characters';
-
-        if( !password || password.value === '' ) errorMessages.password = 'This field is required.';
-        else if( password.value.length < 10 ) errorMessages.password = 'Your password name must be at least containing 10 characters';
-        else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = 'Your password must contain a number';
-
-        if( !terms || !terms.checked ) errorMessages.terms = 'Please confirm our terms and conditions.';
+        if(name){
+            if( name.value === '' ) errorMessages.name = 'This field is required.';
+            else if( name.value.length < 5 ) errorMessages.name = 'Your username name must be at least containing 5 characters';
+        }
+        if(password){
+            if( password.value === '' ) errorMessages.password = 'This field is required.';
+            else if( password.value.length < 10 ) errorMessages.password = 'Your password name must be at least containing 10 characters';
+            else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = 'Your password must contain a number';
+        }
+        if(terms){
+            if( !terms.checked ) errorMessages.terms = 'Please confirm our terms and conditions.';
+        }
         setErrors(errorMessages);
+        return Object.keys(errorMessages).length > 0;
     };
 
     const handleTerms = (e) => {
         const checkbox = e.target;
-        console.log(errors);
         if(checkbox.name === 'terms') setChecked( !checked );
     };
     return {

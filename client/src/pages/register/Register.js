@@ -52,13 +52,17 @@ function Register(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        validateErrors(e.target);
-        signup()
-            .then(() => {
-                history.replace({
-                    pathname: '/home'
+
+        const hasErrors = validateErrors(e.target);
+
+        if( !hasErrors ){
+            signup()
+                .then(() => {
+                    history.replace({
+                        pathname: '/home'
+                    });
                 });
-            });
+        }
     };
 
     return (
