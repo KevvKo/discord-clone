@@ -4,6 +4,12 @@ import { useState } from 'react';
 const useForm = () => {
     const [ errors, setErrors ] = useState({});
     const [ checked, setChecked ] = useState(false);
+    const [user, setUser] = useState({
+        name: '',
+        email: '',
+        password: '',
+    });
+
     /**
      * 
      * @param {*} form 
@@ -32,14 +38,25 @@ const useForm = () => {
             if( !terms.checked ) errorMessages.terms = 'Please confirm our terms and conditions.';
         }
         setErrors(errorMessages);
-        return Object.keys(errorMessages).length > 0;
+        return Object.keys(errorMessages).length === 0;
     };
 
     const handleTerms = (e) => {
         const checkbox = e.target;
         if(checkbox.name === 'terms') setChecked( !checked );
     };
+    const handleChange = (e) => {
+        const { target } = e;
+        const { name, value } = target;
+        setUser({
+            ...user,
+            [ name ]: value
+        });
+    };
+    
     return {
+        user,
+        setUser,
         errors,
         setErrors,
         checked,

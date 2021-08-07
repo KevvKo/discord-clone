@@ -16,18 +16,21 @@ import useForm from '../../hooks/useForm';
 
 function Login(){
 
-    const { handleChange , login } = useAuth();
+    const { login } = useAuth();
+    const history = useHistory();
     const [ t ] = useTranslation('common');
     const { 
         errors,  
-        validateErrors
+        validateErrors,
+        handleChange
     } = useForm();
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const hasErrors = validateErrors(e.target);
-        if( !hasErrors ){
+        const isValid = validateErrors(e.target);
+
+        if( isValid ){
             login()
                 .then(() => { 
                     history.replace({
@@ -54,7 +57,7 @@ function Login(){
                         <Form.Label>
                             {t('login.passwordLabel')}
                         </Form.Label>
-                        <Form.Control  isInvalid={ !!errors.password } onChange={ handleChange } name='password' type='password'></Form.Control>
+                        <Form.Control isInvalid={ !!errors.password } onChange={ handleChange } name='password' type='password'></Form.Control>
                     </FormFeedback>         
                     <Form.Text>
                         <Link to='/newPassword'>

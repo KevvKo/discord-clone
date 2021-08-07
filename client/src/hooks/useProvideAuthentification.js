@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/mutations';
 import { useMutation } from '@apollo/client'; 
+import useForm from '../hooks/useForm';
 
 function useProvideAuth() {
 
     const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        password: '',
-    });
-  
+
+    const {user} = useForm();
+
     const [login] = useMutation(LOGIN_MUTATION, {
         variables: {
             email: user.email,
@@ -18,7 +16,8 @@ function useProvideAuth() {
         },
         onCompleted: ({ login }) => {
             localStorage.setItem(AUTH_TOKEN, login.token);
-        }
+
+        },
     });
 
     const [signup] = useMutation(SIGNUP_MUTATION, {
@@ -31,20 +30,11 @@ function useProvideAuth() {
             localStorage.setItem(AUTH_TOKEN, signup.token);
         }
     });
-    const handleChange = (e) => {
-        const { target } = e;
-        const { name, value } = target;
-        setUser({
-            ...user,
-            [ name ]: value
-        });
-    };
+
 
     return {
-        user,
         login,
-        signup,
-        handleChange
+        signup,   
     };
 }
 
