@@ -41,8 +41,8 @@ IconButton.defaultProps = {
 IconButton.propTypes = {
     icon: PropTypes.string,
     iconSize: PropTypes.string,
-    hover: PropTypes.boolean,
-    background: PropTypes.boolean,
+    hover: PropTypes.bool,
+    background: PropTypes.bool,
     size: PropTypes.string,
     cssClasses: PropTypes.string,
     tooltipText: PropTypes.string,

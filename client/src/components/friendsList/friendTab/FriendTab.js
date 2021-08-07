@@ -28,7 +28,7 @@ FriendTab.defaultProps = {
 
 FriendTab.propTypes = {
     icon: PropTypes.string,
-    closeButton: PropTypes.boolean,
+    closeButton: PropTypes.bool,
     text: PropTypes.string
 };
 

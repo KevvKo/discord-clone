@@ -25,7 +25,7 @@ ChannelTab.defaultProps = {
 };
 
 ChannelTab.propTypes = {
-    defaultBehaviour: PropTypes.boolean,
+    defaultBehaviour: PropTypes.bool,
     icon: PropTypes.string
 };
 
