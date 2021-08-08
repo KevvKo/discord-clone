@@ -41,10 +41,19 @@ const useForm = () => {
         return Object.keys(errorMessages).length === 0;
     };
 
+    /**
+     * 
+     * @param {Event} e 
+     */
     const handleTerms = (e) => {
         const checkbox = e.target;
         if(checkbox.name === 'terms') setChecked( !checked );
     };
+
+    /**
+     * 
+     * @param {Event} e 
+     */
     const handleChange = (e) => {
         const { target } = e;
         const { name, value } = target;
@@ -60,6 +69,7 @@ const useForm = () => {
         errors,
         setErrors,
         checked,
+        handleChange,
         handleTerms,
         validateErrors
     };
