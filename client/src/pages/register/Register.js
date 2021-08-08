@@ -53,9 +53,9 @@ function Register(){
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const hasErrors = validateErrors(e.target);
+        const isValid = validateErrors(e.target);
 
-        if( !hasErrors ){
+        if( isValid ){
             signup()
                 .then(() => {
                     history.replace({

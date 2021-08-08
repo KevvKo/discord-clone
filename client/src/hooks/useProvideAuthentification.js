@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/mutations';
 import { useMutation } from '@apollo/client'; 
 import useForm from '../hooks/useForm';
