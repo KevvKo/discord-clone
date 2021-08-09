@@ -9,20 +9,23 @@ import  FormFeedback from '../../components/forms/formFeedback/FormFeedback';
 import { useTranslation } from 'react-i18next';
 import { 
     Link, 
-    useHistory
 } from 'react-router-dom';
 import useAuth from '../../hooks/useAuthentification';
 import useForm from '../../hooks/useForm';
+import { useHistory } from 'react-router-dom';
 
 function Login(){
 
-    const { login } = useAuth();
-    const history = useHistory();
     const [ t ] = useTranslation('common');
+    const history = useHistory();
+    const { 
+        login,
+        handleChange 
+    } = useAuth();
     const { 
         errors,  
-        validateErrors,
-        handleChange
+        setErrors,
+        validateErrors
     } = useForm();
 
     const handleSubmit = (e) => {
@@ -30,15 +33,20 @@ function Login(){
 
         const isValid = validateErrors(e.target);
 
-        if( isValid ){
+        if(isValid){
             login()
-                .then(() => { 
-                    history.replace({
-                        pathname: '/home'
+                .then(
+                    ({errors}) => { 
+                        errors ?
+                            setErrors({
+                                email: errors.message,
+                                password: errors.message
+                            }) :
+                            history.replace({
+                                pathname: '/home'
+                            });
                     });
-                });
         }
-        
     };
 
     return (

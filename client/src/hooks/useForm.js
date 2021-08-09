@@ -4,11 +4,6 @@ import { useState } from 'react';
 const useForm = () => {
     const [ errors, setErrors ] = useState({});
     const [ checked, setChecked ] = useState(false);
-    const [user, setUser] = useState({
-        name: '',
-        email: '',
-        password: '',
-    });
 
     /**
      * 
@@ -31,7 +26,7 @@ const useForm = () => {
         }
         if(password){
             if( password.value === '' ) errorMessages.password = 'This field is required.';
-            else if( password.value.length < 10 ) errorMessages.password = 'Your password name must be at least containing 10 characters';
+            else if( password.value.length < 9 ) errorMessages.password = 'Your password name must be at least containing 10 characters';
             else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = 'Your password must contain a number';
         }
         if(terms){
@@ -49,27 +44,11 @@ const useForm = () => {
         const checkbox = e.target;
         if(checkbox.name === 'terms') setChecked( !checked );
     };
-
-    /**
-     * 
-     * @param {Event} e 
-     */
-    const handleChange = (e) => {
-        const { target } = e;
-        const { name, value } = target;
-        setUser({
-            ...user,
-            [ name ]: value
-        });
-    };
     
     return {
-        user,
-        setUser,
         errors,
         setErrors,
         checked,
-        handleChange,
         handleTerms,
         validateErrors
     };

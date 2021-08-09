@@ -24,6 +24,7 @@ function Register(){
     const [t] = useTranslation('common');
     const { 
         errors,
+        setErrors,
         validateErrors, 
         handleTerms, 
         checked
@@ -57,10 +58,15 @@ function Register(){
 
         if( isValid ){
             signup()
-                .then(() => {
-                    history.replace({
-                        pathname: '/home'
-                    });
+                .then(({errors}) => { 
+                    errors ?
+                        setErrors({
+                            email: errors.message,
+                            password: errors.message
+                        }) :
+                        history.replace({
+                            pathname: '/home'
+                        });
                 });
         }
     };
