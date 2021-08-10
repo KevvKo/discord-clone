@@ -8,7 +8,7 @@
   background: var(--btn-primary-bg) !important;
   border: none !important;
 }
-.btn-primary:hover {
+.btn-primary:hover:not([disabled]) {
   background: var(--btn-primary-hover-bg) !important;
   border: none !important;
 }

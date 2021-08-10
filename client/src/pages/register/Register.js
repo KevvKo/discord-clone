@@ -4,7 +4,10 @@ import {
     Row, 
     Col, 
     Form, 
-    Button } from 'react-bootstrap';
+    Button,
+    OverlayTrigger,
+    Tooltip
+} from 'react-bootstrap';
 import Select from '../../components/forms/select/Select';
 import FormFeedback from '../../components/forms/formFeedback/FormFeedback';
 import {useTranslation} from 'react-i18next';
@@ -113,11 +116,37 @@ function Register(){
                     <Form.Row>
                     </Form.Row>
                     <Form.Group>
-                        <Form.Check feedback={errors.terms} checked={ checked } isInvalid={ !!errors.terms } onChange={ handleTerms } type='checkbox' name="terms" label={t('register.explanation')}/>
+                        <Form.Check 
+                            feedback={errors.terms} 
+                            checked={ checked } 
+                            isInvalid={ !!errors.terms } 
+                            onChange={ handleTerms } 
+                            type='checkbox' 
+                            name="terms" 
+                            label={t('register.explanation')}
+                        />
                     </Form.Group>
-                    <Button variant='primary' type="submit" block>
-                        {t('register.submit')}
-                    </Button> 
+
+                    { !checked    // if the terms are not checked, there will be a disabled button with a tooltip or the default button
+                        ?
+                        <OverlayTrigger
+                            placement={'top'}
+                            overlay={
+                                <Tooltip id={'termsTooltip'}>
+                                    You need to agree to our terms of service to continue
+                                </Tooltip>
+                            }
+                        >
+                            <Button variant='primary' type="submit" block disabled={ !checked }>
+                                {t('register.submit')}
+                            </Button> 
+                        </OverlayTrigger>
+                        :
+                        <Button variant='primary' type="submit" block disabled={ !checked }>
+                            {t('register.submit')}
+                        </Button> 
+                    }
+
                     <p className='mt-2 text-nowrap'>
                         <Link to='/login'>{t('register.accountAvailable')}</Link>
                     </p>
