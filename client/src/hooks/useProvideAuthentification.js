@@ -19,7 +19,6 @@ function useProvideAuth() {
         },
         onCompleted: ({ login }) => {
             localStorage.setItem(AUTH_TOKEN, login.token);
-            console.log(222);
         },
         onError: (error) => { //returns the error to handle this one in the belonging page and form
             return error.message;

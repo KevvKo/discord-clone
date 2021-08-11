@@ -4,6 +4,24 @@
         "subTitle": "So far everythig is calm...",
         "emptyListText": "If a friend starts an activity - for example plays something or just hanging around in the voice chat - you can see it here!"
     },
+    "error": {
+        "email": {
+            "required": "This field is required.",
+            "valideEmail": "Please enter a valid email."
+        },
+        "name": {
+            "required": "This field is required.",
+            "valideName": "Your username name must be at least containing 5 characters"
+        },
+        "password": {
+            "required": "This field is required.",
+            "validePasswordLength": "Your password name must be at least containing 10 characters",
+            "validePasswordNumber": "Your password name must be at least containing 10 characters"
+        },
+        "terms": {
+            "required": "Please confirm our terms and conditions."
+        }
+    },
     "forms": {
         "select": "select"
     },
@@ -27,7 +45,7 @@
         "register": "Register"
     },
     "register": {
-        "title":"Create an account",
+        "title": "Create an account",
         "email": "email",
         "username": "username",
         "password": "password",

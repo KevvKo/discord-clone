@@ -1,9 +1,12 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 
 /* hook to handle forms, especially for sing up and login */
 const useForm = () => {
     const [ errors, setErrors ] = useState({});
     const [ checked, setChecked ] = useState(false);
+    const [ t ] = useTranslation('common');
 
     /**
      * 
@@ -16,18 +19,18 @@ const useForm = () => {
         const errorMessages = {};
     
         if(email){
-            if( email.value === '' ) errorMessages.email = 'This field is required.';
-            else if( !emailRegex.test(email.value) ) errorMessages.email = 'Please enter a valid email.';
+            if( email.value === '' ) errorMessages.email = t('error.email.required');
+            else if( !emailRegex.test(email.value) ) errorMessages.email = t('error.email.valideEmail');
         }
         
         if(name){
-            if( name.value === '' ) errorMessages.name = 'This field is required.';
-            else if( name.value.length < 5 ) errorMessages.name = 'Your username name must be at least containing 5 characters';
+            if( name.value === '' ) errorMessages.name = t('error.name.required');
+            else if( name.value.length < 5 ) errorMessages.name = t('error.name.valideName');
         }
         if(password){
-            if( password.value === '' ) errorMessages.password = 'This field is required.';
-            else if( password.value.length < 9 ) errorMessages.password = 'Your password name must be at least containing 10 characters';
-            else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = 'Your password must contain a number';
+            if( password.value === '' ) errorMessages.password = t('error.password.required');
+            else if( password.value.length < 9 ) errorMessages.password = t('error.password.validePasswordLength');
+            else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = t('error.password.validePasswordNumber');
         }
         if(terms){
             if( !terms.checked ) errorMessages.terms = 'Please confirm our terms and conditions.';

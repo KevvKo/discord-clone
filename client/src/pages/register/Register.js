@@ -133,7 +133,7 @@ function Register(){
                             placement={'top'}
                             overlay={
                                 <Tooltip id={'termsTooltip'}>
-                                    You need to agree to our terms of service to continue
+                                    {t('error.terms.required')}
                                 </Tooltip>
                             }
                         >

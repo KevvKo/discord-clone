@@ -4,6 +4,24 @@
         "subTitle": "Bisher ist alles ruhig...",
         "emptyListText": "Wenn ein Freund eine Aktivität beginnt - zum Beispiel etwas spielt oder im Sprachchat abhängt - siehst du es hier!"
     },
+    "error": {
+        "email": {
+            "required": "Dieses Feld wird benötigt.",
+            "valideEmail": "Bitte geben Sie eine korrekte Email ein"
+        },
+        "name": {
+            "required": "Dieses Feld wird benötigt.",
+            "valideName": "Your username name must be at least containing 5 characters"
+        },
+        "password": {
+            "required": "Dieses Feld wird benötigt.",
+            "validePasswordLength": "Das Password muss mindestens 10 Zeichen enthalten",
+            "validePasswordNumber": "Das Password muss mindestens eine Nummer enthalten"
+        },
+        "terms": {
+            "required": "Bitte bestätigen Sie unsere Allgemeinen Nutzerbestimmungen"
+        }
+    },
     "forms": {
         "select": "Auswählen"
     },
@@ -28,6 +46,7 @@
         "register": "Registrieren"
     },
     "register": {
+        "tooltip": "Du musst unsere Allgemeinen Nutzerbestimmungen akzeptieren, um fortfahren zu können.",
         "title":"Account erstellen",
         "email": "Email",
         "username": "Benutzername",
