@@ -9,7 +9,14 @@ function useProvideAuth() {
     const [user, setUser] = useState({
         name: '',
         email: '',
-        password: '',
+        birthday: '',
+        password: ''
+    });
+
+    const [birthday, setBirthday] = useState({
+        day: '',
+        month: '',
+        year: ''
     });
 
     const [login] = useMutation(LOGIN_MUTATION, {
@@ -50,11 +57,30 @@ function useProvideAuth() {
         });
     };
 
+    const handleSelect = (e) => {
+
+        const { target } = e;
+        const { name, value } = target;
+
+        setBirthday({
+            ...birthday,
+            [name]: value
+        });
+
+        const { day, month, year} = birthday;
+
+        setUser({
+            ...user,
+            birthday: `${day}.${month}.${year}`
+        });
+    };
+
     return {
         user,
         login,
         signup,   
-        handleChange
+        handleChange,
+        handleSelect
     };
 }
 

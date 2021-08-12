@@ -32,9 +32,13 @@ function Register(){
         handleTerms, 
         checked
     } = useForm();
+    const { 
+        handleChange, 
+        handleSelect,
+        signup 
+    } = useAuth();
 
     const history = useHistory();
-    const { handleChange, signup } = useAuth();
     const days = Array.from({length:31}, (v, k) => k+1 );
     const months = [
         'January',
@@ -103,13 +107,13 @@ function Register(){
                         </Form.Label>
                         <Row>
                             <Col>
-                                <Select data={days} name={'day'} onChange={ handleChange }/>
+                                <Select data={days} name={'day'} onChange={ handleSelect }/>
                             </Col>
                             <Col>
-                                <Select data={months} name={'month'} onChange={ handleChange }/>
+                                <Select data={months} name={'month'} onChange={ handleSelect }/>
                             </Col>
                             <Col>
-                                <Select data={years} name='year' onChange={ handleChange }/>
+                                <Select data={years} name='year' onChange={ handleSelect }/>
                             </Col>
                         </Row>
                     </Form.Group>
