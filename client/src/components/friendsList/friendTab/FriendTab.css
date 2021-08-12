@@ -24,7 +24,3 @@
 .friend-tab a{
     color:  var(--friend-tab-color) !important;
 }
-/* .friend-tab a:hover{ 
-    color: var(--friend-tab-color-hover) !important;
-    text-decoration: none; 
-} */
