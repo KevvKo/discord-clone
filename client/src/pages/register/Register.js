@@ -1,22 +1,23 @@
 import React from 'react';
 import './Register.css';
+
+// Components
 import { 
     Row, 
     Col, 
-    Form, 
-    Button,
-    OverlayTrigger,
-    Tooltip
+    Form
 } from 'react-bootstrap';
 import Select from '../../components/forms/select/Select';
 import FormFeedback from '../../components/forms/formFeedback/FormFeedback';
-import {useTranslation} from 'react-i18next';
+import RegistrationSubmit from './RegistrationSubmit/RegistrationSubmit';
 import {Link} from 'react-router-dom';
+
+// hooks
 import { range } from '../../services/utils';
 import useAuth from '../../hooks/useAuthentification';
 import useForm from '../../hooks/useForm';
+import {useTranslation} from 'react-i18next';
 import { useHistory } from 'react-router-dom';
-
 /**
  * @todo implement birthday handlig for sing up process -> after the update for the database model
  * @param {} props 
@@ -130,27 +131,7 @@ function Register(){
                             label={t('register.explanation')}
                         />
                     </Form.Group>
-
-                    { !checked    // if the terms are not checked, there will be a disabled button with a tooltip or the default button
-                        ?
-                        <OverlayTrigger
-                            placement={'top'}
-                            overlay={
-                                <Tooltip id={'termsTooltip'}>
-                                    {t('error.terms.required')}
-                                </Tooltip>
-                            }
-                        >
-                            <Button variant='primary' type="submit" block disabled={ !checked }>
-                                {t('register.submit')}
-                            </Button> 
-                        </OverlayTrigger>
-                        :
-                        <Button variant='primary' type="submit" block disabled={ !checked }>
-                            {t('register.submit')}
-                        </Button> 
-                    }
-
+                    <RegistrationSubmit checked={ checked } />
                     <p className='mt-2 text-nowrap'>
                         <Link to='/login'>{t('register.accountAvailable')}</Link>
                     </p>
