@@ -7,13 +7,12 @@ import {
     Col, 
     Form
 } from 'react-bootstrap';
-import Select from '../../components/forms/select/Select';
 import FormFeedback from '../../components/forms/formFeedback/FormFeedback';
-import RegistrationSubmit from './RegistrationSubmit/RegistrationSubmit';
+import RegistrationSubmit from './components/RegistrationSubmit/RegistrationSubmit';
+import RegistrationDateSelection from './components/RegistrationDataSelection/RegistrationDateSelection';
 import {Link} from 'react-router-dom';
 
 // hooks
-import { range } from '../../services/utils';
 import useAuth from '../../hooks/useAuthentification';
 import useForm from '../../hooks/useForm';
 import {useTranslation} from 'react-i18next';
@@ -35,29 +34,10 @@ function Register(){
     } = useForm();
     const { 
         handleChange, 
-        handleSelect,
         signup 
     } = useAuth();
 
     const history = useHistory();
-    const days = Array.from({length:31}, (v, k) => k+1 );
-    const months = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'October',
-        'November',
-        'December'
-    ];
-
-    const year = new Date().getFullYear();
-    const years = range(year, 1900, -1);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -107,15 +87,7 @@ function Register(){
                             {t('register.birthday')}
                         </Form.Label>
                         <Row>
-                            <Col>
-                                <Select data={days} name={'day'} onChange={ handleSelect }/>
-                            </Col>
-                            <Col>
-                                <Select data={months} name={'month'} onChange={ handleSelect }/>
-                            </Col>
-                            <Col>
-                                <Select data={years} name='year' onChange={ handleSelect }/>
-                            </Col>
+                            <RegistrationDateSelection />
                         </Row>
                     </Form.Group>
                     <Form.Row>
