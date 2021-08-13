@@ -76,7 +76,7 @@ function Login(){
                         {t('login.submit')}
                     </Button> 
                     <p className='mt-2'>
-                        {t('login.registerQuestion')} <Link to='/register'>{t('login.register')}</Link>
+                        {t('login.registrationQuestion')} <Link to='/registration'>{t('login.registration')}</Link>
                     </p>
                 </Form>
             </Col>

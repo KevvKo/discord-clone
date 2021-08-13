@@ -42,10 +42,10 @@
         "passwordLabel": "Passwort",
         "newPassword": "Passwort vergessen?",
         "submit": "Anmelden",
-        "registerQuestion": "Brauchst du einen Account?",
-        "register": "Registrieren"
+        "registrationQuestion": "Brauchst du einen Account?",
+        "registration": "Registrieren"
     },
-    "register": {
+    "registration": {
         "tooltip": "Du musst unsere Allgemeinen Nutzerbestimmungen akzeptieren, um fortfahren zu können.",
         "title":"Account erstellen",
         "email": "Email",

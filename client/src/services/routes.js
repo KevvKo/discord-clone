@@ -1,7 +1,7 @@
 import Index from '../routes/index/Index';
 import Home from '../routes/home/Home';
 import Login from '../routes/login/Login';
-import Register from '../routes/register/Register';
+import Registration from '../routes/registration/Registration';
 
 const routes = [
     {
@@ -17,8 +17,8 @@ const routes = [
         component: Login,
     },
     {
-        path: '/register',
-        component: Register
+        path: '/registration',
+        component: Registration
     }
 ];
 

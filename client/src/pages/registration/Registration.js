@@ -1,5 +1,5 @@
 import React from 'react';
-import './Register.css';
+import './Registration.css';
 
 // Components
 import { 
@@ -22,7 +22,7 @@ import { useHistory } from 'react-router-dom';
  * @param {} props 
  * @returns 
  */
-function Register(){
+function Registration(){
 
     const [t] = useTranslation('common');
     const { 
@@ -60,31 +60,31 @@ function Register(){
     };
 
     return (
-        <Row className='register flex-grow-1 justify-content-center align-items-center'>
+        <Row className='registration flex-grow-1 justify-content-center align-items-center'>
             <Col className='p-4' sm={8} md={4}>
-                <h1>{t('register.title')}</h1>
+                <h1>{t('registration.title')}</h1>
                 <Form noValidate onSubmit={handleSubmit}>
                     <FormFeedback error={ errors.email }>
                         <Form.Label>
-                            {t('register.email')}                       
+                            {t('registration.email')}                       
                         </Form.Label>
                         <Form.Control isInvalid={ !!errors.email } onChange={ handleChange } name="email" type="email"></Form.Control>
                     </FormFeedback>    
                     <FormFeedback error={ errors.name }>
                         <Form.Label>
-                            {t('register.username')}                       
+                            {t('registration.username')}                       
                         </Form.Label>
                         <Form.Control isInvalid={ !!errors.name } onChange={ handleChange } name="name" type="text"></Form.Control>
                     </FormFeedback>    
                     <FormFeedback error={ errors.password }>
                         <Form.Label>
-                            {t('register.password')}                       
+                            {t('registration.password')}                       
                         </Form.Label>
                         <Form.Control isInvalid={ !!errors.password } onChange={ handleChange } name="password" type="password"></Form.Control>
                     </FormFeedback>    
                     <Form.Group>
                         <Form.Label>
-                            {t('register.birthday')}
+                            {t('registration.birthday')}
                         </Form.Label>
                         <Row>
                             <RegistrationDateSelection />
@@ -100,12 +100,12 @@ function Register(){
                             onChange={ handleTerms } 
                             type='checkbox' 
                             name="terms" 
-                            label={t('register.explanation')}
+                            label={t('registration.explanation')}
                         />
                     </Form.Group>
                     <RegistrationSubmit checked={ checked } />
                     <p className='mt-2 text-nowrap'>
-                        <Link to='/login'>{t('register.accountAvailable')}</Link>
+                        <Link to='/login'>{t('registration.accountAvailable')}</Link>
                     </p>
                 </Form>
             </Col>
@@ -113,4 +113,4 @@ function Register(){
     );
 }
 
-export default Register;
+export default Registration;

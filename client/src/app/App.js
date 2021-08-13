@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Index from '../pages/index/Index';
 import Home from '../pages/home/Home';
 import Login from '../pages/login/Login';
-import Register from '../pages/register/Register';
+import Registration from '../pages/registration/Registration';
 import PrivateRoute from '../routers/privateRoute';
 import ProvideAuth from '../providers/provideAuthentification';
 import {
@@ -27,8 +27,8 @@ function App() {
                         <Route path='/login'>
                             <Login />
                         </Route>
-                        <Route path='/register'>
-                            <Register />
+                        <Route path='/registration'>
+                            <Registration />
                         </Route>
                         <PrivateRoute path='/home'>
                             <Home />

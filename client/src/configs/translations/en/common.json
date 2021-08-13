@@ -41,10 +41,10 @@
         "passwordLabel": "Password",
         "newPassword": "Password forgotten?",
         "submit": "Sign in",
-        "registerQuestion": "Did you need an account?",
-        "register": "Register"
+        "registrationQuestion": "Did you need an account?",
+        "registration": "registration"
     },
-    "register": {
+    "registration": {
         "title": "Create an account",
         "email": "email",
         "username": "username",
