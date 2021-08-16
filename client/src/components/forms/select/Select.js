@@ -14,7 +14,7 @@ function Select(props){
     }
 
     return(
-        <Form.Control name={props.name} className='select' onChange={props.onChange} as='select' custom>
+        <Form.Control name={props.name} className='select' onChange={props.onChange} as='select' isInvalid={ !!props.errors} custom>
             <option key={-1} >{t('forms.select')}</option>
             {selectItems && selectItems}
         </Form.Control>
@@ -24,7 +24,8 @@ function Select(props){
 Select.propTypes = {
     data: PropTypes.array,
     onChange: PropTypes.func,
-    name: PropTypes.string
+    name: PropTypes.string,
+    errors: PropTypes.object
 };
 
 export default Select;

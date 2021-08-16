@@ -81,9 +81,7 @@ function RegistrationForm(){
                 <Form.Label>
                     {t('registration.birthday')}
                 </Form.Label>
-                <Row>
-                    <RegistrationDateSelection />
-                </Row>
+                <RegistrationDateSelection errors={ errors } />
             </Form.Group>
             <Form.Row>
             </Form.Row>

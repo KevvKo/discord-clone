@@ -15,7 +15,15 @@ const useForm = () => {
     const validateErrors = ( form ) => {
         const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/;
         const passwordNumberRegex = /\d/g;
-        const { email, name, password, terms } = form;
+        const { 
+            email, 
+            name, 
+            password, 
+            terms,
+            day,
+            month,
+            year
+        } = form;
         const errorMessages = {};
     
         if(email){
@@ -34,6 +42,15 @@ const useForm = () => {
         }
         if(terms){
             if( !terms.checked ) errorMessages.terms = 'Please confirm our terms and conditions.';
+        }
+        if(day){
+            if( day.value === 'select' ) errorMessages.day = t('error.select.date');
+        }
+        if(month){
+            if( month.value === 'select' ) errorMessages.month = t('error.select.date');
+        }
+        if(year){
+            if( year.value === 'select' ) errorMessages.year = t('error.select.date');
         }
         setErrors(errorMessages);
         return Object.keys(errorMessages).length === 0;

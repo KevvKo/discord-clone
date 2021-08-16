@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // Components
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Select from '../../../../components/forms/select/Select';
-
+import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
 // hooks and services
 import { range } from '../../../../services/utils';
 import useAuth from '../../../../hooks/useAuthentification';
@@ -34,21 +34,26 @@ function RegistrationDateSelection(props){
     
     return ( 
         <>
-            <Col>
-                <Select data={days} name={'day'} onChange={ handleSelect }/>
-            </Col>
-            <Col>
-                <Select data={months} name={'month'} onChange={ handleSelect }/>
-            </Col>
-            <Col>
-                <Select data={years} name='year' onChange={ handleSelect }/>
-            </Col>
+            <FormFeedback error={ props.errors.day }>
+                <Row>
+                    <Col>
+                        <Select data={days} name={'day'} onChange={ handleSelect } errors={ props.errors.day } />
+                    </Col>
+                    <Col>
+                        <Select data={months} name={'month'} onChange={ handleSelect } errors={ props.errors.month }/>
+                    </Col>
+                    <Col>
+                        <Select data={years} name='year' onChange={ handleSelect } errors={ props.errors.year }/>
+                    </Col>
+                </Row>
+            </FormFeedback>
         </>
     );
 }
 
-// RegistrationDataSelection.propTypes = {
-//     checked: PropTypes.bool
-// };
+RegistrationDateSelection.propTypes = {
+    name: PropTypes.string,
+    errors: PropTypes.object
+};
 
 export default RegistrationDateSelection;
