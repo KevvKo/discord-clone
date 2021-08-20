@@ -5,7 +5,7 @@ import './UserAvatar.css';
 function UserAvatar() {
 
     return (
-        <div className="user-avatar mr-1">
+        <div className="user-avatar mr-2">
             <i className="bi bi-person-circle"></i>
         </div>
     );

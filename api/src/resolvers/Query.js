@@ -1,5 +1,5 @@
 
-function authenticatedUser(parent, args, context){
+function user(parent, args, context){
     const { userId } = context
     return context.prisma.user.findUnique({
         where: { id: userId}
@@ -7,5 +7,5 @@ function authenticatedUser(parent, args, context){
 }
 
 module.exports =  {
-    authenticatedUser
+    user
 }
