@@ -1,5 +1,3 @@
-const { prisma } = require("@prisma/client");
-
 function messages(parent, args, context){
     return context.prisma.messages.findMany({ where: { written_by_id: parent.id }});
 }
