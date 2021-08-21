@@ -36,7 +36,8 @@ function useProvideAuth() {
         variables: {
             username: user.name,
             email: user.email,
-            password: user.password
+            password: user.password,
+            status: false
         },
         onCompleted: ({ signup }) => {
             localStorage.setItem(AUTH_TOKEN, signup.token);

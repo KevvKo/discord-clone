@@ -5,11 +5,13 @@ export const SIGNUP_MUTATION = gql`
     $email: String!
     $password: String!
     $username: String!
+    $status: Boolean!
   ) {
     signup(
       email: $email
       password: $password
       username: $username
+      status: $status
     ) {
       token
     }
