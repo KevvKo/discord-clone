@@ -29,7 +29,9 @@ function AppHeader() {
                 icon='bi-box-arrow-left' 
                 size='lg' 
                 callback={logout}
-                cssClasses='p-0 mr-3 ml-auto' />
+                cssClasses='p-0 mr-3 ml-auto' 
+                tooltipText={t( 'header.logout' )}
+                tooltipPlacement='bottom' />
         </header>
     );
 }

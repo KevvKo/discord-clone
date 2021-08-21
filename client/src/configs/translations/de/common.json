@@ -31,6 +31,9 @@
         "removeTooltip": "Entfernen"
 
     },
+    "header": {
+        "logout": "Abmelden"
+    },
     "index": {
         "title": "Discord Clone",
         "subtitle": "You are not logged in..."
