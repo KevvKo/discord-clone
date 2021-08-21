@@ -8,3 +8,8 @@
   font-weight: var(--font-weight-semi-bold);
   background: var(--midnight-blue-color);
 }
+
+.logoutButton{
+    display: inline-block;
+    margin-left: auton;
+}
