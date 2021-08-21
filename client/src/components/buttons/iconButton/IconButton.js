@@ -20,7 +20,11 @@ function IconButton(props) {
                 </Tooltip>
             }
         >
-            <Button className={`icon-button ${props.cssClasses} ${ buttonClassNames}`} variant='flat' size={props.size}>
+            <Button 
+                className={`icon-button ${props.cssClasses} ${ buttonClassNames}`} 
+                variant='flat' size={props.size} 
+                onClick={ props.callback }
+            >
                 <i className={iconClassNames}></i>
             </Button>
         </OverlayTrigger>
@@ -39,6 +43,7 @@ IconButton.defaultProps = {
 };
 
 IconButton.propTypes = {
+    callback: PropTypes.func,
     icon: PropTypes.string,
     iconSize: PropTypes.string,
     hover: PropTypes.bool,

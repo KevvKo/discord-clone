@@ -57,6 +57,10 @@ function useProvideAuth() {
         });
     };
 
+    /**
+     * 
+     * @param {Event} e 
+     */
     const handleSelect = (e) => {
 
         const { target } = e;

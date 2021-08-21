@@ -47,7 +47,7 @@ function RegistrationDateSelection(props){
 }
 
 RegistrationDateSelection.propTypes = {
-    errors: PropTypes.string
+    errors: PropTypes.object
 };
 
 export default RegistrationDateSelection;

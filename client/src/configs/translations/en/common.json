@@ -33,6 +33,9 @@
         "newMessageTooltip": "New direct message",
         "removeTooltip": "Close"
     },
+    "header": {
+        "logout": "logout"
+    },
     "index": {
         "title": "Discord Clone",
         "subtitle": "You are not logged in..."
