@@ -3,7 +3,6 @@ type Query{
 }
 
 type Mutation {
-  message ( text: String!): Message!
   signup ( email: String!, password: String!, username: String! ): AuthPayload
   login ( email: String!, password: String! ): AuthPayload
 }
@@ -17,15 +16,5 @@ type User {
   id: ID!
   username: String!
   email: String!
-  messages: [Message!]
-}
-
-type Message {
-  id: ID!
-  text: String!
-  writtenBy: User
-}
-
-type Subscription{
-  newMessage: Message 
+  online: Boolean!
 }

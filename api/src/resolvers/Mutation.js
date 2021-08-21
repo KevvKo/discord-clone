@@ -62,7 +62,7 @@ async function signup(parent, args, context, info) {
   }
   
   module.exports = {
-    message,
+    // message,
     signup,
     login
   }

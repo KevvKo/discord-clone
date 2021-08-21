@@ -13,31 +13,5 @@ model User{
   username          String?       @unique
   email             String?       @unique
   password          String 
-  Messages          Messages[]
+  status            Boolean
 }
-
-model Conversation{
-
-  id                Int           @default(autoincrement()) @id
-  creator_id        Int
-  created_at        DateTime      @default(now())
-  User              User?         @relation(fields: [creator_id], references: [id])
-}
-
-model Participiants {
-
-  conversation_id   Int
-  user_id           Int
-  User              User?         @relation(fields: [user_id], references: [id])
-  Conversation      Conversation? @relation(fields: [conversation_id], references: [id])
-}
-
-model Messages {
-
-  id                Int           @default(autoincrement()) @id
-  text              String
-  created_at        DateTime      @default(now())
-  written_by        User?         @relation(fields: [written_by_id], references: [id])
-  written_by_id     Int
-}
-

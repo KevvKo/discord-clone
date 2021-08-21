@@ -12,10 +12,10 @@ const User = require('./src/resolvers/User');
 const Message = require('./src/resolvers/Message');
 const resolvers = { 
   User,
-  Message,
+  // Message,
   Query,
   Mutation,
-  Subscription
+  // Subscription
 }
 
 const prisma = new PrismaClient()

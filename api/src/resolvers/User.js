@@ -3,5 +3,5 @@ function messages(parent, args, context){
 }
 
 module.exports =  {
-    messages
+    // messages
 }
