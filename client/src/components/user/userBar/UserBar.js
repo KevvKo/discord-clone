@@ -9,7 +9,7 @@ function UserBar() {
     const [t] = useTranslation('common');
     const classes = 'p-1 m-1';
     return (
-        <div className='py-1 px-2 user-bar d-flex align-items-center'>
+        <div className='px-2 user-bar d-flex align-items-center'>
             <UserAvatar />
             <UserTag />
             <div className='d-flex'>

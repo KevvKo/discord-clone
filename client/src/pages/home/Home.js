@@ -14,11 +14,11 @@ import SearchBar from '../../components/search/searchBar/SearchBar';
 function Home() {
 
     return (
-        <div className='Home'>
+        <div className='Home d-flex flex-column flex-grow-1'>
             <Row >
                 <AppHeader />
             </Row>
-            <Row className="flex-fill">
+            <Row className="flex-grow-1">
                 <ChannelList />
                 <div className="d-flex flex-column">
                     <SearchBar />
