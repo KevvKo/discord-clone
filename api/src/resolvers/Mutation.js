@@ -61,8 +61,19 @@ async function signup(parent, args, context, info) {
     }
   }
   
+  async function setUserStatus( parent, args, context, info){
+    
+    const { userId } = context;
+    const updatedUser = await context.prisma.user.update({
+      where: { id: userId },
+      data: { status: args.status } 
+    })
+
+    return updatedUser
+  }
+
   module.exports = {
-    // message,
+    setUserStatus,
     signup,
     login
   }

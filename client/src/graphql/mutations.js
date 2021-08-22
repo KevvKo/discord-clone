@@ -29,3 +29,13 @@ export const LOGIN_MUTATION = gql`
     }
   }
 `;
+
+export const SET_USER_STATUS = gql`
+  mutation SetUserStatus(
+    $status: Boolean!
+  ){
+    setUserStatus( status: $status){
+      user
+    }
+  }
+`;
