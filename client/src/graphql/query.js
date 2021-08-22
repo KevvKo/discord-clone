@@ -5,6 +5,7 @@ export const USERNAME_QUERY = gql`
         user {
             id
             username
+            status
         }
     }
 `;

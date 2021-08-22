@@ -1,3 +1,16 @@
 .user-avatar{
-    font-size: 27px;
+    --statusColor: var(--green-color-20);
+    --statusSize: 12px;
+
+    font-size: 1.688rem;
+}
+
+.user-avatar .active-user{
+    background: var(--statusColor);
+    width: var(--statusSize);
+    height: var(--statusSize);
+    border-radius: 50%;
+    position: relative;
+    top: 3px;
+    right: 9px;
 }
