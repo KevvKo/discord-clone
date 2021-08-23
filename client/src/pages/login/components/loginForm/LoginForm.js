@@ -1,18 +1,35 @@
 import React from 'react';
-import { 
-    Form, 
-    Button } from 'react-bootstrap';
+
+// Components
+import { Form, Button } from 'react-bootstrap';
 import  FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
+import { Link } from 'react-router-dom';
+
+// Hooks
 import { useTranslation } from 'react-i18next';
-import { 
-    Link, 
-} from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuthentification';
 import useForm from '../../../../hooks/useForm';
 import { useHistory } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+
+// mutations
+import { SET_USER_STATUS_MUTATION } from '../../../../graphql/mutations';
 
 function LoginForm(){
 
+    const [ setUserStatus ] = useMutation(SET_USER_STATUS_MUTATION, {
+        variables: {
+            status: true
+        },
+        onCompleted: () => {
+            history.replace({
+                pathname: '/home'
+            });
+        },
+        onError: (error) => {
+            console.log(error);
+        }
+    });
     const [ t ] = useTranslation('common');
     const history = useHistory();
     const { 
@@ -38,10 +55,9 @@ function LoginForm(){
                             setErrors({
                                 email: errors.message,
                                 password: errors.message
-                            }) :
-                            history.replace({
-                                pathname: '/home'
-                            });
+                            }) 
+                            :
+                            setUserStatus();
                     });
         }
     };

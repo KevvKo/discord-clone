@@ -30,12 +30,12 @@ export const LOGIN_MUTATION = gql`
   }
 `;
 
-export const SET_USER_STATUS = gql`
-  mutation SetUserStatus(
+export const SET_USER_STATUS_MUTATION = gql`
+  mutation SetUserStatusMutation(
     $status: Boolean!
-  ){
-    setUserStatus( status: $status){
-      user
+  ) {
+    setUserStatus(status: $status) {
+      status
     }
   }
 `;
