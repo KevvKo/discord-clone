@@ -1,6 +1,10 @@
-import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/mutations';
+// hooks
 import { useMutation } from '@apollo/client'; 
 import { useState } from 'react';
+
+// mutations
+import { SET_USER_STATUS_MUTATION } from '../graphql/mutations';
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/mutations';
 
 function useProvideAuth() {
 
@@ -19,12 +23,23 @@ function useProvideAuth() {
         year: ''
     });
 
+
+    const [ setUserStatus ] = useMutation(SET_USER_STATUS_MUTATION, {
+        variables: {
+            status: true
+        },
+        onError: (error) => {
+            return error.message;
+        }
+    });
+
     const [login] = useMutation(LOGIN_MUTATION, {
         variables: {
             email: user.email,
             password: user.password
         },
         onCompleted: ({ login }) => {
+            setUserStatus();
             localStorage.setItem(AUTH_TOKEN, login.token);
         },
         onError: (error) => { //returns the error to handle this one in the belonging page and form

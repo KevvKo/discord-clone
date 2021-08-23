@@ -1,18 +1,23 @@
 import React from 'react';
 import './UserAvatar.css';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { USERNAME_QUERY } from '../../../graphql/query';
 
 function UserAvatar() {
 
-    let isOnline; 
+    let [isOnline, setIsOnline] = useState( false ); 
+
     const { data } = useQuery( USERNAME_QUERY );
 
     useEffect( () =>  {
-        if( data ) isOnline = data.user.status; 
-    }, [ data, isOnline ]);
+        if(data) {
+            setIsOnline(data.user.status);
+        }
+    }, [data, isOnline]);
+    console.log(isOnline);
+
 
     return (
         <div className="user-avatar mr-2">

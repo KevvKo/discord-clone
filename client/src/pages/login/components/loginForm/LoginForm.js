@@ -57,7 +57,9 @@ function LoginForm(){
                                 password: errors.message
                             }) 
                             :
-                            setUserStatus();
+                            history.replace({
+                                pathname: '/home'
+                            });
                     });
         }
     };
