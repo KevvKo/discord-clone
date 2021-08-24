@@ -2,6 +2,7 @@
   --user-bar-bg: var(--midnight-blue-color);
   /* --user-bar-height: 44px; */
 
+  height: var(--bar-height);
   background: var(--user-bar-bg); /* height: var(--user-bar-height); */
   font-size: var(--font-size-xs);
 }

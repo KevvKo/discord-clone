@@ -2,6 +2,7 @@
   --header-font-color: var(--grey-color-70);
 
   width: 100%;
+  height: var(--header-height);
   padding: var(--spacer);
   color: var(--header-font-color);
   font-size: var(--font-size-sm);

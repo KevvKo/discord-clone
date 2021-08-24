@@ -1,6 +1,7 @@
 .search-bar {
   --friends-list-bg: var(--midnight-blue-color-20);
 
+  height: var(--bar-height);
   background: var(--friends-list-bg);
   border-bottom: 1px solid var(--border-color-layout);
 }

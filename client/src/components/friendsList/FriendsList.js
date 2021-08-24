@@ -8,7 +8,7 @@ function FriendsList() {
     const [t] = useTranslation('common');
 
     return (
-        <div className='friends-list flex-fill justify-content-start pl-2'>
+        <div className='friends-list pl-2'>
             <ul className="p-0">
                 <FriendTab 
                     icon='people-fill'

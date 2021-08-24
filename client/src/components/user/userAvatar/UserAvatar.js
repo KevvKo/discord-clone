@@ -16,8 +16,6 @@ function UserAvatar() {
             setIsOnline(data.user.status);
         }
     }, [data, isOnline]);
-    console.log(isOnline);
-
 
     return (
         <div className="user-avatar mr-2">

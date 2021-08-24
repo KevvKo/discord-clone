@@ -3,8 +3,8 @@
 
   color: var(--font-color-secondary);
   background: var(--friends-list-bg);
+  max-height: calc(100vh - var(--bar-height)*2 - var(--header-height));
   overflow-y: auto;
-  /* height: calc(100vh - 50.5px - 45px - 29px); */
 }
 
 .friends-list div:hover {
