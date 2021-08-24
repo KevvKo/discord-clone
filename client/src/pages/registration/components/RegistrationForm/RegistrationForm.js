@@ -1,10 +1,7 @@
 import React from 'react';
 
 // Components
-import { 
-    Row, 
-    Form
-} from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
 import RegistrationSubmit from '../RegistrationSubmit/RegistrationSubmit';
 import RegistrationDateSelection from '../RegistrationDataSelection/RegistrationDateSelection';
