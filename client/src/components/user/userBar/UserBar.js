@@ -4,6 +4,9 @@ import {useTranslation} from 'react-i18next';
 import IconButton from '../../buttons/iconButton/IconButton';
 import UserAvatar from '../userAvatar/UserAvatar';
 import UserTag from '../userTag/UserTag';
+import {
+    Link
+} from 'react-router-dom';
 function UserBar() {
 
     const [t] = useTranslation('common');
@@ -25,12 +28,14 @@ function UserBar() {
                     cssClasses={classes} 
                     background={false}  
                     tooltipText={t('userBar.audioTooltip')}/>
-                <IconButton 
-                    icon='bi-gear-fill'
-                    hover={true} 
-                    cssClasses={classes} 
-                    background={false}  
-                    tooltipText={t('userBar.settingsTooltip')}/>
+                <Link to='/settings'>
+                    <IconButton 
+                        icon='bi-gear-fill'
+                        hover={true} 
+                        cssClasses={classes} 
+                        background={false}  
+                        tooltipText={t('userBar.settingsTooltip')}/>
+                </Link>
             </div>
         </div>
     );
