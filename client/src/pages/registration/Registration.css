@@ -1,6 +1,8 @@
 .registration {
     --login-form-bg: var(--midnight-blue-color-20);
+
     background: var(--panel-bg);
+    padding-top: var(--page-padding-top);
   }
   
   .registration > div {

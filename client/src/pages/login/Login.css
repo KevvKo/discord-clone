@@ -1,6 +1,7 @@
 .login {
   --login-form-bg: var(--midnight-blue-color-20);
   --login-form-height: 500px;
+
   background: var(--panel-bg);
 }
 

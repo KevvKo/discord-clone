@@ -1,8 +1,11 @@
 import React from 'react';
 import './Index.css';
-import { Row } from 'react-bootstrap';
-import { useHistory, useLocation } from 'react-router-dom';
 
+// Components
+import { Row } from 'react-bootstrap';
+
+// Hooks
+import { useHistory, useLocation } from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 
 function Index(){

@@ -7,6 +7,9 @@
   color: var(--header-font-color);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semi-bold);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .logoutButton{

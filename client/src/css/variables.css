@@ -4,4 +4,5 @@
     --border-radius: 5px;
     --header-height: 20px;
     --bar-height: 50px;
+    --page-padding-top: var(--header-height);
 }

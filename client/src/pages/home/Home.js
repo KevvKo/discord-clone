@@ -1,7 +1,9 @@
 import React from 'react';
+import './Home.css';
+
+// Components
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
 import AppHeader from '../../components/header/AppHeader';
 import FilterBar from '../../components/filterBar/FilterBar';
 import AppMain from '../../components/main/AppMain';
