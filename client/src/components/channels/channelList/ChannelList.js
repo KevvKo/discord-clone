@@ -1,5 +1,4 @@
 import React from 'react';
-import './ChannelList.css';
 import ChannelTab from '../channelTab/ChannelTab';
 function ChannelList() {
 

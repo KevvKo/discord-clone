@@ -5,9 +5,8 @@
   height: var(--header-height);
   padding: var(--spacer);
   color: var(--header-font-color);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semi-bold);
-  background: var(--midnight-blue-color);
 }
 
 .logoutButton{

@@ -12,6 +12,10 @@ body{
   font-family: var(--font-family) !important;
   line-height: var(--line-height) !important;
 }
+
+#root{
+  background: var(--midnight-blue-color);
+}
 i::before{
   line-height: inherit !important;
 }
