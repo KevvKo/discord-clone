@@ -1,0 +1,26 @@
+.list-tab{
+    --list-tab-color:                 var(--font-color-secondary);
+    --list-tab-bg-hover:              var(--hover-bg);
+    --list-tab-color-hover:           var(--body-font-color);
+
+    color: ;
+    list-style-type: none;
+}
+
+.list-tab     .icon-button {
+    visibility: hidden;
+}
+
+.list-tab:hover{
+    cursor: pointer;
+    color: var(--list-tab-color-hover) !important;
+    background: var(--list-tab-bg-hover);
+}
+
+.list-tab:hover .icon-button {
+    visibility: visible;
+}
+
+.list-tab a{
+    color:  var(--list-tab-color) !important;
+}

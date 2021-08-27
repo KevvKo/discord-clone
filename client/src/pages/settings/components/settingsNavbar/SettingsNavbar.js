@@ -1,13 +1,16 @@
 import React from 'react';
 import './SettingsNavbar.css';
 
-// Hooks
+// Components
 
 import Col from 'react-bootstrap/Col';
+import ListTab from '../../../../components/listTab/ListTab';
 
 function SettingsNavbar(){
     return(
-        <Col className='settings-navbar' md={ 3 }></Col>
+        <Col className='settings-navbar' md={ 3 }>
+            
+        </Col>
     );
 }
 

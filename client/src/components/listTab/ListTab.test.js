@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import FriendsTab from './FriendTab';
+import ListTab from './ListTab';
 
 // test('renders learn react link', () => {
 //     render(<FriendsTab />);
