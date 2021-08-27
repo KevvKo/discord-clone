@@ -1,0 +1,5 @@
+.settings-navbar{
+    --settings-navbar-bg: var(--midnight-blue-color-20);
+
+    background: var(--settings-navbar-bg);
+}

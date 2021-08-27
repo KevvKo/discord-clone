@@ -1,0 +1,5 @@
+.settings-main{
+    --settings-main-bg: var(--midnight-blue-color-30);
+
+    background: var(--settings-main-bg);
+}
