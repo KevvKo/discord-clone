@@ -75,6 +75,11 @@
     "searchBar": {
         "searchButtonName": "Finde Freunde oder starte ein Gespräch"
     },
+    "settings": {
+        "navbar": {
+            "myAccount": "Mein Konto"
+        }
+    },
     "userBar":{
         "micTooltip": "mute",
         "audioTooltip": "deactivate input and output",

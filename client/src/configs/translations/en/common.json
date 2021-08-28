@@ -76,6 +76,11 @@
     "searchBar": {
         "searchFieldPlaceHolder": "Find friends or starting a chat"
     },
+    "settings": {
+        "navbar": {
+            "myAccount": "My Account"
+        }
+    },
     "userBar":{
         "micTooltip": "mute",
         "audioTooltip": "deactivate input and output",

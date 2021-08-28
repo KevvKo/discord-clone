@@ -1,5 +1,12 @@
 .settings-navbar{
     --settings-navbar-bg: var(--midnight-blue-color-20);
+    --settings-navbar-width: 150px;
 
     background: var(--settings-navbar-bg);
+}   
+
+.settings-navbar div:first-child{
+    margin-left: auto;
+    width: var(--settings-navbar-width);
+    min-width: var(--settings-navbar-width);
 }

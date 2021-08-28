@@ -1,7 +1,7 @@
 import React from 'react';
 import './FriendsList.css';
 import { useTranslation } from 'react-i18next';
-import ListTab from '../listTab/ListTab';
+import FriendTab from '../tabs/friendTab/FriendTab';
 import IconButton from '../buttons/iconButton/IconButton';
 function FriendsList() {
 
@@ -10,11 +10,11 @@ function FriendsList() {
     return (
         <div className='friends-list pl-2'>
             <ul className="p-0">
-                <ListTab 
+                <FriendTab 
                     icon='people-fill'
                     text='Friends'
                 />
-                <ListTab 
+                <FriendTab 
                     icon='joystick'
                     text='Nitro'
                 />
@@ -26,52 +26,52 @@ function FriendsList() {
                 <IconButton icon='bi-plus' size='lg' cssClasses='p-0 pr-1 mr-1' tooltipText={t('friendsList.newMessageTooltip')}/>
             </div>
             <ul className="p-0">
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Kevin'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Benny'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Marius'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Anna'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Basti'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Felix'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Simon'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Olivia'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Phili'
                     closeButton={true}
                 />
-                <ListTab 
+                <FriendTab 
                     icon='person-circle'
                     text='Josi'
                     closeButton={true}
