@@ -76,8 +76,14 @@
         "searchButtonName": "Finde Freunde oder starte ein Gespräch"
     },
     "settings": {
+
         "navbar": {
-            "myAccount": "Mein Konto"
+            "authorizedApps": "Authorisierte Apps",
+            "connections": "Verknüpfungen",
+            "myAccount": "Mein Konto",
+            "privacyAndSecurity": "Privatssphäre und Sicherheit",
+            "userProfile": "Nutzerprofil",
+            "userSettingsTitle": "Benutzereinstellungen"  
         }
     },
     "userBar":{

@@ -78,7 +78,12 @@
     },
     "settings": {
         "navbar": {
-            "myAccount": "My Account"
+            "authorizedApps": "Authorized Apps",
+            "connections": "Connections",
+            "myAccount": "My Account",
+            "privacyAndSecurity": "Privacy and Security",
+            "userProfile": "User Profile",
+            "userSettingsTitle": "User Settings"  
         }
     },
     "userBar":{

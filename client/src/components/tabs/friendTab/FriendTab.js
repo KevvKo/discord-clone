@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
+
 
 // Components
 import IconButton from '../../buttons/iconButton/IconButton';
 import ListTab from '../listTab/ListTab';
 // Hooks
+import { useTranslation } from 'react-i18next';
 
 function FriendTab(props) {
 
@@ -13,7 +14,7 @@ function FriendTab(props) {
     const iconClassNames = `bi bi-${props.icon} mr-2`;
 
     return (
-        <ListTab>
+        <ListTab className='friend-tab'>
             { props.icon &&
                 <i className={iconClassNames}></i>
             }
