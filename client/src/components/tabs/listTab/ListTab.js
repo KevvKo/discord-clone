@@ -4,15 +4,28 @@ import './ListTab.css';
 
 function ListTab(props) {
 
+    const callback = () => {
+        props.callback();
+    };
+
+    if(props.callback){
+        return(
+            <li className='list-tab d-flex align-items-center mt-1 mr-1 p-1' onClick={callback}>
+                { props.children }
+            </li>
+        );
+    }
+
     return (
-        <li className='list-tab d-flex align-items-center mt-1 mr-1 p-1'>
+        <li className='list-tab d-flex align-items-center mt-1 mr-1 p-1' >
             { props.children }
         </li>
     );
 }
 
 ListTab.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    callback: PropTypes.func
 
 };
 

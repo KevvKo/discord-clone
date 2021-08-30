@@ -26,3 +26,10 @@
 .settings-navbar-separator{
     border-bottom: 1px solid var(--settings-navbar-separator-color);
 }
+
+.settings-navbar-separator:last-child{
+    color: var(--danger-color);
+}
+.settings-navbar-separator:last-child li:hover{
+    color: var(--danger-color) !important;
+}
