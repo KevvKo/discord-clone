@@ -78,8 +78,11 @@
     },
     "settings": {
         "navbar": {
+            "activityStatus": "Activity Status",
+            "activitySettings": "Activity Settings",
             "authorizedApps": "Authorized Apps",
             "connections": "Connections",
+            "gameOverlay": "Game-Overlay",
             "myAccount": "My Account",
             "privacyAndSecurity": "Privacy and Security",
             "userProfile": "User Profile",

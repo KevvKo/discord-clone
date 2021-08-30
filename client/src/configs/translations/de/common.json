@@ -78,8 +78,11 @@
     "settings": {
 
         "navbar": {
+            "activityStatus": "Aktivitätsstatus",
+            "activitySettings": "Aktivitätseinstellungen",
             "authorizedApps": "Authorisierte Apps",
             "connections": "Verknüpfungen",
+            "gameOverlay": "Game-Overlay",
             "myAccount": "Mein Konto",
             "privacyAndSecurity": "Privatssphäre und Sicherheit",
             "userProfile": "Nutzerprofil",
