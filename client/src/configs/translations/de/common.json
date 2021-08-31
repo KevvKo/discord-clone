@@ -76,7 +76,9 @@
         "searchButtonName": "Finde Freunde oder starte ein Gespräch"
     },
     "settings": {
-
+        "main": {
+            "close": "Schließen"
+        },
         "navbar": {
             "activityStatus": "Aktivitätsstatus",
             "activitySettings": "Aktivitätseinstellungen",

@@ -6,7 +6,7 @@ function IconButton(props) {
 
     const iconClassNames = `bi ${props.icon}`;
     let buttonClassNames = '';
-    
+
     props.hover 
         ? buttonClassNames += 'icon-hover-bg'
         : buttonClassNames += 'icon-hover';
@@ -33,7 +33,6 @@ function IconButton(props) {
 
 IconButton.defaultProps = {
     icon: 'bi-person-fill',
-    iconSize: '',
     hover: false,
     background: true,
     size: 'md',
@@ -45,7 +44,6 @@ IconButton.defaultProps = {
 IconButton.propTypes = {
     callback: PropTypes.func,
     icon: PropTypes.string,
-    iconSize: PropTypes.string,
     hover: PropTypes.bool,
     background: PropTypes.bool,
     size: PropTypes.string,

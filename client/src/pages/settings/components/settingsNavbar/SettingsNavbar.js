@@ -26,7 +26,7 @@ function SettingsNavbar(){
         onCompleted: () => {
             localStorage.removeItem( AUTH_TOKEN );
             history.replace({
-                path: '/login'
+                pathname: '/login'
             });
         },
         onError: ( error ) => {
