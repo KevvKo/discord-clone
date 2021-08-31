@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ListTab.css';
 
+import { Link } from 'react-router-dom';
+
 function ListTab(props) {
 
     const callback = () => {
@@ -18,7 +20,9 @@ function ListTab(props) {
 
     return (
         <li className='list-tab d-flex align-items-center mt-1 mr-1 p-1' >
-            { props.children }
+            <Link to=''>
+                { props.children }
+            </Link>
         </li>
     );
 }
