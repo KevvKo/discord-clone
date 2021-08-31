@@ -1,8 +1,8 @@
 .settings-navbar{
     --settings-navbar-bg: var(--midnight-blue-color-20);
     --settings-navbar-width: 150px;
-    --settings-heading-color: var(--grey-color-10);
-    --settings-font-color: var(--grey-color-40) !important;
+    --settings-heading-color: var(--grey-color);
+    --settings-font-color: var(--grey-color-50) !important;
     --settings-navbar-separator-color: var(--midnight-blue-color-50);
     background: var(--settings-navbar-bg);
     color: var(--settings-font-color)
