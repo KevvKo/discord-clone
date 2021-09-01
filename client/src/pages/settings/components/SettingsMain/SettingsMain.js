@@ -23,16 +23,16 @@ function SettingsMain(){
     return (
         <Col className='settings-main' md={ 9 }>
             <Row>
-                <Col>
+                <Col md={ 9 } >
                     <Switch>
 
                     </Switch>
                 </Col>
-                <Col>
+                <Col md={ 3 }>
                     <div id="back-route">
                         <IconButton 
                             icon='bi-x'
-                            size='md'
+                            size='sm'
                             cssClasses='mt-5 closeButton'
                             tooltipText= {t('settings.main.close')}
                             callback={ routingToHome }

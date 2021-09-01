@@ -1,6 +1,7 @@
 .settings-main{
     --settings-main-bg: var(--midnight-blue-color-30);
     --close-button-border-color: var(--grey-color-30);
+    --close-button-hover-border-color: var(--grey-color-50);
     --back-route-color: var(--grey-color-10);
 
     background: var(--settings-main-bg);
@@ -16,7 +17,10 @@
 }
 
 .closeButton{
-
     border: 1px var(--close-button-border-color) solid !important;
     border-radius: 50% !important;
+}
+
+.closeButton:hover{
+    border-color: var(--close-button-hover-border-color) !important;
 }
