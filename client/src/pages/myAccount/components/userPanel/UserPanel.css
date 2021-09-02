@@ -1,0 +1,6 @@
+.user-panel{
+    --user-panel-bg: var(--midnight-blue-color);
+
+    background: var(--user-panel-bg);
+    border-radius: var(--panel-border-radius);
+}

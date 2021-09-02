@@ -48,6 +48,9 @@
         "registrationQuestion": "Brauchst du einen Account?",
         "registration": "Registrieren"
     },
+    "myAccount": {
+        "title": "Mein Konto"
+    },
     "registration": {
         "tooltip": "Du musst unsere Allgemeinen Nutzerbestimmungen akzeptieren, um fortfahren zu können.",
         "title":"Account erstellen",

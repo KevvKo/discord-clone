@@ -50,6 +50,9 @@
         "registrationQuestion": "Did you need an account?",
         "registration": "registration"
     },
+    "myAccount": {
+        "title": "My Account"
+    },
     "registration": {
         "title": "Create an account",
         "email": "email",
