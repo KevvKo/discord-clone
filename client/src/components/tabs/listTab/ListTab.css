@@ -4,6 +4,7 @@
     --list-tab-color-hover:           var(--body-font-color);
 
     list-style-type: none;
+    color:  var(--list-tab-color);
 }
 
 .list-tab .icon-button {
@@ -18,8 +19,4 @@
 
 .list-tab:hover .icon-button {
     visibility: visible;
-}
-
-.list-tab a{
-    color:  var(--list-tab-color) !important;
 }

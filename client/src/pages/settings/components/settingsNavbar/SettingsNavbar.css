@@ -19,6 +19,14 @@
     min-width: var(--settings-navbar-width);
 }
 
+.settings-navbar a{
+
+}
+
+.settings-navbar a:hover{
+    text-decoration: none;
+}
+
 .settings-navbar .list-tab{
     font-size: var(--font-size-sm) !important;
 }
@@ -27,8 +35,8 @@
     border-bottom: 1px solid var(--settings-navbar-separator-color);
 }
 
-.settings-navbar-separator:last-child{
-    color: var(--danger-color);
+.settings-navbar-separator:last-child li{
+    color: var(--danger-color) !important;
 }
 .settings-navbar-separator:last-child li:hover{
     color: var(--danger-color) !important;
