@@ -13,7 +13,7 @@ function MyAccount(){
 
     return(
         <div className='my-account mt-5 px-4'>
-            <h3>  {t('myAccount.title')} </h3>
+            <h3>{t('myAccount.title')}</h3>
             <UserPanel />
         </div>
     );

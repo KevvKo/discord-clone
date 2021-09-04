@@ -28,7 +28,7 @@ function UserBar() {
                     cssClasses={classes} 
                     background={false}  
                     tooltipText={t('userBar.audioTooltip')}/>
-                <Link to='/settings'>
+                <Link to='/settings/my-account'>
                     <IconButton 
                         icon='bi-gear-fill'
                         hover={true} 

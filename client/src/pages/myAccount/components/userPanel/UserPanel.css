@@ -1,6 +1,14 @@
 .user-panel{
     --user-panel-bg: var(--midnight-blue-color);
+    --user-panel-header-height: 60px;
+    --user-panel-header-bg: var(--grey-color-10);
 
     background: var(--user-panel-bg);
     border-radius: var(--panel-border-radius);
+}
+
+.user-panel div:first-child{
+    height: var(--user-panel-header-height);
+    background: var(--user-panel-header-bg);
+    border-radius: var(--panel-border-radius) var(--panel-border-radius) 0 0; 
 }
