@@ -15,7 +15,7 @@ function RegistrationSubmit(props){
 
     if(checked){
         return (
-            <Button variant='primary' type="submit" block>
+            <Button variant='secondary' type="submit" block>
                 {t('registration.submit')}
             </Button> 
         );
@@ -30,7 +30,7 @@ function RegistrationSubmit(props){
                 </Tooltip>
             }
         >
-            <Button variant='primary' type="submit" block disabled>
+            <Button variant='secondary' type="submit" block disabled>
                 {t('registration.submit')}
             </Button> 
         </OverlayTrigger>

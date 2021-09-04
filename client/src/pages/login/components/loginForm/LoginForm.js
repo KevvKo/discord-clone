@@ -66,7 +66,7 @@ function LoginForm(){
                     {t('login.newPassword')}
                 </Link>
             </Form.Text>
-            <Button variant='primary' type='submit' block>
+            <Button variant='secondary' type='submit' block>
                 {t('login.submit')}
             </Button> 
             <p className='mt-2'>

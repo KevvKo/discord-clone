@@ -1,7 +1,9 @@
 .btn {
-  --btn-primary-bg:       var(--midnight-blue-color-80);
-  --btn-primary-hover-bg: var(--midnight-blue-color-60);
-  --btn-success-bg:       var(--green-color-10);
+  --btn-primary-bg:           var(--access-color);
+  --btn-primary-hover-bg:     var(--midnight-blue-color-60);
+  --btn-secondary-bg:         var(--midnight-blue-color-80);
+  --btn-secondary-hover-bg:   var(--midnight-blue-color-60);
+  --btn-success-bg:           var(--green-color-10);
 }
 
 .btn-primary {
@@ -9,7 +11,15 @@
   border: none !important;
 }
 .btn-primary:hover:not([disabled]) {
-  background: var(--btn-primary-hover-bg) !important;
+  filter: brightness(90%);
+  border: none !important;
+}
+.btn-secondary {
+  background: var(--btn-secondary-bg) !important;
+  border: none !important;
+}
+.btn-secondary:hover:not([disabled]) {
+  background: var(--btn-secondary-hover-bg) !important;
   border: none !important;
 }
 .btn-success {

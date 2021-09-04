@@ -80,7 +80,10 @@
     },
     "settings": {
         "main": {
-            "close": "Schließen"
+            "close": "Schließen",
+            "myAccount": {
+                "editProfile": "Edit Profile"
+            }
         },
         "navbar": {
             "activityStatus": "Aktivitätsstatus",

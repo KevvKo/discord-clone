@@ -61,7 +61,11 @@
     calc(var(--midnight-blue-l) + 24%)
   );
 
-  --green-color: hsl(var(--green-h), var(--green-s), var(--green-l));
+  --green-color: hsl(
+    var(--green-h), 
+    var(--green-s), 
+    var(--green-l)
+  );
   --green-color-10: hsl(
     var(--green-h),
     var(--green-s),
@@ -117,9 +121,11 @@
   --success-color: #17d640;
   --warning-color: #e8ea54;
   --danger-color: #af0f0f;
+  --access-color: #9900e5;
 
   /* hover colors */
   --hover-bg: var(--midnight-blue-color-30);
+
   /* font colors */
   --body-font-color: var(--grey-color-70);
   --dark-font-color: var(--grey-color-80);

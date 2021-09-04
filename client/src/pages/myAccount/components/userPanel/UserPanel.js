@@ -3,6 +3,7 @@ import './UserPanel.css';
 
 // Components
 import UserDataSettings from '../userDataSettings/UserDataSettings';
+import { Button } from 'react-bootstrap';
 // Hooks
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -28,6 +29,7 @@ function UserPanel(){
             <div className="mb-2"></div>
             <div>
                 <b>{username}</b>#{userId}
+                <Button size={'sm'}>{t('settings.main.myAccount.editProfile')}</Button>
             </div>
             <UserDataSettings />
         </div>
