@@ -4,8 +4,9 @@ import './UserAvatar.css';
 import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { USERNAME_QUERY } from '../../../graphql/query';
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-function UserAvatar() {
+function UserAvatar(props) {
 
     let [isOnline, setIsOnline] = useState( false ); 
 
@@ -18,13 +19,23 @@ function UserAvatar() {
     }, [data, isOnline]);
 
     return (
-        <div className="user-avatar mr-2">
-            <i className="bi bi-person-circle"></i>
+        <div className={`user-avatar mr-2 ${ props.cssClasses }`}>
+            <i className='bi bi-person-circle' style={{fontSize: props.fontSize + 'rem'}}></i>
             { isOnline &&
                 <div className='active-user d-inline-block'></div>
             }
         </div>
     );
 }
+
+UserAvatar.defaultProps = {
+    cssClasses: '',
+    fontSize: '1.666rem'
+};
+
+UserAvatar.propTypes = {
+    cssClasses: propTypes.string,
+    fontSize: propTypes.string
+};
 
 export default UserAvatar;
