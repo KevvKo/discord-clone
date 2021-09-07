@@ -4,14 +4,26 @@
     --user-panel-header-bg: var(--grey-color-10);
 }
 
-.user-panel #user-panel-header{
+#user-panel-header{
     height: var(--user-panel-header-height);
+}
+
+#user-panel-header-left, #user-panel-header-right{
     background: var(--user-panel-header-bg);
-    border-radius: var(--panel-border-radius) var(--panel-border-radius) 0 0; 
+    width: 50%;
+}
+
+
+#user-panel-header-right{
+    border-radius: 0 var(--panel-border-radius) 0 0;
+}
+
+#user-panel-header-left{
+    border-radius: var(--panel-border-radius) 0 0 0;
 }
 
 .user-panel div.d-flex.p-3{
-    height: 70px;
+    height: 65px;
     background: var(--user-panel-bg);
     border-radius: 0 0 var(--panel-border-radius) var(--panel-border-radius);
 }

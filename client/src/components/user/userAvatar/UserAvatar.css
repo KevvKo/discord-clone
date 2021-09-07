@@ -11,6 +11,6 @@
     height: var(--statusSize);
     border-radius: 50%;
     position: relative;
-    top: 3px;
-    right: 9px;
+    top: 5%;
+    right: 20%;
 }

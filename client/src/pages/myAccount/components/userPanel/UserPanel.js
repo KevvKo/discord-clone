@@ -37,11 +37,16 @@ function UserPanel(){
 
     return(
         <div className='user-panel'>
-            <div id='user-panel-header'></div>
+            <div id="user-panel-header" className="d-flex">
+                <div id='user-panel-header-left'></div>
+                <div id='user-panel-header-right'></div>
+            </div>
             <div className='d-flex p-3'>
-                <UserAvatar fontSize='4' cssClasses='user-avatar-positioning d-inline-block' />
-                <b>{username}</b>#{userId}
-                <Button className='ml-auto' onClick={routing} size={'sm'}>{t('settings.main.myAccount.editProfile')}</Button>
+                <UserAvatar fontSize='4' cssClasses='user-avatar-positioning ml-2 d-inline-block' />
+                <span>
+                    <b>{username}</b>#{userId}
+                </span>
+                <Button className='ml-auto align-self-start' onClick={routing} size={'sm'}>{t('settings.main.myAccount.editProfile')}</Button>
             </div>
             <UserDataSettings />
         </div>
