@@ -82,6 +82,8 @@
         "main": {
             "close": "Schließen",
             "myAccount": {
+                "edit": "Bearbeiten",
+                "add": "Hinzufügen",
                 "editProfile": "Edit Profile"
             }
         },

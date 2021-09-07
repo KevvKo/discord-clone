@@ -2,6 +2,8 @@
     --user-panel-bg: var(--midnight-blue-color);
     --user-panel-header-height: 60px;
     --user-panel-header-bg: var(--grey-color-10);
+    background: var(--user-panel-bg);
+
 }
 
 #user-panel-header{
@@ -24,7 +26,6 @@
 
 .user-panel div.d-flex.p-3{
     height: 65px;
-    background: var(--user-panel-bg);
     border-radius: 0 0 var(--panel-border-radius) var(--panel-border-radius);
 }
 
