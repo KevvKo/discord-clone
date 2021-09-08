@@ -4,7 +4,7 @@ import './UserPanel.css';
 // Components
 import UserAvatar from '../../../../components/user/userAvatar/UserAvatar';
 import UserDataSettings from '../userDataSettings/UserDataSettings';
-import { Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 
 // Hooks
 import { useEffect, useState } from 'react';
@@ -36,7 +36,7 @@ function UserPanel(){
     };
 
     return(
-        <div className='user-panel'>
+        <Col className='user-panel px-0 mt-3'>
             <div id="user-panel-header" className="d-flex">
                 <div id='user-panel-header-left'></div>
                 <div id='user-panel-header-right'></div>
@@ -49,7 +49,7 @@ function UserPanel(){
                 <Button className='ml-auto align-self-start' onClick={routing} size={'sm'}>{t('settings.main.myAccount.editProfile')}</Button>
             </div>
             <UserDataSettings />
-        </div>
+        </Col>
     );
 }
 
