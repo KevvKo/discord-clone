@@ -83,8 +83,12 @@
             "close": "Schließen",
             "myAccount": {
                 "edit": "Bearbeiten",
+                "email": "Email",
                 "add": "Hinzufügen",
-                "editProfile": "Edit Profile"
+                "editProfile": "Edit Profile",
+                "username": "Benutzername",
+                "phoneNumber": "Telefonnummer"
+
             }
         },
         "navbar": {

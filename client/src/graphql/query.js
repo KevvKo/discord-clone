@@ -6,6 +6,7 @@ export const USERNAME_QUERY = gql`
             id
             username
             status
+            email
         }
     }
 `;

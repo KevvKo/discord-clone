@@ -84,8 +84,12 @@
             "close": "Close",
             "myAccount": {
                 "edit": "Edit",
+                "email": "Email",
                 "add": "Add",
-                "editProfile": "Edit Profile"
+                "editProfile": "Edit Profile",
+                "username": "Username",
+                "phoneNumber": "Phone Number"
+
             }
         },
         "navbar": {
