@@ -21,11 +21,14 @@ function UserPanel(){
     const [ t ] = useTranslation('common');
     const [username, setUsername ] = useState('');
     const [userId, setUserId] = useState('');
+    const [email, setEmail ] = useState('');
+
 
     useEffect(() => {
         if(data){
             setUsername(data.user.username);
             setUserId(data.user.id);
+            setEmail(data.user.email);
         }
     });
 
@@ -48,7 +51,7 @@ function UserPanel(){
                 </span>
                 <Button className='ml-auto align-self-start' onClick={routing} size={'sm'}>{t('settings.main.myAccount.editProfile')}</Button>
             </div>
-            <UserDataSettings />
+            <UserDataSettings username={ username } email={ email } />
         </Col>
     );
 }

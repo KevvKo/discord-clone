@@ -87,6 +87,8 @@
                 "email": "Email",
                 "add": "Add",
                 "editProfile": "Edit Profile",
+                "hide": "Hide",
+                "show": "Show",
                 "username": "Username",
                 "phoneNumber": "Phone Number"
 

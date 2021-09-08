@@ -14,3 +14,14 @@ export const range = (start, stop, step = 1) => {
         (_, i) => start + (i * step)
     );
 };
+
+/**
+ * 
+ * @param {String} email 
+ * @returns String
+ */
+
+export const obscureString = (email) => {
+    let [ name, domain] = email.split('@');
+    return `${new Array(name.length).join('*')}@${domain}`;
+};

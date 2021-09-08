@@ -32,7 +32,7 @@ function SettingsMain(){
     return (
         <Col className='settings-main' md={ 9 }>
             <Row>
-                <Col md={ 6 } >
+                <Col xl={ 9 } xxl={ 6 } >
                     <Switch>
                         <Route path={`${path}/authorized-apps`}>
                             <AuthorizedApps />
@@ -57,7 +57,7 @@ function SettingsMain(){
                         </Route>
                     </Switch>
                 </Col>
-                <Col md={ 6 }>
+                <Col xl={ 3 } xxl={ 6 }>
                     <div id="back-route">
                         <IconButton 
                             icon='bi-x'
