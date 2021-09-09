@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './UserDataSettings.css';
 // Components
 import { Button } from 'react-bootstrap';
 // Hooks 
@@ -36,7 +36,7 @@ function UserDataSettings(props){
     };
 
     return(
-        <div className='user-data-settings px-3 pb-3'>
+        <div className='user-data-settings mx-3 mb-3 p-3'>
             <div className='d-flex mb-4'>
                 <div>
                     <h6>{ t('settings.main.myAccount.username') }</h6>
@@ -55,7 +55,7 @@ function UserDataSettings(props){
             <div className='d-flex mb-4'>
                 <div>
                     <h6>{ t('settings.main.myAccount.phoneNumber') }</h6>
-                    <span></span>
+                    <span>{t('settings.main.myAccount.noPhoneNumber')}</span>
                 </div>
                 <Button className='ml-auto' variant='secondary'>{t('settings.main.myAccount.add')}</Button>
             </div>

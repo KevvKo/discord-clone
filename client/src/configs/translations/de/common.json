@@ -87,10 +87,10 @@
                 "add": "Hinzufügen",
                 "editProfile": "Edit Profile",
                 "hide": "Ausblenden",
+                "noPhoneNumber": "Du hast bisher keine Telefonnummer hinzugefügt",
                 "show": "Einblenden",
                 "username": "Benutzername",
                 "phoneNumber": "Telefonnummer"
-
             }
         },
         "navbar": {

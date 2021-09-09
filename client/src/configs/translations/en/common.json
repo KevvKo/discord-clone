@@ -88,11 +88,10 @@
                 "add": "Add",
                 "editProfile": "Edit Profile",
                 "hide": "Hide",
+                "noPhoneNumber": "You have no phone number added, yet.",
                 "show": "Show",
                 "username": "Username",
-                "phoneNumber": "Phone Number"
-
-            }
+                "phoneNumber": "Phone Number"            }
         },
         "navbar": {
             "activityStatus": "Activity Status",

@@ -1,0 +1,7 @@
+.user-data-settings{
+    --user-data-settings-bg: var(--midnight-blue-color-20);
+
+    background: var(--user-data-settings-bg);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+}
