@@ -2,8 +2,8 @@
     --user-panel-bg: var(--midnight-blue-color);
     --user-panel-header-height: 6rem;
     --user-panel-header-bg: var(--grey-color-10);
+    
     background: var(--user-panel-bg);
-
 }
 
 #user-panel-header{

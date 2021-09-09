@@ -48,9 +48,6 @@
         "registrationQuestion": "Brauchst du einen Account?",
         "registration": "Registrieren"
     },
-    "myAccount": {
-        "title": "Mein Konto"
-    },
     "registration": {
         "tooltip": "Du musst unsere Allgemeinen Nutzerbestimmungen akzeptieren, um fortfahren zu können.",
         "title":"Account erstellen",
@@ -87,7 +84,9 @@
                 "add": "Hinzufügen",
                 "editProfile": "Edit Profile",
                 "hide": "Ausblenden",
+                "myAccount": "Mein Konto",
                 "noPhoneNumber": "Du hast bisher keine Telefonnummer hinzugefügt",
+                "password": "Passwort und Authentifizierung",
                 "show": "Einblenden",
                 "username": "Benutzername",
                 "phoneNumber": "Telefonnummer"

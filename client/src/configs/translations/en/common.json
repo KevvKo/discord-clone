@@ -50,9 +50,6 @@
         "registrationQuestion": "Did you need an account?",
         "registration": "registration"
     },
-    "myAccount": {
-        "title": "My Account"
-    },
     "registration": {
         "title": "Create an account",
         "email": "email",
@@ -88,10 +85,13 @@
                 "add": "Add",
                 "editProfile": "Edit Profile",
                 "hide": "Hide",
+                "myAccount": "My Account",
                 "noPhoneNumber": "You have no phone number added, yet.",
+                "password": "Password and Authentication",
                 "show": "Show",
                 "username": "Username",
-                "phoneNumber": "Phone Number"            }
+                "phoneNumber": "Phone Number"            
+            }
         },
         "navbar": {
             "activityStatus": "Activity Status",
