@@ -80,14 +80,18 @@
         "main": {
             "close": "Close",
             "myAccount": {
+                "activateTwoFactor": "activate Two-Factor-Authentication",
+                "add": "Add",
+                "changePassword": "Change Password",
                 "edit": "Edit",
                 "email": "Email",
-                "add": "Add",
                 "editProfile": "Edit Profile",
                 "hide": "Hide",
                 "myAccount": "My Account",
                 "noPhoneNumber": "You have no phone number added, yet.",
                 "password": "Password and Authentication",
+                "twoFactorDescription": "Protect your Discord Account with an additional security layer. Once configured, you must be enter your password and your authentication code in your smartphone to login.",
+                "twoFactorTitle": "Two-Factor-Authentication",
                 "show": "Show",
                 "username": "Username",
                 "phoneNumber": "Phone Number"            

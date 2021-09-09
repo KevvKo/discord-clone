@@ -79,14 +79,18 @@
         "main": {
             "close": "Schließen",
             "myAccount": {
+                "activateTwoFactor": "Two-Faktor-Authentifizierung aktivieren",
+                "add": "Hinzufügen",
+                "changePassword": "Passwort ändern",
                 "edit": "Bearbeiten",
                 "email": "Email",
-                "add": "Hinzufügen",
                 "editProfile": "Edit Profile",
                 "hide": "Ausblenden",
                 "myAccount": "Mein Konto",
                 "noPhoneNumber": "Du hast bisher keine Telefonnummer hinzugefügt",
                 "password": "Passwort und Authentifizierung",
+                "twoFactorDescription": "Schütze deinen Discord-Account mit einer zusätzlichen Sicherheitsebene. Einmal konfiguriert, musst du dein Passwort und dein Authentifizierungscode von deinem Handy eingeben, um dich anzumelden.",
+                "twoFactorTitle": "Zwei-Faktor-Authentifizierung",
                 "show": "Einblenden",
                 "username": "Benutzername",
                 "phoneNumber": "Telefonnummer"
