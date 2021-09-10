@@ -42,7 +42,7 @@ function SettingsNavbar(){
     };
 
     return(
-        <Col className='settings-navbar' md={ 3 }>
+        <Col className='settings-navbar' md={ 4 }>
             <div className='mt-5'>
                 <div className='pb-3 settings-navbar-separator'>
                     <h6 className='ml-1'>

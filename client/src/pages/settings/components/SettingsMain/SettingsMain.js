@@ -30,9 +30,9 @@ function SettingsMain(){
     };
 
     return (
-        <Col className='settings-main' md={ 9 }>
+        <Col className='settings-main'>
             <Row className='flex-nowrap'>
-                <Col>
+                <Col className='d-flex'>
                     <Switch>
                         <Route path={`${path}/authorized-apps`}>
                             <AuthorizedApps />

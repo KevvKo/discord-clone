@@ -11,9 +11,6 @@
 
 #back-route{
     max-width: max-content;
-    position: fixed;
-    top: 0;
-    right: 240px;
 }
 
 #back-route p{

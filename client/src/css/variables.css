@@ -6,4 +6,5 @@
     --bar-height: 50px;
     --page-padding-top: var(--header-height);
     --panel-border-radius: 10px;
+    --settings-page-width: 700px;
 }

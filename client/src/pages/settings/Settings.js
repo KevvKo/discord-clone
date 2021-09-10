@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 function Settings(){
 
     return(
-        <Row className="settings flex-fill">
+        <Row className="settings flex-fill flex-nowrap">
             <SettingsNavbar />
             <SettingsMain />
         </Row>

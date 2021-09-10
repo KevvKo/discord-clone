@@ -1,6 +1,7 @@
 .my-account{
     --breakline-color: var(--midnight-blue-color-50);
-    width: 70%;
+    width: var(--settings-page-width);
+    min-width: var(--settings-page-width);
 }
 
 .my-account .breakline{
