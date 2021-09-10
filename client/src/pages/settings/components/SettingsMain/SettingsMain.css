@@ -5,10 +5,15 @@
     --back-route-color: var(--grey-color-10);
 
     background: var(--settings-main-bg);
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
 }
 
 #back-route{
     max-width: max-content;
+    position: fixed;
+    top: 0;
+    right: 240px;
 }
 
 #back-route p{

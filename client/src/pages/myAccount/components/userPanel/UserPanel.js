@@ -39,7 +39,7 @@ function UserPanel(){
     };
 
     return(
-        <Col className='user-panel px-0 mt-3 mb-4'>
+        <Col className='user-panel px-0 pb-2 mt-3 mb-4'>
             <div id="user-panel-header" className="d-flex">
                 <div id='user-panel-header-left'></div>
                 <div id='user-panel-header-right'></div>

@@ -14,7 +14,7 @@ function MyAccount(){
     const [ t ] = useTranslation('common');
 
     return(
-        <Row className='my-account flex-column mt-5 px-4'>
+        <div className='my-account flex-column mt-5 px-4 overflow-y-auto'>
             <h3>{t('settings.main.myAccount.myAccount')}</h3>
             <UserPanel />
             <div className='breakline mb-4'></div>
@@ -22,7 +22,7 @@ function MyAccount(){
             < PasswordAuthentication />
             <div className='breakline my-4'></div>
             <DeleteAccount />
-        </Row>
+        </div>
     );
 }
 

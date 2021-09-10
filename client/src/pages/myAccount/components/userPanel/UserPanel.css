@@ -4,6 +4,7 @@
     --user-panel-header-bg: var(--grey-color-10);
     
     background: var(--user-panel-bg);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 #user-panel-header{
