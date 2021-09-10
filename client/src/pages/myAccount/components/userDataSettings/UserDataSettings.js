@@ -2,6 +2,7 @@ import React from 'react';
 import './UserDataSettings.css';
 // Components
 import { Button } from 'react-bootstrap';
+import EditUserName from '../editUserName/EditUserName';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
@@ -13,8 +14,15 @@ function UserDataSettings(props){
     const userEmail = props.email;
     const [ t ] = useTranslation('common');
     const [ email, setEmail ] = useState('');
+    const [ showEditUserName, setShowEditUserName ] = useState(false);
     const [stringKey, setStringKey] = useState('settings.main.myAccount.show');
 
+    const toggleEditUserName = () => {
+        showEditUserName 
+            ? setShowEditUserName(false)
+            : setShowEditUserName(true);
+    };
+    
     useEffect(() => {
         if(props.email && email === '') {
             setEmail( obscureString( props.email ) );
@@ -43,6 +51,7 @@ function UserDataSettings(props){
                     <span>{props.username}</span>
                 </div>
                 <Button className='ml-auto' variant='secondary'>{t('settings.main.myAccount.edit')}</Button>
+                <EditUserName show={ showEditUserName }/>
             </div>
             <div className='d-flex mb-4'>
                 <div>
