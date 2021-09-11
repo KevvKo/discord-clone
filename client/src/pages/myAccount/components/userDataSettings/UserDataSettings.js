@@ -14,14 +14,7 @@ function UserDataSettings(props){
     const userEmail = props.email;
     const [ t ] = useTranslation('common');
     const [ email, setEmail ] = useState('');
-    const [ showEditUserName, setShowEditUserName ] = useState(false);
     const [stringKey, setStringKey] = useState('settings.main.myAccount.show');
-
-    const toggleEditUserName = () => {
-        showEditUserName 
-            ? setShowEditUserName(false)
-            : setShowEditUserName(true);
-    };
     
     useEffect(() => {
         if(props.email && email === '') {
@@ -46,12 +39,7 @@ function UserDataSettings(props){
     return(
         <div className='user-data-settings mx-3 mb-3 p-3'>
             <div className='d-flex mb-4'>
-                <div>
-                    <h6>{ t('settings.main.myAccount.username') }</h6>
-                    <span>{props.username}</span>
-                </div>
-                <Button className='ml-auto' variant='secondary'>{t('settings.main.myAccount.edit')}</Button>
-                <EditUserName show={ showEditUserName }/>
+                <EditUserName id={ props.id } username={ props.username }/>
             </div>
             <div className='d-flex mb-4'>
                 <div>
@@ -73,6 +61,7 @@ function UserDataSettings(props){
 }
 
 UserDataSettings.propTypes = {
+    id: PropTypes.string,
     username: PropTypes.string,
     email: PropTypes.string
 };

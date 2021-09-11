@@ -1,0 +1,15 @@
+.modal-content{
+    background: var(--midnight-blue-color-50) !important;
+}
+
+.modal-content .modal-header{
+    border-bottom: none;
+}
+
+.modal-header .close{
+    text-shadow: none;
+}
+
+.modal-content .modal-footer{
+    border-top: none;
+}

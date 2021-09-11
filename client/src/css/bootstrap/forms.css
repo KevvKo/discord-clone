@@ -11,3 +11,9 @@
     color: var(--font-color-label) !important; 
     text-transform: uppercase;
 }
+
+.input-group-text{
+    background: var(--midnight-blue-color-30) !important;
+    border-color: var(--border-color-forms) !important;
+    color: var(--font-color-secondary) !important;
+}

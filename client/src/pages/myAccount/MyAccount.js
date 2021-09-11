@@ -3,7 +3,6 @@ import './MyAccount.css';
 
 // Components
 import UserPanel from './components/userPanel/UserPanel';
-import { Row } from 'react-bootstrap';
 import PasswordAuthentication from './components/passwordAuthentication/PasswordAuthentication';
 import DeleteAccount from './components/deleteAccount/DeleteAccount';
 // Hooks

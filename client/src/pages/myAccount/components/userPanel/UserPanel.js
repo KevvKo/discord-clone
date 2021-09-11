@@ -51,7 +51,7 @@ function UserPanel(){
                 </span>
                 <Button className='ml-auto align-self-start' onClick={routing} size={'sm'}>{t('settings.main.myAccount.editProfile')}</Button>
             </div>
-            <UserDataSettings username={ username } email={ email } />
+            <UserDataSettings id={ userId } username={ username } email={ email } />
         </Col>
     );
 }
