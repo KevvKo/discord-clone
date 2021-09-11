@@ -7,7 +7,7 @@ import { Button,InputGroup, Form, Modal } from 'react-bootstrap';
 // Hooks 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-function AddPhoneNumber(props){
+function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);

@@ -3,6 +3,7 @@ import './DeleteAccount.css';
 
 // Components
 import { Button } from 'react-bootstrap';
+
 // Hooks
 import { useTranslation } from 'react-i18next';
 

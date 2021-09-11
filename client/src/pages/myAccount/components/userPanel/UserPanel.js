@@ -4,7 +4,7 @@ import './UserPanel.css';
 // Components
 import UserAvatar from '../../../../components/user/userAvatar/UserAvatar';
 import UserDataSettings from '../userDataSettings/UserDataSettings';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Col, Button } from 'react-bootstrap';
 
 // Hooks
 import { useEffect, useState } from 'react';
@@ -16,7 +16,7 @@ import { USERNAME_QUERY } from '../../../../graphql/query';
 function UserPanel(){
 
     const history = useHistory();
-    const { path, url } = useRouteMatch();
+    const { path } = useRouteMatch();
     const { data } = useQuery( USERNAME_QUERY );
     const [ t ] = useTranslation('common');
     const [username, setUsername ] = useState('');
