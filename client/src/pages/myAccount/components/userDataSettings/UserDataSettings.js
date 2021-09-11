@@ -4,6 +4,7 @@ import './UserDataSettings.css';
 import { Button } from 'react-bootstrap';
 import EditUserName from '../editUserName/EditUserName';
 import EditEmail from '../editEmail/EditEmail';
+import AddPhoneNumber from '../addPhoneNumber/AddPhoneNumber';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 // Utils
@@ -22,11 +23,7 @@ function UserDataSettings(props){
                 <EditEmail email={props.email}/>
             </div>
             <div className='d-flex mb-4'>
-                <div>
-                    <h6>{ t('settings.main.myAccount.phoneNumber') }</h6>
-                    <span>{t('settings.main.myAccount.noPhoneNumber')}</span>
-                </div>
-                <Button className='ml-auto' variant='secondary'>{t('settings.main.myAccount.add')}</Button>
+                <AddPhoneNumber />            
             </div>
         </div>
     );
