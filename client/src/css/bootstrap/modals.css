@@ -13,3 +13,11 @@
 .modal-content .modal-footer{
     border-top: none;
 }
+
+.modal-content p{
+    color: var(--font-color-secondary);
+}
+
+.modal-content .btn-link{
+    color: var(--body-font-color) !important;
+}

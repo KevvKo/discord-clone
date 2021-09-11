@@ -26,13 +26,13 @@ function EditUserName(props){
             </div>
             <Button className='ml-auto' variant='secondary' onClick={handleShow}>{t('settings.main.myAccount.edit')}</Button>
             <Modal centered show={ show } onHide={handleShow} >
-                <Modal.Header closeButton>
+                <Modal.Header className='pb-0' closeButton>
                     <Modal.Title className='ml-auto'>
                         {t('settings.main.myAccount.changeUsername')}
 
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className='pt-0'>
                     <p className='text-center'>
                         {t('settings.main.myAccount.editUserDescription')}
                     </p>
