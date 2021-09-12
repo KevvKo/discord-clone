@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const { APP_SECRET } = process.env;
 
-async function newConversation(parent, args, contect, info){
+async function newConversation( parent, args, contect, info ){
   const { userId } = context;
 
   const newMessage = await context.prisma.Conversation.create({
@@ -34,7 +34,7 @@ async function message(parent, args, context, info) {
   return newMessage;
 }
 
-async function signup(parent, args, context, info) {
+async function signup( parent, args, context, info ) {
     const saltRounds =  5;
     const password = await bcrypt.hash(args.password, saltRounds);
     const user = await context.prisma.user.create({ data: { ...args, password } });
@@ -45,7 +45,7 @@ async function signup(parent, args, context, info) {
     }
   }
   
-  async function login(parent, args, context, info) {
+  async function login( parent, args, context, info ) {
 
     const user = await context.prisma.user.findUnique({ where: { email: args.email } });
     if (!user) throw new Error('No such user found');
@@ -61,7 +61,7 @@ async function signup(parent, args, context, info) {
     }
   }
   
-  async function setUserStatus( parent, args, context, info){
+  async function setUserStatus( parent, args, context, info ){
     
     const { userId } = context;
     const updatedUser = await context.prisma.user.update({
@@ -72,7 +72,19 @@ async function signup(parent, args, context, info) {
     return updatedUser
   }
 
+  async function changeUsername( parent, args, context, info ){
+   
+    const { userId } = context;
+    const user = await context.findUnique({ where: { id: userId}});
+
+    const valid = await bcrypt.compare( args.password, user.password );
+    if(!valid) throw new Error('Invalid password');
+
+    
+  }
+
   module.exports = {
+    changeUserName,
     setUserStatus,
     signup,
     login

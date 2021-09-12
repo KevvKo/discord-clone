@@ -3,6 +3,7 @@ type Query{
 }
 
 type Mutation {
+  changeUsername( newUsername: String!, password: String! ): User!
   setUserStatus ( status: Boolean! ): User!
   signup ( email: String!, password: String!, username: String!, status: Boolean! ): AuthPayload
   login ( email: String!, password: String! ): AuthPayload
