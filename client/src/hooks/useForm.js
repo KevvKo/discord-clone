@@ -37,7 +37,10 @@ const useForm = () => {
         }
         if(password){
             if( password.value === '' ) errorMessages.password = t('error.password.required');
-            else if( password.value.length < 9 ) errorMessages.password = t('error.password.validePasswordLength');
+            else if( password.value.length < 9 ){
+                console.log(errorMessages);
+                errorMessages.password = t('error.password.validePasswordLength');
+            } 
             else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = t('error.password.validePasswordNumber');
         }
         if(terms){
@@ -52,6 +55,7 @@ const useForm = () => {
         if(year){
             if( year.value === 'select' ) errorMessages.year = t('error.select.date');
         }
+
         setErrors(errorMessages);
         return Object.keys(errorMessages).length === 0;
     };

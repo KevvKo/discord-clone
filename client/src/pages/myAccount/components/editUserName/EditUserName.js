@@ -4,17 +4,36 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // Components
 import { Button, Form, InputGroup, Modal } from 'react-bootstrap';
+import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
 // Hooks 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
+import useForm from '../../../../hooks/useForm';
+
 // Utilite
 import { CHANGE_USERNAME } from '../../../../graphql/mutations';
 function EditUserName(props){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);
-    const [ changeUsername ] = useMutation(CHANGE_USERNAME);
+    const { 
+        errors,  
+        setErrors,
+        validateErrors
+    } = useForm();
+
+    const [ changeUsername ] = useMutation(CHANGE_USERNAME, {
+        onError: (error) => {
+            if(error){ 
+                setErrors({
+                    username: error.message,
+                    password: error.message
+                });
+            }
+            return;
+        }            
+    });
 
     const handleShow = () => {
         show
@@ -25,14 +44,17 @@ function EditUserName(props){
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
+        const isValid = validateErrors(e.target);
         const { username, password } = form;
+        if(isValid){
+            changeUsername({
+                variables: {
+                    newUsername: username.value,
+                    password: password.value
+                }
+            });
+        }
 
-        changeUsername({
-            variables: { 
-                newUsername: username.value,
-                password: password.value
-            }
-        });
     };
     
     return(
@@ -62,8 +84,10 @@ function EditUserName(props){
                             </InputGroup.Text>
                         </InputGroup>
                         <Form.Group>
-                            <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
-                            <Form.Control name='password'></Form.Control>
+                            <FormFeedback error={ errors.password }>
+                                <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
+                                <Form.Control isInvalid={ !!errors.password } name='password' type='password'></Form.Control>
+                            </FormFeedback>
                         </Form.Group>
                         <Form.Group className='ml-auto'>
                             <Button  variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>

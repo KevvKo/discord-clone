@@ -16,7 +16,7 @@
         "password": {
             "required": "This field is required.",
             "validePasswordLength": "Your password name must be at least containing 10 characters",
-            "validePasswordNumber": "Your password name must be at least containing 10 characters"
+            "validePasswordNumber": "Your password name must be at least containing 1 number"
         }, 
         "select": {
             "date": "Please select a valid date"
