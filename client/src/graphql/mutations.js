@@ -39,3 +39,15 @@ export const SET_USER_STATUS_MUTATION = gql`
     }
   }
 `;
+
+export const CHANGE_USERNAME = gql`
+  mutation ChangeUsername(
+    $newUsername: String!
+    $password: String!
+  ) {
+    changeUsername(
+      newUserame: $username
+      password: $password
+      )
+  }
+`;

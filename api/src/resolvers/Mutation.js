@@ -75,16 +75,21 @@ async function signup( parent, args, context, info ) {
   async function changeUsername( parent, args, context, info ){
    
     const { userId } = context;
-    const user = await context.findUnique({ where: { id: userId}});
+    const user = await context.prisma.user.findUnique({ where: { id: userId}});
 
     const valid = await bcrypt.compare( args.password, user.password );
     if(!valid) throw new Error('Invalid password');
 
-    
+    const updatedUser = await context.prisma.user.update({ 
+      where: { id: userId},
+      data: { username: args.newUsername}
+    })
+
+    return updatedUser;
   }
 
   module.exports = {
-    changeUserName,
+    changeUsername,
     setUserStatus,
     signup,
     login

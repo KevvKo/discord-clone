@@ -7,9 +7,10 @@ import { Button, Form, Modal } from 'react-bootstrap';
 // Hooks 
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useMutation } from '@apollo/client';
 // Utilites
 import { obscureString } from '../../../../services/utils';
-
+import { CHANGE_USERNAME } from '../../../../graphql/mutations';
 function EditEmail(props){
 
     const [ t ] = useTranslation('common');
@@ -17,6 +18,7 @@ function EditEmail(props){
     const [stringKey, setStringKey] = useState('settings.main.myAccount.show');
     const [ email, setEmail ] = useState('');
     const userEmail = props.email;
+
 
     useEffect(() => {
         if(props.email && email === '') {
@@ -44,6 +46,13 @@ function EditEmail(props){
         setEmail( obscureString(userEmail) );   
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+
+
+    };
+
     return(
         <>
             <div>
@@ -62,21 +71,19 @@ function EditEmail(props){
                     <p className='text-center'>
                         {t('settings.main.myAccount.editEmailDescription')}
                     </p>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Group>                        
                             <Form.Label>{t('settings.main.myAccount.email')}</Form.Label>
-                            <Form.Control className='py-3'></Form.Control>
+                            <Form.Control name='email' className='py-3'></Form.Control>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
-                            <Form.Control></Form.Control>
+                            <Form.Control name='password'></Form.Control>
                         </Form.Group>
+                        <Button variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
+                        <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
-                    <Button variant='primary'>{ t('settings.main.myAccount.ready') }</Button>
-                </Modal.Footer>
             </Modal>
         </>
     );

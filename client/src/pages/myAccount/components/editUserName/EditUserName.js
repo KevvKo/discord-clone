@@ -7,15 +7,32 @@ import { Button, Form, InputGroup, Modal } from 'react-bootstrap';
 // Hooks 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useMutation } from '@apollo/client';
+// Utilite
+import { CHANGE_USERNAME } from '../../../../graphql/mutations';
 function EditUserName(props){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);
-    
+    const [ changeUsername ] = useMutation(CHANGE_USERNAME);
+
     const handleShow = () => {
         show
             ? setShow(false)
             : setShow(true);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const { username, password } = form;
+
+        changeUsername({
+            variables: { 
+                newUsername: username.value,
+                password: password.value
+            }
+        });
     };
     
     return(
@@ -36,24 +53,24 @@ function EditUserName(props){
                     <p className='text-center'>
                         {t('settings.main.myAccount.editUserDescription')}
                     </p>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <Form.Label>{t('settings.main.myAccount.username')}</Form.Label>
                         <InputGroup size='md'>
-                            <Form.Control className='py-3'></Form.Control>
+                            <Form.Control name='username' className='py-3'></Form.Control>
                             <InputGroup.Text className='py-1'>
                                 {`#${props.id}`}
                             </InputGroup.Text>
                         </InputGroup>
                         <Form.Group>
                             <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
-                            <Form.Control id="inlineFormInputGroup" ></Form.Control>
+                            <Form.Control name='password'></Form.Control>
+                        </Form.Group>
+                        <Form.Group className='ml-auto'>
+                            <Button  variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
+                            <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
                         </Form.Group>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
-                    <Button variant='primary'>{ t('settings.main.myAccount.ready') }</Button>
-                </Modal.Footer>
             </Modal>
         </>
     );

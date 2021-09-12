@@ -3,7 +3,7 @@ import React from 'react';
 // Utilities
 import PropTypes from 'prop-types';
 // Components
-import { Button, Form, InputGroup, Modal } from 'react-bootstrap';
+import { Button, Form, Modal } from 'react-bootstrap';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 function EditPassword(props){
