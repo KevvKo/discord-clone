@@ -4,7 +4,7 @@ import './MyAccount.css';
 // Components
 import UserPanel from './components/userPanel/UserPanel';
 import PasswordAuthentication from './components/passwordAuthentication/PasswordAuthentication';
-import DeleteAccount from './components/deleteAccount/DeleteAccount';
+import DeleteAndDeactivate from './components/deleteAndDeactivate/DeleteAndDeactivate';
 // Hooks
 import { useTranslation } from 'react-i18next';
 
@@ -20,7 +20,7 @@ function MyAccount(){
             <h3>{t('settings.main.myAccount.passwordAndAuthentication')}</h3>
             < PasswordAuthentication />
             <div className='breakline my-4'></div>
-            <DeleteAccount />
+            <DeleteAndDeactivate />
         </div>
     );
 }

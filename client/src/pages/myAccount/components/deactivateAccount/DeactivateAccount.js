@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { Button, Modal } from 'react-bootstrap';
 // Hooks 
 import { useTranslation } from 'react-i18next';
-function DeleteAccount(props){
+function DeactivateAccount(props){
 
     const [ t ] = useTranslation('common');
 
@@ -14,11 +14,11 @@ function DeleteAccount(props){
         <Modal centered show={ props.show } onHide={ props.callback } >
             <Modal.Header className='pb-0' closeButton>
                 <Modal.Title className='ml-auto'>
-                    {t('settings.main.myAccount.deleteAccount')}
+                    {t('settings.main.myAccount.deactivateAccount')}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className='pt-0'>
-                <p>{t('settings.main.myAccount.deleteAccountDescription')}</p>
+                <p>{t('settings.main.myAccount.deactivateAccountDescription')}</p>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant='link' onClick={props.callback}>{ t('settings.main.myAccount.cancel') }</Button>
@@ -28,12 +28,12 @@ function DeleteAccount(props){
     );
 }
 
-DeleteAccount.defaultProps = {
+DeactivateAccount.defaultProps = {
     show: false
 };
 
-DeleteAccount.propTypes = {
+DeactivateAccount.propTypes = {
     callback: PropTypes.func,
     show: PropTypes.bool
 };
-export default DeleteAccount;
+export default DeactivateAccount;

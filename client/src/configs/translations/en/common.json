@@ -82,6 +82,7 @@
             "myAccount": {
                 "activateTwoFactor": "activate Two-Factor-Authentication",
                 "add": "Add",
+                "continue": "Continue",
                 "cancel": "Cancel",
                 "changeEmail": "Enter your email",
                 "changePassword": "Change Password",
@@ -91,6 +92,7 @@
                 "deactivateAccount": "Deactivate Account",
                 "deactivateAccountDescription": "If you deactivate your account, you can restore it at any time",
                 "deleteAccount": "Delete Account",
+                "deleteAccountDescription": "If you want to delete your account, all your settings and chats are lost.",
                 "edit": "Edit",
                 "editEmailDescription": "Enter a new email and your existing password.",
                 "editPhoneDescriptionI": "You will be receiving a SMS with a verification code.",
