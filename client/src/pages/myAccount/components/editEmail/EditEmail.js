@@ -4,13 +4,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // Components
 import { Button, Form, Modal } from 'react-bootstrap';
+import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
 // Hooks 
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
+import useForm from '../../../../hooks/useForm';
+
 // Utilites
 import { obscureString } from '../../../../services/utils';
-import { CHANGE_USERNAME } from '../../../../graphql/mutations';
+import { CHANGE_EMAIL } from '../../../../graphql/mutations';
 function EditEmail(props){
 
     const [ t ] = useTranslation('common');
@@ -18,7 +21,23 @@ function EditEmail(props){
     const [stringKey, setStringKey] = useState('settings.main.myAccount.show');
     const [ email, setEmail ] = useState('');
     const userEmail = props.email;
+    const { 
+        errors,  
+        setErrors,
+        validateErrors
+    } = useForm();
 
+    const [ changeEmail ] = useMutation(CHANGE_EMAIL, {
+        onError: (error) => {
+            if(error){ 
+                setErrors({
+                    username: error.message,
+                    password: error.message
+                });
+            }
+            return;
+        }            
+    });
 
     useEffect(() => {
         if(props.email && email === '') {
@@ -46,11 +65,20 @@ function EditEmail(props){
         setEmail( obscureString(userEmail) );   
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
+    const handleSubmit = (e) => {
 
-
+        e.preventDefault();
+        const form = e.target;
+        const isValid = validateErrors(e.target);
+        const { email, password } = form;
+        if(isValid){
+            changeEmail({
+                variables: {
+                    newEmail: email.value,
+                    password: password.value
+                }
+            });
+        }
     };
 
     return(
@@ -72,13 +100,17 @@ function EditEmail(props){
                         {t('settings.main.myAccount.editEmailDescription')}
                     </p>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Group>                        
-                            <Form.Label>{t('settings.main.myAccount.email')}</Form.Label>
-                            <Form.Control name='email' className='py-3'></Form.Control>
+                        <Form.Group>         
+                            <FormFeedback error={ errors.email }>   
+                                <Form.Label>{t('settings.main.myAccount.email')}</Form.Label>
+                                <Form.Control name='email' isInvalid={ !!errors.email } type='email' className='py-3'></Form.Control>
+                            </FormFeedback>
                         </Form.Group>
                         <Form.Group>
-                            <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
-                            <Form.Control name='password'></Form.Control>
+                            <FormFeedback error={ errors.password } >
+                                <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
+                                <Form.Control name='password' isInvalid={ !!errors.password } type='password'></Form.Control>
+                            </FormFeedback>
                         </Form.Group>
                         <Button variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
                         <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>

@@ -88,7 +88,25 @@ async function signup( parent, args, context, info ) {
     return updatedUser;
   }
 
+  async function changeEmail( parent, args, context, info ){
+   
+    const { userId } = context;
+    const user = await context.prisma.user.findUnique({ where: { id: userId}});
+
+    const valid = await bcrypt.compare( args.password, user.password );
+    if(!valid) throw new Error('Invalid password');
+
+    const updatedUser = await context.prisma.user.update({ 
+      where: { id: userId},
+      data: { email: args.newEmail}
+    })
+
+    return updatedUser;
+  }
+
+
   module.exports = {
+    changeEmail,
     changeUsername,
     setUserStatus,
     signup,

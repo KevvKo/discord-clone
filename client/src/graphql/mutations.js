@@ -53,3 +53,17 @@ export const CHANGE_USERNAME = gql`
       }
   }
 `;
+
+export const CHANGE_EMAIL = gql`
+  mutation ChangeEmailMutation(
+    $newEmail: String!
+    $password: String!
+  ) {
+    changeEmail(
+      newEmail: $newEmail
+      password: $password
+      ){
+        email
+      }
+  }
+`;
