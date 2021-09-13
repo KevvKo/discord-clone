@@ -24,6 +24,9 @@ function EditUserName(props){
     } = useForm();
 
     const [ changeUsername ] = useMutation(CHANGE_USERNAME, {
+        onCompleted: () => {
+            setShow(false);
+        }, 
         onError: (error) => {
             if(error){ 
                 setErrors({
@@ -40,8 +43,8 @@ function EditUserName(props){
             ? setShow(false)
             : setShow(true);
     };
-
     const handleSubmit = (e) => {
+
         e.preventDefault();
         const form = e.target;
         const isValid = validateErrors(e.target);

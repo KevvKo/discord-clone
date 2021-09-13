@@ -28,6 +28,9 @@ function EditEmail(props){
     } = useForm();
 
     const [ changeEmail ] = useMutation(CHANGE_EMAIL, {
+        onCompleted: () => {
+            setShow(false);
+        }, 
         onError: (error) => {
             if(error){ 
                 setErrors({
