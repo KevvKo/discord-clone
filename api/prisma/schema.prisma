@@ -13,4 +13,5 @@ model user {
   email             String?       @unique
   password          String?
   status            Boolean
+  active            Boolean
 }
