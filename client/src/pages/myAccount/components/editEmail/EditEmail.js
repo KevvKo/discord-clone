@@ -29,7 +29,7 @@ function EditEmail(props){
 
     const [ changeEmail ] = useMutation(CHANGE_EMAIL, {
         onCompleted: () => {
-            setShow(false);
+            window.location.reload();
         }, 
         onError: (error) => {
             if(error){ 
@@ -115,8 +115,10 @@ function EditEmail(props){
                                 <Form.Control name='password' isInvalid={ !!errors.password } type='password'></Form.Control>
                             </FormFeedback>
                         </Form.Group>
-                        <Button variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
-                        <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
+                        <Form.Group className='d-flex justify-contend-end'>
+                            <Button variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
+                            <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
+                        </Form.Group>
                     </Form>
                 </Modal.Body>
             </Modal>

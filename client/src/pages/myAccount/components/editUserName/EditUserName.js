@@ -25,7 +25,7 @@ function EditUserName(props){
 
     const [ changeUsername ] = useMutation(CHANGE_USERNAME, {
         onCompleted: () => {
-            setShow(false);
+            window.location.reload();
         }, 
         onError: (error) => {
             if(error){ 
@@ -57,7 +57,6 @@ function EditUserName(props){
                 }
             });
         }
-
     };
     
     return(
@@ -92,7 +91,7 @@ function EditUserName(props){
                                 <Form.Control isInvalid={ !!errors.password } name='password' type='password'></Form.Control>
                             </FormFeedback>
                         </Form.Group>
-                        <Form.Group className='ml-auto'>
+                        <Form.Group className='d-flex justify-content-end'>
                             <Button  variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
                             <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
                         </Form.Group>

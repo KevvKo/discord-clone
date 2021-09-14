@@ -19,21 +19,6 @@ async function newConversation( parent, args, contect, info ){
   return newchat;
 }
 
-
-async function message(parent, args, context, info) {
-  const { userId } = context;
-
-  const newMessage = await context.prisma.messages.create({
-    data: {
-      written_by: { connect: { id: userId }},
-      written_in:  2,   
-      text: args.text
-    }
-  })
-  context.pubsub.publish("NEW_MESSAGE", newMessage)
-  return newMessage;
-}
-
 async function signup( parent, args, context, info ) {
     const saltRounds =  5;
     const password = await bcrypt.hash(args.password, saltRounds);
@@ -72,6 +57,25 @@ async function signup( parent, args, context, info ) {
     return updatedUser
   }
 
+  async function changePassword( parent, args, context, info ){
+
+    const saltRounds =  5;
+    const { userId } = context;
+    const user = await context.prisma.user.findUnique({ where: { id: userId}});
+
+    const valid = await bcrypt.compare( args.password, user.password );
+    if(!valid) throw new Error('Invalid password');
+
+    const password = await bcrypt.hash(args.newPassword, saltRounds);
+
+    const updatedUser = await context.prisma.user.update({ 
+      where: { id: userId},
+      data: { password: password }
+    })
+
+    return updatedUser;
+  }
+
   async function changeUsername( parent, args, context, info ){
    
     const { userId } = context;
@@ -106,6 +110,7 @@ async function signup( parent, args, context, info ) {
 
 
   module.exports = {
+    changePassword,
     changeEmail,
     changeUsername,
     setUserStatus,

@@ -67,3 +67,17 @@ export const CHANGE_EMAIL = gql`
       }
   }
 `;
+
+export const CHANGE_PASSWORD = gql`
+  mutation ChangePasswordMutation(
+    $newPassword: String!
+    $password: String!
+  ) {
+    changePassword(
+      newPassword: $newPassword
+      password: $password
+      ){
+        username
+      }
+  }
+`;
