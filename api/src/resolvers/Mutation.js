@@ -34,6 +34,7 @@ async function signup( parent, args, context, info ) {
 
     const user = await context.prisma.user.findUnique({ where: { email: args.email } });
     if (!user) throw new Error('No such user found');
+    if (!user.active) throw new Error('This account is inactive');
 
     const valid = await bcrypt.compare(args.password, user.password);
     if (!valid) throw new Error('Invalid password');
