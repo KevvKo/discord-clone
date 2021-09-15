@@ -7,7 +7,6 @@ function PrivateRoute({ children, ...rest }) {
 
     const AUTH_TOKEN = process.env.REACT_APP_AUTH_TOKEN;
     const authenticationToken = localStorage.getItem(AUTH_TOKEN);
-
     return (
         <Route
             {...rest}

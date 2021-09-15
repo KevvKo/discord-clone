@@ -6,12 +6,14 @@ export const SIGNUP_MUTATION = gql`
     $password: String!
     $username: String!
     $status: Boolean!
+    $active: Boolean!
   ) {
     signup(
       email: $email
       password: $password
       username: $username
       status: $status
+      active: $active
     ) {
       token
     }
@@ -76,6 +78,18 @@ export const CHANGE_PASSWORD = gql`
     changePassword(
       newPassword: $newPassword
       password: $password
+      ){
+        username
+      }
+  }
+`;
+
+export const CHANGE_ACTIVE= gql`
+  mutation ChangeActiveutation(
+    $active: Boolean!
+  ) {
+    changeActive(
+      active: $active
       ){
         username
       }

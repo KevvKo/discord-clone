@@ -108,8 +108,19 @@ async function signup( parent, args, context, info ) {
     return updatedUser;
   }
 
+  async function changeActive( parent, args, context, info ){
+    const { userId } = context;
+
+    const updatedUser = await context.prisma.user.update({ 
+      where: { id: userId},
+      data: { active: args.active }
+    })
+
+    return updatedUser; 
+  }
 
   module.exports = {
+    changeActive,
     changePassword,
     changeEmail,
     changeUsername,

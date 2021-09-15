@@ -10,11 +10,18 @@ import { useTranslation } from 'react-i18next';
 import useAuth from '../../../../hooks/useAuthentification';
 import useForm from '../../../../hooks/useForm';
 import { useHistory } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import { useEffect } from 'react';
+
+//Utilites
+import { USERNAME_QUERY } from '../../../../graphql/query';
 
 function LoginForm(){
 
     const [ t ] = useTranslation('common');
     const history = useHistory();
+    const { data } = useQuery( USERNAME_QUERY );
+    let active;
     const { 
         login,
         handleChange 
@@ -25,12 +32,22 @@ function LoginForm(){
         validateErrors
     } = useForm();
 
+    useEffect(() => {
+        if(data) active = data.active;
+
+    }, [ data, active]);
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const isValid = validateErrors(e.target);
+       
+        if(!active){
+            console.log(active);
+            setErrors(' Your account is deactivated');
+            return;
+        }
 
         if(isValid){
+
             login()
                 .then(
                     ({errors}) => { 

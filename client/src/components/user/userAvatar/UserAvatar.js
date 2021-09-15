@@ -4,7 +4,7 @@ import './UserAvatar.css';
 import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { USERNAME_QUERY } from '../../../graphql/query';
-import { propTypes } from 'react-bootstrap/esm/Image';
+import PropTypes  from 'react-bootstrap/esm/Image';
 
 function UserAvatar(props) {
 
@@ -34,8 +34,8 @@ UserAvatar.defaultProps = {
 };
 
 UserAvatar.propTypes = {
-    cssClasses: propTypes.string,
-    fontSize: propTypes.string
+    cssClasses: PropTypes.string,
+    fontSize: PropTypes.string
 };
 
 export default UserAvatar;
