@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import { Button, Form, Modal } from 'react-bootstrap';
 import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
 // Hooks 
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
 import useForm from '../../../../hooks/useForm';

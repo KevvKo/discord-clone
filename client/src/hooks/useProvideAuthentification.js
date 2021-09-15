@@ -52,7 +52,7 @@ function useProvideAuth() {
             username: user.name,
             email: user.email,
             password: user.password,
-            status: false,
+            status: true,
             active: true
         },
         onCompleted: ({ signup }) => {
