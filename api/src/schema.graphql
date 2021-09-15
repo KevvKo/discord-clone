@@ -3,6 +3,7 @@ type Query{
 }
 
 type Mutation {
+  addPhoneNumber( phoneNumber: String!): User!
   changeActive( active: Boolean! ): User!
   changePassword( newPassword: String!, password: String! ): User!
   changeUsername( newUsername: String!, password: String! ): User!
@@ -22,5 +23,6 @@ type User {
   id: ID!
   username: String!
   email: String!
+  phoneNumber: String!
   status: Boolean!
 }

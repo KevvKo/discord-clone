@@ -12,6 +12,7 @@ model user {
   username          String?       @unique
   email             String?       @unique
   password          String?
+  phoneNumber       String?         
   status            Boolean
   active            Boolean
 }
