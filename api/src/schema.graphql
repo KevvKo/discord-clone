@@ -7,6 +7,7 @@ type Mutation {
   changePassword( newPassword: String!, password: String! ): User!
   changeUsername( newUsername: String!, password: String! ): User!
   changeEmail( newEmail: String!, password: String! ): User!
+  deleteAccount( password: String! ): User!
   setUserStatus ( status: Boolean! ): User!
   signup ( email: String!, password: String!, username: String!, status: Boolean!, active: Boolean! ): AuthPayload
   login ( email: String!, password: String! ): AuthPayload

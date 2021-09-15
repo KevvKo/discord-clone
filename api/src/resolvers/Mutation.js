@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
-const { getUserId } = require('../utils/utils');
 require('dotenv').config();
 
 const { APP_SECRET } = process.env;
@@ -120,11 +119,27 @@ async function signup( parent, args, context, info ) {
     return updatedUser; 
   }
 
+  async function deleteAccount( parent, args, context, info ){
+    const { userId } = context;
+    const user = await context.prisma.user.findUnique({ where: { id: userId}});
+
+    const valid = await bcrypt.compare( args.password, user.password );
+    
+    if(!valid) throw new Error('Invalid password');
+
+    const updatedUser = await context.prisma.user.delete({ 
+      where: { id: userId},
+    })
+
+    return updatedUser; 
+  }
+
   module.exports = {
     changeActive,
     changePassword,
     changeEmail,
     changeUsername,
+    deleteAccount,
     setUserStatus,
     signup,
     login

@@ -85,13 +85,26 @@ export const CHANGE_PASSWORD = gql`
 `;
 
 export const CHANGE_ACTIVE= gql`
-  mutation ChangeActiveutation(
+  mutation ChangeActiveMutation(
     $active: Boolean!
   ) {
     changeActive(
       active: $active
       ){
         username
+      }
+  }
+`;
+
+export const DELETE_ACCOUNT= gql`
+  mutation DeleteAccountMutation(
+    $password: String!
+  ) {
+    deleteAccount(
+      password: $password
+      ){
+        username
+        email
       }
   }
 `;
