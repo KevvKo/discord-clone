@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './DeleteAccount.css';
 // Utilities
 import PropTypes from 'prop-types';
 // Components
@@ -47,14 +47,14 @@ function DeleteAccount(props){
     };
 
     return(
-        <Modal centered show={ props.show } onHide={ props.callback } >
+        <Modal id='delete-account' centered show={ props.show } onHide={ props.callback } >
             <Modal.Header className='pb-0' closeButton>
                 <Modal.Title className='ml-auto'>
                     {t('settings.main.myAccount.deleteAccount')}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className='pt-0'>
-                <p>{t('settings.main.myAccount.deleteAccountDescription')}</p>
+                <p className='warning p-2 my-2'>{t('settings.main.myAccount.deleteAccountDescription')}</p>
                 <Form  onSubmit={handleSubmit}>
                     <Form.Group>
                         <FormFeedback error={ errors.password }>   

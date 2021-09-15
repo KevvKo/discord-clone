@@ -139,3 +139,13 @@
   /* background colors */
   --panel-bg: var(--midnight-blue-color-40);
 }
+
+.success{
+  background: var(--success-color) !important;
+}
+.danger{
+  background: var(--danger-color) !important;
+}
+.warning{
+  background: var(--warning-color) !important;
+}
