@@ -7,17 +7,40 @@ import { Button,InputGroup, Form, Modal } from 'react-bootstrap';
 // Hooks 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useMutation } from '@apollo/client';
+//Utilities
+import { ADD_PHONE_NUMBER } from '../../../../graphql/mutations';
 function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);
-    
+    const [ addPhoneNumber ] = useMutation(ADD_PHONE_NUMBER, {
+        onCompleted: () => {
+            setShow(false);
+        },
+        onError: (error) => {
+            console.log(error.message);
+        }
+    });
     const handleShow = () => {
         show
             ? setShow(false)
             : setShow(true);
     };
     
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+        const form = e.target;
+        const { phoneNumber } = form;
+        
+        addPhoneNumber({
+            variables: {
+                phoneNumber: phoneNumber.value,
+            }
+        });
+    };
+
     return(
         <>
             <div>
@@ -39,10 +62,10 @@ function AddPhoneNumber(){
                     <p className='mt-2 text-center'>
                         {t('settings.main.myAccount.editPhoneDescriptionII')}
                     </p>
-                    <Form>
+                    <Form onSubmit={ handleSubmit }>
                         <InputGroup>
-                            <Form.Control type='tel1' ></Form.Control>
-                            <Button variant='primary'>  {t('settings.main.myAccount.send')} </Button>
+                            <Form.Control type='tel' name='phoneNumber' ></Form.Control>
+                            <Button variant='primary' type='submit'>  {t('settings.main.myAccount.send')} </Button>
                         </InputGroup>
                     </Form>
                 </Modal.Body>

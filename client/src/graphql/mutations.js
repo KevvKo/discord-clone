@@ -108,3 +108,16 @@ export const DELETE_ACCOUNT= gql`
       }
   }
 `;
+
+export const ADD_PHONE_NUMBER=gql`
+  mutation AddPhoneNumberMutation(
+    $phoneNumber: String!
+  ){
+    addPhoneNumber(
+      phoneNumber: $phoneNumber
+    ){
+      username
+      phoneNumber
+    }
+  }
+`;
