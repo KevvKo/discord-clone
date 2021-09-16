@@ -1,10 +1,10 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { USERNAME_QUERY } from '../../../graphql/query';
+import { USER_QUERY } from '../../../graphql/query';
 
 function UserTag() {
 
-    const { data } = useQuery( USERNAME_QUERY );
+    const { data } = useQuery( USER_QUERY );
 
     return (
         <div className='user-tag flex-fill'>

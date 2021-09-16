@@ -11,13 +11,13 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouteMatch, useHistory } from 'react-router';
 import { useQuery } from '@apollo/client';
-import { USERNAME_QUERY } from '../../../../graphql/query';
+import { USER_QUERY } from '../../../../graphql/query';
 
 function UserPanel(){
 
     const history = useHistory();
     const { path } = useRouteMatch();
-    const { data } = useQuery( USERNAME_QUERY );
+    const { data } = useQuery( USER_QUERY );
     const [ t ] = useTranslation('common');
     const [username, setUsername ] = useState('');
     const [userId, setUserId] = useState('');

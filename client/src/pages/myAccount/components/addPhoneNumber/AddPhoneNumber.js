@@ -5,23 +5,27 @@ import PropTypes from 'prop-types';
 // Components
 import { Button,InputGroup, Form, Modal } from 'react-bootstrap';
 // Hooks 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 //Utilities
 import { ADD_PHONE_NUMBER } from '../../../../graphql/mutations';
+import { USER_QUERY } from '../../../../graphql/query';
 function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);
+    const [ phoneNumber, setPhoneNumber ] = useState('');
+    const { data } = useQuery(USER_QUERY); 
     const [ addPhoneNumber ] = useMutation(ADD_PHONE_NUMBER, {
         onCompleted: () => {
-            setShow(false);
+            window.location.reload();
         },
         onError: (error) => {
             console.log(error.message);
         }
     });
+
     const handleShow = () => {
         show
             ? setShow(false)
@@ -41,11 +45,21 @@ function AddPhoneNumber(){
         });
     };
 
+    useEffect(() => {
+        if(data){
+            setPhoneNumber(data.user.phoneNumber);
+        }
+    }, [ data ]);
+
+    const description = phoneNumber
+        ?  <span>{phoneNumber}</span>
+        :  <span>{t('settings.main.myAccount.noPhoneNumber')}</span>;
+
     return(
         <>
             <div>
                 <h6>{ t('settings.main.myAccount.phoneNumber') }</h6>
-                <span>{t('settings.main.myAccount.noPhoneNumber')}</span>
+                { description }
             </div>
             <Button onClick={ handleShow } className='ml-auto' variant='secondary'>{t('settings.main.myAccount.add')}</Button>
             <Modal centered show={ show } onHide={handleShow} >

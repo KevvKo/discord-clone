@@ -1,12 +1,13 @@
 import { gql } from '@apollo/client';
 
-export const USERNAME_QUERY = gql`
+export const USER_QUERY = gql`
     {
         user {
             id
             username
             status
             email
+            phoneNumber
         }
     }
 `;

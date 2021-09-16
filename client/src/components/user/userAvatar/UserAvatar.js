@@ -3,14 +3,14 @@ import './UserAvatar.css';
 
 import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { USERNAME_QUERY } from '../../../graphql/query';
+import { USER_QUERY } from '../../../graphql/query';
 import PropTypes  from 'react-bootstrap/esm/Image';
 
 function UserAvatar(props) {
 
     let [isOnline, setIsOnline] = useState( false ); 
 
-    const { data } = useQuery( USERNAME_QUERY );
+    const { data } = useQuery( USER_QUERY );
 
     useEffect( () =>  {
         if(data) {
