@@ -25,3 +25,17 @@ export const obscureString = (email) => {
     let [ name, domain] = email.split('@');
     return `${new Array(name.length).join('*')}@${domain}`;
 };
+
+export const countryPrefix = () =>  {
+
+    return {
+        'Netherlands': '+31',
+        'France': '+33',
+        'Switzerland': '+41',
+        'Germany': '+49',
+        'Afghanistan': '+93',
+        'Algeria': '+213',
+        'Ireland': '+353',
+        'Albania': '+355',
+    };
+};

@@ -1,0 +1,14 @@
+.dropdown{
+    --dropdown-bg: var(--midnight-blue-color-20);
+    --dropdown-bg-hover: var(--midnight-blue-color-40);
+}
+
+.dropdown-menu, .dropdown-item{
+    color: var(--dark-font-color) !important;
+    background: var(--dropdown-bg) !important;
+}
+
+.dropdown-item:hover{
+    color: var(--dark-font-color) !important;
+    background: var(--dropdown-bg-hover) !important;
+}

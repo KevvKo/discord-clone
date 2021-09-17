@@ -1,0 +1,7 @@
+.prefix-dropdown{
+    --dropdown-menu-width: 210px;
+}
+
+.prefix-dropdown .dropdown-menu{
+    width: var(--dropdown-menu-width) !important;
+}

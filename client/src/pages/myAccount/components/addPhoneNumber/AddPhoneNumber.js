@@ -3,7 +3,8 @@ import React from 'react';
 // Utilities
 import PropTypes from 'prop-types';
 // Components
-import { Button,InputGroup, Form, Modal } from 'react-bootstrap';
+import { Button, InputGroup, Form, Modal } from 'react-bootstrap';
+import PrefixDropdown from './Components/prefixesDropdown/PrefixesDropdown';
 // Hooks 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -66,7 +67,6 @@ function AddPhoneNumber(){
                 <Modal.Header className='pb-0' closeButton>
                     <Modal.Title className='ml-auto'>
                         {t('settings.main.myAccount.changePhoneNumber')}
-
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='pt-0'>
@@ -78,6 +78,7 @@ function AddPhoneNumber(){
                     </p>
                     <Form onSubmit={ handleSubmit }>
                         <InputGroup>
+                            <PrefixDropdown />
                             <Form.Control type='tel' name='phoneNumber' ></Form.Control>
                             <Button variant='primary' type='submit'>  {t('settings.main.myAccount.send')} </Button>
                         </InputGroup>
