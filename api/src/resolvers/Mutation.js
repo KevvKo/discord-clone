@@ -134,7 +134,19 @@ async function signup( parent, args, context, info ) {
     return updatedUser; 
   }
 
+  async function addPhoneNumber( parent, args, context, info ){
+    const { userId } = context;
+    const updatedUser = await context.prisma.user.update({
+      where: { id: userId },
+      data: { phoneNumber: args.phoneNumber } 
+    })
+
+    return updatedUser;
+  }
+
+
   module.exports = {
+    addPhoneNumber,
     changeActive,
     changePassword,
     changeEmail,
