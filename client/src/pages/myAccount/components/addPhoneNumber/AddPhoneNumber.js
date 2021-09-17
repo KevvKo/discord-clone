@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // Components
 import { Button, InputGroup, Form, Modal } from 'react-bootstrap';
-import PrefixDropdown from './Components/prefixesDropdown/PrefixesDropdown';
+import PrefixDropdown from './prefixesDropdown/PrefixesDropdown';
 // Hooks 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // Components
 import { Button, Form, Modal } from 'react-bootstrap';
 import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
+import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -92,36 +93,29 @@ function EditEmail(props){
                 <Button variant='link' onClick={toggleEmailVisibility}> { t(stringKey) } </Button>
             </div>
             <Button onClick={ handleShow }className='ml-auto' variant='secondary'>{t('settings.main.myAccount.edit')}</Button>
-            <Modal centered show={ show } onHide={handleShow} >
-                <Modal.Header className='pb-0' closeButton>
-                    <Modal.Title className='ml-auto'>
-                        {t('settings.main.myAccount.changeEmail')}
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body className='pt-0'>
-                    <p className='text-center'>
-                        {t('settings.main.myAccount.editEmailDescription')}
-                    </p>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Group>         
-                            <FormFeedback error={ errors.email }>   
-                                <Form.Label>{t('settings.main.myAccount.email')}</Form.Label>
-                                <Form.Control name='email' isInvalid={ !!errors.email } type='email' className='py-3'></Form.Control>
-                            </FormFeedback>
-                        </Form.Group>
-                        <Form.Group>
-                            <FormFeedback error={ errors.password } >
-                                <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
-                                <Form.Control name='password' isInvalid={ !!errors.password } type='password'></Form.Control>
-                            </FormFeedback>
-                        </Form.Group>
-                        <Form.Group className='d-flex justify-contend-end'>
-                            <Button variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
-                            <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
-            </Modal>
+            <FormModal show={ show } onHide={handleShow}  modalTitle={ t('settings.main.myAccount.changeEmail') }>
+                <p className='text-center'>
+                    {t('settings.main.myAccount.editEmailDescription')}
+                </p>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group>         
+                        <FormFeedback error={ errors.email }>   
+                            <Form.Label>{t('settings.main.myAccount.email')}</Form.Label>
+                            <Form.Control name='email' isInvalid={ !!errors.email } type='email' className='py-3'></Form.Control>
+                        </FormFeedback>
+                    </Form.Group>
+                    <Form.Group>
+                        <FormFeedback error={ errors.password } >
+                            <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
+                            <Form.Control name='password' isInvalid={ !!errors.password } type='password'></Form.Control>
+                        </FormFeedback>
+                    </Form.Group>
+                    <Form.Group className='d-flex justify-content-end'>
+                        <Button variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
+                        <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
+                    </Form.Group>
+                </Form>
+            </FormModal>
         </>
     );
 }
