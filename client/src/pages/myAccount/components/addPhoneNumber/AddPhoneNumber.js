@@ -3,7 +3,7 @@ import React from 'react';
 // Utilities
 import PropTypes from 'prop-types';
 // Components
-import { Button, InputGroup, Form, Modal } from 'react-bootstrap';
+import { Button, InputGroup, Form } from 'react-bootstrap';
 import PrefixDropdown from './prefixesDropdown/PrefixesDropdown';
 import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 

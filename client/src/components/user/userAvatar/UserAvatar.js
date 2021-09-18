@@ -10,14 +10,14 @@ function UserAvatar(props) {
 
     let [isOnline, setIsOnline] = useState( false ); 
 
-    const { loading, error, data } = useQuery( USER_QUERY );
+    const { data } = useQuery( USER_QUERY );
 
     useEffect( () =>  {
         if(data) {
             setIsOnline(data.user.status);
         }
     }, [data, isOnline]);
-    if (error) return `Error: ${error.message}`;
+
     return (
         <div className={`user-avatar mr-2 ${ props.cssClasses }`}>
             <i className='bi bi-person-circle' style={{fontSize: props.fontSize + 'rem'}}></i>

@@ -3,7 +3,7 @@ import './DeleteAccount.css';
 // Utilities
 import PropTypes from 'prop-types';
 // Components
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
 import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 

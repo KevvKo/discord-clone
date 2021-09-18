@@ -3,7 +3,7 @@ import React from 'react';
 // Utilities
 import PropTypes from 'prop-types';
 // Components
-import { Button, Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useTranslation } from 'react-i18next';

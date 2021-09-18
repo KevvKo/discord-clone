@@ -4,11 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // Components
 import { Modal } from 'react-bootstrap';
-// Hooks 
-import { useTranslation } from 'react-i18next';
-
 function FormModal(props){
-    const [ t ] = useTranslation('common');
 
     return(
         <Modal centered show={ props.show } onHide={props.handleOnHide} >
