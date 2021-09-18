@@ -20,6 +20,11 @@ function FormModal(props){
             <Modal.Body className='pt-0'>
                 { props.children }
             </Modal.Body>
+            { props.footerChildren &&
+                <Modal.Footer>
+                    { props.footerChildren}
+                </Modal.Footer>
+            }
         </Modal>
  
     );
@@ -33,6 +38,7 @@ FormModal.defaultProps = {
 
 FormModal.propTypes = {
     children: PropTypes.element,
+    footerChildren: PropTypes.element,
     id: PropTypes.string,
     username: PropTypes.string,
     show: PropTypes.bool,

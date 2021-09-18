@@ -3,8 +3,9 @@ import React from 'react';
 // Utilities
 import PropTypes from 'prop-types';
 // Components
-import { Button, Form, InputGroup, Modal } from 'react-bootstrap';
+import { Button, Form, InputGroup } from 'react-bootstrap';
 import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
+import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -66,38 +67,31 @@ function EditUserName(props){
                 <span>{props.username}</span>
             </div>
             <Button className='ml-auto' variant='secondary' onClick={handleShow}>{t('settings.main.myAccount.edit')}</Button>
-            <Modal centered show={ show } onHide={handleShow} >
-                <Modal.Header className='pb-0' closeButton>
-                    <Modal.Title className='ml-auto'>
-                        {t('settings.main.myAccount.changeUsername')}
+            <FormModal modalTitle={t('settings.main.myAccount.changeUsername')} show={ show } handleOnHide={ handleShow }>
+                <p className='text-center'>
+                    {t('settings.main.myAccount.editUserDescription')}
+                </p>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Label>{t('settings.main.myAccount.username')}</Form.Label>
+                    <InputGroup size='md'>
+                        <Form.Control name='username' className='py-3'></Form.Control>
+                        <InputGroup.Text className='py-1'>
+                            {`#${props.id}`}
+                        </InputGroup.Text>
+                    </InputGroup>
+                    <Form.Group>
+                        <FormFeedback error={ errors.password }>
+                            <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
+                            <Form.Control isInvalid={ !!errors.password } name='password' type='password'></Form.Control>
+                        </FormFeedback>
+                    </Form.Group>
+                    <Form.Group className='d-flex justify-content-end'>
+                        <Button  variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
+                        <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
+                    </Form.Group>
+                </Form>
+            </FormModal>
 
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body className='pt-0'>
-                    <p className='text-center'>
-                        {t('settings.main.myAccount.editUserDescription')}
-                    </p>
-                    <Form onSubmit={handleSubmit}>
-                        <Form.Label>{t('settings.main.myAccount.username')}</Form.Label>
-                        <InputGroup size='md'>
-                            <Form.Control name='username' className='py-3'></Form.Control>
-                            <InputGroup.Text className='py-1'>
-                                {`#${props.id}`}
-                            </InputGroup.Text>
-                        </InputGroup>
-                        <Form.Group>
-                            <FormFeedback error={ errors.password }>
-                                <Form.Label>{t('settings.main.myAccount.currentPassword')}</Form.Label>
-                                <Form.Control isInvalid={ !!errors.password } name='password' type='password'></Form.Control>
-                            </FormFeedback>
-                        </Form.Group>
-                        <Form.Group className='d-flex justify-content-end'>
-                            <Button  variant='link' onClick={handleShow}>{ t('settings.main.myAccount.cancel') }</Button>
-                            <Button variant='primary' type='submit'>{ t('settings.main.myAccount.ready') }</Button>
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
-            </Modal>
         </>
     );
 }

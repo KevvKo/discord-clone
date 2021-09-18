@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // Components
 import { Button, InputGroup, Form, Modal } from 'react-bootstrap';
 import PrefixDropdown from './prefixesDropdown/PrefixesDropdown';
+import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -63,28 +64,21 @@ function AddPhoneNumber(){
                 { description }
             </div>
             <Button onClick={ handleShow } className='ml-auto' variant='secondary'>{t('settings.main.myAccount.add')}</Button>
-            <Modal centered show={ show } onHide={handleShow} >
-                <Modal.Header className='pb-0' closeButton>
-                    <Modal.Title className='ml-auto'>
-                        {t('settings.main.myAccount.changePhoneNumber')}
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body className='pt-0'>
-                    <p className='text-center'>
-                        {t('settings.main.myAccount.editPhoneDescriptionI')}
-                    </p>
-                    <p className='mt-2 text-center'>
-                        {t('settings.main.myAccount.editPhoneDescriptionII')}
-                    </p>
-                    <Form onSubmit={ handleSubmit }>
-                        <InputGroup>
-                            <PrefixDropdown />
-                            <Form.Control type='tel' name='phoneNumber' ></Form.Control>
-                            <Button variant='primary' type='submit'>  {t('settings.main.myAccount.send')} </Button>
-                        </InputGroup>
-                    </Form>
-                </Modal.Body>
-            </Modal>
+            <FormModal modalTitle={t('settings.main.myAccount.changePhoneNumber')} show={ show } handleOnHie={ handleShow }>
+                <p className='text-center'>
+                    {t('settings.main.myAccount.editPhoneDescriptionI')}
+                </p>
+                <p className='mt-2 text-center'>
+                    {t('settings.main.myAccount.editPhoneDescriptionII')}
+                </p>
+                <Form onSubmit={ handleSubmit }>
+                    <InputGroup>
+                        <PrefixDropdown />
+                        <Form.Control type='tel' name='phoneNumber' ></Form.Control>
+                        <Button variant='primary' type='submit'>  {t('settings.main.myAccount.send')} </Button>
+                    </InputGroup>
+                </Form>
+            </FormModal>
         </>
     );
 }

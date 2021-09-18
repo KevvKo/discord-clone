@@ -4,6 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // Components
 import { Button, Modal } from 'react-bootstrap';
+import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
@@ -24,22 +25,17 @@ function DeactivateAccount(props){
             alert(error);
         }            
     });
+    const buttons = (
+        <>
+            <Button variant='link' onClick={props.callback}>{ t('settings.main.myAccount.cancel') }</Button>
+            <Button variant='primary' onClick={ changeActive }>{ t('settings.main.myAccount.continue') }</Button>
+        </>
+    );
 
     return(
-        <Modal centered show={ props.show } onHide={ props.callback } >
-            <Modal.Header className='pb-0' closeButton>
-                <Modal.Title className='ml-auto'>
-                    {t('settings.main.myAccount.deactivateAccount')}
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className='pt-0'>
-                <p>{t('settings.main.myAccount.deactivateAccountDescription')}</p>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button variant='link' onClick={props.callback}>{ t('settings.main.myAccount.cancel') }</Button>
-                <Button variant='primary' onClick={ changeActive }>{ t('settings.main.myAccount.continue') }</Button>
-            </Modal.Footer>
-        </Modal>
+        <FormModal modalTitle={t('settings.main.myAccount.deactivateAccount')} show={props.show} handleOnHida={props.callback} footerChildren={ buttons }>
+            <p>{t('settings.main.myAccount.deactivateAccountDescription')}</p>
+        </FormModal>
     );
 }
 

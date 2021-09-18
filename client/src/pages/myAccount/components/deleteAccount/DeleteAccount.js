@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // Components
 import { Button, Form, Modal } from 'react-bootstrap';
 import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
-
+import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
@@ -47,28 +47,21 @@ function DeleteAccount(props){
     };
 
     return(
-        <Modal id='delete-account' centered show={ props.show } onHide={ props.callback } >
-            <Modal.Header className='pb-0' closeButton>
-                <Modal.Title className='ml-auto'>
-                    {t('settings.main.myAccount.deleteAccount')}
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className='pt-0'>
-                <p className='warning p-2 my-2'>{t('settings.main.myAccount.deleteAccountDescription')}</p>
-                <Form  onSubmit={handleSubmit}>
-                    <Form.Group>
-                        <FormFeedback error={ errors.password }>   
-                            <Form.Label>{t('settings.main.myAccount.password')}</Form.Label>
-                            <Form.Control isInvalid={ !!errors.password } name='password' type='password'></Form.Control>
-                        </FormFeedback>
-                    </Form.Group>
-                    <Form.Group className='d-flex justify-content-end'>
-                        <Button variant='link' onClick={props.callback}>{ t('settings.main.myAccount.cancel') }</Button>
-                        <Button variant='primary' type='submit' >{ t('settings.main.myAccount.continue') }</Button>
-                    </Form.Group>
-                </Form>
-            </Modal.Body>
-        </Modal>
+        <FormModal modalTitle={t('settings.main.myAccount.deleteAccount')} show={ props.show } handleOnHide={ props.callback }>
+            <p className='warning p-2 my-2'>{t('settings.main.myAccount.deleteAccountDescription')}</p>
+            <Form  onSubmit={handleSubmit}>
+                <Form.Group>
+                    <FormFeedback error={ errors.password }>   
+                        <Form.Label>{t('settings.main.myAccount.password')}</Form.Label>
+                        <Form.Control isInvalid={ !!errors.password } name='password' type='password'></Form.Control>
+                    </FormFeedback>
+                </Form.Group>
+                <Form.Group className='d-flex justify-content-end'>
+                    <Button variant='link' onClick={props.callback}>{ t('settings.main.myAccount.cancel') }</Button>
+                    <Button variant='primary' type='submit' >{ t('settings.main.myAccount.continue') }</Button>
+                </Form.Group>
+            </Form>
+        </FormModal>
     );
 }
 
