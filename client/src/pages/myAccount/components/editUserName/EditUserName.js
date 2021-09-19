@@ -13,7 +13,7 @@ import { useMutation } from '@apollo/client';
 import useForm from '../../../../hooks/useForm';
 
 // Utilite
-import { CHANGE_USERNAME } from '../../../../graphql/mutations';
+import { CHANGE_USERNAME } from '../../../../graphql/user/userMutations';
 function EditUserName(props){
 
     const [ t ] = useTranslation('common');

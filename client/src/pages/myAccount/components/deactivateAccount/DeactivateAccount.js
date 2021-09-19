@@ -9,7 +9,7 @@ import FormModal from '../../../../components/modals/FormModal/FormModal';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
 // Utilities
-import { CHANGE_ACTIVE } from '../../../../graphql/mutations';
+import { CHANGE_ACTIVE } from '../../../../graphql/user/userMutations';
 
 function DeactivateAccount(props){
 

@@ -3,7 +3,7 @@ import './UserAvatar.css';
 
 import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { USER_QUERY } from '../../../graphql/query';
+import { USER_QUERY } from '../../../graphql/user/userQuery';
 import PropTypes  from 'react-bootstrap/esm/Image';
 
 function UserAvatar(props) {

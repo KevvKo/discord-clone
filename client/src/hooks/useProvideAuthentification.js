@@ -3,8 +3,8 @@ import { useMutation } from '@apollo/client';
 import { useState } from 'react';
 
 // mutations
-import { SET_USER_STATUS_MUTATION } from '../graphql/mutations';
-import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/mutations';
+import { SET_USER_STATUS_MUTATION } from '../graphql/user/userMutations';
+import { LOGIN_MUTATION, SIGNUP_MUTATION } from '../graphql/authentication/authMutations';
 
 function useProvideAuth() {
 

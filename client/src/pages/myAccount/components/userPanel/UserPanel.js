@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouteMatch, useHistory } from 'react-router';
 import { useQuery } from '@apollo/client';
-import { USER_QUERY } from '../../../../graphql/query';
+import { USER_QUERY } from '../../../../graphql/user/userQuery';
 
 function UserPanel(){
 

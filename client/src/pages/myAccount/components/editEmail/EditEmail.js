@@ -14,7 +14,7 @@ import useForm from '../../../../hooks/useForm';
 
 // Utilites
 import { obscureString } from '../../../../services/utils';
-import { CHANGE_EMAIL } from '../../../../graphql/mutations';
+import { CHANGE_EMAIL } from '../../../../graphql/user/userMutations';
 function EditEmail(props){
 
     const [ t ] = useTranslation('common');

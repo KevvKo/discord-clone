@@ -13,7 +13,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 // mutations
-import { SET_USER_STATUS_MUTATION } from '../../../../graphql/mutations';
+import { SET_USER_STATUS_MUTATION } from '../../../../graphql/user/userMutations';
 
 function SettingsNavbar(){
     

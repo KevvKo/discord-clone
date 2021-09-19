@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
 import useForm from '../../../../hooks/useForm';
 // Utilities
-import { DELETE_ACCOUNT } from '../../../../graphql/mutations';
+import { DELETE_ACCOUNT } from '../../../../graphql/user/userMutations';
 
 function DeleteAccount(props){
 

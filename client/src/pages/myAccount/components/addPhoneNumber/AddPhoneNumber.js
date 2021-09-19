@@ -11,8 +11,8 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation, useQuery } from '@apollo/client';
 //Utilities
-import { ADD_PHONE_NUMBER } from '../../../../graphql/mutations';
-import { USER_QUERY } from '../../../../graphql/query';
+import { ADD_PHONE_NUMBER } from '../../../../graphql/user/userMutations';
+import { USER_QUERY } from '../../../../graphql/user/userQuery';
 function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');

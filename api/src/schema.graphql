@@ -28,6 +28,8 @@ type User {
   active: Boolean!
 }
 
+
+
 input signUpData {
   email: String!
   password: String!

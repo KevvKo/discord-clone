@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
 import useForm from '../../../../hooks/useForm';
 // Utilities
-import { CHANGE_PASSWORD } from '../../../../graphql/mutations';
+import { CHANGE_PASSWORD } from '../../../../graphql/user/userMutations';
 
 function EditPassword(props){
 

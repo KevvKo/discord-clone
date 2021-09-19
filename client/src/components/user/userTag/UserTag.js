@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { USER_QUERY } from '../../../graphql/query';
+import { USER_QUERY } from '../../../graphql/user/userQuery';
 
 function UserTag() {
 
