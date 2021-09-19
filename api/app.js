@@ -8,10 +8,7 @@ const path = require('path');
 const Query = require('./src/resolvers/Query');
 const Subscription = require('./src/resolvers/Subscription')
 const Mutation = require('./src/resolvers/Mutation');
-const User = require('./src/resolvers/User');
-const Message = require('./src/resolvers/Message');
 const resolvers = { 
-  User,
   Query,
   Mutation,
 }

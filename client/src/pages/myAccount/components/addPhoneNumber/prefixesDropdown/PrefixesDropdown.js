@@ -3,18 +3,20 @@ import './PrefixDropdown.css';
 import PropTypes from 'prop-types';
 // Components
 import { Dropdown, DropdownButton } from 'react-bootstrap';
+//HOoks
+import { useState } from 'react';
 // Utilites
 import { countryPrefix } from '../../../../../services/utils';
 
-function PrefixDropdown(){
+function PrefixDropdown(props){
 
     const prefixes = countryPrefix();
-    const dropdownTitle = `${ prefixes[ Object.keys( prefixes )[0] ] }`;
+    const [ dropdownTitle, setDropdownTitle ] = useState( `${ prefixes[ Object.keys( prefixes )[0] ] }` );
     let dropdownItems = [];
 
     for ( const [key, value] of Object.entries(prefixes)){
         dropdownItems.push(
-            <Dropdown.Item>
+            <Dropdown.Item eventKey={ value }>
                 <div className='d-flex'>
                     {key}<b className='ml-auto'>{value}</b>
                 </div>
@@ -22,14 +24,23 @@ function PrefixDropdown(){
         );
     }
 
+    const handleSelect = (e) => {
+        props.onSelect(e);
+        setDropdownTitle(e);
+    };
+
     return (
-        <DropdownButton className='prefix-dropdown' variant='secondary' onSelect={ props.onSelect } title={dropdownTitle}>
-            {dropdownItems}
-        </DropdownButton>
+        <DropdownButton 
+            name='test'     
+            className='prefix-dropdown' 
+            variant='secondary' 
+            onSelect={ handleSelect } 
+            title={dropdownTitle}
+        >{dropdownItems}</DropdownButton>
     );
 }
 
-PrefixDropdown.prototype = {
+PrefixDropdown.propTypes = {
     onSelect: PropTypes.func
 };
 

@@ -17,7 +17,7 @@ function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);
-    const [ value, setValue ] = useState('');
+    const [ prefix, setPrefix ] = useState('');
     const [ phoneNumber, setPhoneNumber ] = useState('');
     const { data } = useQuery(USER_QUERY); 
     const [ addPhoneNumber ] = useMutation(ADD_PHONE_NUMBER, {
@@ -36,20 +36,21 @@ function AddPhoneNumber(){
     };
     
     const handleSelect = (e) => {
-        setValue(e.value);
+        setPrefix(e);
     };
     const handleSubmit = (e) => {
 
         e.preventDefault();
         const form = e.target;
-        console.log(form);
         const { phoneNumber } = form;
         
-        // addPhoneNumber({
-        //     variables: {
-        //         phoneNumber: phoneNumber.value,
-        //     }
-        // });
+        if(phoneNumber){
+            addPhoneNumber({
+                variables: {
+                    phoneNumber: prefix + phoneNumber.value,
+                }
+            });
+        }
     };
 
     useEffect(() => {
@@ -69,7 +70,7 @@ function AddPhoneNumber(){
                 { description }
             </div>
             <Button onClick={ handleShow } className='ml-auto' variant='secondary'>{t('settings.main.myAccount.add')}</Button>
-            <FormModal modalTitle={t('settings.main.myAccount.changePhoneNumber')} show={ show } handleOnHie={ handleShow }>
+            <FormModal modalTitle={t('settings.main.myAccount.changePhoneNumber')} show={ show } handleOnHide={ handleShow }>
                 <p className='text-center'>
                     {t('settings.main.myAccount.editPhoneDescriptionI')}
                 </p>
