@@ -10,7 +10,7 @@ type Mutation {
   changeEmail( newEmail: String!, password: String! ): User!
   deleteAccount( password: String! ): User!
   setUserStatus ( status: Boolean! ): User!
-  signup ( email: String!, password: String!, username: String!, status: Boolean!, active: Boolean! ): AuthPayload
+  signup ( signUpData: signUpData ): AuthPayload
   login ( email: String!, password: String! ): AuthPayload
 }
 
@@ -24,6 +24,14 @@ type User {
   username: String!
   email: String!
   phoneNumber: String
+  status: Boolean!
+  active: Boolean!
+}
+
+input signUpData {
+  email: String!
+  password: String!
+  username: String! 
   status: Boolean!
   active: Boolean!
 }

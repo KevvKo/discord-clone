@@ -20,8 +20,9 @@ async function newConversation( parent, args, contect, info ){
 
 async function signup( parent, args, context, info ) {
     const saltRounds =  5;
-    const password = await bcrypt.hash(args.password, saltRounds);
-    const user = await context.prisma.user.create({ data: { ...args, password } });
+    const data = args.signUpData
+    const password = await bcrypt.hash( data.password, saltRounds);
+    const user = await context.prisma.user.create({ data: { ...data, password } });
     const token = jwt.sign({ userId: user.id }, APP_SECRET);
     return {
       token,
