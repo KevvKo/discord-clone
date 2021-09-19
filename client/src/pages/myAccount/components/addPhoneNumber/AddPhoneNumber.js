@@ -17,6 +17,7 @@ function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);
+    const [ value, setValue ] = useState('');
     const [ phoneNumber, setPhoneNumber ] = useState('');
     const { data } = useQuery(USER_QUERY); 
     const [ addPhoneNumber ] = useMutation(ADD_PHONE_NUMBER, {
@@ -34,17 +35,21 @@ function AddPhoneNumber(){
             : setShow(true);
     };
     
+    const handleSelect = (e) => {
+        setValue(e.value);
+    };
     const handleSubmit = (e) => {
 
         e.preventDefault();
         const form = e.target;
+        console.log(form);
         const { phoneNumber } = form;
         
-        addPhoneNumber({
-            variables: {
-                phoneNumber: phoneNumber.value,
-            }
-        });
+        // addPhoneNumber({
+        //     variables: {
+        //         phoneNumber: phoneNumber.value,
+        //     }
+        // });
     };
 
     useEffect(() => {
@@ -73,7 +78,7 @@ function AddPhoneNumber(){
                 </p>
                 <Form onSubmit={ handleSubmit }>
                     <InputGroup>
-                        <PrefixDropdown />
+                        <PrefixDropdown onSelect= { handleSelect }/>
                         <Form.Control type='tel' name='phoneNumber' ></Form.Control>
                         <Button variant='primary' type='submit'>  {t('settings.main.myAccount.send')} </Button>
                     </InputGroup>

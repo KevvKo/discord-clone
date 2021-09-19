@@ -1,5 +1,6 @@
 import React from 'react';
 import './PrefixDropdown.css';
+import PropTypes from 'prop-types';
 // Components
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 // Utilites
@@ -22,10 +23,14 @@ function PrefixDropdown(){
     }
 
     return (
-        <DropdownButton className='prefix-dropdown' variant='secondary' title={dropdownTitle}>
+        <DropdownButton className='prefix-dropdown' variant='secondary' onSelect={ props.onSelect } title={dropdownTitle}>
             {dropdownItems}
         </DropdownButton>
     );
 }
+
+PrefixDropdown.prototype = {
+    onSelect: PropTypes.func
+};
 
 export default PrefixDropdown;
