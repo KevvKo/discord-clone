@@ -93,7 +93,7 @@ function EditEmail(props){
                 <Button variant='link' onClick={toggleEmailVisibility}> { t(stringKey) } </Button>
             </div>
             <Button onClick={ handleShow }className='ml-auto' variant='secondary'>{t('settings.main.myAccount.edit')}</Button>
-            <FormModal show={ show } onHide={handleShow}  modalTitle={ t('settings.main.myAccount.changeEmail') }>
+            <FormModal show={ show } handleOnHide={handleShow}  modalTitle={ t('settings.main.myAccount.changeEmail') }>
                 <p className='text-center'>
                     {t('settings.main.myAccount.editEmailDescription')}
                 </p>

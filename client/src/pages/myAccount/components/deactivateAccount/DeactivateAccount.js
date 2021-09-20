@@ -33,7 +33,7 @@ function DeactivateAccount(props){
     );
 
     return(
-        <FormModal modalTitle={t('settings.main.myAccount.deactivateAccount')} show={props.show} handleOnHida={props.callback} footerChildren={ buttons }>
+        <FormModal modalTitle={t('settings.main.myAccount.deactivateAccount')} show={props.show} handleOnHide={props.callback} footerChildren={ buttons }>
             <p>{t('settings.main.myAccount.deactivateAccountDescription')}</p>
         </FormModal>
     );
