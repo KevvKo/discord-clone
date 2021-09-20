@@ -10,7 +10,7 @@
     color: var(--font-color-secondary);
 }
 
-.color-panel-default, .color-panel-customized{
+.color-panel-default, .color-panel-customized, #color-picker{
     height: var(--color-panel-height);
     width: var(--color-panel-width);
     border-radius: var(--border-radius);
@@ -23,4 +23,8 @@
 
 .color-panel-customized{
     background: var(--color-panel-customized-bg);
+}
+
+#color-picker{
+    opacity: 0;
 }
