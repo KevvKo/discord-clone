@@ -1,11 +1,17 @@
 import React from 'react';
+// Components
+import SettingsPanel from '../../components/settingsPanel/SettingsPanel';
+// Hooks
+import { useTranslation } from 'react-i18next';
 
 function GameOverlay(){
 
+    const [ t ] = useTranslation('common');
+
     return(
-        <div className='game-overlay'>
-     
-        </div>
+        <SettingsPanel>
+            <h3>{t('settings.main.gameOverlay.title')}</h3>
+        </SettingsPanel>
     );
 }
 

@@ -1,11 +1,17 @@
 import React from 'react';
+// Components
+import SettingsPanel from '../../components/settingsPanel/SettingsPanel';
+// Hooks
+import { useTranslation } from 'react-i18next';
 
 function Connections(){
 
+    const [ t ] = useTranslation('common');
+
     return(
-        <div className="connections">
-     
-        </div>
+        <SettingsPanel>
+            <h3>{t('settings.main.connections.title')}</h3>
+        </SettingsPanel>
     );
 }
 

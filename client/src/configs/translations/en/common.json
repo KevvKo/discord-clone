@@ -78,7 +78,19 @@
     },
     "settings": {
         "main": {
+            "activityStatus": {
+                "title": "Activity Status"
+            },
+            "authorizedApps": {
+                "title": "Authorized Apps"
+            },
             "close": "Close",
+            "connections": {
+                "title": "Connection"
+            },
+            "gameOverlay": {
+                "title": "Game-Overlay"
+            },
             "myAccount": {
                 "activateTwoFactor": "activate Two-Factor-Authentication",
                 "add": "Add",
@@ -113,6 +125,9 @@
                 "twoFactorDescription": "Protect your Discord Account with an additional security layer. Once configured, you must be enter your password and your authentication code in your smartphone to login.",
                 "twoFactorTitle": "Two-Factor-Authentication",
                 "phoneNumber": "Phone Number"            
+            },
+            "privacyAndSecurity": {
+                "title": "Privacy and Security"
             },
             "userProfile": {
                 "title": "User Profile"
