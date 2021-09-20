@@ -49,11 +49,14 @@ function useProvideAuth() {
 
     const [signup] = useMutation(SIGNUP_MUTATION, {
         variables: {
-            username: user.name,
-            email: user.email,
-            password: user.password,
-            status: true,
-            active: true
+            signUpData:
+            {
+                username: user.name,
+                email: user.email,
+                password: user.password,
+                status: true,
+                active: true
+            }
         },
         onCompleted: ({ signup }) => {
             localStorage.setItem(AUTH_TOKEN, signup.token);
