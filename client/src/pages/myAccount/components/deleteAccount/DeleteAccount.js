@@ -48,7 +48,7 @@ function DeleteAccount(props){
 
     return(
         <FormModal modalTitle={t('settings.main.myAccount.deleteAccount')} show={ props.show } handleOnHide={ props.callback }>
-            <p className='warning p-2 my-2'>{t('settings.main.myAccount.deleteAccountDescription')}</p>
+            <p id='delete-account' className='warning p-2 my-2'>{t('settings.main.myAccount.deleteAccountDescription')}</p>
             <Form  onSubmit={handleSubmit}>
                 <Form.Group>
                     <FormFeedback error={ errors.password }>   

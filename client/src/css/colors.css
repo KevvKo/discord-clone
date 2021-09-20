@@ -119,7 +119,7 @@
 
   /* spotlight colors */
   --success-color: #17d640;
-  --warning-color: #e8ea54;
+  --warning-color: #ffde6b;
   --danger-color: #af0f0f;
   --access-color: #a663ed;
 
@@ -131,6 +131,7 @@
   --dark-font-color: var(--grey-color-80);
   --font-color-secondary: var(--grey-color-20);
   --font-color-tertiary: var(--grey-color-80);
+  --font-color-fourth: var(--grey-color);
   --font-color-label: var(--grey-color);
   /* border colors */
   --border-color-layout: var(--midnight-blue-color-50);

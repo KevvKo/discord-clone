@@ -38,7 +38,6 @@ const useForm = () => {
         if(password){
             if( password.value === '' ) errorMessages.password = t('error.password.required');
             else if( password.value.length < 9 ){
-                console.log(errorMessages);
                 errorMessages.password = t('error.password.validePasswordLength');
             } 
             else if( !passwordNumberRegex.test(password.value) ) errorMessages.password = t('error.password.validePasswordNumber');

@@ -1,4 +1,4 @@
-#delete-account p {
+#delete-account {
     border-radius: var(--border-radius) !important;
-    color: var(--font-color-secondary);
+    color: var(--font-color-fourth);
 }
