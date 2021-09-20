@@ -1,0 +1,26 @@
+.profile-color {
+    --color-panel-width: 75px;
+    --color-panel-height: 50px;
+    --color-panel-default-bg: var(--grey-color-10);
+    --color-panel-customized-bg: var(--grey-color-10);
+}
+
+.profile-color{
+    font-size: var(--font-size-xs);
+    color: var(--font-color-secondary);
+}
+
+.color-panel-default, .color-panel-customized{
+    height: var(--color-panel-height);
+    width: var(--color-panel-width);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.color-panel-default{
+    background: var(--color-panel-default-bg);
+}
+
+.color-panel-customized{
+    background: var(--color-panel-customized-bg);
+}

@@ -128,7 +128,12 @@
                 "title": "Privatsphäre und Sicherheit"
             },
             "userProfile": {
-                "avatarTitle": "Avatar",
+                "avatar": "Avatar",
+                "changeAvatar": "Avatar verändern",
+                "customized": "Benutzerdefiniert",
+                "default": "Standard",
+                "profileColor": "Profilfarbe",
+                "removeAvatar": "Avatar ändern",
                 "title": "Nutzerprofil"
             }
         },

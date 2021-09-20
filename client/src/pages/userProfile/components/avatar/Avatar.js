@@ -10,9 +10,9 @@ function Avatar(){
     const [ t ] = useTranslation('common');
 
     return(
-        <div className='Avatar'>
-            <div className='subtitle mb-3   '>
-                {t('settings.main.userProfile.avatarTitle')}
+        <div className='Avatar mb-5'>
+            <div className='subtitle mb-3'>
+                {t('settings.main.userProfile.avatar')}
             </div>
             <Button className='mr-2' size='sm'>               
                 {t('settings.main.userProfile.changeAvatar')}

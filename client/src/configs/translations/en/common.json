@@ -130,8 +130,11 @@
                 "title": "Privacy and Security"
             },
             "userProfile": {
-                "avatarTitle": "Avatar",
+                "avatar": "Avatar",
                 "changeAvatar": "Change Avatar",
+                "customized": "Customized",
+                "default": "Default",
+                "profileColor": "Profile Color",
                 "removeAvatar": "Remove Avatar",
                 "title": "User Profile"
             }
