@@ -113,6 +113,9 @@
                 "twoFactorDescription": "Protect your Discord Account with an additional security layer. Once configured, you must be enter your password and your authentication code in your smartphone to login.",
                 "twoFactorTitle": "Two-Factor-Authentication",
                 "phoneNumber": "Phone Number"            
+            },
+            "userProfile": {
+                "title": "User Profile"
             }
         },
         "navbar": {

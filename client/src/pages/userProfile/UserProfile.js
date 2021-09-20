@@ -1,11 +1,16 @@
 import React from 'react';
+// Components
+import SettingsPanel from '../../components/settingsPanel/SettingsPanel';
+// Hooks
+import { useTranslation } from 'react-i18next';
 
 function UserProfile(){
 
+    const [ t ] = useTranslation('common');
     return(
-        <div className='user-profile'>
-     
-        </div>
+        <SettingsPanel>
+            <h3>{t('settings.main.userProfile.title')}</h3>
+        </SettingsPanel>
     );
 }
 

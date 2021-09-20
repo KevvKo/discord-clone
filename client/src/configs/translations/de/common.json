@@ -111,6 +111,9 @@
                 "twoFactorDescription": "Schütze deinen Discord-Account mit einer zusätzlichen Sicherheitsebene. Einmal konfiguriert, musst du dein Passwort und dein Authentifizierungscode von deinem Handy eingeben, um dich anzumelden.",
                 "twoFactorTitle": "Zwei-Faktor-Authentifizierung",
                 "phoneNumber": "Telefonnummer"
+            },
+            "userProfile": {
+                "title": "Nutzerprofil"
             }
         },
         "navbar": {
