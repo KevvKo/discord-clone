@@ -36,3 +36,8 @@ h6, .h6{
   text-transform: uppercase;
   font-weight: var(--font-weight-semi-bold) !important;
 }
+
+.subtitle{
+  font-size: var(--font-size-sm);
+  color: var(--font-color-fourth);
+}
