@@ -1,0 +1,14 @@
+.user-description{
+    --textarea-width: 350px;
+    --textarea-height: 150px;
+}
+
+.user-description p{
+    color: var(--font-color-secondary);
+    font-size: var(--font-size-sm)
+}
+
+.user-description textarea{
+    width: var(--textarea-width);
+    height:  var(--textarea-height) !important;
+}

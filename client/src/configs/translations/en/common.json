@@ -136,7 +136,10 @@
                 "default": "Default",
                 "profileColor": "Profile Color",
                 "removeAvatar": "Remove Avatar",
-                "title": "User Profile"
+                "title": "User Profile",
+                "userDescription": "About me",
+                "textAreaDescription": "You can also use markdown and links.",
+                "textAreaPlaceholder": "Tell the world just a little bit about you"
             }
         },
         "navbar": {

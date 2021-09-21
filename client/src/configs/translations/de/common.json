@@ -134,7 +134,10 @@
                 "default": "Standard",
                 "profileColor": "Profilfarbe",
                 "removeAvatar": "Avatar ändern",
-                "title": "Nutzerprofil"
+                "title": "Nutzerprofil",
+                "userDescription": "Über mich",
+                "textAreaDescription": "Du kannst auch Markdown und Links benutzen.",
+                "textAreaPlaceholder": "Erzähl der Welt ein bisschen was von dir"
             }
         },
         "navbar": {

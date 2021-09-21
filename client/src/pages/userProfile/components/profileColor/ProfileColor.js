@@ -18,7 +18,7 @@ function ProfileColor(){
         document.querySelector('.color-panel-customized').style.background = customizedColor;
     }, [customizedColor]);
     return(
-        <div className='profile-color'>
+        <div className='profile-color mb-5'>
             <div className='subtitle mb-3'>
                 {t('settings.main.userProfile.profileColor')}
             </div>
