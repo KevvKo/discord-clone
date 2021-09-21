@@ -19,6 +19,7 @@ function UserDescription(){
             <Form.Control 
                 as='textarea' 
                 placeholder={t('settings.main.userProfile.textAreaPlaceholder')}
+                maxLength='190'
             ></Form.Control>
         </div>
     );
