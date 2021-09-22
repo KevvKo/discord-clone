@@ -13,8 +13,17 @@ import ActiveUserList from '../../components/activeUserList/ActiveUserList';
 import UserBar from '../../components/user/userBar/UserBar';
 import SearchBar from '../../components/search/searchBar/SearchBar';
 
+// Hooks
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useQuery } from '@apollo/client';
+import { USER_QUERY } from '../../graphql/user/userQuery';
+import { setUser } from '../../store/slices/userSlice';
+
 function Home() {
 
+    const post = useSelector(state => state.user);
+    console.log(post);   
     return (
         <div className='Home d-flex flex-column flex-grow-1'>
             <Row >
