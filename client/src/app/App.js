@@ -18,7 +18,7 @@ import AppHeader from '../components/header/AppHeader';
 // Hooks
 import PrivateRoute from '../routers/privateRoute';
 import ProvideAuth from '../providers/provideAuthentification';
-
+import '../services/getUserData';
 function App() {
 
     return (
