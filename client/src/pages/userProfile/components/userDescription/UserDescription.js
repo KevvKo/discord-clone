@@ -4,7 +4,6 @@ import './UserDescription.css';
 import { Form } from 'react-bootstrap';
 // Hooks 
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
 
 function UserDescription(){
 

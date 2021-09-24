@@ -7,30 +7,16 @@ import UserDataSettings from '../userDataSettings/UserDataSettings';
 import { Col, Button } from 'react-bootstrap';
 
 // Hooks
-import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRouteMatch, useHistory } from 'react-router';
-import { useQuery } from '@apollo/client';
-import { USER_QUERY } from '../../../../graphql/user/userQuery';
+import { useSelector } from 'react-redux';
 
 function UserPanel(){
 
     const history = useHistory();
     const { path } = useRouteMatch();
-    const { data } = useQuery( USER_QUERY );
+    const user = useSelector( state => state.user);
     const [ t ] = useTranslation('common');
-    const [username, setUsername ] = useState('');
-    const [userId, setUserId] = useState('');
-    const [email, setEmail ] = useState('');
-
-
-    useEffect(() => {
-        if(data){
-            setUsername(data.user.username);
-            setUserId(data.user.id);
-            setEmail(data.user.email);
-        }
-    });
 
     const routing = () => {
         history.replace({
@@ -47,11 +33,11 @@ function UserPanel(){
             <div className='d-flex p-3'>
                 <UserAvatar fontSize='4' cssClasses='user-avatar-positioning ml-2 d-inline-block' />
                 <span>
-                    <b>{username}</b>#{userId}
+                    <b>{user.username}</b>#{user.id}
                 </span>
                 <Button className='ml-auto align-self-start' onClick={routing} size={'sm'}>{t('settings.main.myAccount.editProfile')}</Button>
             </div>
-            <UserDataSettings id={ userId } username={ username } email={ email } />
+            <UserDataSettings id={ user.id } username={ user.username } email={ user.email } />
         </Col>
     );
 }

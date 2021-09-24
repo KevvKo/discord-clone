@@ -22,9 +22,19 @@ import { setUser } from '../../store/slices/userSlice';
 
 function Home() {
 
-    const post = useSelector(state => state.user);
-    console.log(post);   
-    return (
+    const {êrror, loading, data } = useQuery( USER_QUERY);
+    const dispatch = useDispatch();
+
+    useEffect( () => {
+
+        if( data ) {
+            dispatch(setUser(data.user));
+        }
+    }, [ data ]);
+
+    if ( loading ) return 'loading...';
+    
+    return ( 
         <div className='Home d-flex flex-column flex-grow-1'>
             <Row >
                 <AppHeader />

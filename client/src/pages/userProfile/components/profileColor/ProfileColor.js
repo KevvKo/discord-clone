@@ -10,7 +10,6 @@ function ProfileColor(){
     const [ customizedColor, setCustomizedColor ] = useState(''); 
 
     const handleInput = (e) => {
-        console.log('jo');
         setCustomizedColor(e.target.value);
     };
 

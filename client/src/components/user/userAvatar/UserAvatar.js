@@ -1,27 +1,18 @@
 import React from 'react';
 import './UserAvatar.css';
-
-import { useEffect, useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { USER_QUERY } from '../../../graphql/user/userQuery';
+// Hooks
+import { useSelector } from 'react-redux';
+// Utilities
 import PropTypes  from 'react-bootstrap/esm/Image';
 
 function UserAvatar(props) {
 
-    let [isOnline, setIsOnline] = useState( false ); 
-
-    const { data } = useQuery( USER_QUERY );
-
-    useEffect( () =>  {
-        if(data) {
-            setIsOnline(data.user.status);
-        }
-    }, [data, isOnline]);
+    const user = useSelector(state => state.user);
 
     return (
         <div className={`user-avatar mr-2 ${ props.cssClasses }`}>
             <i className='bi bi-person-circle' style={{fontSize: props.fontSize + 'rem'}}></i>
-            { isOnline &&
+            { user.status &&
                 <div className='active-user d-inline-block'></div>
             }
         </div>

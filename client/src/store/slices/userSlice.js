@@ -7,8 +7,8 @@ const userSlice = createSlice({
         username: '',
         email: '',
         phoneNumber: '',
-        status: false,
-        active: true, 
+        status: Boolean,
+        active: Boolean, 
     },
     reducers: {    
         setUser(state, action) { 
@@ -19,7 +19,7 @@ const userSlice = createSlice({
                 username: user.username,
                 email: user.email,
                 phoneNumber: user.phoneNumber,
-                status: user.state,
+                status: user.status,
                 active: user.active, 
 
             };

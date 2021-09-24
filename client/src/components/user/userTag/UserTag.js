@@ -1,17 +1,17 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { USER_QUERY } from '../../../graphql/user/userQuery';
+// Hooks
+import { useSelector } from 'react-redux';
 
 function UserTag() {
 
-    const { data } = useQuery( USER_QUERY );
+    const user = useSelector(state => state.user);
 
     return (
         <div className='user-tag flex-fill'>
-            { data &&
+            { user &&
                 <>
-                    <div>{ data.user.username}</div>
-                    <div>#{ data.user.id }</div>
+                    <div>{ user.username}</div>
+                    <div>#{ user.id }</div>
                 </>
             }
         </div>

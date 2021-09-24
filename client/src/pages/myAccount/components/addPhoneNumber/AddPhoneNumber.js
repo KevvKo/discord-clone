@@ -9,17 +9,17 @@ import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useMutation, useQuery } from '@apollo/client';
+import { useMutation } from '@apollo/client';
+import { useSelector } from 'react-redux';
 //Utilities
 import { ADD_PHONE_NUMBER } from '../../../../graphql/user/userMutations';
-import { USER_QUERY } from '../../../../graphql/user/userQuery';
 function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');
+    const user = useSelector( state => state.user);
     const [ show, setShow ] = useState(false);
     const [ prefix, setPrefix ] = useState('');
     const [ phoneNumber, setPhoneNumber ] = useState('');
-    const { data } = useQuery(USER_QUERY); 
     const [ addPhoneNumber ] = useMutation(ADD_PHONE_NUMBER, {
         onCompleted: () => {
             window.location.reload();
@@ -54,10 +54,10 @@ function AddPhoneNumber(){
     };
 
     useEffect(() => {
-        if(data){
-            setPhoneNumber(data.user.phoneNumber);
+        if( user ){
+            setPhoneNumber( user.phoneNumber );
         }
-    }, [ data ]);
+    }, [ user ]);
 
     const description = phoneNumber
         ?  <span>{phoneNumber}</span>
