@@ -12,27 +12,12 @@ import ChannelList from '../../components/channels/channelList/ChannelList';
 import ActiveUserList from '../../components/activeUserList/ActiveUserList';
 import UserBar from '../../components/user/userBar/UserBar';
 import SearchBar from '../../components/search/searchBar/SearchBar';
-
 // Hooks
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useQuery } from '@apollo/client';
-import { USER_QUERY } from '../../graphql/user/userQuery';
-import { setUser } from '../../store/slices/userSlice';
+import { useSetupUser } from '../../hooks/useSetupUser';
 
 function Home() {
 
-    const {êrror, loading, data } = useQuery( USER_QUERY);
-    const dispatch = useDispatch();
-
-    useEffect( () => {
-
-        if( data ) {
-            dispatch(setUser(data.user));
-        }
-    }, [ data ]);
-
-    if ( loading ) return 'loading...';
+    useSetupUser();
     
     return ( 
         <div className='Home d-flex flex-column flex-grow-1'>

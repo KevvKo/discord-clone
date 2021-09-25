@@ -19,11 +19,11 @@ import { Provider } from 'react-redux';
 // Hooks
 import PrivateRoute from '../routers/privateRoute';
 import ProvideAuth from '../providers/provideAuthentification';
-import '../services/getUserData';
 // Utilities
 import { store } from '../store/store';
 
 function App() {
+
 
     return (
         <Provider store={ store }>
