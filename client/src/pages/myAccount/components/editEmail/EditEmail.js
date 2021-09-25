@@ -10,18 +10,21 @@ import FormModal from '../../../../components/modals/FormModal/FormModal';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
+import { useSelector, useDispatch } from 'react-redux';
 import useForm from '../../../../hooks/useForm';
 
-// Utilites
+// Utilities
+import { setEmail } from '../../../../store/slices/userSlice';
 import { obscureString } from '../../../../services/utils';
 import { CHANGE_EMAIL } from '../../../../graphql/user/userMutations';
 function EditEmail(props){
 
     const [ t ] = useTranslation('common');
+    const dispatch = useDispatch();
+    const user = useSelector( state => state.user );
     const [ show, setShow ] = useState(false);
     const [stringKey, setStringKey] = useState('settings.main.myAccount.show');
-    const [ email, setEmail ] = useState('');
-    const userEmail = props.email;
+    const [ obscuredEmail, setObscuredEmail ] = useState('');
     const { 
         errors,  
         setErrors,
@@ -30,7 +33,7 @@ function EditEmail(props){
 
     const [ changeEmail ] = useMutation(CHANGE_EMAIL, {
         onCompleted: () => {
-            window.location.reload();
+            setShow(false);
         }, 
         onError: (error) => {
             if(error){ 
@@ -44,8 +47,8 @@ function EditEmail(props){
     });
 
     useEffect(() => {
-        if(props.email && email === '') {
-            setEmail( obscureString( props.email ) );
+        if(user.email && obscuredEmail === '') {
+            setObscuredEmail( obscureString( user.email ) );
         }
     });
 
@@ -61,12 +64,12 @@ function EditEmail(props){
 
         if(value === 'Show'){
             setStringKey('settings.main.myAccount.hide');
-            setEmail(userEmail);
+            setObscuredEmail(user.email);
             return;
         }
 
         setStringKey('settings.main.myAccount.show');
-        setEmail( obscureString(userEmail) );   
+        setObscuredEmail( obscureString(user.email) );   
     };
 
     const handleSubmit = (e) => {
@@ -82,6 +85,7 @@ function EditEmail(props){
                     password: password.value
                 }
             });
+            dispatch( setEmail( email.value ));
         }
     };
 
@@ -89,7 +93,7 @@ function EditEmail(props){
         <>
             <div>
                 <h6>{ t('settings.main.myAccount.email') }</h6>
-                <span>{ email }</span>
+                <span>{ obscuredEmail }</span>
                 <Button variant='link' onClick={toggleEmailVisibility}> { t(stringKey) } </Button>
             </div>
             <Button onClick={ handleShow }className='ml-auto' variant='secondary'>{t('settings.main.myAccount.edit')}</Button>
@@ -125,9 +129,6 @@ EditEmail.defaultProps = {
 };
 
 EditEmail.propTypes = {
-    email: PropTypes.string,
-    id: PropTypes.string,
-    username: PropTypes.string,
     show: PropTypes.bool
 };
 export default EditEmail;
