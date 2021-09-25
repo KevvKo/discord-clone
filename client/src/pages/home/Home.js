@@ -17,7 +17,9 @@ import { useSetupUser } from '../../hooks/useSetupUser';
 
 function Home() {
 
-    useSetupUser();
+    const { error, loading } = useSetupUser();
+    if ( loading ) return 'loading...';
+    if ( error ) return 'error...';
     
     return ( 
         <div className='Home d-flex flex-column flex-grow-1'>

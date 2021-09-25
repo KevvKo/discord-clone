@@ -9,7 +9,7 @@ import { USER_QUERY } from '../graphql/user/userQuery';
 
 export const useSetupUser = () => {
 
-    const {error, loading, data } = useQuery( USER_QUERY);
+    const {error, loading, data } = useQuery( USER_QUERY );
     const dispatch = useDispatch();
 
     useEffect( () => {

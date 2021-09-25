@@ -24,16 +24,22 @@ const userSlice = createSlice({
 
             };
         },  
-        addPhoneNumber: state => {},
-        changeActive: state => {},
-        changePassword: state => {},
-        changeUsername: state => {},
-        changeEmail: state => {},
+        setPhoneNumber(state, action) {
+            const phoneNumber = action.payload;
+            return {
+                ...state,
+                phoneNumber: phoneNumber
+            };
+        },
+        setActive: state => {},
+        setPassword: state => {},
+        setUsername: state => {},
+        setEmail: state => {},
         deleteAccount: state => {},
         setUserStatus: state => {},
 
     }
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, setPhoneNumber } = userSlice.actions;
 export default userSlice.reducer;

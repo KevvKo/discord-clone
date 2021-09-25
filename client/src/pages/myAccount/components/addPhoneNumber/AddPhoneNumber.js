@@ -1,28 +1,26 @@
 import React from 'react';
-
-// Utilities
-import PropTypes from 'prop-types';
 // Components
 import { Button, InputGroup, Form } from 'react-bootstrap';
 import PrefixDropdown from './prefixesDropdown/PrefixesDropdown';
 import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 //Utilities
+import { setPhoneNumber } from '../../../../store/slices/userSlice';
 import { ADD_PHONE_NUMBER } from '../../../../graphql/user/userMutations';
 function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');
+    const dispatch = useDispatch();
     const user = useSelector( state => state.user);
     const [ show, setShow ] = useState(false);
     const [ prefix, setPrefix ] = useState('');
-    const [ phoneNumber, setPhoneNumber ] = useState('');
     const [ addPhoneNumber ] = useMutation(ADD_PHONE_NUMBER, {
         onCompleted: () => {
-            window.location.reload();
+            setShow(false);
         },
         onError: (error) => {
             console.log(error.message);
@@ -50,17 +48,12 @@ function AddPhoneNumber(){
                     phoneNumber: prefix + phoneNumber.value,
                 }
             });
+            dispatch( setPhoneNumber( prefix + phoneNumber.value ));
         }
     };
 
-    useEffect(() => {
-        if( user ){
-            setPhoneNumber( user.phoneNumber );
-        }
-    }, [ user ]);
-
-    const description = phoneNumber
-        ?  <span>{phoneNumber}</span>
+    const description = user.phoneNumber
+        ?  <span>{user.phoneNumber}</span>
         :  <span>{t('settings.main.myAccount.noPhoneNumber')}</span>;
 
     return(
@@ -89,13 +82,4 @@ function AddPhoneNumber(){
     );
 }
 
-AddPhoneNumber.defaultProps = {
-    show: false
-};
-
-AddPhoneNumber.propTypes = {
-    id: PropTypes.string,
-    username: PropTypes.string,
-    show: PropTypes.bool
-};
 export default AddPhoneNumber;
