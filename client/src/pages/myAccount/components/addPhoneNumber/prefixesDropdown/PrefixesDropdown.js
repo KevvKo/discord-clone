@@ -3,8 +3,8 @@ import './PrefixDropdown.css';
 import PropTypes from 'prop-types';
 // Components
 import { Dropdown, DropdownButton } from 'react-bootstrap';
-//HOoks
-import { useState } from 'react';
+//Hooks
+import { useEffect, useState } from 'react';
 // Utilites
 import { countryPrefix } from '../../../../../services/utils';
 
@@ -13,6 +13,11 @@ function PrefixDropdown(props){
     const prefixes = countryPrefix();
     const [ dropdownTitle, setDropdownTitle ] = useState( `${ prefixes[ Object.keys( prefixes )[0] ] }` );
     let dropdownItems = [];
+    
+    useEffect(() => {
+        // too set the first prefix after rendering
+        props.onSelect(dropdownTitle);
+    });
 
     for ( const [key, value] of Object.entries(prefixes)){
         dropdownItems.push(

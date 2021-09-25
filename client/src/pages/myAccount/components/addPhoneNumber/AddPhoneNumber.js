@@ -23,7 +23,7 @@ function AddPhoneNumber(){
             setShow(false);
         },
         onError: (error) => {
-            console.log(error.message);
+            console.error(error.message);
         }
     });
 
@@ -52,7 +52,7 @@ function AddPhoneNumber(){
         }
     };
 
-    const description = user.phoneNumber
+    let description = user.phoneNumber
         ?  <span>{user.phoneNumber}</span>
         :  <span>{t('settings.main.myAccount.noPhoneNumber')}</span>;
 
