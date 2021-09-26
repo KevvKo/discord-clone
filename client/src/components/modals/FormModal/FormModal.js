@@ -33,7 +33,7 @@ FormModal.defaultProps = {
 };
 
 FormModal.propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.node,
     footerChildren: PropTypes.element,
     id: PropTypes.string,
     username: PropTypes.string,

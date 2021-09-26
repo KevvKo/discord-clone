@@ -4,17 +4,16 @@ import './UserDataSettings.css';
 import EditUserName from '../editUserName/EditUserName';
 import EditEmail from '../editEmail/EditEmail';
 import AddPhoneNumber from '../addPhoneNumber/AddPhoneNumber';
-// Utils
-import PropTypes from 'prop-types';
-function UserDataSettings(props){   
+
+function UserDataSettings(){   
 
     return(
         <div className='user-data-settings mx-3 mb-3 p-3'>
             <div className='d-flex mb-4'>
-                <EditUserName id={ props.id } username={ props.username }/>
+                <EditUserName/>
             </div>
             <div className='d-flex mb-4'>
-                <EditEmail email={props.email}/>
+                <EditEmail />
             </div>
             <div className='d-flex mb-4'>
                 <AddPhoneNumber />            
@@ -22,11 +21,5 @@ function UserDataSettings(props){
         </div>
     );
 }
-
-UserDataSettings.propTypes = {
-    id: PropTypes.string,
-    username: PropTypes.string,
-    email: PropTypes.string
-};
 
 export default UserDataSettings;

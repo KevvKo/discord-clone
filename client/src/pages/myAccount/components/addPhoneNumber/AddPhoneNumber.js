@@ -11,6 +11,8 @@ import { useSelector, useDispatch } from 'react-redux';
 //Utilities
 import { setPhoneNumber } from '../../../../store/slices/userSlice';
 import { ADD_PHONE_NUMBER } from '../../../../graphql/user/userMutations';
+import { USER_QUERY } from '../../../../graphql/user/userQuery';
+
 function AddPhoneNumber(){
 
     const [ t ] = useTranslation('common');
@@ -24,7 +26,8 @@ function AddPhoneNumber(){
         },
         onError: (error) => {
             console.error(error.message);
-        }
+        },
+        refetchQueries: [ { query: USER_QUERY }]
     });
 
     const handleShow = () => {

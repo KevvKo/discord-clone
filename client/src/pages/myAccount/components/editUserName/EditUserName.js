@@ -1,22 +1,25 @@
 import React from 'react';
-
-// Utilities
-import PropTypes from 'prop-types';
 // Components
 import { Button, Form, InputGroup } from 'react-bootstrap';
 import FormFeedback from '../../../../components/forms/formFeedback/FormFeedback';
 import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
 import useForm from '../../../../hooks/useForm';
 
 // Utilite
 import { CHANGE_USERNAME } from '../../../../graphql/user/userMutations';
-function EditUserName(props){
+import { USER_QUERY } from '../../../../graphql/user/userQuery';
+import { setUsername } from '../../../../store/slices/userSlice';
+
+function EditUserName(){
 
     const [ t ] = useTranslation('common');
+    const dispatch = useDispatch();
+    const user = useSelector( state => state.user);
     const [ show, setShow ] = useState(false);
     const { 
         errors,  
@@ -26,7 +29,7 @@ function EditUserName(props){
 
     const [ changeUsername ] = useMutation(CHANGE_USERNAME, {
         onCompleted: () => {
-            window.location.reload();
+            setShow(false);
         }, 
         onError: (error) => {
             if(error){ 
@@ -36,7 +39,8 @@ function EditUserName(props){
                 });
             }
             return;
-        }            
+        },
+        refetchQueries: [ { query: USER_QUERY }]  
     });
 
     const handleShow = () => {
@@ -50,6 +54,7 @@ function EditUserName(props){
         const form = e.target;
         const isValid = validateErrors(e.target);
         const { username, password } = form;
+        
         if(isValid){
             changeUsername({
                 variables: {
@@ -57,6 +62,7 @@ function EditUserName(props){
                     password: password.value
                 }
             });
+            dispatch( setUsername( username.value ));
         }
     };
     
@@ -64,7 +70,7 @@ function EditUserName(props){
         <>
             <div>
                 <h6>{ t('settings.main.myAccount.username') }</h6>
-                <span>{props.username}</span>
+                <span>{user.username}</span>
             </div>
             <Button className='ml-auto' variant='secondary' onClick={handleShow}>{t('settings.main.myAccount.edit')}</Button>
             <FormModal modalTitle={t('settings.main.myAccount.changeUsername')} show={ show } handleOnHide={ handleShow }>
@@ -76,7 +82,7 @@ function EditUserName(props){
                     <InputGroup size='md'>
                         <Form.Control name='username' className='py-3'></Form.Control>
                         <InputGroup.Text className='py-1'>
-                            {`#${props.id}`}
+                            {`#${user.id}`}
                         </InputGroup.Text>
                     </InputGroup>
                     <Form.Group>
@@ -96,13 +102,4 @@ function EditUserName(props){
     );
 }
 
-EditUserName.defaultProps = {
-    show: false
-};
-
-EditUserName.propTypes = {
-    id: PropTypes.string,
-    username: PropTypes.string,
-    show: PropTypes.bool
-};
 export default EditUserName;

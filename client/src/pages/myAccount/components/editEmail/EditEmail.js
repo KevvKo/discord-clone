@@ -13,6 +13,8 @@ import useForm from '../../../../hooks/useForm';
 import { setEmail } from '../../../../store/slices/userSlice';
 import { obscureString } from '../../../../services/utils';
 import { CHANGE_EMAIL } from '../../../../graphql/user/userMutations';
+import { USER_QUERY } from '../../../../graphql/user/userQuery';
+
 function EditEmail(){
 
     const [ t ] = useTranslation('common');
@@ -41,7 +43,8 @@ function EditEmail(){
                 });
             }
             return;
-        }            
+        },
+        refetchQueries: [ { query: USER_QUERY }]            
     });
 
     useEffect(() => {

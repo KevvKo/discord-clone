@@ -21,7 +21,7 @@ function PrefixDropdown(props){
 
     for ( const [key, value] of Object.entries(prefixes)){
         dropdownItems.push(
-            <Dropdown.Item eventKey={ value }>
+            <Dropdown.Item eventKey={ value } key={key}>
                 <div className='d-flex'>
                     {key}<b className='ml-auto'>{value}</b>
                 </div>

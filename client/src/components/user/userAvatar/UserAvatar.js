@@ -3,7 +3,7 @@ import './UserAvatar.css';
 // Hooks
 import { useSelector } from 'react-redux';
 // Utilities
-import PropTypes  from 'react-bootstrap/esm/Image';
+import PropTypes from 'prop-types';
 
 function UserAvatar(props) {
 
