@@ -14,13 +14,15 @@ import UserBar from '../../components/user/userBar/UserBar';
 import SearchBar from '../../components/search/searchBar/SearchBar';
 // Hooks
 import { useSetupUser } from '../../hooks/useSetupUser';
+import { useSelector } from 'react-redux';
 
 function Home() {
+    // const user = useSelector( state => state.user);
 
     const { error, loading } = useSetupUser();
-    
+    console.log('user');
     if ( loading ) return 'loading...';
-    if ( error ) return 'error...';
+    if ( error ) return `${error.message}`;    
 
     return ( 
         <div className='Home d-flex flex-column flex-grow-1'>

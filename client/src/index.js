@@ -12,7 +12,9 @@ import {
     createHttpLink,
     InMemoryCache
 } from '@apollo/client';
+import { Provider } from 'react-redux';
 import { setContext } from '@apollo/client/link/context';
+import { store } from './store/store';
 
 const httpLink = createHttpLink({
     uri: 'http://localhost:4000'
@@ -38,7 +40,9 @@ const client = new ApolloClient({
 ReactDOM.render(
     <React.StrictMode>
         <ApolloProvider client={client}>
-            <App />
+            <Provider store={ store }>
+                <App />
+            </Provider>
         </ApolloProvider>
     </React.StrictMode>,
     document.getElementById('root')
