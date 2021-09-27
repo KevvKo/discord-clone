@@ -51,7 +51,7 @@ function useProvideAuth() {
         variables: {
             signUpData:
             {
-                username: user.name,
+                name: user.name,
                 email: user.email,
                 password: user.password,
                 status: true,

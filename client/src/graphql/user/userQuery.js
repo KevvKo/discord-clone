@@ -4,7 +4,7 @@ export const USER_QUERY = gql`
     {
         user {
             id
-            username
+            name
             status
             email
             phoneNumber

@@ -70,7 +70,7 @@ function EditUserName(){
         <>
             <div>
                 <h6>{ t('settings.main.myAccount.username') }</h6>
-                <span>{user.username}</span>
+                <span>{user.name}</span>
             </div>
             <Button className='ml-auto' variant='secondary' onClick={handleShow}>{t('settings.main.myAccount.edit')}</Button>
             <FormModal modalTitle={t('settings.main.myAccount.changeUsername')} show={ show } handleOnHide={ handleShow }>

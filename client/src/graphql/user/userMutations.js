@@ -19,7 +19,7 @@ export const CHANGE_USERNAME = gql`
       newUsername: $newUsername
       password: $password
       ){
-        username
+        name
       }
   }
 `;
@@ -47,7 +47,7 @@ export const CHANGE_PASSWORD = gql`
       newPassword: $newPassword
       password: $password
       ){
-        username
+        name
       }
   }
 `;
@@ -59,7 +59,7 @@ export const CHANGE_ACTIVE= gql`
     changeActive(
       active: $active
       ){
-        username
+        name
       }
   }
 `;
@@ -71,7 +71,7 @@ export const DELETE_ACCOUNT= gql`
     deleteAccount(
       password: $password
       ){
-        username
+        name
         email
       }
   }
@@ -84,7 +84,7 @@ export const ADD_PHONE_NUMBER=gql`
     addPhoneNumber(
       phoneNumber: $phoneNumber
     ){
-      username
+      name
       phoneNumber
     }
   }

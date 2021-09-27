@@ -21,7 +21,7 @@ type AuthPayload {
 
 type User {
   id: ID!
-  username: String!
+  name: String!
   email: String!
   phoneNumber: String
   status: Boolean!
@@ -33,7 +33,7 @@ type User {
 input signUpData {
   email: String!
   password: String!
-  username: String! 
+  name: String! 
   status: Boolean!
   active: Boolean!
 }

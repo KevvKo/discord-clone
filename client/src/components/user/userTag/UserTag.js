@@ -10,7 +10,7 @@ function UserTag() {
         <div className='user-tag flex-fill'>
             { user &&
                 <>
-                    <div>{ user.username}</div>
+                    <div>{ user.name}</div>
                     <div>#{ user.id }</div>
                 </>
             }

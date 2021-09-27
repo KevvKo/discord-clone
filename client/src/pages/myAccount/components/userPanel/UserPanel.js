@@ -33,7 +33,7 @@ function UserPanel(){
             <div className='d-flex p-3'>
                 <UserAvatar fontSize='4' cssClasses='user-avatar-positioning ml-2 d-inline-block' />
                 <span>
-                    <b>{user.username}</b>#{user.id}
+                    <b>{user.name}</b>#{user.id}
                 </span>
                 <Button className='ml-auto align-self-start' onClick={routing} size={'sm'}>{t('settings.main.myAccount.editProfile')}</Button>
             </div>

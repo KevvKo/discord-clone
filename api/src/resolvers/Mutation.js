@@ -87,7 +87,7 @@ async function signup( parent, args, context, info ) {
 
     const updatedUser = await context.prisma.user.update({ 
       where: { id: userId},
-      data: { username: args.newUsername}
+      data: { name: args.newUsername}
     })
 
     return updatedUser;
