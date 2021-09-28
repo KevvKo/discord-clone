@@ -1,3 +1,7 @@
+const { gql } = require('apollo-server');
+
+const typeDefs = gql`
+
 type Query{
   user: User!
 }
@@ -36,4 +40,6 @@ input signUpData {
   name: String! 
   status: Boolean!
   active: Boolean!
-}
+}`
+
+module.exports = typeDefs;

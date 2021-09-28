@@ -6,20 +6,18 @@ const { getUserId } = require('./src/utils/utils');
 const fs = require('fs');
 const path = require('path');
 const Query = require('./src/resolvers/Query');
-const Subscription = require('./src/resolvers/Subscription')
+const Subscription = require('./src/resolvers/Subscription');
 const Mutation = require('./src/resolvers/Mutation');
+const typeDefs = require('./src/schema');
 const resolvers = { 
   Query,
-  Mutation,
+  Mutation
 }
 
 const prisma = new PrismaClient()
 const pubsub = new PubSub()
 const server = new ApolloServer({
-  typeDefs: fs.readFileSync(
-    path.join(__dirname, './src/schema.graphql'),
-    'utf8'
-  ),
+  typeDefs,
   resolvers,
   context: ({req}) => {
     return {
