@@ -1,45 +1,31 @@
-const { gql } = require('apollo-server');
+const { gql, makeExecutableSchema } = require('apollo-server');
+const { merge } = require('lodash')
+const User = require('./User');
+const Authentication = require('./Authentication');
 
-const typeDefs = gql`
+const Query = gql`
 
 type Query{
   user: User!
-}
-
-type Mutation {
-  addPhoneNumber( phoneNumber: String!): User!
-  changeActive( active: Boolean! ): User!
-  changePassword( newPassword: String!, password: String! ): User!
-  changeUsername( newUsername: String!, password: String! ): User!
-  changeEmail( newEmail: String!, password: String! ): User!
-  deleteAccount( password: String! ): User!
-  setUserStatus ( status: Boolean! ): User!
-  signup ( signUpData: signUpData ): AuthPayload
-  login ( email: String!, password: String! ): AuthPayload
-}
-
-type AuthPayload {
-  token: String
-  user: User
-}
-
-type User {
-  id: ID!
-  name: String!
-  email: String!
-  phoneNumber: String
-  status: Boolean!
-  active: Boolean!
-}
-
-
-
-input signUpData {
-  email: String!
-  password: String!
-  name: String! 
-  status: Boolean!
-  active: Boolean!
 }`
 
-module.exports = typeDefs;
+const queryResolvers = {
+  Query: {
+    user: (parent, args, context) => {
+      const { userId } = context
+      return context.prisma.user.findUnique({
+          where: { id: userId }
+      });
+    }
+  }
+}
+
+const schema = makeExecutableSchema( {
+  typeDefs: [Query, User, Authentication],
+  resolvers: merge(queryResolvers)
+});
+
+module.exports = {
+  schema,
+  
+}
