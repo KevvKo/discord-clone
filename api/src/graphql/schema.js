@@ -1,7 +1,10 @@
 const { gql, makeExecutableSchema } = require('apollo-server');
 const { merge } = require('lodash')
-const User = require('./User');
-const Authentication = require('./Authentication');
+const { User, userResolvers } = require('./user');
+const {
+  Authentication,
+  authenticationResolvers
+} = require('./authentication');
 
 const Query = gql`
 
@@ -11,7 +14,7 @@ type Query{
 
 const queryResolvers = {
   Query: {
-    user: (parent, args, context) => {
+    user: async (parent, args, context) => {
       const { userId } = context
       return context.prisma.user.findUnique({
           where: { id: userId }
@@ -22,10 +25,9 @@ const queryResolvers = {
 
 const schema = makeExecutableSchema( {
   typeDefs: [Query, User, Authentication],
-  resolvers: merge(queryResolvers)
+  resolvers: merge(queryResolvers, authenticationResolvers, userResolvers )
 });
 
 module.exports = {
-  schema,
-  
+  schema
 }
