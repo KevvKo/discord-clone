@@ -14,12 +14,12 @@ import UserBar from '../../components/user/userBar/UserBar';
 import SearchBar from '../../components/search/searchBar/SearchBar';
 // Hooks
 import { useSetupUser } from '../../hooks/useSetupUser';
-
+import { useSetupUserProfile } from '../../hooks/useSetupUserProfile';
 
 function Home() {
-    // const user = useSelector( state => state.user);
 
     const { error, loading } = useSetupUser();
+    useSetupUserProfile();
     if ( loading ) return 'loading...';
     if ( error ) return `${error.message}`;    
 
