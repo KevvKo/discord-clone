@@ -18,6 +18,12 @@ const queryResolvers = {
       return context.prisma.user.findUnique({
           where: { id: userId }
       });
+    },
+    userProfile: async (parent, args, context) => {
+      const { userId } = context;
+      return context.prisma.userprofile.findUnique({
+          where: { userId: userId }
+      });
     }
   }
 }

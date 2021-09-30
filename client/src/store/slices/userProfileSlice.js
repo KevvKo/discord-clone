@@ -1,22 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const userSlice = createSlice({
-    name: 'user',
+const userProfileSlice = createSlice({
+    name: 'userProfile',
     initialState: {},
     reducers: {    
-        setUser(state, action) { 
+        setUserProfile(state, action) { 
             const userProfile = action.payload;
             return {
                 ...state,
-                id: userProfile.id,
+                userId: userProfile.id,
                 color: userProfile.name,
             };
         },  
         setColor(state, action) {
-            const phoneNumber = action.payload;
+            const color = action.payload;
             return {
                 ...state,
-                phoneNumber: phoneNumber
+                color: color
             };
         }
     }
@@ -24,5 +24,5 @@ const userSlice = createSlice({
 
 export const { 
     setColor
-} = userSlice.actions;
-export default userSlice.reducer;
+} = userProfileSlice.actions;
+export default userProfileSlice.reducer;

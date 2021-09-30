@@ -14,7 +14,7 @@ export const useSetupUserProfile = () => {
 
     useEffect( () => {
         if( data ) {
-            dispatch(setColor(data.user));
+            dispatch(setColor(data.userProfile));
         }
     }, [ data ]); 
 

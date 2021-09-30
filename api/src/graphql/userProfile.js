@@ -1,13 +1,10 @@
 require('dotenv').config();
 const { gql } = require('apollo-server');
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken');
-const { APP_SECRET } = process.env;
 
 const UserProfile = gql`
 
 type UserProfile {
-    id: ID!
+    userId: ID!
     color: String!
 }
 
@@ -16,7 +13,17 @@ extend type Mutation {
 }`
 
 const userProfileResolvers = {
-    Mutation: {}
+    Mutation: {
+        setColor: async ( parent, args, context, info ) => {
+            const { userId } = context;
+            const updatedUserProfile = await context.prisma.userprofile.update({
+                where: { userId: userId },
+                data: { color: args.color } 
+            })
+
+            return updatedUserProfile;
+        }
+    }
 }
 
 module.exports = {

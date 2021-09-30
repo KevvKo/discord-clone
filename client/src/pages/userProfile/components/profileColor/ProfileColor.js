@@ -3,12 +3,14 @@ import './ProfileColor.css';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 function ProfileColor(){
 
     const [ t ] = useTranslation('common');
     const [ customizedColor, setCustomizedColor ] = useState(''); 
-
+    const profileColor = useSelector( state => state.userProfile.color );
+    
     const handleInput = (e) => {
         setCustomizedColor(e.target.value);
     };
