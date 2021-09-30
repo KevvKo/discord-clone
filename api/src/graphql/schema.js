@@ -1,15 +1,14 @@
 const { gql, makeExecutableSchema } = require('apollo-server');
 const { merge } = require('lodash')
 const { User, userResolvers } = require('./user');
-const {
-  Authentication,
-  authenticationResolvers
-} = require('./authentication');
+const { UserProfile, userProfileResolvers } = require('./userProfile');
+const { Authentication, authenticationResolvers } = require('./authentication');
 
 const Query = gql`
 
 type Query{
   user: User!
+  userProfile: UserProfile!
 }`
 
 const queryResolvers = {
@@ -24,8 +23,13 @@ const queryResolvers = {
 }
 
 const schema = makeExecutableSchema( {
-  typeDefs: [Query, User, Authentication],
-  resolvers: merge(queryResolvers, authenticationResolvers, userResolvers )
+  typeDefs: [Query, User, UserProfile, Authentication],
+  resolvers: merge(
+    queryResolvers, 
+    authenticationResolvers, 
+    userResolvers, 
+    userProfileResolvers 
+  )
 });
 
 module.exports = {
