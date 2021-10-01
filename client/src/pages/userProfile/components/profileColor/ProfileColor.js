@@ -7,8 +7,9 @@ import { useSelector } from 'react-redux';
 
 function ProfileColor(){
 
+    const defaultColor = '#939394';
     const [ t ] = useTranslation('common');
-    const [ customizedColor, setCustomizedColor ] = useState(''); 
+    const [ customizedColor, setCustomizedColor ] = useState('');
     const profileColor = useSelector( state => state.userProfile.color );
     
     let customizedStyle = {
@@ -35,11 +36,19 @@ function ProfileColor(){
             </div>
             <div className='d-flex'>
                 <div className='mr-3'>
-                    <div className='color-panel-default'></div>
+                    <div className='color-panel-default d-flex justify-content-center'>
+                        { defaultColor === customizedColor &&
+                            <i className="bi bi-check"></i>
+
+                        }
+                    </div>
                     <p className='text-center'>{t('settings.main.userProfile.default')}</p>
                 </div>
                 <div>
                     <div className='color-panel-customized' style={ customizedStyle }>
+                        { defaultColor !== customizedColor &&
+                            <i id='custom-check' className='bi bi-check'></i>
+                        }                        
                         <input id='color-picker' type='color' onInput={ handleInput } onChange={ handleInput }></input>
                     </div>
                     <p className='text-center'>{t('settings.main.userProfile.customized')}</p>

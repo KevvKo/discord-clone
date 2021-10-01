@@ -3,6 +3,8 @@
     --color-panel-height: 50px;
     --color-panel-default-bg: var(--grey-color-10);
     --color-panel-customized-bg: var(--grey-color-10);
+    --check-color: var(--midnight-blue-color-10);
+    --check-size: 30px;
 }
 
 .profile-color{
@@ -19,6 +21,18 @@
 
 .color-panel-default{
     background: var(--color-panel-default-bg);
+}
+
+.profile-color .bi-check{
+    color: var(--check-color);
+    font-size: var(--check-size);
+}
+
+#custom-check{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #color-picker{
