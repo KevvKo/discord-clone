@@ -3,21 +3,39 @@ import './ProfileColor.css';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setProfileColor } from '../../../../store/slices/userProfileSlice';
+import { useMutation } from '@apollo/client';
+import { SET_COLOR } from '../../../../graphql/userProfile/userProfileMutations';
 
 function ProfileColor(){
 
     const defaultColor = '#939394';
+    const dispatch  = useDispatch();
     const [ t ] = useTranslation('common');
     const [ customizedColor, setCustomizedColor ] = useState('');
     const profileColor = useSelector( state => state.userProfile.color );
-    
+    const [ setColor , { data, error, loading }] = useMutation(SET_COLOR, {
+        onError: (error) => {
+            alert(error);
+        } 
+    });
+
     let customizedStyle = {
         background: `${customizedColor}`
     };
 
     const handleInput = (e) => {
         setCustomizedColor(e.target.value);
+        setColor({
+            variables: {
+                color: e.target.value
+            }
+        });
+
+      
+        dispatch( setProfileColor( e.target.value ));
+        
     };
 
     useEffect( () => {
@@ -39,7 +57,6 @@ function ProfileColor(){
                     <div className='color-panel-default d-flex justify-content-center'>
                         { defaultColor === customizedColor &&
                             <i className="bi bi-check"></i>
-
                         }
                     </div>
                     <p className='text-center'>{t('settings.main.userProfile.default')}</p>

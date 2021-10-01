@@ -12,7 +12,7 @@ const userProfileSlice = createSlice({
                 color: userProfile.name,
             };
         },  
-        setColor(state, action) {
+        setProfileColor(state, action) {
             const color = action.payload;
             return {
                 ...state,
@@ -23,6 +23,6 @@ const userProfileSlice = createSlice({
 });
 
 export const { 
-    setColor
+    setProfileColor
 } = userProfileSlice.actions;
 export default userProfileSlice.reducer;

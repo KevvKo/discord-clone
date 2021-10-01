@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useQuery } from '@apollo/client';
-import { setColor } from '../store/slices/userProfileSlice';
+import { setProfileColor } from '../store/slices/userProfileSlice';
 // Querys
 import { USER_PROFILE_QUERY } from '../graphql/userProfile/userProfileQuery';
 
@@ -14,7 +14,7 @@ export const useSetupUserProfile = () => {
 
     useEffect( () => {
         if( data ) {
-            dispatch(setColor(data.userProfile?.color));
+            dispatch(setProfileColor(data.userProfile?.color));
         }
     }, [ data ]); 
 
