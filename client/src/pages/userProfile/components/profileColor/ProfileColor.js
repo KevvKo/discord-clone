@@ -11,13 +11,23 @@ function ProfileColor(){
     const [ customizedColor, setCustomizedColor ] = useState(''); 
     const profileColor = useSelector( state => state.userProfile.color );
     
+    let customizedStyle = {
+        background: `${customizedColor}`
+    };
+
     const handleInput = (e) => {
         setCustomizedColor(e.target.value);
     };
 
     useEffect( () => {
+
+        if( profileColor ){
+            setCustomizedColor( profileColor );
+        }
+
         document.querySelector('.color-panel-customized').style.background = customizedColor;
-    }, [customizedColor]);
+    }, [profileColor]);
+
     return(
         <div className='profile-color mb-5'>
             <div className='subtitle mb-3'>
@@ -29,7 +39,7 @@ function ProfileColor(){
                     <p className='text-center'>{t('settings.main.userProfile.default')}</p>
                 </div>
                 <div>
-                    <div className='color-panel-customized'>
+                    <div className='color-panel-customized' style={ customizedStyle }>
                         <input id='color-picker' type='color' onInput={ handleInput } onChange={ handleInput }></input>
                     </div>
                     <p className='text-center'>{t('settings.main.userProfile.customized')}</p>

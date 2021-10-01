@@ -21,10 +21,6 @@
     background: var(--color-panel-default-bg);
 }
 
-.color-panel-customized{
-    background: var(--color-panel-customized-bg);
-}
-
 #color-picker{
     opacity: 0;
 }
