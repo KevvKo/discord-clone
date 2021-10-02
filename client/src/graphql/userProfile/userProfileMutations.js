@@ -9,3 +9,13 @@ export const SET_COLOR = gql`
     }
   }
 `;
+
+export const SET_DESCRIPTION = gql`
+  mutation SetDescriptionMutation(
+    $description: String!
+  ) {
+    setDescription( description: $description) {
+      description
+    }
+  }
+`;

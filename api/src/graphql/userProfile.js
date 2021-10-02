@@ -11,6 +11,7 @@ type UserProfile {
 
 extend type Mutation {
     setColor (color: String): UserProfile!
+    setDescription (description: String): UserProfile!
 }`
 
 const userProfileResolvers = {
@@ -20,7 +21,7 @@ const userProfileResolvers = {
             const updatedUserProfile = await context.prisma.userprofile.update({
                 where: { userId: userId },
                 data: { color: args.color } 
-            })
+            }) 
 
             return updatedUserProfile;
         },

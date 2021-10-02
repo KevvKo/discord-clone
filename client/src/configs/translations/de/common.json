@@ -134,6 +134,7 @@
                 "default": "Standard",
                 "profileColor": "Profilfarbe",
                 "removeAvatar": "Avatar ändern",
+                "saveChanges": "Save Changes",
                 "title": "Nutzerprofil",
                 "userDescription": "Über mich",
                 "textAreaDescription": "Du kannst auch Markdown und Links benutzen.",
