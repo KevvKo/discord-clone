@@ -6,6 +6,7 @@ const UserProfile = gql`
 type UserProfile {
     userId: ID!
     color: String!
+    description: String
 }
 
 extend type Mutation {

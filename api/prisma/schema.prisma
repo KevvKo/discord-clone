@@ -22,4 +22,5 @@ model userprofile {
   userId            Int           @unique @id
   color             String        @default("#939394")
   user              user?         @relation(fields: userId, references: id)
+  description       String        @db.VarChar(200)
 }
