@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setProfileColor } from '../../../../store/slices/userProfileSlice';
 import { useMutation } from '@apollo/client';
 import { SET_COLOR } from '../../../../graphql/userProfile/userProfileMutations';
+import { USER_PROFILE_QUERY } from '../../../../graphql/userProfile/userProfileQuery';
 
 function ProfileColor(){
 
@@ -18,7 +19,8 @@ function ProfileColor(){
     const [ setColor , { data, error, loading }] = useMutation(SET_COLOR, {
         onError: (error) => {
             alert(error);
-        } 
+        },
+        refetchQueries: [{ query: USER_PROFILE_QUERY }]
     });
 
     let customizedStyle = {
@@ -47,12 +49,9 @@ function ProfileColor(){
     };
 
     useEffect( () => {
-
         if( profileColor ){
             setCustomizedColor( profileColor );
         }
-
-        document.querySelector('.color-panel-customized').style.background = customizedColor;
     }, [profileColor]);
 
     return(

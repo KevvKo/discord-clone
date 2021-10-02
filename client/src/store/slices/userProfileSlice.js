@@ -9,7 +9,8 @@ const userProfileSlice = createSlice({
             return {
                 ...state,
                 userId: userProfile.id,
-                color: userProfile.name,
+                color: userProfile.color,
+                description: userProfile.description
             };
         },  
         setProfileColor(state, action) {
@@ -18,11 +19,20 @@ const userProfileSlice = createSlice({
                 ...state,
                 color: color
             };
+        },
+        setProfileDescription( state, action ) {
+            const description = action.payload;
+            return {
+                ...state,
+                description: description
+            };
         }
     }
 });
 
 export const { 
-    setProfileColor
+    setUserProfile,
+    setProfileColor,
+    setProfileDescription
 } = userProfileSlice.actions;
 export default userProfileSlice.reducer;

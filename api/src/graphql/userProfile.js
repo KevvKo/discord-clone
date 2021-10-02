@@ -23,7 +23,16 @@ const userProfileResolvers = {
             })
 
             return updatedUserProfile;
-        }
+        },
+        setDescription: async ( parent, args, context, info ) => {
+            const { userId } = context;
+            const updatedUserProfile = await context.prisma.userprofile.update({
+                where: { userId: userId },
+                data: { description: args.description } 
+            })
+
+            return updatedUserProfile;
+        },
     }
 }
 
