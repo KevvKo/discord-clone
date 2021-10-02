@@ -32,10 +32,18 @@ function ProfileColor(){
                 color: e.target.value
             }
         });
-
-      
         dispatch( setProfileColor( e.target.value ));
         
+    };
+
+    const handleClick = () => {
+        setCustomizedColor( defaultColor );
+        setColor({
+            variables: {
+                color: defaultColor
+            }
+        });
+        dispatch( setProfileColor( defaultColor ));
     };
 
     useEffect( () => {
@@ -54,7 +62,7 @@ function ProfileColor(){
             </div>
             <div className='d-flex'>
                 <div className='mr-3'>
-                    <div className='color-panel-default d-flex justify-content-center'>
+                    <div className='color-panel-default d-flex justify-content-center' onClick={ handleClick }>
                         { defaultColor === customizedColor &&
                             <i className="bi bi-check"></i>
                         }

@@ -23,6 +23,10 @@
     background: var(--color-panel-default-bg);
 }
 
+.color-panel-customized {
+    position: relative;
+}
+
 .profile-color .bi-check{
     color: var(--check-color);
     font-size: var(--check-size);
@@ -37,6 +41,7 @@
 
 #color-picker{
     opacity: 0;
-    position: relative;
-    top: -100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
