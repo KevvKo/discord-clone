@@ -2,7 +2,9 @@ import React from 'react';
 import './UserDescription.css';
 // Components
 import { Form, Button } from 'react-bootstrap';
+import ChangeModal from '../../../../components/ChangesPopover/ChangesPopover';
 // Hooks 
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useMutation } from '@apollo/client';
 // GQL
@@ -12,6 +14,7 @@ import { USER_PROFILE_QUERY } from '../../../../graphql/userProfile/userProfileQ
 function UserDescription(){
 
     const [ t ] = useTranslation('common');
+    const [ show, setShow ] = useState(false);
     const [ setDescription ] = useMutation(SET_DESCRIPTION, {
         onError: (error) => {
             alert(error);
@@ -19,11 +22,12 @@ function UserDescription(){
         refetchQueries: [{ query: USER_PROFILE_QUERY }]
     });
     const handleClick = (e) => {
-        setDescription({
-            variables: {
-                description: e.target.value
-            }
-        });
+        // setDescription({
+        //     variables: {
+        //         description: e.target.value
+        //     }
+        // });
+        setShow(!show);
     };
     return(
         <div className='user-description'>
@@ -37,6 +41,7 @@ function UserDescription(){
                 maxLength='190'
             ></Form.Control>
             <Button onClick={ handleClick } size='sm' variant='success'> { t('settings.main.userProfile.saveChanges') }</Button>
+            <ChangeModal show={ show } />
         </div>
     );
 }

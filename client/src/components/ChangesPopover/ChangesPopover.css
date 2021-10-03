@@ -1,0 +1,27 @@
+.changes-popover{
+    --changes-popover-bg: var(--midnight-blue-color);
+    --changes-popover-width: 750px;
+    --link-btn-color: var(--grey-color-50);
+
+    background: var(--changes-popover-bg);
+    font-size: var(--font-size-sm);
+    position: fixed;
+    bottom: 20px;
+    width: var(--changes-popover-width);
+    animation: linear 0.4s popup;
+    animation-timing-function: ease;
+}
+
+.changes-popover .btn-link{
+    color: var(--link-btn-color);
+}
+
+.changes-popover .btn-link:hover{
+    color: var(--link-btn-color);
+}
+
+@keyframes popup { 
+    0%{ bottom: -47px; }
+    80%{ bottom: 32px; }
+    100% { bottom: 25px; }
+}
