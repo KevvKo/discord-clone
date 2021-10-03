@@ -136,8 +136,10 @@
                 "default": "Default",
                 "profileColor": "Profile Color",
                 "removeAvatar": "Remove Avatar",
+                "reset": "Reset Changes",
                 "saveChanges": "Save Changes",
                 "title": "User Profile",
+                "unsaved": "Attention, you have unsaved changes! ",
                 "userDescription": "About me",
                 "textAreaDescription": "You can also use markdown and links.",
                 "textAreaPlaceholder": "Tell the world just a little bit about you"
