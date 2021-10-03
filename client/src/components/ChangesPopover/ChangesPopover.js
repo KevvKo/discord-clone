@@ -13,10 +13,10 @@ function ChangesPopover(props){
     return(
         <>  
             { props.show && 
-            <div className='changes-popover d-flex p-2' centered show={ props.show } onHide={props.handleOnHide} >
+            <div className='changes-popover d-flex p-2' centered show={ props.show } >
                 <span className='d-flex align-items-center'>{t('settings.main.userProfile.unsaved')}</span>
                 <Button className='ml-auto' variant='link' size='sm'>{t('settings.main.userProfile.reset')}</Button>
-                <Button variant='success' size='sm'>{t('settings.main.userProfile.saveChanges')}</Button>
+                <Button onClick={ props.callback } variant='success' size='sm'>{t('settings.main.userProfile.saveChanges')}</Button>
             </div>
             }
         </> 
@@ -31,6 +31,6 @@ ChangesPopover.defaultProps = {
 
 ChangesPopover.propTypes = {
     show: PropTypes.bool,
-    handleOnHide: PropTypes.func,
+    callback: PropTypes.func,
 
 };
