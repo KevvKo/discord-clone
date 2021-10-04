@@ -1,51 +1,33 @@
 import React from 'react';
 import './ProfileColor.css';
+import PropTypes from 'prop-types';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setProfileColor } from '../../../../store/slices/userProfileSlice';
-import { useMutation } from '@apollo/client';
-import { SET_COLOR } from '../../../../graphql/userProfile/userProfileMutations';
-import { USER_PROFILE_QUERY } from '../../../../graphql/userProfile/userProfileQuery';
-
-function ProfileColor(){
+function ProfileColor(props){
 
     const defaultColor = '#939394';
     const dispatch  = useDispatch();
     const [ t ] = useTranslation('common');
     const [ customizedColor, setCustomizedColor ] = useState('');
     const profileColor = useSelector( state => state.userProfile.color );
-    const [ setColor , { data, error, loading }] = useMutation(SET_COLOR, {
-        onError: (error) => {
-            alert(error);
-        },
-        refetchQueries: [{ query: USER_PROFILE_QUERY }]
-    });
-
+    const setProfileChanged = props.onChange;
     let customizedStyle = {
         background: `${customizedColor}`
     };
 
     const handleInput = (e) => {
         setCustomizedColor(e.target.value);
-        setColor({
-            variables: {
-                color: e.target.value
-            }
-        });
         dispatch( setProfileColor( e.target.value ));
-        
+        setProfileChanged();
     };
 
     const handleClick = () => {
         setCustomizedColor( defaultColor );
-        setColor({
-            variables: {
-                color: defaultColor
-            }
-        });
         dispatch( setProfileColor( defaultColor ));
+        setProfileChanged();
     };
 
     useEffect( () => {
@@ -81,5 +63,9 @@ function ProfileColor(){
         </div>
     );
 }
+
+ProfileColor.propTypes = {
+    onChange: PropTypes.func
+};
 
 export default ProfileColor;

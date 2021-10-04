@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 // Components
 import { Modal } from 'react-bootstrap';
 function FormModal(props){
-
     return(
         <Modal centered show={ props.show } onHide={props.handleOnHide} >
             <Modal.Header className='pb-0' closeButton>

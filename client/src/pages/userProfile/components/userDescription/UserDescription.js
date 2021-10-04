@@ -1,5 +1,6 @@
 import React from 'react';
 import './UserDescription.css';
+import PropTypes from 'prop-types';
 // Components
 import { Form, Button } from 'react-bootstrap';
 // Hooks 
@@ -28,5 +29,8 @@ function UserDescription(){
         </div>
     );
 }
+UserDescription .prototype = {
+    onChange: PropTypes.func
+};
 
 export default UserDescription;

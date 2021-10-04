@@ -1,5 +1,6 @@
 import React from 'react';
 import './Avatar.css';
+import PropTypes from 'prop-types';
 // Components
 import { Button } from 'react-bootstrap';
 // Hooks 
@@ -23,5 +24,9 @@ function Avatar(){
         </div>
     );
 }
+
+Avatar.prototype = {
+    onChange: PropTypes.func
+};
 
 export default Avatar;

@@ -7,17 +7,18 @@ import UserDescription from './components/userDescription/UserDescription';
 import ChangesPopover from '../../components/ChangesPopover/ChangesPopover';
 // Hooks
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import { useMutation } from '@apollo/client';
 // GQL
 import { SET_DESCRIPTION } from '../../graphql/userProfile/userProfileMutations';
+import { SET_COLOR } from '../../graphql/userProfile/userProfileMutations';
 import { USER_PROFILE_QUERY } from '../../graphql/userProfile/userProfileQuery';
 
 function UserProfile(){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);
+    const [ profileChanged, setProfileChanged] = useState(false);
 
     const [ setDescription ] = useMutation(SET_DESCRIPTION, {
         onError: (error) => {
@@ -25,13 +26,29 @@ function UserProfile(){
         },
         refetchQueries: [{ query: USER_PROFILE_QUERY }]
     });
+
+    const [ setColor ] = useMutation(SET_COLOR, {
+        onError: (error) => {
+            alert(error);
+        },
+        refetchQueries: [{ query: USER_PROFILE_QUERY }]
+    });
+    const handleChange = () => {
+        setProfileChanged(true);
+        console.log(profileChanged);
+    };
     
+    useEffect(() => {
+        if(profileChanged){ setProfileChanged(true); }
+    }, [profileChanged]);
+
+
     return(
         <SettingsPanel>
             <h3>{t('settings.main.userProfile.title')}</h3>
-            <Avatar />
-            <ProfileColor />
-            <UserDescription />
+            <Avatar onChange={ handleChange } />
+            <ProfileColor onChange={ handleChange } />
+            <UserDescription onChange={ handleChange } />
             <ChangesPopover show={ show } />
         </SettingsPanel>
     );
