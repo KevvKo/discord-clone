@@ -2,18 +2,14 @@ import React from 'react';
 import './UserDescription.css';
 import PropTypes from 'prop-types';
 // Components
-import { Form, Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 // Hooks 
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function UserDescription(){
+function UserDescription(props){
 
     const [ t ] = useTranslation('common');
 
-    const handleClick = (e) => {
-
-    };
     return(
         <div className='user-description'>
             <div className='subtitle mb-3'>
@@ -24,12 +20,12 @@ function UserDescription(){
                 as='textarea' 
                 placeholder={t('settings.main.userProfile.textAreaPlaceholder')}
                 maxLength='190'
+                onChange={ props.onChange }
             ></Form.Control>
-            <Button onClick={ handleClick } size='sm' variant='success'> { t('settings.main.userProfile.saveChanges') }</Button>
         </div>
     );
 }
-UserDescription .prototype = {
+UserDescription.propTypes = {
     onChange: PropTypes.func
 };
 

@@ -17,7 +17,6 @@ import { USER_PROFILE_QUERY } from '../../graphql/userProfile/userProfileQuery';
 function UserProfile(){
 
     const [ t ] = useTranslation('common');
-    const [ show, setShow ] = useState(false);
     const [ profileChanged, setProfileChanged] = useState(false);
 
     const [ setDescription ] = useMutation(SET_DESCRIPTION, {
@@ -34,12 +33,15 @@ function UserProfile(){
         refetchQueries: [{ query: USER_PROFILE_QUERY }]
     });
     const handleChange = () => {
-        setProfileChanged(true);
-        console.log(profileChanged);
+        if( !profileChanged ){
+            setProfileChanged(true);
+        }
     };
     
-    useEffect(() => {
-        if(profileChanged){ setProfileChanged(true); }
+    useEffect(() => {   
+        if(profileChanged){ 
+            setProfileChanged(true); 
+        }
     }, [profileChanged]);
 
 
@@ -49,7 +51,7 @@ function UserProfile(){
             <Avatar onChange={ handleChange } />
             <ProfileColor onChange={ handleChange } />
             <UserDescription onChange={ handleChange } />
-            <ChangesPopover show={ show } />
+            <ChangesPopover show={ profileChanged } />
         </SettingsPanel>
     );
 }
