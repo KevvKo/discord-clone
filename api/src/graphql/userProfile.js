@@ -7,6 +7,7 @@ type UserProfile {
     userId: ID!
     color: String!
     description: String
+    path: String
 }
 
 extend type Mutation {
@@ -34,6 +35,15 @@ const userProfileResolvers = {
 
             return updatedUserProfile;
         },
+        setPath: async ( parent, args, context, info ) => {
+            const { userId } = context;
+            const updatedUserProfile = await context.prisma.userprofile.update({
+                where: { userId: userId },
+                data: { path: args.description } 
+            })
+
+            return updatedUserProfile;
+        }
     }
 }
 
