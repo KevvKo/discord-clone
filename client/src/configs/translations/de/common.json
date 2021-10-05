@@ -135,9 +135,11 @@
                 "profileColor": "Profilfarbe",
                 "removeAvatar": "Avatar ändern",
                 "reset": "Zurücksetzen",
-                "saveChanges": "Save Changes",
+                "saveChanges": "Speichere Änderungen",
+                "selectImage": "Wähle ein Bild",
                 "title": "Nutzerprofil",
                 "unsaved": "Achtung, du hast nicht gespeicherte Änderungen!",
+                "uploadFile": "Datei hochladen",
                 "userDescription": "Über mich",
                 "textAreaDescription": "Du kannst auch Markdown und Links benutzen.",
                 "textAreaPlaceholder": "Erzähl der Welt ein bisschen was von dir"

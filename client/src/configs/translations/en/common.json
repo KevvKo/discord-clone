@@ -138,8 +138,10 @@
                 "removeAvatar": "Remove Avatar",
                 "reset": "Reset Changes",
                 "saveChanges": "Save Changes",
+                "selectImage": "Select Image",
                 "title": "User Profile",
                 "unsaved": "Attention, you have unsaved changes! ",
+                "uploadFile": "Upload file",
                 "userDescription": "About me",
                 "textAreaDescription": "You can also use markdown and links.",
                 "textAreaPlaceholder": "Tell the world just a little bit about you"

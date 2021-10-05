@@ -13,6 +13,7 @@ type UserProfile {
 extend type Mutation {
     setColor (color: String): UserProfile!
     setDescription (description: String): UserProfile!
+    setPath (string: String): UserProfile!
 }`
 
 const userProfileResolvers = {

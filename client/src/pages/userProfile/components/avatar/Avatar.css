@@ -1,3 +1,41 @@
-.Avatar .btn-link{
+.Avatar .btn-link, .avatar-modal{
+    --avatar-upload-width: 190px;
+    --avatar-upload-height: 190px;    
+    --avatar-upload-bg: var(--midnight-blue-color);
+    --avatar-upload-icon-bg: var(--access-color);
+
     color: var(--font-color-primary) !important;
+}
+
+.avatar-modal{
+    display: inline-block
+}
+
+.avatar-modal form{
+    width: var(--avatar-upload-width);
+    height: var(--avatar-upload-height);
+    background: var(--avatar-upload-bg)
+}
+
+.avatar-modal .position-absolute{
+    top:50%;
+    left:50%;
+    transform: translate( -50%, -50%);
+    height: calc( var(--avatar-upload-height) - 25%);
+    width: calc( var(--avatar-upload-width) - 25%);
+    background: var(--avatar-upload-icon-bg);
+    border-radius: 50%;
+}
+
+.avatar-modal i{
+    margin: auto;
+    width: min-content;
+    font-size: 2rem;
+}
+
+.avatar-modal input{
+    cursor: pointer;
+    width: var(--avatar-upload-width);
+    height: var(--avatar-upload-height);
+    opacity: 0;
 }
