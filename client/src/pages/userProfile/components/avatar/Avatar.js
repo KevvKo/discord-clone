@@ -35,12 +35,14 @@ function Avatar(){
                 </Modal.Header>
                 <Modal.Body className='d-flex px-0 justify-content-center'>
                     <form className='position-relative' encType='multipart/form-data' action="/upload">
-                        <div className='position-absolute d-flex justify-content-center align-items-start'>
-                            <div className='d-flex flex-column align-self-center'> 
-                                <i className="bi bi-file-arrow-up"></i>
-                                <span>{t('settings.main.userProfile.uploadFile')}</span>
+                        <div className='position-absolute d-flex flex-column align-items-center'>
+                            <div className='d-flex mt-3 justify-content-center align-items-start'>
+                                <div className='d-flex flex-column align-self-center'> 
+                                    <i className="bi bi-file-arrow-up"></i>
+                                </div>
                             </div>
-                        </div>
+                            <span>{t('settings.main.userProfile.uploadFile')}</span>
+                        </div>                        
                         <input type='file' />
                     </form>
                 </Modal.Body>

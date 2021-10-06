@@ -3,7 +3,8 @@
     --avatar-upload-height: 190px;    
     --avatar-upload-bg: var(--midnight-blue-color);
     --avatar-upload-icon-bg: var(--access-color);
-
+    --border-color: var(--midnight-blue-color-80);
+    --hover-border-color: var(--access-color);
     color: var(--font-color-primary) !important;
 }
 
@@ -14,13 +15,23 @@
 .avatar-modal form{
     width: var(--avatar-upload-width);
     height: var(--avatar-upload-height);
-    background: var(--avatar-upload-bg)
+    background: var(--avatar-upload-bg);
+    border: 1px solid var(--border-color);
+    transition: 0.5s;
+}
+
+.avatar-modal form:hover{
+    border: 1px solid var(--hover-border-color);
 }
 
 .avatar-modal .position-absolute{
-    top:50%;
-    left:50%;
-    transform: translate( -50%, -50%);
+    height: 100%; 
+    width: 100%;
+}
+.avatar-modal .d-flex.justify-content-center.align-items-start{
+    /* top:50%;
+    left:50%; */
+    /* transform: translate( -50%, -50%); */
     height: calc( var(--avatar-upload-height) - 25%);
     width: calc( var(--avatar-upload-width) - 25%);
     background: var(--avatar-upload-icon-bg);
