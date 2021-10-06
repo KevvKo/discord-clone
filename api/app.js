@@ -8,14 +8,12 @@ const multer  = require('multer');
 const upload = multer({ dest: 'uploads/' });
 
 const prisma = new PrismaClient()
-const pubsub = new PubSub()
 const server = new ApolloServer({
   schema: schema,
   context: ({req}) => {
     return {
       ...req,
       prisma,
-      pubsub,
       userId: 
         req && req.headers.authorization
           ? getUserId(req)
