@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { gql } = require('apollo-server');
+const { gql } = require('apollo-server-express');
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 const { APP_SECRET } = process.env;

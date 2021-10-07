@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server');
+const { gql } = require('apollo-server-express');
 const bcrypt = require('bcrypt')
 
 const User = gql`

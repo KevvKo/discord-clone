@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { gql } = require('apollo-server');
+const { gql } = require('apollo-server-express');
 
 const UserProfile = gql`
 
