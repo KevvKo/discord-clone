@@ -7,10 +7,7 @@ const { getUserId } = require('./src/utils/utils');
 const { schema } = require('./src/graphql/schema');
 const express = require('express');
 const http = require ('http');
-const {
-  GraphQLUpload,
-  graphqlUploadExpress, // A Koa implementation is also exported.
-} = require('graphql-upload');
+const { graphqlUploadExpress } = require('graphql-upload');
 
 async function startServer(){
   const app = express();
