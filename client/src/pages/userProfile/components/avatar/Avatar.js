@@ -3,6 +3,7 @@ import './Avatar.css';
 import PropTypes from 'prop-types';
 // Components
 import { Button, Modal } from 'react-bootstrap';
+import DisplayImage from '../displayImage/DisplayImage';
 // Hooks 
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
@@ -10,11 +11,15 @@ function Avatar(){
 
     const [ t ] = useTranslation('common');
     const [ show, setShow ] = useState(false);
+    const [ showImage, setShowImage ] = useState(false);
+
     const handleShow = () => {
         setShow(!show);
     };
 
-    const handleChange = () => {};
+    const handleChange = () => {
+        setShow(!show);
+    };
     return(
         <div className='Avatar mb-5'>
             <div className='subtitle mb-3'>
@@ -48,6 +53,7 @@ function Avatar(){
                     </form>
                 </Modal.Body>
             </Modal>
+            <DisplayImage />
         </div>
     );
 }
