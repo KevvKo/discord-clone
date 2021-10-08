@@ -1,8 +1,5 @@
 require('dotenv').config();
 const { gql } = require('apollo-server-express');
-const { GraphQLUpload } = require('graphql-upload');
-const fs = require('fs');
-
 const UserProfile = gql`
 
 scalar Upload
@@ -14,21 +11,13 @@ type UserProfile {
     path: String
 }
 
-type Image{
-    filename: String!
-    mimetype: String!
-    encoding: String!
-}
-
 extend type Mutation {
     setColor (color: String): UserProfile!
     setDescription (description: String): UserProfile!
     setPath (string: String): UserProfile!
-    uploadImage (image: Upload! ): Image!
 }`
 
 const userProfileResolvers = {
-    Upload: GraphQLUpload,
 
     Mutation: {
         setColor: async ( parent, args, context ) => {
@@ -58,12 +47,6 @@ const userProfileResolvers = {
 
             return updatedUserProfile;
         },
-        uploadImage: async( parent, { file }) => {
-            const { filename, mimetype, createReadStream } = await image;
-            const stream = createReadStream();
-            const writeStream = fs.createWriteStream('./src/assets/img');
-            return true;
-        }
     }
 }
 

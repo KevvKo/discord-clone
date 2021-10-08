@@ -4,7 +4,7 @@ const { merge } = require('lodash')
 const { User, userResolvers } = require('./user');
 const { UserProfile, userProfileResolvers } = require('./userProfile');
 const { Authentication, authenticationResolvers } = require('./authentication');
-
+const { File, fileResolvers } = require('./file');
 const Query = gql`
 
 type Query{
@@ -30,12 +30,13 @@ const queryResolvers = {
 }
 
 const schema = makeExecutableSchema( {
-  typeDefs: [Query, User, UserProfile, Authentication],
+  typeDefs: [Query, User, File, UserProfile, Authentication],
   resolvers: merge(
     queryResolvers, 
     authenticationResolvers, 
     userResolvers, 
-    userProfileResolvers 
+    userProfileResolvers, 
+    fileResolvers
   )
 });
 

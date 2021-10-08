@@ -14,6 +14,7 @@ function Avatar(){
         setShow(!show);
     };
 
+    const handleChange = () => {};
     return(
         <div className='Avatar mb-5'>
             <div className='subtitle mb-3'>
@@ -43,7 +44,7 @@ function Avatar(){
                             </div>
                             <span>{t('settings.main.userProfile.uploadFile')}</span>
                         </div>                        
-                        <input type='file' />
+                        <input type='file' onChange={ handleChange } accept="image/png, image/jpeg"/>
                     </form>
                 </Modal.Body>
             </Modal>
