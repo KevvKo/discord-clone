@@ -1,0 +1,21 @@
+.display-image{
+    --footer-bg: var(--midnight-blue-color-40);
+}
+
+.display-image input[type=range]{
+    width: 70%;
+}
+
+.display-image #range-size{
+    width: 100%;
+}
+
+.display-image i:first-child{
+    font-size: 1rem;
+}
+.display-image i:nth-child(3){
+    font-size: 1.5rem;
+}
+.display-image .modal-footer{
+    background: var(--footer-bg);
+}

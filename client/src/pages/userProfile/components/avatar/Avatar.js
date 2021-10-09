@@ -17,14 +17,20 @@ function Avatar(){
         setShow(!show);
     };
 
+    const handleShowImage = () => {
+        setShowImage(!showImage);
+    };
+
     const handleChange = () => {
         setShow(!show);
+        setShowImage(true);
     };
     return(
         <div className='Avatar mb-5'>
             <div className='subtitle mb-3'>
                 {t('settings.main.userProfile.avatar')}
             </div>
+
             <Button className='mr-2' size='sm' onClick={ handleShow }>               
                 {t('settings.main.userProfile.changeAvatar')}
             </Button>
@@ -49,11 +55,11 @@ function Avatar(){
                             </div>
                             <span>{t('settings.main.userProfile.uploadFile')}</span>
                         </div>                        
-                        <input type='file' onChange={ handleChange } accept="image/png, image/jpeg"/>
+                        <input className='select-image' type='file' onChange={ handleChange } accept="image/png, image/jpeg"/>
                     </form>
                 </Modal.Body>
             </Modal>
-            <DisplayImage />
+            <DisplayImage show={ showImage } handleHide={ handleShowImage }/>
         </div>
     );
 }

@@ -44,7 +44,7 @@
     font-size: 2rem;
 }
 
-.avatar-modal input{
+.avatar-modal .select-image{
     cursor: pointer;
     width: var(--avatar-upload-width);
     height: var(--avatar-upload-height);
