@@ -2,7 +2,8 @@ import React from 'react';
 import './DisplayImage.css';
 import PropTypes from 'prop-types'; 
 // Components
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap';
+import ImageSlider from '../ImageSlider/ImageSlider';
 // Hooks
 import { useTranslation } from 'react-i18next';
 
@@ -25,7 +26,7 @@ function DisplayImage(props){
                 <img src='' />
                 <div id='range-size' className='d-flex'>
                     <i className='bi bi-file-image-fill'></i>
-                    <input type='range' />
+                    <ImageSlider />
                     <i className='bi bi-file-image-fill'></i>
                 </div>
             </Modal.Body>
