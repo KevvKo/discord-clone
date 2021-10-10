@@ -3,6 +3,7 @@ import './DisplayImage.css';
 import PropTypes from 'prop-types'; 
 // Components
 import { Button, Modal } from 'react-bootstrap';
+import ExmapleAvatar from '../../../../assets/img/person-circle.svg';
 import ImageSlider from '../ImageSlider/ImageSlider';
 // Hooks
 import { useTranslation } from 'react-i18next';
@@ -22,8 +23,10 @@ function DisplayImage(props){
             <Modal.Header className='ml-3 px-0 pb-0'>
                 {t('settings.main.userProfile.editImage')}
             </Modal.Header>
-            <Modal.Body className='d-flex px-0 justify-content-center'>
-                <img src='' />
+            <Modal.Body className='d-flex flex-column px-0 justify-content-center'>
+                <div className='d-flex justify-content-center'>
+                    <img src={ ExmapleAvatar} />
+                </div>
                 <div id='range-size' className='d-flex'>
                     <i className='bi bi-file-image-fill'></i>
                     <ImageSlider />
