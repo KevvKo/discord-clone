@@ -1,4 +1,6 @@
 .display-image{
+    --image-container-bg: var(--midnight-blue-color-10);
+    --image-container-height: 300px;
     --footer-bg: var(--midnight-blue-color-40);
 }
 
@@ -10,6 +12,10 @@
 }
 .display-image i:first-child{
     font-size: 1rem;
+}
+.display-image #image-container{
+    height: var(--image-container-height);
+    background: var(--image-container-bg);
 }
 .display-image i:nth-child(3){
     font-size: 1.5rem;

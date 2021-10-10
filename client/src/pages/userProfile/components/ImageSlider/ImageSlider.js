@@ -9,13 +9,14 @@ function ImageSlider(props){
     const [ t ] = useTranslation('common');
 
     return(
-        <input id='image-slider' type='range'/>
+        <input id='image-slider' onChange={ props.onChange } type='range' min={0} max={100} value={ props.value }/>
     );
 }
 
 
 ImageSlider.propTypes = {
-
+    value: PropTypes.number,
+    onChange: PropTypes.func
 };
 
 export default ImageSlider;
