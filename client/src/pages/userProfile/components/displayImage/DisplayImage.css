@@ -1,7 +1,8 @@
 .display-image{
     --image-container-bg: var(--midnight-blue-color-10);
-    --image-container-height: 300px;
+    --image-container-size: 300px;
     --footer-bg: var(--midnight-blue-color-40);
+    --showcase-border-color: var(--grey-color-50);
 }
 
 .display-image input[type=range]{
@@ -14,8 +15,15 @@
     font-size: 1rem;
 }
 .display-image #image-container{
-    height: var(--image-container-height);
+    position: relative;
+    height: var(--image-container-size);
     background: var(--image-container-bg);
+}
+.display-image #avatar-showcase{
+    border: 5px solid var(--showcase-border-color);
+    height: var(--image-container-size);
+    width: var(--image-container-size);
+    border-radius: 50%;
 }
 .display-image i:nth-child(3){
     font-size: 1.5rem;

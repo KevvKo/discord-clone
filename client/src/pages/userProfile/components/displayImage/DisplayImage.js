@@ -32,6 +32,9 @@ function DisplayImage(props){
             <Modal.Body className='d-flex flex-column px-0 justify-content-center'>
                 <div id='image-container' className='d-flex mx-3 mb-3 justify-content-center align-items-center overflow-hidden'>
                     <img src={ ExampleAvatar} width={`${ 280 * ( 1 + imageSize/100)}px`} height={`${ 280 * ( 1 + imageSize/100)}px`} />
+                    <div className='position-absolute d-flex justify-content-center'>
+                        <div id='avatar-showcase'></div>
+                    </div>
                 </div>
                 <div id='range-size' className='d-flex'>
                     <i className='bi bi-file-image-fill'></i>
