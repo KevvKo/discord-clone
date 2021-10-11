@@ -1,5 +1,5 @@
 .display-image{
-    --image-container-bg: var(--midnight-blue-color-10);
+    --image-container-bg: var(--midnight-blue-color-20);
     --image-container-size: 300px;
     --footer-bg: var(--midnight-blue-color-40);
     --showcase-border-color: var(--grey-color-50);
@@ -24,6 +24,21 @@
     height: var(--image-container-size);
     width: var(--image-container-size);
     border-radius: 50%;
+    position: relative;
+}
+.display-image #avatar-showcase::before{
+    content: "";
+    display: block;
+    border: 200px solid black;
+    border-radius: 50%;
+    height: calc( var(--image-container-size) + 400px ); /* 400 px to match the size for the hole combined with the border width */
+    width: calc( var(--image-container-size) + 400px );
+    padding-bottom: 50%;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
 }
 .display-image i:nth-child(3){
     font-size: 1.5rem;

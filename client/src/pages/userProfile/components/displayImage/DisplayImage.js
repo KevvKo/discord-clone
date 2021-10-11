@@ -22,7 +22,7 @@ function DisplayImage(props){
             className='display-image' 
             dialogClassName="avatar-modal p-4"
             centered 
-            show={ props.show } 
+            show={ true } 
             onHide={ props.callback }
         >
             <Modal.Header className='ml-3 px-0 pb-0'>
@@ -31,8 +31,7 @@ function DisplayImage(props){
             <Modal.Body className='d-flex flex-column px-0 justify-content-center'>
                 <div id='image-container' className='d-flex mx-3 mb-3 justify-content-center align-items-center overflow-hidden'>
                     <img src={ ExampleAvatar} width={`${ 280 * ( 1 + imageSize/100)}px`} height={`${ 280 * ( 1 + imageSize/100)}px`} />
-                    <div className='position-absolute d-flex justify-content-center'>
-                        <div id='avatar-showcase'></div>
+                    <div id='avatar-showcase' className='position-absolute'>
                     </div>
                 </div>
                 <div id='range-size' className='d-flex'>
