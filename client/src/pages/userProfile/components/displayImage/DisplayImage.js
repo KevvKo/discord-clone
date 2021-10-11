@@ -15,7 +15,6 @@ function DisplayImage(props){
 
     const handleChange = (e) => {
         setImageSize(e.target.value);
-        console.log(imageSize);
     };
 
     return(
@@ -23,8 +22,8 @@ function DisplayImage(props){
             className='display-image' 
             dialogClassName="avatar-modal p-4"
             centered 
-            show={ true } 
-            onHide={ props.handleHide }
+            show={ props.show } 
+            onHide={ props.callback }
         >
             <Modal.Header className='ml-3 px-0 pb-0'>
                 {t('settings.main.userProfile.editImage')}
@@ -44,7 +43,7 @@ function DisplayImage(props){
             </Modal.Body>
             <Modal.Footer className='d-flex'>
                 <Button className='mr-auto' variant='link'>{t('settings.main.userProfile.skip')}</Button>
-                <Button variant='link'>{t('settings.main.userProfile.cancel')}</Button>
+                <Button onClick={ props.callback } variant='link'>{t('settings.main.userProfile.cancel')}</Button>
                 <Button>{t('settings.main.userProfile.confirm')}</Button>
             </Modal.Footer>
         </Modal>
@@ -57,7 +56,7 @@ DisplayImage.defaultProps = {
 
 DisplayImage.propTypes = {
     show: PropTypes.bool,
-    handleHide: PropTypes.func
+    callback: PropTypes.func
 };
 
 export default DisplayImage;

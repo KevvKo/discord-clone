@@ -59,7 +59,7 @@ function Avatar(){
                     </form>
                 </Modal.Body>
             </Modal>
-            <DisplayImage show={ showImage } handleHide={ handleShowImage }/>
+            <DisplayImage show={ showImage } callback={ handleShowImage }/>
         </div>
     );
 }
