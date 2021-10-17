@@ -1,8 +1,20 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render } from '@testing-library/react';
 import App from './App';
+import { MockedProvider } from '@apollo/client/testing';
+import { InMemoryCache } from '@apollo/client';
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/ xyz /i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+import '../services/i18n';
+
+describe('App component', () => {
+    const cache = new InMemoryCache({ });
+    const mocks = [];
+
+    it('should render', () => {
+        const view = render(
+            <MockedProvider cache={cache} mocks={mocks} addTypename={false}>
+                <App />
+            </MockedProvider>
+        );
+    });
+});

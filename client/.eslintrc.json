@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
@@ -15,25 +16,38 @@
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
+    "plugins": 
+        [
+            "react", 
+            "testing-library"
+        ],
+    
     "globals": {
         "process": "readonly"
     },
     "rules": {
         "indent": [
-            "error",
+            1,
             4
         ],
-        "no-unused-vars": "warn",
+        "no-unused-vars": 1,
         "quotes": [
-            "error",
+            1,
             "single"
         ],
         "semi": [
-            "error",
+            1,
             "always"
-        ]
-    }
+        ],
+        "testing-library/await-async-query": "warn",
+        "testing-library/no-await-sync-query": "warn",
+        "testing-library/no-debug": "warn",
+        "testing-library/no-dom-import": "off"
+    },
+    "overrides": [
+        {
+          "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+          "extends": ["plugin:testing-library/react"]
+        }
+      ]
 }
