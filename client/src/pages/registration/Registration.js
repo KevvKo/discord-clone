@@ -21,7 +21,7 @@ function Registration(){
 
 
     return (
-        <Row className='registration flex-grow-1 justify-content-center align-items-center'>
+        <Row className='registration flex-grow-1 justify-content-center align-items-center' role='page-view'>
             <Col className='p-4' sm={8} md={4}>
                 <h1>{t('registration.title')}</h1>
                 <RegistrationForm />

@@ -24,7 +24,7 @@ function Home() {
     if ( error ) return `${error.message}`;    
 
     return ( 
-        <div className='Home d-flex flex-column flex-grow-1'>
+        <div className='Home d-flex flex-column flex-grow-1' role='page-view'>
             <Row >
                 <AppHeader />
             </Row>

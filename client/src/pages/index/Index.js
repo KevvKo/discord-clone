@@ -25,7 +25,7 @@ function Index(){
     const [t] = useTranslation('common');
 
     return (
-        <Row className='index flex-grow-1'>
+        <Row className='index flex-grow-1' role='page-view'>
             <div className='col d-flex flex-column justify-content-center align-items-center'>
                 <h5>
                     {t('index.title')}

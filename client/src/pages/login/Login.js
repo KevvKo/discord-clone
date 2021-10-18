@@ -12,7 +12,7 @@ function Login(){
 
 
     return (
-        <Row className='login flex-grow-1 justify-content-center align-items-center'>
+        <Row className='login flex-grow-1 justify-content-center align-items-center' role='page-view'>
             <Col className='p-5' sm={8} md={5}>
                 <h1 className='h1'>{t('login.title')}</h1>
                 <p>{t('login.subGreetings')}</p>

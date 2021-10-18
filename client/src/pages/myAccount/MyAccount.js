@@ -14,7 +14,7 @@ function MyAccount(){
     const [ t ] = useTranslation('common');
 
     return(
-        <SettingsPanel>
+        <SettingsPanel role='page-view'>
             <h3>{t('settings.main.myAccount.myAccount')}</h3>
             <UserPanel />
             <div className='breakline mb-4'></div>
