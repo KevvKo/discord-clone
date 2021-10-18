@@ -11,7 +11,7 @@ export const useSetupUser = () => {
 
     const {error, loading, data } = useQuery( USER_QUERY );
     const dispatch = useDispatch();
-
+    
     useEffect( () => {
         if( data ) {
             dispatch(setUser(data.user));

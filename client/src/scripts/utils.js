@@ -48,9 +48,11 @@ import userReducer from '../store/slices/userSlice';
 import userProfileReducer from '../store/slices/userProfileSlice';
 import { MockedProvider } from '@apollo/client/testing';
 import { InMemoryCache } from '@apollo/client';
+import { MemoryRouter } from 'react-router';
 
 function render(
     ui,
+    mocks = [],
     {
         preloadedState,
         store = configureStore({  reducer: {
@@ -63,13 +65,13 @@ function render(
     function Wrapper({ children }) {
 
         const cache = new InMemoryCache({ });
-        const mocks = [];
-    
         return (
-            <MockedProvider cache={cache} mocks={mocks} addTypename={false}>
-                <Provider store={store}>
-                    {children}
-                </Provider>
+            <MockedProvider cache={cache} mocks={mocks}>
+                <MemoryRouter>
+                    <Provider store={store}>
+                        {children}
+                    </Provider>
+                </MemoryRouter>
             </MockedProvider>
         )
         }
