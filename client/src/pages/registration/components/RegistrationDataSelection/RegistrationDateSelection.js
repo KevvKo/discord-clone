@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Col, Row } from 'react-bootstrap';
 import Select from '../../../../components/forms/select/Select';
 // hooks and services
-import { range } from '../../../../services/utils';
+import { range } from '../../../../scripts/utils';
 import useAuth from '../../../../hooks/useAuthentification';
 
 function RegistrationDateSelection(props){

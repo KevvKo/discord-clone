@@ -25,6 +25,7 @@
     "globals": {
         "process": "readonly"
     },
+    "ignorePatterns": ["utils.js", "**/scripts"],
     "rules": {
         "indent": [
             1,

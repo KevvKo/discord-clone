@@ -11,7 +11,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import useForm from '../../../../hooks/useForm';
 // Utilities
 import { setEmail } from '../../../../store/slices/userSlice';
-import { obscureString } from '../../../../services/utils';
+import { obscureString } from '../../../../scripts/utils';
 import { CHANGE_EMAIL } from '../../../../graphql/user/userMutations';
 import { USER_QUERY } from '../../../../graphql/user/userQuery';
 
