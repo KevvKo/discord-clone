@@ -3,7 +3,8 @@ import Home from './Home';
 import '../../scripts/i18n';
 import { render, screen, act } from '../../scripts/utils';
 import { USER_QUERY } from '../../graphql/user/userQuery';
-import { GraphQLError } from '@apollo/client/testing';
+
+
 describe('Home component', () => {
     it('should render', () => {
         render(

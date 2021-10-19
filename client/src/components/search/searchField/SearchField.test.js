@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen, act } from '../../../scripts/utils';
 import SearchField from './SearchField';
 
-// test('renders learn react link', () => {
-//   render(<SearchField />);
-//   const linkElement = screen.getByText(/ xyz /i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+describe('Channellist component', () => {
+    it('should render', () => {
+        render( <SearchField placeholder='xyz'/> );
+        expect(screen.getByPlaceholderText('xyz')).toBeTruthy();
+    });
+    it('should render default type input', () => {
+        
+        render( <SearchField type='button' placeholder='xyz'/> );
+        expect(screen.getByRole('button')).toBeTruthy();
+        expect(screen.getByText('xyz')).toBeTruthy();
+
+    });
+});

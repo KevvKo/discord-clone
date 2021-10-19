@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen, act } from '../../../scripts/utils';
 import ChannelList from './ChannelList';
 
-// test('renders learn react link', () => {
-//   render(<ChannelList />);
-//   const linkElement = screen.getByText(/ xyz /i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+describe('Channellist component', () => {
+    it('should render', () => {
+        render(
+            <ChannelList />
+        );
+    });
+});

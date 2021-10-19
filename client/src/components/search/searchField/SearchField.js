@@ -1,26 +1,25 @@
 import React from 'react';
-
+import './SearchField.css';
+import { PropTypes } from 'prop-types';
+// Components
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './SearchField.css';
 function SearchField(props) {
 
-    const buttonType = props.type;
-    let searchField;
-
-    if ( buttonType === 'button' ){
-        searchField = <Button className='search-field text-nowrap text-left' variant='flat' size='sm'>{props.placeholder}</Button>;
-    } else if( buttonType === 'input' ){
-        searchField = <Form.Control className='search-field text-nowrap' type='text' placeholder={props.placeholder} />;
-    }
-
-    return (
-        searchField
-    );
+    if ( props.type === 'button' ){
+        return <Button className='search-field text-nowrap text-left' variant='flat' size='sm' role='button'>{props.placeholder}</Button>;
+    }    
+    return <Form.Control className='search-field text-nowrap' type='text' placeholder={props.placeholder} />;
 }
 
 SearchField.defaultProps = {
-    type: 'input'
+    type: 'input',
+    placeholder: ''
 };
 
+SearchField.propTypes = {
+    type: PropTypes.string,
+    placeholder: PropTypes.string
+
+}
 export default SearchField;
