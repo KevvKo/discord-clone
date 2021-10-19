@@ -3,7 +3,7 @@ import { render, screen } from '../../scripts/utils';
 import AppHeader from './AppHeader';
 import '../../scripts/i18n';
 
-describe('SearchBar component', () => {
+describe('AppHeader component', () => {
     it('should render', () => {
         render( <AppHeader /> );
     });

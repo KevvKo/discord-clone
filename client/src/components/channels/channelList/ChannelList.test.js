@@ -1,11 +1,10 @@
 import React from 'react';
-import { render, screen, act } from '../../../scripts/utils';
+import { render } from '../../../scripts/utils';
 import ChannelList from './ChannelList';
+import '../../../scripts/i18n';
 
-describe('Channellist component', () => {
+describe('ChannelList component', () => {
     it('should render', () => {
-        render(
-            <ChannelList />
-        );
+        render( <ChannelList /> );
     });
 });
