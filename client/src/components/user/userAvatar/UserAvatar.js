@@ -10,7 +10,7 @@ function UserAvatar(props) {
     const user = useSelector(state => state.user);
 
     return (
-        <div className={`user-avatar mr-2 ${ props.cssClasses }`}>
+        <div className={`user-avatar mr-2 ${ props.cssClasses }`} data-testid='user-avatar'>
             <i className='bi bi-person-circle' style={{fontSize: props.fontSize + 'rem'}}></i>
             { user.status &&
                 <div className='active-user d-inline-block'></div>

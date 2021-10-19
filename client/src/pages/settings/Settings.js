@@ -17,7 +17,7 @@ function Settings(){
     if ( error ) return `${error.message}`;    
 
     return(
-        <Row className="settings flex-fill flex-nowrap">
+        <Row className="settings flex-fill flex-nowrap" data-testid='settings'>
             <SettingsNavbar />
             <SettingsMain />
         </Row>

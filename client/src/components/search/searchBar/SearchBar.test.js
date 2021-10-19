@@ -3,7 +3,7 @@ import { render, screen } from '../../../scripts/utils';
 import SearchBar from './SearchBar';
 import '../../../scripts/i18n';
 
-describe('Channellist component', () => {
+describe('SearchBar component', () => {
     it('should render', () => {
         render( <SearchBar /> );
     });

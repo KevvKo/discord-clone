@@ -24,6 +24,7 @@ function IconButton(props) {
                 className={`icon-button ${props.cssClasses} ${ buttonClassNames}`} 
                 variant='flat' size={props.size} 
                 onClick={ props.callback }
+                data-testid='icon-button'
             >
                 <i className={iconClassNames}></i>
             </Button>

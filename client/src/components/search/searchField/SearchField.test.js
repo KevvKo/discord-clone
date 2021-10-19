@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '../../../scripts/utils';
 import SearchField from './SearchField';
 
-describe('Channellist component', () => {
+describe('SearchField component', () => {
     it('should render', () => {
         render( <SearchField placeholder='xyz'/> );
         expect(screen.getByPlaceholderText('xyz')).toBeTruthy();
