@@ -1,8 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render, screen } from '../../scripts/utils';
 import AppHeader from './AppHeader';
+import '../../scripts/i18n';
 
-// test('renders learn react link', () => {
-//   render(<AppHeader />);
-//   const linkElement = screen.getByText(/ xyz /i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+describe('SearchBar component', () => {
+    it('should render', () => {
+        render( <AppHeader /> );
+    });
+    it('should contain label "discord cloe"', () => {
+        render( <AppHeader /> );
+        expect(screen.getByText('Discord Clone')).toBeTruthy;
+
+    });
+});
