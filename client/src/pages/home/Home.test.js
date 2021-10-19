@@ -3,7 +3,7 @@ import Home from './Home';
 import '../../scripts/i18n';
 import { render, screen, act } from '../../scripts/utils';
 import { USER_QUERY } from '../../graphql/user/userQuery';
-
+import { GraphQLError } from '@apollo/client/testing';
 describe('Home component', () => {
     it('should render', () => {
         render(
@@ -14,7 +14,7 @@ describe('Home component', () => {
         render( <Home /> );
         expect(screen.getByText('loading...')).toBeTruthy();
     });
-    it('should render appheader', async () => {
+    it('should render components', async () => {
 
         const mocks = [
             {
@@ -38,9 +38,32 @@ describe('Home component', () => {
         
         await act( async () => {
             render( <Home />, mocks );
-            await new Promise( resolve => setTimeout(resolve, 5));
+            await new Promise( resolve => setTimeout(resolve, 0));
         });
-        expect(screen.getByTestId('app-header')).toBeTruthy();
 
+        expect(screen.getByTestId('app-header')).toBeTruthy();
+        expect(screen.getByTestId('app-main')).toBeTruthy();
+        expect(screen.getByTestId('channel-list')).toBeTruthy();
+        expect(screen.getByTestId('search-field')).toBeTruthy();
+        expect(screen.getByTestId('friends-list')).toBeTruthy();
+        expect(screen.getByTestId('user-bar')).toBeTruthy();
+        expect(screen.getByTestId('active-user-list')).toBeTruthy();
+    });
+    it('should render error state', async () => {
+
+        const mocks = [
+            {
+                request: {
+                    query: USER_QUERY
+                },
+                error: new Error('An error occurred'),
+            }
+        ];
+        
+        await act( async () => {
+            render( <Home />, mocks );
+            await new Promise( resolve => setTimeout(resolve, 0));
+        });
+        expect(screen.getByText('An error occurred')).toBeTruthy();
     });
 });

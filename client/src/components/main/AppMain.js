@@ -5,7 +5,7 @@ import {Col} from 'react-bootstrap';
 function AppMain() {
 
     return (
-        <Col className="app-main">
+        <Col className="app-main" data-testid='app-main'>
           
         </Col>
     );

@@ -8,7 +8,7 @@ function FriendsList() {
     const [t] = useTranslation('common');
 
     return (
-        <div className='friends-list pl-2'>
+        <div className='friends-list pl-2' data-testid='friends-list'>
             <ul className="p-0">
                 <FriendTab 
                     icon='people-fill'
