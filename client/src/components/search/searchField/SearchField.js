@@ -21,5 +21,5 @@ SearchField.propTypes = {
     type: PropTypes.string,
     placeholder: PropTypes.string
 
-}
+};
 export default SearchField;

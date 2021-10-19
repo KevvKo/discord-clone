@@ -39,7 +39,7 @@ describe('Home component', () => {
         
         await act( async () => {
             render( <Home />, mocks );
-            await new Promise( resolve => setTimeout(resolve, 0));
+            await new Promise( resolve => setTimeout(resolve, 0 ));
         });
 
         expect(screen.getByTestId('app-header')).toBeTruthy();

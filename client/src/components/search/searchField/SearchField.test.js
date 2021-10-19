@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, act } from '../../../scripts/utils';
+import { render, screen } from '../../../scripts/utils';
 import SearchField from './SearchField';
 
 describe('Channellist component', () => {
