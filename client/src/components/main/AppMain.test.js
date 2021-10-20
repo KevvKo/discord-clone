@@ -1,8 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
+import { render } from '../../scripts/utils';
 import AppMain from './AppMain';
+import '../../scripts/i18n';
 
-// test('renders learn react link', () => {
-//   render(<AppMain />);
-//   const linkElement = screen.getByText(/ xyz /i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+describe('AppMain component', () => {
+    it('should render', () => {
+        render( <AppMain /> );
+    });
+});
