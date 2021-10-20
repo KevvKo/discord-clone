@@ -3,7 +3,7 @@ import { render, screen } from '../../scripts/utils';
 import SettingsPanel from './SettingsPanel';
 import '../../scripts/i18n';
 
-describe('SearchBar component', () => {
+describe('SettingsPanel component', () => {
     it('should render', () => {
         render( <SettingsPanel /> );
     });
