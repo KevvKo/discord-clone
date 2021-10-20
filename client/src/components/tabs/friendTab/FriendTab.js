@@ -16,7 +16,7 @@ function FriendTab(props) {
     return (
         <ListTab className='friend-tab'>
             { props.icon &&
-                <i className={iconClassNames}></i>
+                <i className={iconClassNames} data-testid='friend-tab-icon'></i>
             }
             <span className='flex-fill'>
                 {props.text}
