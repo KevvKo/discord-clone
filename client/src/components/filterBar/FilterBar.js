@@ -13,7 +13,7 @@ function FilterBar() {
     return (
         <Row className='filterbar'>
             <Col className='navbar d-flex'>
-                <i className='bi bi-people-fill'></i>
+                <i className='bi bi-people-fill' data-testid='people-icon'></i>
                 <div className='h5 mb-0 pr-2 mx-2'>
                     {t('topBar.friendView.title')}
                 </div>  
