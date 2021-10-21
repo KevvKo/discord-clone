@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '../../../scripts/utils';
+import { render, screen } from '../../../scripts/utils';
 import FriendTab from './FriendTab';
 import '../../../scripts/i18n';
 

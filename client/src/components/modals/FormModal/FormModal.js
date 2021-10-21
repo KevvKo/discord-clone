@@ -8,7 +8,7 @@ function FormModal(props){
     return(
         <Modal centered show={ props.show } onHide={props.handleOnHide} >
             <Modal.Header className='pb-0' closeButton>
-                <Modal.Title className='ml-auto'>
+                <Modal.Title className='ml-auto' data-testid='xyz'>
                     { props.modalTitle }
                 </Modal.Title>
             </Modal.Header>
@@ -34,8 +34,6 @@ FormModal.defaultProps = {
 FormModal.propTypes = {
     children: PropTypes.node,
     footerChildren: PropTypes.element,
-    id: PropTypes.string,
-    username: PropTypes.string,
     show: PropTypes.bool,
     handleOnHide: PropTypes.func,
     modalTitle: PropTypes.string
