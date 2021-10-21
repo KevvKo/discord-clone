@@ -17,7 +17,7 @@ describe('ChannelTab component', () => {
         expect(container.firstChild.className).toBe('channel-tab d-flex justify-content-center');
     });
     it('should render close icon', () => {
-        const { container } = render( <ChannelTab icon='bi-x' /> );
+        render( <ChannelTab icon='bi-x' /> );
         expect(screen.getByTestId(/channel-tab-icon/i).className).toContain('bi-x');
     });
 });
