@@ -10,7 +10,7 @@ function ChannelTab(props) {
         : 'channel-tab d-flex justify-content-center';
     
     return (
-        <div className={classNames}>
+        <div className={classNames} data-testid='channel-tab'>
             <i className={icon} data-testid='channel-tab-icon'></i>
         </div>
     );
