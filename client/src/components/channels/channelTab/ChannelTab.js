@@ -11,16 +11,13 @@ function ChannelTab(props) {
     
     return (
         <div className={classNames}>
-            <i className={icon}></i>
+            <i className={icon} data-testid='channel-tab-icon'></i>
         </div>
     );
 }
 
 ChannelTab.defaultProps = {
     icon: 'bi-person-fill',
-    hover: true,
-    background: true,
-    size: 'md',
     defaultBehaviour: true
 };
 
