@@ -15,7 +15,7 @@ function IconButton(props) {
         <OverlayTrigger 
             placement={props.tooltipPlacement}
             overlay={
-                <Tooltip>
+                <Tooltip data-testid='tooltip'>
                     {props.tooltipText}
                 </Tooltip>
             }
@@ -26,7 +26,7 @@ function IconButton(props) {
                 onClick={ props.callback }
                 data-testid='icon-button'
             >
-                <i className={iconClassNames}></i>
+                <i className={iconClassNames} data-testid='icon'></i>
             </Button>
         </OverlayTrigger>
     );
@@ -35,7 +35,6 @@ function IconButton(props) {
 IconButton.defaultProps = {
     icon: 'bi-person-fill',
     hover: false,
-    background: true,
     size: 'md',
     cssClasses: 'p-0',
     tooltipText: '',
@@ -46,7 +45,6 @@ IconButton.propTypes = {
     callback: PropTypes.func,
     icon: PropTypes.string,
     hover: PropTypes.bool,
-    background: PropTypes.bool,
     size: PropTypes.string,
     cssClasses: PropTypes.string,
     tooltipText: PropTypes.string,
