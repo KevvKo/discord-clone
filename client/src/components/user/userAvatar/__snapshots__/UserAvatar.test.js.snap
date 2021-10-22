@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserAvatar should render with given state from redux store 1`] = `
+<div
+  className="user-avatar mr-2"
+  data-testid="user-avatar"
+>
+  <i
+    className="bi bi-person-circle"
+    style={
+      Object {
+        "fontSize": "1.666rem",
+      }
+    }
+  />
+  <div
+    className="active-user d-inline-block"
+  />
+</div>
+`;
