@@ -37,4 +37,20 @@ describe('UserAvatar', () => {
             expect(component.root.findByProps({className: 'active-user d-inline-block'})).toBeTruthy();
         });
     });
+    it('should change the classes', () => {
+        component = renderer.create( 
+            <Provider store={store}>
+                <UserAvatar cssClasses={'xyz'} />
+            </Provider>
+        );
+        expect(component.root.findByProps({className: 'user-avatar mr-2 xyz'})).toBeTruthy();
+    });
+    it('should change the fontSize', () => {
+        component = renderer.create( 
+            <Provider store={store}>
+                <UserAvatar fontSize='1' />
+            </Provider>
+        );
+        expect(component.root.findByType('i').props.style.fontSize).toBe('1rem');
+    });
 });

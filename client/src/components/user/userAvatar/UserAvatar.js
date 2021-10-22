@@ -6,11 +6,11 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 function UserAvatar(props) {
-
+    let classNames = 'user-avatar mr-2';
     const user = useSelector(state => state.user);
-
+    if( props.cssClasses ) classNames += ' ' + props.cssClasses;
     return (
-        <div className={`user-avatar mr-2${ props.cssClasses }`} data-testid='user-avatar'>
+        <div className={ classNames } data-testid='user-avatar'>
             <i className='bi bi-person-circle' style={{fontSize: props.fontSize + 'rem'}}></i>
             { user.status &&
                 <div className='active-user d-inline-block'></div>
