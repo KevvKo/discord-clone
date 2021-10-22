@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserAvatar should render with given state from redux store 1`] = `
+<div
+  className="user-tag flex-fill"
+  data-testid="user-tag"
+>
+  <div>
+    xyz name
+  </div>
+  <div>
+    #
+    1
+  </div>
+</div>
+`;
