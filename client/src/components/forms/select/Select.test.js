@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '../../../scripts/utils';
 import Select from './Select';
 import '../../../scripts/i18n';
 
-describe('AppMain component', () => {
+describe('Select component', () => {
     it('should render', () => {
         render( <Select /> );
     });

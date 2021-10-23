@@ -4,7 +4,7 @@ import { Form } from 'react-bootstrap';
 function FormFeedback(props){
 
     return(
-        <Form.Group className="form-feedback" onChange={ props.onChange }>
+        <Form.Group className="form-feedback" role='form-feedback'>
             {props.children}
             <Form.Control.Feedback type="invalid">
                 {props.error}
@@ -13,7 +13,6 @@ function FormFeedback(props){
     );
 }
 FormFeedback.propTypes = {
-    onChange: PropTypes.func,
     children: PropTypes.node.isRequired,
     error: PropTypes.string,
 };
