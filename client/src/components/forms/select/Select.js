@@ -14,7 +14,7 @@ function Select(props){
     }
 
     return(
-        <Form.Control name={ props.name } className='select' onChange={ props.onChange } as='select' isInvalid={ !!props.errors } custom>
+        <Form.Control name={ props.name } className='select' data-testid='select' onChange={ props.onChange } as='select' isInvalid={ !!props.errors } custom>
             <option key={-1} >{t('forms.select')}</option>
             {selectItems && selectItems}
         </Form.Control>
