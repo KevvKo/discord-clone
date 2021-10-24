@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrivacyAndSecurity renders the component correctly 1`] = `
+<div
+  className="settings-panel flex-column mt-5 px-4 overflow-y-auto"
+>
+  <h3>
+    Privacy and Security
+  </h3>
+</div>
+`;
