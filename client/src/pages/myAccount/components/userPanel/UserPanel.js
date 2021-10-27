@@ -13,8 +13,8 @@ import { useSelector } from 'react-redux';
 
 function UserPanel(){
 
-    const history = useHistory();
-    const { path } = useRouteMatch();
+    // const history = useHistory();
+    // const { path } = useRouteMatch();
     const user = useSelector( state => state.user);
     const [ t ] = useTranslation('common');
 

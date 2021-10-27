@@ -3,7 +3,7 @@ import { render, screen, fireEvent, act } from '../../../scripts/utils';
 import IconButton from './IconButton';
 import '../../../scripts/i18n';
 
-describe('ChangesPopover component', () => {
+describe('IconButton component', () => {
     it('should render', () => {
         render( <IconButton /> );
     });
@@ -28,13 +28,12 @@ describe('ChangesPopover component', () => {
         expect( screen.getByTestId('icon-button').className).toContain('p-0 icon-hover-bg');
     });
     it('should pop up a tooltip by hovering the button', async () => {
-        const { container } = render( <IconButton tooltipText='xyz' /> );
+        render( <IconButton tooltipText='xyz' /> );
         await act( async () => {
             fireEvent.mouseOver(screen.getByTestId('icon-button'));
         });
-        expect( screen.getByTestId('tooltip')).toBeTruthy();
-        expect( screen.getByText('xyz').innerHTMl).toBe('xyz');
-
+        expect( screen.getByText('xyz')).toBeTruthy();
+        expect(screen.getByText('xyz').innerHTML).toBe('xyz')
     });
     
 });
