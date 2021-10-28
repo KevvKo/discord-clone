@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrefixDropdown component should render correctly 1`] = `
+<div
+  className="prefix-dropdown dropdown"
+  name="test"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-secondary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    +31
+  </button>
+</div>
+`;

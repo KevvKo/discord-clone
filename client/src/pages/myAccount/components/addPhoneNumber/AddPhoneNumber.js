@@ -1,7 +1,7 @@
 import React from 'react';
 // Components
 import { Button, InputGroup, Form } from 'react-bootstrap';
-import PrefixDropdown from './prefixesDropdown/PrefixesDropdown';
+import PrefixDropdown from './components/prefixesDropdown/PrefixDropdown';
 import FormModal from '../../../../components/modals/FormModal/FormModal';
 // Hooks 
 import { useState } from 'react';
