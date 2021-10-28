@@ -28,7 +28,7 @@ function DeleteAndDeactivate(){
     };
     
     return(
-        <div className='delete-and-deactivate flex-column my-4 px-0'>
+        <div className='delete-and-deactivate flex-column my-4 px-0' data-testid='delete-and-deactivate'>
             <h6>{t('settings.main.myAccount.deleteAccount')}</h6>
             <p>{t('settings.main.myAccount.deactivateAccountDescription')}</p>
             <div>

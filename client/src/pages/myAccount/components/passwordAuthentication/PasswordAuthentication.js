@@ -26,7 +26,7 @@ function PasswordAuthentication(){
     };
 
     return(
-        <div className='password-authentication flex-column mt-5 px-0'>
+        <div className='password-authentication flex-column mt-5 px-0' data-testid='password-authentication'>
             <Button onClick={ handleShowEditPassword } className='mb-4' variant='primary' size={'sm'} >{t('settings.main.myAccount.changePassword')}</Button>
             <EditPassword show={ showEditPassword } handleOnHide={ handleShowEditPassword } />
             <h6>{t('settings.main.myAccount.twoFactorTitle')}</h6>

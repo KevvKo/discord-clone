@@ -34,6 +34,5 @@ describe('IconButton component', () => {
         });
         expect( screen.getByText('xyz')).toBeTruthy();
         expect(screen.getByText('xyz').innerHTML).toBe('xyz')
-    });
-    
+    })
 });

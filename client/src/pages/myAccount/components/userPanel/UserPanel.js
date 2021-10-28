@@ -13,8 +13,8 @@ import { useSelector } from 'react-redux';
 
 function UserPanel(){
 
-    // const history = useHistory();
-    // const { path } = useRouteMatch();
+    const history = useHistory();
+    const { path } = useRouteMatch();
     const user = useSelector( state => state.user);
     const [ t ] = useTranslation('common');
 
@@ -25,7 +25,7 @@ function UserPanel(){
     };
 
     return(
-        <Col className='user-panel px-0 pb-2 mt-3 mb-4'>
+        <Col className='user-panel px-0 pb-2 mt-3 mb-4' data-testid='user-panel'>
             <div id="user-panel-header" className="d-flex">
                 <div id='user-panel-header-left'></div>
                 <div id='user-panel-header-right'></div>
