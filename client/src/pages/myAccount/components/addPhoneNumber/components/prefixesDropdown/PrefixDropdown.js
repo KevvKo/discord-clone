@@ -36,7 +36,7 @@ function PrefixDropdown(props){
 
     return (
         <DropdownButton 
-            name='test'     
+            data-testid='prefix-dropdown'    
             className='prefix-dropdown' 
             variant='secondary' 
             onSelect={ handleSelect } 
