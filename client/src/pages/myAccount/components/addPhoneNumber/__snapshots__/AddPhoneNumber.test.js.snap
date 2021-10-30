@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddPhoneNumber component renders correctly 1`] = `
+Array [
+  <div>
+    <h6>
+      Phone Number
+    </h6>
+    <span>
+      You have no phone number added, yet.
+    </span>
+  </div>,
+  <button
+    className="ml-auto btn btn-secondary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    Add
+  </button>,
+]
+`;

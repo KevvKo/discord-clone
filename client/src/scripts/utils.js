@@ -50,7 +50,6 @@ import { MockedProvider } from '@apollo/client/testing';
 import { InMemoryCache } from '@apollo/client';
 import { MemoryRouter } from 'react-router';
 import { createMemoryHistory } from "history";
-import { Router } from "react-router";
 
 function render(
     ui,
@@ -67,7 +66,6 @@ function render(
     function Wrapper({ children }) {
 
         const cache = new InMemoryCache({ });
-        const history = createMemoryHistory();
 
         return (
             <MockedProvider cache={cache} mocks={mocks}>
