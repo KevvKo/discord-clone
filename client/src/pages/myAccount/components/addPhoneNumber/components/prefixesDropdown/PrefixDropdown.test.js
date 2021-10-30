@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, act } from '../../../../../../scripts/utils';
+import renderer from 'react-test-renderer';
 import PrefixDropdown from './PrefixDropdown';
 
 describe('PrefixDropdown component', () => {
@@ -8,7 +9,12 @@ describe('PrefixDropdown component', () => {
     beforeEach(() => {
         render( <PrefixDropdown onSelect={mockCallback}/> );
     });
-
+    it('renders correctly', () =>{
+        const tree = renderer
+            .create(<PrefixDropdown onSelect={mockCallback}/>)
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
     it('should render all countryprefixes', async () => {
         await act( async () => {
             fireEvent.click(screen.getByRole('button'));
