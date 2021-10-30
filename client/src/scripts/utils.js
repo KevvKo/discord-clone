@@ -49,7 +49,6 @@ import userProfileReducer from '../store/slices/userProfileSlice';
 import { MockedProvider } from '@apollo/client/testing';
 import { InMemoryCache } from '@apollo/client';
 import { MemoryRouter } from 'react-router';
-import { createMemoryHistory } from "history";
 
 function render(
     ui,
